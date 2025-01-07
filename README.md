@@ -1,4 +1,6 @@
 # Gemimeg Backend
+[![pipeline status](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/badges/master/pipeline.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/commits/master)
+[![coverage report](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/badges/master/coverage.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/commits/master) [![Latest Release](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/badges/release.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/releases)
 
 
 
