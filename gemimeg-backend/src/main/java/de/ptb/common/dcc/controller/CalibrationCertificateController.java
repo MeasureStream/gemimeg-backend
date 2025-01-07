@@ -44,10 +44,7 @@ import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 @RestController
 @Tag(name = "CalibrationCertificateController")
 @OpenAPIDefinition(servers = {
-    @Server(url = "https://oplayer.berlin.ptb.de", description = "production system"),
-    @Server(url = "https://staging-oplayer.berlin.ptb.de", description = "staging system"),
-    @Server(url = "https://test-oplayer.berlin.ptb.de", description = "testing system"),
-    @Server(url = "http://localhost:10013", description = "local testing api")
+    @Server(url = "http://localhost:10001", description = "GEMIMEG Backend powered by OP-Layer")
 })
 public class CalibrationCertificateController {
 
