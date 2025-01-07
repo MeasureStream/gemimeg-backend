@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dcc:digitalCalibrationCertificate schemaVersion="3.3.0" xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content lang="de">gemimeg-backend-test</dcc:content>
+        </dcc:name>
+        <dcc:release>1.0.0</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>d9795820-36ca-4180-a5eb-5d309d01ac20</dcc:uniqueIdentifier>
+      <dcc:receiptDate>2024-09-12+02:00</dcc:receiptDate>
+      <dcc:beginPerformanceDate>2024-09-13+02:00</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>2024-09-14+02:00</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="de">Gegenstand</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content lang="de">Hersteller</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>other</dcc:issuer>
+            <dcc:value>manufacturer</dcc:value>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:calibrationLaboratoryCode>PTB-9.4</dcc:calibrationLaboratoryCode>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content lang="de">Toni Tester</dcc:content>
+        </dcc:name>
+        <dcc:eMail>toni.tester@ptb.de</dcc:eMail>
+        <dcc:phone>+49303481-9876</dcc:phone>
+        <dcc:location>
+          <dcc:countryCode>DE</dcc:countryCode>
+          <dcc:state>BE</dcc:state>
+          <dcc:postCode>10587</dcc:postCode>
+          <dcc:city>Berlin</dcc:city>
+          <dcc:street>Abbestr.</dcc:street>
+          <dcc:streetNo>2-12</dcc:streetNo>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content lang="de">Verantwortlicher</dcc:content>
+          </dcc:name>
+        </dcc:person>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content lang="de">Kunibert Kunde</dcc:content>
+      </dcc:name>
+      <dcc:eMail>kunibert.kunde@mail.de</dcc:eMail>
+      <dcc:phone>+4930123456</dcc:phone>
+      <dcc:location>
+        <dcc:countryCode>DE</dcc:countryCode>
+        <dcc:state>BE</dcc:state>
+        <dcc:postCode>10627</dcc:postCode>
+        <dcc:city>Berlin</dcc:city>
+        <dcc:street>Testgasse</dcc:street>
+        <dcc:streetNo>123</dcc:streetNo>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+        <dcc:validXMLList>true false</dcc:validXMLList>
+        <dcc:date>2024-09-12+02:00</dcc:date>
+        <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content lang="de">PTB</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@ptb.de</dcc:eMail>
+          <dcc:phone>+493034819875</dcc:phone>
+          <dcc:location>
+            <dcc:countryCode>DE</dcc:countryCode>
+            <dcc:state>BE</dcc:state>
+            <dcc:postCode>10587</dcc:postCode>
+            <dcc:city>Berlin</dcc:city>
+            <dcc:street>Abbestr.</dcc:street>
+            <dcc:streetNo>2-12</dcc:streetNo>
+          </dcc:location>
+        </dcc:respAuthority>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:usedSoftware>
+        <dcc:software>
+          <dcc:name>
+            <dcc:content lang="de">NI LabView</dcc:content>
+          </dcc:name>
+          <dcc:release>2021 SP1</dcc:release>
+        </dcc:software>
+      </dcc:usedSoftware>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">RAD-8620</dcc:content>
+          </dcc:name>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Pfreundt GmbH</dcc:content>
+            </dcc:name>
+            <dcc:eMail>manufacturer@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819876</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:manufacturer>
+          <dcc:model>RAD-8620</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>0.01</si:value>
+                <si:unit>kg</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData>
+          <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+          <dcc:validXMLList>true false</dcc:validXMLList>
+          <dcc:date>2024-09-12+02:00</dcc:date>
+          <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+          <dcc:respAuthority>
+            <dcc:name>
+              <dcc:content lang="de">PTB</dcc:content>
+            </dcc:name>
+            <dcc:eMail>info@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819875</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:respAuthority>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:usedSoftware>
+        <dcc:software>
+          <dcc:name>
+            <dcc:content lang="de">NI LabView</dcc:content>
+          </dcc:name>
+          <dcc:release>2021 SP1</dcc:release>
+        </dcc:software>
+      </dcc:usedSoftware>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">RAD-8620</dcc:content>
+          </dcc:name>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Pfreundt GmbH</dcc:content>
+            </dcc:name>
+            <dcc:eMail>manufacturer@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819876</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:manufacturer>
+          <dcc:model>RAD-8620</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>0.05</si:value>
+                <si:unit>kg</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData>
+          <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+          <dcc:validXMLList>true false</dcc:validXMLList>
+          <dcc:date>2024-09-12+02:00</dcc:date>
+          <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+          <dcc:respAuthority>
+            <dcc:name>
+              <dcc:content lang="de">PTB</dcc:content>
+            </dcc:name>
+            <dcc:eMail>info@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819875</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:respAuthority>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:usedSoftware>
+        <dcc:software>
+          <dcc:name>
+            <dcc:content lang="de">NI LabView</dcc:content>
+          </dcc:name>
+          <dcc:release>2021 SP1</dcc:release>
+        </dcc:software>
+      </dcc:usedSoftware>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">RAD-8620</dcc:content>
+          </dcc:name>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Pfreundt GmbH</dcc:content>
+            </dcc:name>
+            <dcc:eMail>manufacturer@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819876</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:manufacturer>
+          <dcc:model>RAD-8620</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>0.1</si:value>
+                <si:unit>kg</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData>
+          <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+          <dcc:validXMLList>true false</dcc:validXMLList>
+          <dcc:date>2024-09-12+02:00</dcc:date>
+          <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+          <dcc:respAuthority>
+            <dcc:name>
+              <dcc:content lang="de">PTB</dcc:content>
+            </dcc:name>
+            <dcc:eMail>info@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819875</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:respAuthority>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:usedSoftware>
+        <dcc:software>
+          <dcc:name>
+            <dcc:content lang="de">NI LabView</dcc:content>
+          </dcc:name>
+          <dcc:release>2021 SP1</dcc:release>
+        </dcc:software>
+      </dcc:usedSoftware>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">RAD-8620</dcc:content>
+          </dcc:name>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Pfreundt GmbH</dcc:content>
+            </dcc:name>
+            <dcc:eMail>manufacturer@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819876</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:manufacturer>
+          <dcc:model>RAD-8620</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>0.5</si:value>
+                <si:unit>kg</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData>
+          <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+          <dcc:validXMLList>true false</dcc:validXMLList>
+          <dcc:date>2024-09-12+02:00</dcc:date>
+          <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+          <dcc:respAuthority>
+            <dcc:name>
+              <dcc:content lang="de">PTB</dcc:content>
+            </dcc:name>
+            <dcc:eMail>info@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819875</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:respAuthority>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:usedSoftware>
+        <dcc:software>
+          <dcc:name>
+            <dcc:content lang="de">NI LabView</dcc:content>
+          </dcc:name>
+          <dcc:release>2021 SP1</dcc:release>
+        </dcc:software>
+      </dcc:usedSoftware>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">RAD-8620</dcc:content>
+          </dcc:name>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Pfreundt GmbH</dcc:content>
+            </dcc:name>
+            <dcc:eMail>manufacturer@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819876</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:manufacturer>
+          <dcc:model>RAD-8620</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Weighing_for_Calibration 0..1 kgs</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>1.0</si:value>
+                <si:unit>kg</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData>
+          <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+          <dcc:validXMLList>true false</dcc:validXMLList>
+          <dcc:date>2024-09-12+02:00</dcc:date>
+          <dcc:period>P1Y2M3DT10H30M0S</dcc:period>
+          <dcc:respAuthority>
+            <dcc:name>
+              <dcc:content lang="de">PTB</dcc:content>
+            </dcc:name>
+            <dcc:eMail>info@ptb.de</dcc:eMail>
+            <dcc:phone>+493034819875</dcc:phone>
+            <dcc:location>
+              <dcc:countryCode>DE</dcc:countryCode>
+              <dcc:state>BE</dcc:state>
+              <dcc:postCode>10587</dcc:postCode>
+              <dcc:city>Berlin</dcc:city>
+              <dcc:street>Abbestr.</dcc:street>
+              <dcc:streetNo>2-12</dcc:streetNo>
+            </dcc:location>
+          </dcc:respAuthority>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

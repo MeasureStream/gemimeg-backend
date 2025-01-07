@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>oplayer-parent</artifactId>
+    <groupId>de.ptb.common</groupId>
+    <version>1.0-SNAPSHOT</version>
+    <relativePath>../parent-pom/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>gemimeg-backend-project</artifactId>
+  <packaging>pom</packaging>
+  <version>${revision}</version>
+
+  <modules>
+    <module>gemimeg-backend</module>
+    <module>gemimeg-backend-api</module>
+  </modules>
+
+  <properties>
+    <dcc-namespace-uri>https://ptb.de/dcc</dcc-namespace-uri>
+    <byte-buddy.version>1.15.1</byte-buddy.version>
+  </properties>
+
+  <!-- SCM settings -->
+  <scm>
+    <connection>scm:git:ssh://git@itgit.bs.ptb.de:op-layer/gemimeg-backend-project.git</connection>
+    <!--suppress CheckTagEmptyBody -->
+    <tag></tag>
+    <developerConnection>${project.scm.connection}</developerConnection>
+  </scm>
+
+  <!-- module repositories -->
+  <repositories>
+    <repository>
+      <id>gitlab-maven</id>
+      <url>https://itgit.bs.ptb.de/api/v4/groups/451/-/packages/maven</url>
+    </repository>
+  </repositories>
+  <distributionManagement>
+    <repository>
+      <id>gitlab-maven</id>
+      <url>https://itgit.bs.ptb.de/api/v4/projects/945/packages/maven</url>
+    </repository>
+    <snapshotRepository>
+      <id>gitlab-maven</id>
+      <url>https://itgit.bs.ptb.de/api/v4/projects/945/packages/maven</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven-central</id>
+      <url>https://itgit.bs.ptb.de/api/v4/projects/945/packages/maven</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

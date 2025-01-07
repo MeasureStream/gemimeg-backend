@@ -1,0 +1,850 @@
+{
+  "administrativeData" : {
+    "dccSoftware" : [
+      {
+        "name" : {
+          "**" : "Notepad++ (32-bit)"
+        },
+        "version" : "v 8.2"
+      }
+    ],
+    "customer" : {
+      "name" : {
+        "**" : "Kunde GmbH"
+      },
+      "location" : {
+        "countryCode" : "DE",
+        "city" : "Musterstadt",
+        "postalCode" : "00900",
+        "additionalInformation" : {
+          "textContent" : {
+            "de" : "Kunden Nr. 1024418",
+            "en" : "Customer ID no. 1024418"
+          }
+        }
+      },
+      "emailAddress" : "info@kunde.xx"
+    },
+    "calibrationLaboratory" : {
+      "contact" : {
+        "name" : {
+          "**" : "Kalibrierfirma GmbH"
+        },
+        "phoneNumber" : "+49 123 4567-89",
+        "location" : {
+          "countryCode" : "DE",
+          "city" : "Musterstadt",
+          "postalCode" : "00900",
+          "street" : "Musterstraße",
+          "houseNumber" : "1",
+          "additionalInformation" : {
+            "textContent" : {
+              "**" : "www.kalibrierfirma.xx"
+            }
+          }
+        },
+        "emailAddress" : "info@kalibrierfirma.xx"
+      }
+    },
+    "items" : [
+      {
+        "name" : {
+          "de" : "Temperatur-Fühler",
+          "en" : "Temperature sensor"
+        },
+        "model" : "String",
+        "manufacturer" : {
+          "name" : {
+            "**" : "String"
+          }
+        },
+        "identifications" : [
+          {
+            "name" : {
+              "de" : "Serien Nr.",
+              "en" : "Serial no."
+            },
+            "issuer" : "manufacturer",
+            "value" : "string-manufacturer-item"
+          },
+          {
+            "name" : {
+              "de" : "Messmittel Nr.",
+              "en" : "Measurement equipment no."
+            },
+            "issuer" : "customer",
+            "value" : "string-customer-item"
+          },
+          {
+            "name" : {
+              "de" : "Equipment Nr.",
+              "en" : "Equipment no."
+            },
+            "issuer" : "calibrationLaboratory",
+            "value" : "string-calibrationLaboratory-item"
+          }
+        ]
+      }
+    ],
+    "uniqueIdentifier" : "GP_DCC_temperature_extensive_1.2",
+    "countryCode" : "DE",
+    "languageCodes" : [
+      "de",
+      "en"
+    ],
+    "startDate" : "1957-08-13",
+    "endDate" : "1957-08-13",
+    "performanceLocation" : "laboratory",
+    "responsiblePersons" : [
+      {
+        "name" : {
+          "**" : "Michaela Musterfrau"
+        }
+      },
+      {
+        "name" : {
+          "**" : "Michael Mustermann"
+        }
+      }
+    ],
+    "statements" : [
+      {
+        "norms" : [
+          "ISO/IEC 17025:2018-03"
+        ],
+        "declaration" : {
+          "textContent" : {
+            "de" : "Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Es obliegt dem Antragsteller, zu\n            gegebener Zeit eine Rekalibrierung zu veranlassen.\n          ",
+            "en" : "The results refer only to the object calibrated in this DCC. The measurement results\n            are valid at the time of calibration. The applicant is responsible for arranging a recalibration in due\n            time.\n          "
+          }
+        }
+      },
+      {
+        "data" : [
+          {
+            "quantity" : {
+              "refTypes" : [
+                "basic_validityRangeMin"
+              ],
+              "name" : {
+                "de" : "Unteres Limit",
+                "en" : "Lower limit"
+              },
+              "dimension" : {
+                "value" : 306.0,
+                "unit" : "\\kelvin"
+              },
+              "quantityTypeName" : "real"
+            }
+          },
+          {
+            "quantity" : {
+              "refTypes" : [
+                "basic_validityRangeMax"
+              ],
+              "name" : {
+                "de" : "Oberes Limit",
+                "en" : "Upper limit"
+              },
+              "dimension" : {
+                "value" : 593.0,
+                "unit" : "\\kelvin"
+              },
+              "quantityTypeName" : "real"
+            }
+          }
+        ],
+        "declaration" : {
+          "textContent" : {
+            "de" : "Specification of the temperature range in which calibration was performed:\n          "
+          }
+        }
+      },
+      {
+        "declaration" : {
+          "textContent" : {
+            "de" : "Die Konformitätsaussage erfolgt anhand der Vorgaben des Kunden. Sie sind im DCC mit\n            aufgeführt.\n          ",
+            "en" : "The conformity statement is made on the basis of the customer's specifications. They\n            are listed in the DCC.\n          "
+          }
+        }
+      },
+      {
+        "date" : "1959-10-22",
+        "declaration" : {
+          "textContent" : {
+            "de" : "Date when the calibration item is to be recalibrated at the latest according to the\n            customer's specification:\n          "
+          }
+        }
+      }
+    ]
+  },
+  "measurementResults" : [
+    {
+      "name" : {
+        "de" : "Messergebnisse",
+        "en" : "Measurement results"
+      },
+      "usedSoftware" : [
+        {
+          "id" : "gp_uS1",
+          "name" : {
+            "de" : "Software 1",
+            "en" : "Software 1"
+          },
+          "version" : "R1.3"
+        },
+        {
+          "id" : "gp_uS2",
+          "name" : {
+            "de" : "Software 2",
+            "en" : "Software 2"
+          },
+          "version" : "R4.0"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "refTypes" : [
+            "basic_uncertainty"
+          ],
+          "name" : {
+            "de" : "Erweiterte Messunsicherheit",
+            "en" : "Expanded uncertainty"
+          },
+          "norms" : [
+            "GUM"
+          ],
+          "description" : {
+            "textContent" : {
+              "de" : "Angegeben ist die erweiterte Messunsicherheit, die sich aus der\n              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k=2 ergibt. Sie wurde gemäß dem\n              „Guide to the Expression of Uncertainty in Measurement (GUM)“ ermittelt. Der Wert der Messgröße liegt dann\n              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.\n            ",
+              "en" : "The expanded uncertainty was calculated from the contributions of uncertainty\n              originating from the standards used, from the weighings and the air buoyancy corrections. The reported\n              uncertainty does not include an estimate of long-term variations.\n            "
+            }
+          }
+        },
+        {
+          "refTypes" : [
+            "gp_temperatureSensor"
+          ],
+          "name" : {
+            "de" : "Kalibrierung von Temperaturmessfühlern",
+            "en" : "Calibration of temperature sensors"
+          },
+          "norms" : [
+            "DKD-R 5-1:2018"
+          ]
+        },
+        {
+          "id" : "gp_uM1",
+          "name" : {
+            "de" : "Zusatzmethode 1",
+            "en" : "Additinal method 1"
+          }
+        },
+        {
+          "id" : "gp_uM2",
+          "name" : {
+            "de" : "Zusatzmethode 2",
+            "en" : "Additinal method 2"
+          }
+        },
+        {
+          "id" : "gp_uMTotalSampleTime",
+          "name" : {
+            "de" : "Gesamtaufnahmezeit pro Temperatur",
+            "en" : "Total recording time per temperature"
+          }
+        },
+        {
+          "id" : "gp_uMNumberOfSamples",
+          "name" : {
+            "de" : "Anzahl der Einzelmessungen pro Temperatur",
+            "en" : "Number of individual measurements per temperature"
+          }
+        }
+      ],
+      "results" : [
+        {
+          "refTypes" : [
+            "gp_measuringResult1"
+          ],
+          "name" : {
+            "de" : "Messergebnisse",
+            "en" : "Measuring results"
+          },
+          "data" : [
+            {
+              "list" : {
+                "refTypes" : [
+                  "gp_table2"
+                ],
+                "quantities" : [
+                  {
+                    "refTypes" : [
+                      "basic_referenceValue"
+                    ],
+                    "name" : {
+                      "de" : "Bezugswert",
+                      "en" : "Reference value"
+                    },
+                    "quantityTypeName" : "hybrid",
+                    "hybridValues" : {
+                      "dimensions" : [
+                        {
+                          "value" : 306.248,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 373.121,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 448.253,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 523.319,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 593.154,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 33.098,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 99.971,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 175.103,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 250.169,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 320.004,
+                          "unit" : "\\degreecelsius"
+                        }
+                      ],
+                      "quantitySubTypeNames" : [
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList"
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "basic_measuredValue"
+                    ],
+                    "name" : {
+                      "de" : "Angezeigter Messwert Kalibriergegenstand",
+                      "en" : "Indicated measured value probe"
+                    },
+                    "quantityTypeName" : "hybrid",
+                    "hybridValues" : {
+                      "dimensions" : [
+                        {
+                          "value" : 306.32,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 373.21,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 448.36,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 523.31,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 593.07,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 33.17,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 100.06,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 175.21,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 250.16,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 319.92,
+                          "unit" : "\\degreecelsius"
+                        }
+                      ],
+                      "quantitySubTypeNames" : [
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList"
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "basic_measurementError"
+                    ],
+                    "name" : {
+                      "de" : "Messabweichung",
+                      "en" : "Measurement error"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 0.072,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 0.089,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 0.107,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : -0.009,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : -0.084,
+                          "unit" : "\\kelvin"
+                        }
+                      ],
+                      "uncertainties" : [
+                        {
+                          "uncertainty" : 0.061,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "influenceConditions" : [
+        {
+          "refTypes" : [
+            "gp_immersionDepth"
+          ],
+          "name" : {
+            "de" : "Eintauchtiefe im Wasserbad",
+            "en" : "Immersion depth in water bath"
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Eintauchtiefe",
+                  "en" : "Immersion depth"
+                },
+                "dimension" : {
+                  "value" : 0.1,
+                  "unit" : "\\metre"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "basic_temperature"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung Temperatur",
+            "en" : "Ambient condition temperature"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Diese Werte wurden nicht gemessen, sondern wurden anhand der typischen\n              Wetterbedingungen zu einer Jahreszeit angegeben. [^1]\n            ",
+              "en" : "These values were not measured, but were given based on typical weather conditions at\n              a time of year. [^1]\n            "
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_temperatureMin"
+                ],
+                "name" : {
+                  "de" : "Temperatur min",
+                  "en" : "temperature min"
+                },
+                "dimension" : {
+                  "value" : 293.0,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real"
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_temperatureMax"
+                ],
+                "name" : {
+                  "de" : "Temperatur max",
+                  "en" : "temperature max"
+                },
+                "dimension" : {
+                  "value" : 299.0,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "basic_humidityRelative"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung relative Luftfeuchte",
+            "en" : "Ambient condition relative humidity"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Diese Werte wurden nicht gemessen, sondern wurden anhand der typischen\n              Wetterbedingungen zu einer Jahreszeit angegeben. [^1]\n            ",
+              "en" : "These values were not measured, but were given based on typical weather conditions at\n              a time of year. [^1]\n            "
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_humidityRelativeMin"
+                ],
+                "name" : {
+                  "de" : "Feuchte min",
+                  "en" : "humidity min"
+                },
+                "dimension" : {
+                  "value" : 0.2,
+                  "unit" : "\\one"
+                },
+                "quantityTypeName" : "real"
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_humidityRelativeMax"
+                ],
+                "name" : {
+                  "de" : "Feuchte max",
+                  "en" : "humidity max"
+                },
+                "dimension" : {
+                  "value" : 0.7,
+                  "unit" : "\\one"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "basic_adjustment"
+          ],
+          "name" : {
+            "de" : "Justage",
+            "en" : "Adjustment"
+          },
+          "status" : "beforeAdjustment",
+          "data" : [
+            {
+              "list" : {
+                "refTypes" : [
+                  "gp_table1"
+                ],
+                "quantities" : [
+                  {
+                    "refTypes" : [
+                      "basic_referenceValue"
+                    ],
+                    "name" : {
+                      "de" : "Referenzwert",
+                      "en" : "Reference value"
+                    },
+                    "quantityTypeName" : "hybrid",
+                    "hybridValues" : {
+                      "dimensions" : [
+                        {
+                          "value" : 306.245,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 373.127,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 448.249,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 523.321,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 593.151,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 33.095,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 99.977,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 175.099,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 250.171,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 320.001,
+                          "unit" : "\\degreecelsius"
+                        }
+                      ],
+                      "quantitySubTypeNames" : [
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList"
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "basic_measuredValue"
+                    ],
+                    "name" : {
+                      "de" : "Angezeigter Messwert Kalibriergegenstand",
+                      "en" : "Indicated measured value probe"
+                    },
+                    "quantityTypeName" : "hybrid",
+                    "hybridValues" : {
+                      "dimensions" : [
+                        {
+                          "value" : 306.35,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 373.45,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 448.05,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 523.05,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 593.35,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 33.2,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 100.3,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 174.9,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 249.9,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 320.2,
+                          "unit" : "\\degreecelsius"
+                        }
+                      ],
+                      "quantitySubTypeNames" : [
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList"
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "basic_measurementError"
+                    ],
+                    "name" : {
+                      "de" : "Messabweichung",
+                      "en" : "Measurement error"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 0.105,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 0.323,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : -0.199,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : -0.271,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 0.199,
+                          "unit" : "\\kelvin"
+                        }
+                      ],
+                      "uncertainties" : [
+                        {
+                          "uncertainty" : 0.89,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "id" : "gp_mE1",
+          "name" : {
+            "de" : "Pt 100 Widerstandsthermometer",
+            "en" : "Pt 100 thermometer"
+          },
+          "identifications" : [
+            {
+              "issuer" : "manufacturer",
+              "value" : "string-manufacturer-measuringEquipment-1"
+            }
+          ]
+        },
+        {
+          "id" : "gp_mE2",
+          "name" : {
+            "de" : "Pt 100 Widerstandsthermometer",
+            "en" : "Pt 100 thermometer"
+          },
+          "identifications" : [
+            {
+              "issuer" : "manufacturer",
+              "value" : "string-manufacturer-measuringEquipment-2"
+            }
+          ],
+          "certificateValue" : "analogue",
+          "certificateReferral" : {
+            "**" : "www.kalibrierfirma.xx/certificate-download"
+          },
+          "certificateReferralId" : "GP-mE-Certificate2",
+          "certificateProcedure" : "analogue"
+        },
+        {
+          "id" : "gp_mE3",
+          "name" : {
+            "de" : "DAkkS-Bezugsnormal (PT25)",
+            "en" : "DAkkS-Reference (PT25)"
+          },
+          "identifications" : [
+            {
+              "issuer" : "manufacturer",
+              "value" : "string-manufacturer-measuringEquipment-3"
+            }
+          ],
+          "certificateValue" : "-GP-Value-",
+          "certificateReferral" : {
+            "**" : "www.kalibrierfirma.xx/certificate-download"
+          },
+          "certificateReferralId" : "GP-mE-Certificate3",
+          "certificateProcedure" : "SHA256"
+        }
+      ],
+      "metaData" : [
+        {
+          "declaration" : {
+            "name" : {
+              "de" : "Hinweise",
+              "en" : "Notes"
+            },
+            "textContent" : {
+              "de" : "[^1]: Das ist eine typische Vorgehensweise bei der Kalibrierung\n              eines Temperatursensors.\n            ",
+              "en" : "[^1]: This is a typical procedure in the case of calibrating a\n              temperature-sensor.\n            "
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : "3.3.0"
+}

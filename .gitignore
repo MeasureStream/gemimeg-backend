@@ -1,0 +1,13 @@
+.idea/
+*.iml
+.flattened-pom.xml
+.classpath
+.project
+.settings/
+MANIFEST.MF
+target/
+/gemimeg-backend-api/src/main/java/de/ptb/common/dcc/api/v1/xjc/
+/gemimeg-backend/src/main/java/de/ptb/common/dcc/xjc/generated/
+sun-jaxb.episode
+*.mv.db
+*.trace.db

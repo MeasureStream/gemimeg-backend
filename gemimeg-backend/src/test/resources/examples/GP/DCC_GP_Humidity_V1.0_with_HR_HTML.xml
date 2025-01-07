@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="dcc.xsl"?>
+<dcc:digitalCalibrationCertificate
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dcc="https://ptb.de/dcc"
+    xmlns:si="https://ptb.de/si"
+    xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+    schemaVersion="3.3.0">
+  <!--
+      DCC - Digital Calibration Certificate
+      Copyright (c) 2019 - 2022 Physikalisch-Technische Bundesanstalt
+
+      This XML dataset is free software: you can redistribute it and/or modify
+      it under the terms of the GNU Lesser General Public License as published by
+      the Free Software Foundation, version 3 of the License.
+
+      This XSD is distributed in the hope that it will be useful,
+      but WITHOUT ANY WARRANTY; without even the implied warranty of
+      MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+      GNU Lesser General Public License for more details.
+
+      The development of minimum requirements for a digital calibration certificate (DCC) is partially funded and
+      supported by the joint research project EMPIR 17IND02 (title: SmartCom).
+      This project (17IND02) has received funding from the EMPIR programme co-financed by the Participating States
+      and from the European Union's Horizon 2020 research and innovation programme.
+      The further development of the digital calibration certificate (DCC) is partly supported by the lighthouse
+      project GEMIMEG-II (GEMIMEG 01 MT20001E) funded by the German Federal Ministry for Economic Affairs and
+      Energy (BMWi) and the project "International Standard Accident Number" (ISAN) funded by the Niedersächsiches
+      Vorab initiative of the Volkswagen Foundation (VolkswagenStiftung).
+
+
+      Documentation: https://ptb.de/dcc
+
+      ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION! ATTENTION!
+
+      This is not a real calibration certificate. It is invalid.
+
+      Draft Good Practise Temperature
+
+      GP_DCC_humidity_19
+      ==================
+  -->
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>Notepad++ (32-bit)</dcc:content>
+        </dcc:name>
+        <dcc:release>v 8.4.6</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>Id 123456789 HtW</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification>
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>Or_123456789</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Auftrags Nr.</dcc:content>
+            <dcc:content lang="en">Order no.</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:beginPerformanceDate>1957-08-13</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>1957-08-14</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:name>
+        <dcc:content lang="de">Feuchtemesssystem</dcc:content>
+        <dcc:content lang="en">Hygrometer</dcc:content>
+      </dcc:name>
+      <dcc:description>
+        <dcc:content lang="de">Feuchtemesssystem zur direkten Messung der relativen Feuchte und der Temperatur,
+          bestehend aus einem Anzeigegerät und einem Sensor mit den Maßen: Gesamtlänge 210 mm, Länge Sensorelement 35 mm
+          und Durchmesser 14 mm.
+        </dcc:content>
+        <dcc:content lang="en">Hygrometer for the direct measurement of relative humidity and temperature, it consists
+          of a handheld display unit and a sensor with the dimensions: total length 210 mm, sensor lenght 35 mm and
+          diameter 14 mm.
+        </dcc:content>
+      </dcc:description>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="de">Anzeigegerät</dcc:content>
+          <dcc:content lang="en">Display unit</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content>Feuchtemesstechnik GmbH</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:model>Display 1234-5</dcc:model>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>123456789 Ma</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Serien Nr.</dcc:content>
+              <dcc:content lang="en">Serial no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>customer</dcc:issuer>
+            <dcc:value>123456789 Hu</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Messmittel Nr.</dcc:content>
+              <dcc:content lang="en">Measurement equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>calibrationLaboratory</dcc:issuer>
+            <dcc:value>Eq 123456789</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Equipment Nr.</dcc:content>
+              <dcc:content lang="en">Equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="de">Feuchtesensor</dcc:content>
+          <dcc:content lang="en">Humidity sensor</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content>Feuchtemesstechnik GmbH</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:model>H2OMeas 6789-1</dcc:model>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>Fs 135792468 Hu</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Serien Nr.</dcc:content>
+              <dcc:content lang="en">Serial no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>customer</dcc:issuer>
+            <dcc:value>Be 123456789 kk</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Messmittel Nr.</dcc:content>
+              <dcc:content lang="en">Measurement equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>calibrationLaboratory</dcc:issuer>
+            <dcc:value>Cl 123456789 By</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Equipment Nr.</dcc:content>
+              <dcc:content lang="en">Equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content>Kalibrierfirma GmbH</dcc:content>
+        </dcc:name>
+        <dcc:eMail>info@kalibrierfirma.xx</dcc:eMail>
+        <dcc:phone>+49 123 4567-89</dcc:phone>
+        <dcc:fax>+49 123 4567-90</dcc:fax>
+        <dcc:location>
+          <dcc:city>Musterstadt</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+          <dcc:postCode>00900</dcc:postCode>
+          <dcc:street>Musterstraße</dcc:street>
+          <dcc:streetNo>1</dcc:streetNo>
+          <dcc:further>
+            <dcc:content>www.kalibrierfirma.xx</dcc:content>
+          </dcc:further>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Michaela Musterfrau</dcc:content>
+          </dcc:name>
+        </dcc:person>
+        <dcc:mainSigner>true</dcc:mainSigner>
+      </dcc:respPerson>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Michael Mustermann</dcc:content>
+          </dcc:name>
+        </dcc:person>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content>Kunde GmbH</dcc:content>
+      </dcc:name>
+      <dcc:eMail>info@kunde.xx</dcc:eMail>
+      <dcc:location>
+        <dcc:city>Musterstadt</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+        <dcc:postCode>00900</dcc:postCode>
+        <dcc:further>
+          <dcc:content lang="de">Kunden Nr. 123456789</dcc:content>
+          <dcc:content lang="en">Customer ID no. 123456789</dcc:content>
+        </dcc:further>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement refType="basic_recalibration">
+        <dcc:declaration>
+          <dcc:content lang="de">Datum, wann nach der Festlegung durch den Kunden spätestens der Kalibriergegenstand
+            rekalibriert werden soll:
+          </dcc:content>
+          <dcc:content lang="en">Date when the calibration item is to be recalibrated at the latest according to the
+            customer's specification:
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:date>1959-10-22</dcc:date>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content>Kunde GmbH</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@kunde.xx</dcc:eMail>
+          <dcc:location>
+            <dcc:city>Musterstadt</dcc:city>
+            <dcc:postCode>00900</dcc:postCode>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:respAuthority>
+      </dcc:statement>
+      <dcc:statement refType="basic_conformity">
+        <dcc:declaration>
+          <dcc:content lang="de">Die Konformitätsaussage erfolgt anhand der Vorgaben des Kunden. Sie sind im DCC mit
+            aufgeführt.
+          </dcc:content>
+          <dcc:content lang="en">The conformity statement is made on the basis of the customer's specifications. They
+            are listed in the DCC.
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content>Kunde GmbH</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@kunde.xx</dcc:eMail>
+          <dcc:location>
+            <dcc:city>Musterstadt</dcc:city>
+            <dcc:postCode>00900</dcc:postCode>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:respAuthority>
+        <dcc:conformity>pass</dcc:conformity>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:norm>DIN EN ISO/IEC 17025:2018-03</dcc:norm>
+        <dcc:reference>7.8.4.3</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Es obliegt dem Antragsteller, zu
+            gegebener Zeit eine Rekalibrierung zu veranlassen.
+          </dcc:content>
+          <dcc:content lang="en">The results refer only to the object calibrated in this DCC. The measurement results
+            are valid at the time of calibration. The applicant is responsible for arranging a recalibration in due
+            time.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement refType="basic_validityRange">
+        <dcc:declaration>
+          <dcc:content lang="de">Angabe des kalibrierten Bereichs der relativen Feuchte bei der vorgegebenen
+            Gastemperatur:
+          </dcc:content>
+          <dcc:content lang="en">Specification of the calibrated range of the relative humidity at the given gas
+            temperature:
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:data>
+          <dcc:quantity refType="basic_validityRangeMin">
+            <dcc:name>
+              <dcc:content lang="de">Unteres Limit des kalibrierten Bereichs</dcc:content>
+              <dcc:content lang="en">Lower limit of the calibrated range</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>0.1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>10</si:value>
+                <si:unit>\percent</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+          <dcc:quantity refType="basic_validityRangeMax">
+            <dcc:name>
+              <dcc:content lang="de">Oberes Limit des kalibrierten Bereichs</dcc:content>
+              <dcc:content lang="en">Upper limit of the calibrated range</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>0.8</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>80</si:value>
+                <si:unit>\percent</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+          <dcc:quantity refType="basic_validitySecondaryCondition">
+            <dcc:name>
+              <dcc:content lang="de">Vorgegebene Gastemperatur</dcc:content>
+              <dcc:content lang="en">Given gas temperature</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>293.15</si:value>
+                <si:unit>\kelvin</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>20</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+        </dcc:data>
+      </dcc:statement>
+      <dcc:statement refType="basic_measurementRange">
+        <dcc:declaration>
+          <dcc:content lang="de">Angabe des Bereichs, in dem gemessen wurde:</dcc:content>
+          <dcc:content lang="en">Specification of the range in which the measurement was performed:</dcc:content>
+        </dcc:declaration>
+        <dcc:data>
+          <dcc:quantity refType="basic_measurementRangeMin">
+            <dcc:name>
+              <dcc:content lang="de">Unteres Limit des Messbereichs</dcc:content>
+              <dcc:content lang="en">Lower limit of the measurment range</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>0</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>0</si:value>
+                <si:unit>\percent</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+          <dcc:quantity refType="basic_measurementRangeMax">
+            <dcc:name>
+              <dcc:content lang="de">Oberes Limit des Messbereichs</dcc:content>
+              <dcc:content lang="en">Upper limit of the measurment range</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>100</si:value>
+                <si:unit>\percent</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+          <dcc:quantity refType="basic_measurementSecondaryCondition">
+            <dcc:name>
+              <dcc:content lang="de">Vorgegebene Temperatur:</dcc:content>
+              <dcc:content lang="en">Given temperature:</dcc:content>
+            </dcc:name>
+            <si:hybrid>
+              <si:real>
+                <si:value>293.15</si:value>
+                <si:unit>\kelvin</si:unit>
+              </si:real>
+              <si:real>
+                <si:value>20</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </si:hybrid>
+          </dcc:quantity>
+        </dcc:data>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Messergebnisse</dcc:content>
+        <dcc:content lang="en">Measurement results</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="basic_uncertainty">
+          <dcc:name>
+            <dcc:content lang="de">Erweiterte Messunsicherheit</dcc:content>
+            <dcc:content lang="en">Expanded uncertainty</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Angegeben ist die erweiterte Messunsicherheit, die sich aus der
+              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k = 2 ergibt. Sie wurde gemäß dem
+              "Guide to the Expression of Uncertainty in Measurement (GUM)" ermittelt. Der Wert der Messgröße liegt dann
+              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.
+            </dcc:content>
+            <dcc:content lang="en">The uncertainty stated is the expanded measurement uncertainty obtained by
+              multiplying the standard measurement uncertainty by the coverage factor k=2. It has been determined in
+              accordance with the “Guide to the Expression of Uncertainty in Measurement (GUM)”. The value of the
+              measurand then normally lies, with a probability of approximately 95%, within the attributed coverage
+              interval.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>GUM</dcc:norm>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="gp_uncertainty">
+          <dcc:name>
+            <dcc:content lang="de">Messunsicherheit des Verfahrens</dcc:content>
+            <dcc:content lang="en">Measurement uncertainity of the measurement procedure</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Messunsicherheit der Abweichung des von der Anzeige des Gerätes abgelesenen
+              Wertes vom Referenzwert der relativen Feuchte ist in der Tabelle für die einzelnen Kalibrierpunkte
+              angegeben. Berücksichtigt wurden dabei Beiträge aus der Messung der Taupunkttemperatur, sowie der Messung
+              der Bezugstemperatur (Kalibrierung des Pt-100 sowie Temperaturinhomogenität der Klimakammer) und der
+              Kurzzeitstabilität des Kalibriergegenstandes während der Messung. Ein Beitrag für die Langzeitstabilität
+              oder des Hystereseverhaltens des Kalibriergegenstandes ist nicht berücksichtigt.
+            </dcc:content>
+            <dcc:content lang="en">The measurement uncertainity of the difference of the read value from the display of
+              the device and the reference value of the relative humidity is given in the table for each single point of
+              calibration. Contribution due to the measurement of the dew point tmeperature, and the reference
+              temperature (calibration of the Pt-100 as well as inhomogeneity of the climatic chamber), and short term
+              stability of the device under calibration during the meausurement are considered. Contributions due to
+              long term stability or hysteresis of the device under test are not considered.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>GUM</dcc:norm>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="gp_method">
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierverfahren</dcc:content>
+            <dcc:content lang="en">Calibration method</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Feuchtekalibrierung wurde nach der DKD-Richtlinie DKD-R 5-8 „Kalibrierung von
+              Hygrometern zur direkten Erfassung der relativen Feuchte“, Ausgabe 02/2019 nach Ablauf A2
+              (aufwärts/abwärts) durchgeführt.
+            </dcc:content>
+            <dcc:content lang="en">The humidity calibration was carried out according to the DKD guideline DKD-R 5-8
+              ʺCalibration of hygrometers for the direct measurement of relative humidityʺ, Edition 10/2019, in
+              accordance with sequence A2 (upward/downward).
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>DKD-R 5-8</dcc:norm>
+          <dcc:reference>https://doi.org/10.7795/550.20190214</dcc:reference>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="basic_measurementConditions">
+          <dcc:name>
+            <dcc:content lang="de">Messbedingungen</dcc:content>
+            <dcc:content lang="en">Measurement conditions</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Kalibrierung wurde in einem Klimaschrank bei einer Strömungsgeschwindigkeit von
+              ca. 2 m/s durchgeführt.
+            </dcc:content>
+            <dcc:content lang="en">The calibration was carried out in a climatic chamber at a flow velocity of
+              approximately 2 m/s.
+            </dcc:content>
+            <dcc:content lang="de">Die Kalibrierung wurde in Luft durchgeführt.</dcc:content>
+            <dcc:content lang="en">The calibration was carried out in air.</dcc:content>
+            <dcc:content lang="de">Der externe Fühler des Kalibriergegenstandes wurde inklusive 1 m seiner
+              Anschlussleitung im Klimaschrank positioniert. Das Anzeigegerät war während der Kalibrierung außerhalb der
+              Messkammer den Raumbedingungen ausgesetzt.
+            </dcc:content>
+            <dcc:content lang="en">The external sensor of the calibration item was positioned in the climatic chamber,
+              including 1 m of its connecting cable. The display unit was exposed to room conditions outside the
+              measuring chamber during calibration.
+            </dcc:content>
+            <dcc:content lang="de">Die Angleichzeit für jeden Kalibrierpunkt betrug mindestens 150 min.</dcc:content>
+            <dcc:content lang="en">The adjustment time for each calibration point was at least 150 min.</dcc:content>
+            <dcc:content lang="de">Der Startwert für die Kalibrierung war die angegebene Umgebungsbedingung.
+            </dcc:content>
+            <dcc:content lang="en">The starting value for the calibration was the specified environmental condition.
+            </dcc:content>
+            <dcc:content lang="de">Der Wert der Hysterese ist in der Messunsicherheit nicht berücksichtigt.
+            </dcc:content>
+            <dcc:content lang="en">The value of the hysteresis is not considered in the measurement uncertainty.
+            </dcc:content>
+            <dcc:content lang="de">Der Referenzwert der relativen Feuchte wurde aus den Messwerten der Gastemperatur und
+              Taupunkttemperatur der Bezugsnormale berechnet.
+            </dcc:content>
+            <dcc:content lang="en">The reference value of the relative humidity was calculated from the measured values
+              of the gas temperature and dew point temperature of the reference standards.
+            </dcc:content>
+            <dcc:content lang="de">Die angegebenen relativen Feuchtewerte beziehen sich auf die Sättigung über Wasser.
+            </dcc:content>
+            <dcc:content lang="en">The given values of relative humidity refer to the saturation above water.
+            </dcc:content>
+            <dcc:content lang="de">Angegeben sind die Messergebnisse in der Reihenfolge der Kalibrierung.</dcc:content>
+            <dcc:content lang="en">The measurement results are shown in order of the calibration.</dcc:content>
+          </dcc:description>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment refType="basic_standardUsed">
+          <dcc:name>
+            <dcc:content lang="de">Pt 100 Widerstandsthermometer</dcc:content>
+            <dcc:content lang="en">Pt 100 thermometer</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content>www.kalibrierfirma.xx/certificate-download</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>GP-mE-Certificate-x</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+          </dcc:certificate>
+          <dcc:identifications>
+            <dcc:identification>
+              <dcc:issuer>manufacturer</dcc:issuer>
+              <dcc:value>Temperaturmesstechnik GmbH</dcc:value>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+        <dcc:measuringEquipment refType="basic_standardUsed">
+          <dcc:name>
+            <dcc:content lang="de">Taupunktspiegel-Hygrometer</dcc:content>
+            <dcc:content lang="en">Dew point hygrometer</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content>www.kalibrierfirma.xx/certificate-download</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>GP-mE-Certificate-y</dcc:referralID>
+            <dcc:procedure>SHA256</dcc:procedure>
+            <dcc:value>SHA256-value</dcc:value>
+          </dcc:certificate>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung Temperatur</dcc:content>
+            <dcc:content lang="en">Ambient condition temperature</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_temperatureMin">
+              <dcc:name>
+                <dcc:content lang="de">Minimale Umgebungstemperatur</dcc:content>
+                <dcc:content lang="en">Minimum ambient temperature</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>295.15</si:value>
+                  <si:unit>\kelvin</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>22</si:value>
+                  <si:unit>\degreecelsius</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_temperatureMax">
+              <dcc:name>
+                <dcc:content lang="de">Maximale Umgebungstemperatur</dcc:content>
+                <dcc:content lang="en">Maximum ambient temperature</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>297.15</si:value>
+                  <si:unit>\kelvin</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>24</si:value>
+                  <si:unit>\degreecelsius</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_humidityRelative">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung relative Luftfeuchte</dcc:content>
+            <dcc:content lang="en">Ambient condition relative air humidity</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_humidityRelativeMin">
+              <dcc:name>
+                <dcc:content lang="de">Minimale relative Luftfeuchte der Umgebung</dcc:content>
+                <dcc:content lang="en">Minimum relative humidity of the ambient air</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>0.35</si:value>
+                  <si:unit>\one</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>35</si:value>
+                  <si:unit>\percent</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_humidityRelativeMax">
+              <dcc:name>
+                <dcc:content lang="de">Maximale relative Luftfeuchte der Umgebung</dcc:content>
+                <dcc:content lang="en">Maximum relative humidity of the ambient air</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>0.55</si:value>
+                  <si:unit>\one</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>55</si:value>
+                  <si:unit>\percent</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_valueSettlingTime gp_valueAdjustmentTime">
+          <dcc:name>
+            <dcc:content lang="de">Angleichzeit für jeden Kalibrierpunkt</dcc:content>
+            <dcc:content lang="en">Adjustment time for each calibration point</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:hybrid>
+                <si:real>
+                  <si:value>9000</si:value>
+                  <si:unit>\second</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>150</si:value>
+                  <si:unit>\minute</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="gp_valueFlowVelocity">
+          <dcc:name>
+            <dcc:content lang="de">Anströmgeschwindigkeit</dcc:content>
+            <dcc:content lang="en">Flow velocity</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>2</si:value>
+                <si:unit>\metre\second\tothe{-1}</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_measurementDimension">
+          <dcc:name>
+            <dcc:content lang="de">Angezeigte Einheit</dcc:content>
+            <dcc:content lang="en">Unit of display</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\percent</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_measurementRangeScaleInterval">
+          <dcc:name>
+            <dcc:content lang="de">Auflösung der Anzeige</dcc:content>
+            <dcc:content lang="en">Resolution of display</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <si:hybrid>
+                <si:real>
+                  <si:value>0.001</si:value>
+                  <si:unit>\one</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>0.1</si:value>
+                  <si:unit>\percent</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result refType="gp_relativeGasHumidityAboveWater">
+          <dcc:name>
+            <dcc:content lang="de">Messergebnisse</dcc:content>
+            <dcc:content lang="en">Measurement results</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:list>
+              <dcc:quantity refType="basic_referenceValue">
+                <dcc:name>
+                  <dcc:content lang="de">Referenzwert relative Feuchte</dcc:content>
+                  <dcc:content lang="en">Reference value relative humidity</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>0.201 0.500 0.800 0.901 0.801 0.500 0.200</si:valueXMLList>
+                    <si:unitXMLList>\one</si:unitXMLList>
+                    <si:dateTimeXMLList>2021-07-27T06:00:01 2021-07-27T09:30:00 2021-07-27T13:00:00 2021-07-27T16:30:00
+                      2021-07-27T20:00:00 2021-07-27T23:30:00 2021-07-28T03:00:00
+                    </si:dateTimeXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>20.1 50.0 80.0 90.1 80.1 50.0 20.0</si:valueXMLList>
+                    <si:unitXMLList>\percent</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_measuredValue">
+                <dcc:name>
+                  <dcc:content lang="de">Angezeigter Messwert Kalibriergegenstand</dcc:content>
+                  <dcc:content lang="en">Displayed value calibration item</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>0.197 0.499 0.803 0.912 0.813 0.506 0.197</si:valueXMLList>
+                    <si:unitXMLList>\one</si:unitXMLList>
+                    <si:dateTimeXMLList>2021-07-27T06:00:01 2021-07-27T09:30:00 2021-07-27T13:00:00 2021-07-27T16:30:00
+                      2021-07-27T20:00:00 2021-07-27T23:30:00 2021-07-28T03:00:00
+                    </si:dateTimeXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>19.7 49.9 80.3 91.2 81.3 50.6 19.7</si:valueXMLList>
+                    <si:unitXMLList>\percent</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_measurementError">
+                <dcc:name>
+                  <dcc:content lang="de">Messabweichung</dcc:content>
+                  <dcc:content lang="en">Measurement error</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>-0.004 -0.001 0.003 0.011 0.012 0.006 -0.003</si:valueXMLList>
+                    <si:unitXMLList>\one</si:unitXMLList>
+                    <si:expandedUncXMLList>
+                      <si:uncertaintyXMLList>0.006 0.008 0.010 0.011 0.010 0.008 0.006</si:uncertaintyXMLList>
+                      <si:coverageFactorXMLList>2</si:coverageFactorXMLList>
+                      <si:coverageProbabilityXMLList>0.95</si:coverageProbabilityXMLList>
+                    </si:expandedUncXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>-0.4 -0.1 0.3 1.1 1.2 0.6 -0.3</si:valueXMLList>
+                    <si:unitXMLList>\percent</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+                <dcc:measurementMetaData>
+                  <dcc:metaData refType="basic_conformity">
+                    <dcc:declaration>
+                      <dcc:name>
+                        <dcc:content lang="de">Konformität</dcc:content>
+                        <dcc:content lang="en">Conformity</dcc:content>
+                      </dcc:name>
+                    </dcc:declaration>
+                    <dcc:conformityXMLList>pass</dcc:conformityXMLList>
+                    <dcc:data>
+                      <dcc:quantity refType="basic_toleranceLimitLower">
+                        <dcc:name>
+                          <dcc:content lang="de">Unteres Toleranzlimit</dcc:content>
+                          <dcc:content lang="en">Lower tolerance limit</dcc:content>
+                        </dcc:name>
+                        <si:hybrid>
+                          <si:realListXMLList>
+                            <si:valueXMLList>-0.022</si:valueXMLList>
+                            <si:unitXMLList>\one</si:unitXMLList>
+                          </si:realListXMLList>
+                          <si:realListXMLList>
+                            <si:valueXMLList>-2.2</si:valueXMLList>
+                            <si:unitXMLList>\percent</si:unitXMLList>
+                          </si:realListXMLList>
+                        </si:hybrid>
+                      </dcc:quantity>
+                      <dcc:quantity refType="basic_acceptanceLimitLower">
+                        <dcc:name>
+                          <dcc:content lang="de">Unteres Akzeptanzlimit</dcc:content>
+                          <dcc:content lang="en">Lower acceptance limit</dcc:content>
+                        </dcc:name>
+                        <si:hybrid>
+                          <si:realListXMLList>
+                            <si:valueXMLList>-0.020</si:valueXMLList>
+                            <si:unitXMLList>\one</si:unitXMLList>
+                          </si:realListXMLList>
+                          <si:realListXMLList>
+                            <si:valueXMLList>-2.0</si:valueXMLList>
+                            <si:unitXMLList>\percent</si:unitXMLList>
+                          </si:realListXMLList>
+                        </si:hybrid>
+                      </dcc:quantity>
+                      <dcc:quantity refType="basic_acceptanceLimitUpper">
+                        <dcc:name>
+                          <dcc:content lang="de">Oberes Akzeptanzlimit</dcc:content>
+                          <dcc:content lang="en">Upper acceptance limit</dcc:content>
+                        </dcc:name>
+                        <si:hybrid>
+                          <si:realListXMLList>
+                            <si:valueXMLList>0.020</si:valueXMLList>
+                            <si:unitXMLList>\one</si:unitXMLList>
+                          </si:realListXMLList>
+                          <si:realListXMLList>
+                            <si:valueXMLList>2.0</si:valueXMLList>
+                            <si:unitXMLList>\percent</si:unitXMLList>
+                          </si:realListXMLList>
+                        </si:hybrid>
+                      </dcc:quantity>
+                      <dcc:quantity refType="basic_toleranceLimitUpper">
+                        <dcc:name>
+                          <dcc:content lang="de">Oberes Toleranzlimit</dcc:content>
+                          <dcc:content lang="en">Upper tolerance limit</dcc:content>
+                        </dcc:name>
+                        <si:hybrid>
+                          <si:realListXMLList>
+                            <si:valueXMLList>0.022</si:valueXMLList>
+                            <si:unitXMLList>\one</si:unitXMLList>
+                          </si:realListXMLList>
+                          <si:realListXMLList>
+                            <si:valueXMLList>2.2</si:valueXMLList>
+                            <si:unitXMLList>\percent</si:unitXMLList>
+                          </si:realListXMLList>
+                        </si:hybrid>
+                      </dcc:quantity>
+                    </dcc:data>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+              <dcc:influenceConditions>
+                <dcc:influenceCondition refType="gp_gasTemperature">
+                  <dcc:name>
+                    <dcc:content lang="de">Referenzwert Gastemperatur</dcc:content>
+                    <dcc:content lang="en">Reference value gas temperature</dcc:content>
+                  </dcc:name>
+                  <dcc:data>
+                    <dcc:quantity>
+                      <si:hybrid>
+                        <si:realListXMLList>
+                          <si:valueXMLList>293.15 293.15 293.15 293.15 293.15 293.15 293.15</si:valueXMLList>
+                          <si:unitXMLList>\kelvin</si:unitXMLList>
+                          <si:dateTimeXMLList>2021-07-27T06:00:01 2021-07-27T09:30:00 2021-07-27T13:00:00
+                            2021-07-27T16:30:00 2021-07-27T20:00:00 2021-07-27T23:30:00 2021-07-28T03:00:00
+                          </si:dateTimeXMLList>
+                        </si:realListXMLList>
+                        <si:realListXMLList>
+                          <si:valueXMLList>20.0 20.0 20.0 20.0 20.0 20.0 20.0</si:valueXMLList>
+                          <si:unitXMLList>\degreecelsius</si:unitXMLList>
+                        </si:realListXMLList>
+                      </si:hybrid>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:influenceCondition>
+              </dcc:influenceConditions>
+            </dcc:list>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+  <dcc:document>
+    <dcc:fileName>HR_Humidty_final.html</dcc:fileName>
+    <dcc:mimeType>text/html</dcc:mimeType>
+    <dcc:dataBase64>
+      PGh0bWwgeG1sbnM6ZGNjPSJodHRwczovL3B0Yi5kZS9kY2MiIHhtbG5zOnNpPSJodHRwczovL3B0Yi5kZS9zaSI+PGhlYWQ+DQo8bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDsgY2hhcnNldD1VVEYtOCI+DQo8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwczovL2NvZGUuanF1ZXJ5LmNvbS9qcXVlcnktMy42LjAubWluLmpzIj48L3NjcmlwdD48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJqcy92ZXJ0aWNhbFRhYmxlSGVhZGVycy5qcyI+PC9zY3JpcHQ+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0ianMvc2l1bml0Mm1hdGhtbC5qcyI+PC9zY3JpcHQ+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiPg0KICAgICAgICAgICAgICAgICAgICBNYXRoSmF4ID0gew0KICAgICAgICAgICAgICAgICAgICB0ZXg6IHsNCiAgICAgICAgICAgICAgICAgICAgaW5saW5lTWF0aDogW1snJCcsICckJ10sIFsnXFwoJywgJ1xcKSddXSwNCiAgICAgICAgICAgICAgICAgICAgcHJvY2Vzc0VzY2FwZXM6IHRydWUNCiAgICAgICAgICAgICAgICAgICAgfQ0KICAgICAgICAgICAgICAgICAgICB9Ow0KICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICAgICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ2xvYWQnLCBmdW5jdGlvbigpIHsNCiAgICAgICAgICAgICAgICAgICAgZWxzID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNCeUNsYXNzTmFtZSgic2ktdW5pdCIpOw0KICAgICAgICAgICAgICAgICAgICBBcnJheS5mcm9tKGVscykuZm9yRWFjaCgoc2kpID0+IHtzaS5pbm5lckhUTUwgPSBjb252ZXJ0U2lVbml0VG9NYXRoTWwoc2kuaW5uZXJIVE1MKS5qb2luKCcnKTt9KTsNCiAgICAgICAgICAgICAgICAgICAgdHJhbnNmb3JtVG9WZXJ0aWNhbFRhYmxlSGVhZGVycygidGFibGUuZGNjLXRhYmxlLXZlcnRpY2FsIik7DQogICAgICAgICAgICAgICAgICAgIH0pOw0KICAgICAgICAgICAgICAgIDwvc2NyaXB0PjxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiBzcmM9ImpzL3RleC1tbWwtY2h0bWwuanMiPjwvc2NyaXB0PjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LkN0eHRNZW51X0luZm9DbG9zZSB7ICB0b3A6LjJlbTsgcmlnaHQ6LjJlbTt9DQouQ3R4dE1lbnVfSW5mb0NvbnRlbnQgeyAgb3ZlcmZsb3c6YXV0bzsgdGV4dC1hbGlnbjpsZWZ0OyBmb250LXNpemU6ODAlOyAgcGFkZGluZzouNGVtIC42ZW07IGJvcmRlcjoxcHggaW5zZXQ7IG1hcmdpbjoxZW0gMHB4OyAgbWF4LWhlaWdodDoyMGVtOyBtYXgtd2lkdGg6MzBlbTsgYmFja2dyb3VuZC1jb2xvcjojRUVFRUVFOyAgd2hpdGUtc3BhY2U6bm9ybWFsO30NCi5DdHh0TWVudV9JbmZvLkN0eHRNZW51X01vdXNlUG9zdCB7b3V0bGluZTpub25lO30NCi5DdHh0TWVudV9JbmZvIHsgIHBvc2l0aW9uOmZpeGVkOyBsZWZ0OjUwJTsgd2lkdGg6YXV0bzsgdGV4dC1hbGlnbjpjZW50ZXI7ICBib3JkZXI6M3B4IG91dHNldDsgcGFkZGluZzoxZW0gMmVtOyBiYWNrZ3JvdW5kLWNvbG9yOiNEREREREQ7ICBjb2xvcjpibGFjazsgIGN1cnNvcjpkZWZhdWx0OyBmb250LWZhbWlseTptZXNzYWdlLWJveDsgZm9udC1zaXplOjEyMCU7ICBmb250LXN0eWxlOm5vcm1hbDsgdGV4dC1pbmRlbnQ6MDsgdGV4dC10cmFuc2Zvcm06bm9uZTsgIGxpbmUtaGVpZ2h0Om5vcm1hbDsgbGV0dGVyLXNwYWNpbmc6bm9ybWFsOyB3b3JkLXNwYWNpbmc6bm9ybWFsOyAgd29yZC13cmFwOm5vcm1hbDsgd2hpdGUtc3BhY2U6bm93cmFwOyBmbG9hdDpub25lOyB6LWluZGV4OjIwMTsgIGJvcmRlci1yYWRpdXM6IDE1cHg7ICAgICAgICAgICAgICAgICAgICAgLyogT3BlcmEgMTAuNSBhbmQgSUU5ICovICAtd2Via2l0LWJvcmRlci1yYWRpdXM6MTVweDsgICAgICAgICAgICAgICAvKiBTYWZhcmkgYW5kIENocm9tZSAqLyAgLW1vei1ib3JkZXItcmFkaXVzOjE1cHg7ICAgICAgICAgICAgICAgICAgLyogRmlyZWZveCAqLyAgLWtodG1sLWJvcmRlci1yYWRpdXM6MTVweDsgICAgICAgICAgICAgICAgLyogS29ucXVlcm9yICovICBib3gtc2hhZG93OjBweCAxMHB4IDIwcHggIzgwODA4MDsgICAgICAgICAvKiBPcGVyYSAxMC41IGFuZCBJRTkgKi8gIC13ZWJraXQtYm94LXNoYWRvdzowcHggMTBweCAyMHB4ICM4MDgwODA7IC8qIFNhZmFyaSAzICYgQ2hyb21lICovICAtbW96LWJveC1zaGFkb3c6MHB4IDEwcHggMjBweCAjODA4MDgwOyAgICAvKiBGb3JlZm94IDMuNSAqLyAgLWtodG1sLWJveC1zaGFkb3c6MHB4IDEwcHggMjBweCAjODA4MDgwOyAgLyogS29ucXVlcm9yICovICBmaWx0ZXI6cHJvZ2lkOkRYSW1hZ2VUcmFuc2Zvcm0uTWljcm9zb2Z0LmRyb3BzaGFkb3coT2ZmWD0yLCBPZmZZPTIsIENvbG9yPSJncmF5IiwgUG9zaXRpdmU9InRydWUiKTsgLyogSUUgKi99DQo8L3N0eWxlPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LkN0eHRNZW51X01lbnVDbG9zZSB7ICBwb3NpdGlvbjphYnNvbHV0ZTsgIGN1cnNvcjpwb2ludGVyOyAgZGlzcGxheTppbmxpbmUtYmxvY2s7ICBib3JkZXI6MnB4IHNvbGlkICNBQUE7ICBib3JkZXItcmFkaXVzOjE4cHg7ICAtd2Via2l0LWJvcmRlci1yYWRpdXM6IDE4cHg7ICAgICAgICAgICAgIC8qIFNhZmFyaSBhbmQgQ2hyb21lICovICAtbW96LWJvcmRlci1yYWRpdXM6IDE4cHg7ICAgICAgICAgICAgICAgIC8qIEZpcmVmb3ggKi8gIC1raHRtbC1ib3JkZXItcmFkaXVzOiAxOHB4OyAgICAgICAgICAgICAgLyogS29ucXVlcm9yICovICBmb250LWZhbWlseTogIkNvdXJpZXIgTmV3IiwgQ291cmllcjsgIGZvbnQtc2l6ZToyNHB4OyAgY29sb3I6I0YwRjBGMH0NCi5DdHh0TWVudV9NZW51Q2xvc2Ugc3BhbiB7ICBkaXNwbGF5OmJsb2NrOyBiYWNrZ3JvdW5kLWNvbG9yOiNBQUE7IGJvcmRlcjoxLjVweCBzb2xpZDsgIGJvcmRlci1yYWRpdXM6MThweDsgIC13ZWJraXQtYm9yZGVyLXJhZGl1czogMThweDsgICAgICAgICAgICAgLyogU2FmYXJpIGFuZCBDaHJvbWUgKi8gIC1tb3otYm9yZGVyLXJhZGl1czogMThweDsgICAgICAgICAgICAgICAgLyogRmlyZWZveCAqLyAgLWtodG1sLWJvcmRlci1yYWRpdXM6IDE4cHg7ICAgICAgICAgICAgICAvKiBLb25xdWVyb3IgKi8gIGxpbmUtaGVpZ2h0OjA7ICBwYWRkaW5nOjhweCAwIDZweCAgICAgLyogbWF5IG5lZWQgdG8gYmUgYnJvd3Nlci1zcGVjaWZpYyAqL30NCi5DdHh0TWVudV9NZW51Q2xvc2U6aG92ZXIgeyAgY29sb3I6d2hpdGUhaW1wb3J0YW50OyAgYm9yZGVyOjJweCBzb2xpZCAjQ0NDIWltcG9ydGFudH0NCi5DdHh0TWVudV9NZW51Q2xvc2U6aG92ZXIgc3BhbiB7ICBiYWNrZ3JvdW5kLWNvbG9yOiNDQ0MhaW1wb3J0YW50fQ0KLkN0eHRNZW51X01lbnVDbG9zZTpob3Zlcjpmb2N1cyB7ICBvdXRsaW5lOm5vbmV9DQo8L3N0eWxlPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LkN0eHRNZW51X01lbnUgeyAgcG9zaXRpb246YWJzb2x1dGU7ICBiYWNrZ3JvdW5kLWNvbG9yOndoaXRlOyAgY29sb3I6YmxhY2s7ICB3aWR0aDphdXRvOyBwYWRkaW5nOjVweCAwcHg7ICBib3JkZXI6MXB4IHNvbGlkICNDQ0NDQ0M7IG1hcmdpbjowOyBjdXJzb3I6ZGVmYXVsdDsgIGZvbnQ6IG1lbnU7IHRleHQtYWxpZ246bGVmdDsgdGV4dC1pbmRlbnQ6MDsgdGV4dC10cmFuc2Zvcm06bm9uZTsgIGxpbmUtaGVpZ2h0Om5vcm1hbDsgbGV0dGVyLXNwYWNpbmc6bm9ybWFsOyB3b3JkLXNwYWNpbmc6bm9ybWFsOyAgd29yZC13cmFwOm5vcm1hbDsgd2hpdGUtc3BhY2U6bm93cmFwOyBmbG9hdDpub25lOyB6LWluZGV4OjIwMTsgIGJvcmRlci1yYWRpdXM6IDVweDsgICAgICAgICAgICAgICAgICAgICAvKiBPcGVyYSAxMC41IGFuZCBJRTkgKi8gIC13ZWJraXQtYm9yZGVyLXJhZGl1czogNXB4OyAgICAgICAgICAgICAvKiBTYWZhcmkgYW5kIENocm9tZSAqLyAgLW1vei1ib3JkZXItcmFkaXVzOiA1cHg7ICAgICAgICAgICAgICAgIC8qIEZpcmVmb3ggKi8gIC1raHRtbC1ib3JkZXItcmFkaXVzOiA1cHg7ICAgICAgICAgICAgICAvKiBLb25xdWVyb3IgKi8gIGJveC1zaGFkb3c6MHB4IDEwcHggMjBweCAjODA4MDgwOyAgICAgICAgIC8qIE9wZXJhIDEwLjUgYW5kIElFOSAqLyAgLXdlYmtpdC1ib3gtc2hhZG93OjBweCAxMHB4IDIwcHggIzgwODA4MDsgLyogU2FmYXJpIDMgJiBDaHJvbWUgKi8gIC1tb3otYm94LXNoYWRvdzowcHggMTBweCAyMHB4ICM4MDgwODA7ICAgIC8qIEZvcmVmb3ggMy41ICovICAta2h0bWwtYm94LXNoYWRvdzowcHggMTBweCAyMHB4ICM4MDgwODA7ICAvKiBLb25xdWVyb3IgKi99DQouQ3R4dE1lbnVfTWVudUl0ZW0geyAgcGFkZGluZzogMXB4IDJlbTsgIGJhY2tncm91bmQ6dHJhbnNwYXJlbnQ7fQ0KLkN0eHRNZW51X01lbnVBcnJvdyB7ICBwb3NpdGlvbjphYnNvbHV0ZTsgcmlnaHQ6LjVlbTsgcGFkZGluZy10b3A6LjI1ZW07IGNvbG9yOiM2NjY2NjY7ICBmb250LWZhbWlseTogbnVsbDsgZm9udC1zaXplOiAuNzVlbX0NCi5DdHh0TWVudV9NZW51QWN0aXZlIC5DdHh0TWVudV9NZW51QXJyb3cge2NvbG9yOndoaXRlfQ0KLkN0eHRNZW51X01lbnVBcnJvdy5DdHh0TWVudV9SVEwge2xlZnQ6LjVlbTsgcmlnaHQ6YXV0b30NCi5DdHh0TWVudV9NZW51Q2hlY2sgeyAgcG9zaXRpb246YWJzb2x1dGU7IGxlZnQ6LjdlbTsgIGZvbnQtZmFtaWx5OiBudWxsfQ0KLkN0eHRNZW51X01lbnVDaGVjay5DdHh0TWVudV9SVEwgeyByaWdodDouN2VtOyBsZWZ0OmF1dG8gfQ0KLkN0eHRNZW51X01lbnVSYWRpb0NoZWNrIHsgIHBvc2l0aW9uOmFic29sdXRlOyBsZWZ0OiAuN2VtO30NCi5DdHh0TWVudV9NZW51UmFkaW9DaGVjay5DdHh0TWVudV9SVEwgeyAgcmlnaHQ6IC43ZW07IGxlZnQ6YXV0b30NCi5DdHh0TWVudV9NZW51SW5wdXRCb3ggeyAgcGFkZGluZy1sZWZ0OiAxZW07IHJpZ2h0Oi41ZW07IGNvbG9yOiM2NjY2NjY7ICBmb250LWZhbWlseTogbnVsbDt9DQouQ3R4dE1lbnVfTWVudUlucHV0Qm94LkN0eHRNZW51X1JUTCB7ICBsZWZ0OiAuMWVtO30NCi5DdHh0TWVudV9NZW51Q29tYm9Cb3ggeyAgbGVmdDouMWVtOyBwYWRkaW5nLWJvdHRvbTouNWVtO30NCi5DdHh0TWVudV9NZW51U2xpZGVyIHsgIGxlZnQ6IC4xZW07fQ0KLkN0eHRNZW51X1NsaWRlclZhbHVlIHsgIHBvc2l0aW9uOmFic29sdXRlOyByaWdodDouMWVtOyBwYWRkaW5nLXRvcDouMjVlbTsgY29sb3I6IzMzMzMzMzsgIGZvbnQtc2l6ZTogLjc1ZW19DQouQ3R4dE1lbnVfU2xpZGVyQmFyIHsgIG91dGxpbmU6IG5vbmU7IGJhY2tncm91bmQ6ICNkM2QzZDN9DQouQ3R4dE1lbnVfTWVudUxhYmVsIHsgIHBhZGRpbmc6IDFweCAyZW0gM3B4IDEuMzNlbTsgIGZvbnQtc3R5bGU6aXRhbGljfQ0KLkN0eHRNZW51X01lbnVSdWxlIHsgIGJvcmRlci10b3A6IDFweCBzb2xpZCAjREREREREOyAgbWFyZ2luOiA0cHggM3B4O30NCi5DdHh0TWVudV9NZW51RGlzYWJsZWQgeyAgY29sb3I6R3JheVRleHR9DQouQ3R4dE1lbnVfTWVudUFjdGl2ZSB7ICBiYWNrZ3JvdW5kLWNvbG9yOiAjNjA2ODcyOyAgY29sb3I6IHdoaXRlO30NCi5DdHh0TWVudV9NZW51RGlzYWJsZWQ6Zm9jdXMgeyAgYmFja2dyb3VuZC1jb2xvcjogI0U4RThFOH0NCi5DdHh0TWVudV9NZW51TGFiZWw6Zm9jdXMgeyAgYmFja2dyb3VuZC1jb2xvcjogI0U4RThFOH0NCi5DdHh0TWVudV9Db250ZXh0TWVudTpmb2N1cyB7ICBvdXRsaW5lOm5vbmV9DQouQ3R4dE1lbnVfQ29udGV4dE1lbnUgLkN0eHRNZW51X01lbnVJdGVtOmZvY3VzIHsgIG91dGxpbmU6bm9uZX0NCi5DdHh0TWVudV9TZWxlY3Rpb25NZW51IHsgIHBvc2l0aW9uOnJlbGF0aXZlOyBmbG9hdDpsZWZ0OyAgYm9yZGVyLWJvdHRvbTogbm9uZTsgLXdlYmtpdC1ib3gtc2hhZG93Om5vbmU7IC13ZWJraXQtYm9yZGVyLXJhZGl1czowcHg7IH0NCi5DdHh0TWVudV9TZWxlY3Rpb25JdGVtIHsgIHBhZGRpbmctcmlnaHQ6IDFlbTt9DQouQ3R4dE1lbnVfU2VsZWN0aW9uIHsgIHJpZ2h0OiA0MCU7IHdpZHRoOjUwJTsgfQ0KLkN0eHRNZW51X1NlbGVjdGlvbkJveCB7ICBwYWRkaW5nOiAwZW07IG1heC1oZWlnaHQ6MjBlbTsgbWF4LXdpZHRoOiBub25lOyAgYmFja2dyb3VuZC1jb2xvcjojRkZGRkZGO30NCi5DdHh0TWVudV9TZWxlY3Rpb25EaXZpZGVyIHsgIGNsZWFyOiBib3RoOyBib3JkZXItdG9wOiAycHggc29saWQgIzAwMDAwMDt9DQouQ3R4dE1lbnVfTWVudSAuQ3R4dE1lbnVfTWVudUNsb3NlIHsgIHRvcDotMTBweDsgbGVmdDotMTBweH0NCjwvc3R5bGU+DQo8c3R5bGUgaWQ9Ik1KWC1DSFRNTC1zdHlsZXMiPg0KbWp4LWNvbnRhaW5lcltqYXg9IkNIVE1MIl0gew0KICBsaW5lLWhlaWdodDogMDsNCn0NCg0KbWp4LWNvbnRhaW5lciBbc3BhY2U9IjEiXSB7DQogIG1hcmdpbi1sZWZ0OiAuMTExZW07DQp9DQoNCm1qeC1jb250YWluZXIgW3NwYWNlPSIyIl0gew0KICBtYXJnaW4tbGVmdDogLjE2N2VtOw0KfQ0KDQptangtY29udGFpbmVyIFtzcGFjZT0iMyJdIHsNCiAgbWFyZ2luLWxlZnQ6IC4yMjJlbTsNCn0NCg0KbWp4LWNvbnRhaW5lciBbc3BhY2U9IjQiXSB7DQogIG1hcmdpbi1sZWZ0OiAuMjc4ZW07DQp9DQoNCm1qeC1jb250YWluZXIgW3NwYWNlPSI1Il0gew0KICBtYXJnaW4tbGVmdDogLjMzM2VtOw0KfQ0KDQptangtY29udGFpbmVyIFtyc3BhY2U9IjEiXSB7DQogIG1hcmdpbi1yaWdodDogLjExMWVtOw0KfQ0KDQptangtY29udGFpbmVyIFtyc3BhY2U9IjIiXSB7DQogIG1hcmdpbi1yaWdodDogLjE2N2VtOw0KfQ0KDQptangtY29udGFpbmVyIFtyc3BhY2U9IjMiXSB7DQogIG1hcmdpbi1yaWdodDogLjIyMmVtOw0KfQ0KDQptangtY29udGFpbmVyIFtyc3BhY2U9IjQiXSB7DQogIG1hcmdpbi1yaWdodDogLjI3OGVtOw0KfQ0KDQptangtY29udGFpbmVyIFtyc3BhY2U9IjUiXSB7DQogIG1hcmdpbi1yaWdodDogLjMzM2VtOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJzIl0gew0KICBmb250LXNpemU6IDcwLjclOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJzcyJdIHsNCiAgZm9udC1zaXplOiA1MCU7DQp9DQoNCm1qeC1jb250YWluZXIgW3NpemU9IlRuIl0gew0KICBmb250LXNpemU6IDYwJTsNCn0NCg0KbWp4LWNvbnRhaW5lciBbc2l6ZT0ic20iXSB7DQogIGZvbnQtc2l6ZTogODUlOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJsZyJdIHsNCiAgZm9udC1zaXplOiAxMjAlOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJMZyJdIHsNCiAgZm9udC1zaXplOiAxNDQlOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJMRyJdIHsNCiAgZm9udC1zaXplOiAxNzMlOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJoZyJdIHsNCiAgZm9udC1zaXplOiAyMDclOw0KfQ0KDQptangtY29udGFpbmVyIFtzaXplPSJIRyJdIHsNCiAgZm9udC1zaXplOiAyNDklOw0KfQ0KDQptangtY29udGFpbmVyIFt3aWR0aD0iZnVsbCJdIHsNCiAgd2lkdGg6IDEwMCU7DQp9DQoNCm1qeC1ib3ggew0KICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7DQp9DQoNCm1qeC1ibG9jayB7DQogIGRpc3BsYXk6IGJsb2NrOw0KfQ0KDQptangtaXRhYmxlIHsNCiAgZGlzcGxheTogaW5saW5lLXRhYmxlOw0KfQ0KDQptangtcm93IHsNCiAgZGlzcGxheTogdGFibGUtcm93Ow0KfQ0KDQptangtcm93ID4gKiB7DQogIGRpc3BsYXk6IHRhYmxlLWNlbGw7DQp9DQoNCm1qeC1tdGV4dCB7DQogIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCn0NCg0KbWp4LW1zdHlsZSB7DQogIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCn0NCg0KbWp4LW1lcnJvciB7DQogIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCiAgY29sb3I6IHJlZDsNCiAgYmFja2dyb3VuZC1jb2xvcjogeWVsbG93Ow0KfQ0KDQptangtbXBoYW50b20gew0KICB2aXNpYmlsaXR5OiBoaWRkZW47DQp9DQoNCl86Oi13ZWJraXQtZnVsbC1wYWdlLW1lZGlhLCBfOmZ1dHVyZSwgOnJvb3QgbWp4LWNvbnRhaW5lciB7DQogIHdpbGwtY2hhbmdlOiBvcGFjaXR5Ow0KfQ0KDQptangtYXNzaXN0aXZlLW1tbCB7DQogIHBvc2l0aW9uOiBhYnNvbHV0ZSAhaW1wb3J0YW50Ow0KICB0b3A6IDBweDsNCiAgbGVmdDogMHB4Ow0KICBjbGlwOiByZWN0KDFweCwgMXB4LCAxcHgsIDFweCk7DQogIHBhZGRpbmc6IDFweCAwcHggMHB4IDBweCAhaW1wb3J0YW50Ow0KICBib3JkZXI6IDBweCAhaW1wb3J0YW50Ow0KICBkaXNwbGF5OiBibG9jayAhaW1wb3J0YW50Ow0KICB3aWR0aDogYXV0byAhaW1wb3J0YW50Ow0KICBvdmVyZmxvdzogaGlkZGVuICFpbXBvcnRhbnQ7DQogIC13ZWJraXQtdG91Y2gtY2FsbG91dDogbm9uZTsNCiAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTsNCiAgLWtodG1sLXVzZXItc2VsZWN0OiBub25lOw0KICAtbW96LXVzZXItc2VsZWN0OiBub25lOw0KICAtbXMtdXNlci1zZWxlY3Q6IG5vbmU7DQogIHVzZXItc2VsZWN0OiBub25lOw0KfQ0KDQptangtYXNzaXN0aXZlLW1tbFtkaXNwbGF5PSJibG9jayJdIHsNCiAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDsNCn0NCg0KbWp4LWM6OmJlZm9yZSB7DQogIGRpc3BsYXk6IGJsb2NrOw0KICB3aWR0aDogMDsNCn0NCg0KLk1KWC1URVggew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYOw0KfQ0KDQouVEVYLUIgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLUI7DQp9DQoNCi5URVgtSSB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtSTsNCn0NCg0KLlRFWC1NSSB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtTUk7DQp9DQoNCi5URVgtQkkgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLUJJOw0KfQ0KDQouVEVYLVMxIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1TMTsNCn0NCg0KLlRFWC1TMiB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtUzI7DQp9DQoNCi5URVgtUzMgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLVMzOw0KfQ0KDQouVEVYLVM0IHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1TNDsNCn0NCg0KLlRFWC1BIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1BOw0KfQ0KDQouVEVYLUMgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLUM7DQp9DQoNCi5URVgtQ0Igew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLUNCOw0KfQ0KDQouVEVYLUZSIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1GUjsNCn0NCg0KLlRFWC1GUkIgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLUZSQjsNCn0NCg0KLlRFWC1TUyB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtU1M7DQp9DQoNCi5URVgtU1NCIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1TU0I7DQp9DQoNCi5URVgtU1NJIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk8sIE1KWFRFWC1TU0k7DQp9DQoNCi5URVgtU0Mgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLVNDOw0KfQ0KDQouVEVYLVQgew0KICBmb250LWZhbWlseTogTUpYWkVSTywgTUpYVEVYLVQ7DQp9DQoNCi5URVgtViB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtVjsNCn0NCg0KLlRFWC1WQiB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtVkI7DQp9DQoNCm1qeC1zdHJldGNoeS12IG1qeC1jLCBtangtc3RyZXRjaHktaCBtangtYyB7DQogIGZvbnQtZmFtaWx5OiBNSlhaRVJPLCBNSlhURVgtUzEsIE1KWFRFWC1TNCwgTUpYVEVYLCBNSlhURVgtQSAhIGltcG9ydGFudDsNCn0NCg0KQGZvbnQtZmFjZSAvKiAwICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFpFUk87DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9aZXJvLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFRFWDsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X01haW4tUmVndWxhci53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogMiAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtQjsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X01haW4tQm9sZC53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogMyAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtSTsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X01hdGgtSXRhbGljLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiA0ICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFRFWC1NSTsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X01haW4tSXRhbGljLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiA1ICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFRFWC1CSTsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X01hdGgtQm9sZEl0YWxpYy53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogNiAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtUzE7DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9TaXplMS1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiA3ICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFRFWC1TMjsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X1NpemUyLVJlZ3VsYXIud29mZiIpIGZvcm1hdCgid29mZiIpOw0KfQ0KDQpAZm9udC1mYWNlIC8qIDggKi8gew0KICBmb250LWZhbWlseTogTUpYVEVYLVMzOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfU2l6ZTMtUmVndWxhci53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogOSAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtUzQ7DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9TaXplNC1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxMCAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtQTsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X0FNUy1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxMSAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtQzsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X0NhbGxpZ3JhcGhpYy1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxMiAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtQ0I7DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9DYWxsaWdyYXBoaWMtQm9sZC53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogMTMgKi8gew0KICBmb250LWZhbWlseTogTUpYVEVYLUZSOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfRnJha3R1ci1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxNCAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtRlJCOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfRnJha3R1ci1Cb2xkLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxNSAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtU1M7DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9TYW5zU2VyaWYtUmVndWxhci53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogMTYgKi8gew0KICBmb250LWZhbWlseTogTUpYVEVYLVNTQjsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X1NhbnNTZXJpZi1Cb2xkLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAxNyAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtU1NJOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfU2Fuc1NlcmlmLUl0YWxpYy53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQoNCkBmb250LWZhY2UgLyogMTggKi8gew0KICBmb250LWZhbWlseTogTUpYVEVYLVNDOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfU2NyaXB0LVJlZ3VsYXIud29mZiIpIGZvcm1hdCgid29mZiIpOw0KfQ0KDQpAZm9udC1mYWNlIC8qIDE5ICovIHsNCiAgZm9udC1mYW1pbHk6IE1KWFRFWC1UOw0KICBzcmM6IHVybCgiaHR0cDovLzEyNy4wLjAuMTo4MDgwL2pzL291dHB1dC9jaHRtbC9mb250cy93b2ZmLXYyL01hdGhKYXhfVHlwZXdyaXRlci1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAyMCAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtVjsNCiAgc3JjOiB1cmwoImh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9qcy9vdXRwdXQvY2h0bWwvZm9udHMvd29mZi12Mi9NYXRoSmF4X1ZlY3Rvci1SZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCn0NCg0KQGZvbnQtZmFjZSAvKiAyMSAqLyB7DQogIGZvbnQtZmFtaWx5OiBNSlhURVgtVkI7DQogIHNyYzogdXJsKCJodHRwOi8vMTI3LjAuMC4xOjgwODAvanMvb3V0cHV0L2NodG1sL2ZvbnRzL3dvZmYtdjIvTWF0aEpheF9WZWN0b3ItQm9sZC53b2ZmIikgZm9ybWF0KCJ3b2ZmIik7DQp9DQo8L3N0eWxlPg0KPHN0eWxlPg0KLmZsZXggew0KICBkaXNwbGF5OiBmbGV4Ow0KfQ0KDQouY29sIHsNCiAgZmxleDogMTsNCn0NCg0KLmNlbGwgew0KICBwYWRkaW5nOiAxMHB4Ow0KICBib3JkZXI6IDFweCBibGFjayBzb2xpZDsNCiAgbWFyZ2luOi0xcHggMCAwIC0xcHg7DQogIHdoaXRlLXNwYWNlOiBub3dyYXA7DQp9DQoNCi5hbGVydCB7DQogIHBhZGRpbmc6IDEwcHg7DQogIG1hcmdpbi1ib3R0b206IDEwcHg7DQoNCiAgY29sb3I6IHdoaXRlOw0KICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkZDMTA3Ow0KDQogIGJvcmRlci1yYWRpdXM6IDVweDsNCn0NCg0KYm9keSB7DQogIGZvbnQtZmFtaWx5OiBBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmOw0KfQ0KDQoudy0xMDAgew0KICB3aWR0aDogMTAwJQ0KfQ0KDQoubWItZGVmYXVsdCB7DQogIG1hcmdpbi1ib3R0b206IDEwcHggIWltcG9ydGFudDsNCn0NCg0KLm10LWRlZmF1bHQgew0KICBtYXJnaW4tdG9wOiAxMHB4ICFpbXBvcnRhbnQ7DQp9DQoNCi50ZXh0LWNlbnRlciB7DQogIHRleHQtYWxpZ246IGNlbnRlcjsNCn0NCg0KLnRleHQtaXRhbGljIHsNCiAgZm9udC1zdHlsZTogaXRhbGljOw0KfQ0KDQoudGV4dC1ib2xkIHsNCiAgZm9udC13ZWlnaHQ6IGJvbGQ7DQp9DQoNCnAgew0KICBtYXJnaW46IDA7DQp9DQoNCi5oZWFkaW5nIHsNCiAgZm9udC1zaXplOiAyMHB0Ow0KICBmb250LXdlaWdodDogYm9sZDsNCn0NCg0KLnN1Yi1oZWFkaW5nIHsNCiAgZm9udC1zaXplOiAxMnB0Ow0KICBmb250LXdlaWdodDogYm9sZDsNCn0NCg0KLnRvcC1oZWFkaW5nIHsNCiAgZm9udC1zaXplOiAxOHB0Ow0KICBmb250LXdlaWdodDogYm9sZDsNCn0NCg0KDQoNCi5hZG1pbmlzdHJhdGl2ZS1kYXRhLXRhYmxlIHRyIHRkIHsNCiAgdmVydGljYWwtYWxpZ246IHRvcDsNCn0NCg0KLmFkbWluaXN0cmF0aXZlLWRhdGEtdGFibGUgdHIgdGQ6Zmlyc3QtY2hpbGQgew0KICB3aWR0aDogMjAwcHg7DQp9DQoNCi5hZG1pbmlzdHJhdGl2ZS1kYXRhLXRhYmxlIHRyIHRkOmZpcnN0LWNoaWxkIHA6bnRoLWNoaWxkKDIpLCAudGQtdHJhbnNsYXRlZCBwOm50aC1jaGlsZCgyKSB7DQogIGZvbnQtc3R5bGU6IGl0YWxpYzsNCiAgZm9udC1zaXplOiA4cHQ7DQp9DQoNCi5wLXJvdy1ib3R0b20gdGQgew0KICBwYWRkaW5nLWJvdHRvbTogMTBweDsNCn0NCg0KLnYtYWxpZ24tYm90dG9tIHsNCiAgdmVydGljYWwtYWxpZ246IGJvdHRvbSAhaW1wb3J0YW50Ow0KfQ0KDQouZGVzY3JpcHRpb24gew0KICB3aGl0ZS1zcGFjZTogcHJlLWxpbmU7DQogIG1hcmdpbi1ib3R0b206IDA7DQp9DQoNCi5kZXNjcmlwdGlvbi1zZWNvbmRhcnkgew0KICBmb250LXN0eWxlOiBpdGFsaWM7DQogIGZvbnQtc2l6ZTogOHB0Ow0KICBtYXJnaW4tYm90dG9tOiAwOw0KfQ0KDQouZGNjLXRhYmxlIHsNCiAgZGlzcGxheTogYmxvY2s7DQogIG92ZXJmbG93OiBhdXRvOw0KICB3aWR0aDogMTAwJTsNCn0NCg0KLmRjYy10YWJsZSwgLmRjYy10YWJsZSB0aCwgLmRjYy10YWJsZSB0ZCB7DQogIGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7DQogIGJvcmRlcjogMXB4IGJsYWNrIHNvbGlkOw0KfQ0KDQouZGNjLXRhYmxlIHRoZWFkIHRkIHsNCiAgcGFkZGluZzogMDsNCn0NCg0KLmRjYy10YWJsZSB0Ym9keSB0ZCB7DQogIHBhZGRpbmc6IDEwcHg7DQp9DQoNCi5wYWdlLWJyZWFrIHsNCiAgbWFyZ2luLWJvdHRvbTogMnJlbTsNCn0NCg0KLmF2b2lkLWJyZWFrIHsNCiAgcGFnZS1icmVhay1pbnNpZGU6IGF2b2lkOw0KfQ0KDQpAbWVkaWEgcHJpbnQgew0KICAucGFnZS1icmVhayB7DQogICAgbWFyZ2luLWJvdHRvbTogMDsNCiAgICBjbGVhcjogYm90aDsNCiAgICBwYWdlLWJyZWFrLWFmdGVyOiBhbHdheXM7DQogIH0NCn0NCg0KI3JvdGF0ZS10ZXh0IHsNCiAgLXdlYmtpdC10cmFuc2Zvcm06IHJvdGF0ZSg5MGRlZyk7DQogICAgLW1vei10cmFuc2Zvcm06IHJvdGF0ZSg5MGRlZyk7DQogICAgLW8tdHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOw0KICAgIC1tcy10cmFuc2Zvcm06IHJvdGF0ZSg5MGRlZyk7DQogICAgdHJhbnNmb3JtOiByb3RhdGUoOTBkZWcpOw0KfQ0KDQo8L3N0eWxlPg0KPC9oZWFkPg0KPGJvZHk+PGRpdiBjbGFzcz0idy0xMDAiPg0KPGRpdiBjbGFzcz0idGV4dC1sZWZ0Ij48cCBjbGFzcz0iaGVhZGluZyI+RGlnaXRhbCBDYWxpYnJhdGlvbiBDZXJ0aWZpY2F0ZTwvcD48L2Rpdj4NCjx0YWJsZSBjbGFzcz0iYWRtaW5pc3RyYXRpdmUtZGF0YS10YWJsZSI+DQo8dGJvZHk+PHRyIGNsYXNzPSJwLXJvdy1ib3R0b20iPjx0ZD48cCBjbGFzcz0idG9wLWhlYWRpbmciPkFkbWluaXN0cmF0aXZlIERhdGE8L3A+PC90ZD48L3RyPg0KPHRyPjx0ZD48cCBjbGFzcz0ic3ViLWhlYWRpbmciPkRDQyBTb2Z0d2FyZTwvcD48L3RkPjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+4oCiIFNvZnR3YXJlPC9wPjwvdGQ+DQo8dGQ+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+TmFtZTwvcD48L3RkPg0KPHRkPjxwPg0KCQkJCQlOb3RlcGFkKysgKDMyLWJpdCkNCgkJCQk8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+UmVsZWFzZTwvcD48L3RkPg0KPHRkPjxwPnYgOC40LjY8L3A+PC90ZD4NCjwvdHI+DQo8dHI+PC90cj4NCjx0cj48dGQ+PHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5Db3JlIERhdGE8L3A+PC90ZD48L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkNvdW50cnkgQ29kZSBJU08zMTY2XzE8L3A+PC90ZD4NCjx0ZD48cD5ERTwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5Vc2VkIExhbmd1YWdlIENvZGUgSVNPNjM5XzE8L3A+PC90ZD4NCjx0ZD48cD5kZSwNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbjwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5NYW5kYXRvcnkgTGFuZ3VhZ2UgQ29kZSBJU082MzlfMTwvcD48L3RkPg0KPHRkPjxwPmRlPC9wPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPlVuaXF1ZSBJZGVudGlmaWVyPC9wPjwvdGQ+DQo8dGQ+PHA+SWQgMTIzNDU2Nzg5IEh0VzwvcD48L3RkPg0KPC90cj4NCjx0cj48L3RyPg0KPHRyPjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+SXNzdWVyPC9wPjwvdGQ+DQo8dGQ+PHA+Y2FsaWJyYXRpb25MYWJvcmF0b3J5PC9wPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+QXVmdHJhZ3MgTnIuPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+T3JkZXIgbm8uPC9pPjwvcD4NCjwvZGl2PjwvdGQ+DQo8dGQ+PHA+T3JfMTIzNDU2Nzg5PC9wPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPlBlcmZvcm1hbmNlIERhdGU8L3A+PC90ZD4NCjx0ZD48cD4xOTU3LTA4LTEzIC0gDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgMTk1Ny0wOC0xNDwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5QZXJmb3JtYW5jZSBMb2NhdGlvbjwvcD48L3RkPg0KPHRkPjxwPmxhYm9yYXRvcnk8L3A+PC90ZD4NCjwvdHI+DQo8dHIgY2xhc3M9InAtcm93LWJvdHRvbSI+DQo8dGQ+PHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5JdGVtczwvcD48L3RkPg0KPHRkPjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkZldWNodGVtZXNzc3lzdGVtPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+SHlncm9tZXRlcjwvaT48L3A+DQo8L2Rpdj48cD48L3A+PC90ZD4NCjwvdHI+DQo8dHIgY2xhc3M9InAtcm93LWJvdHRvbSI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RGVzY3JpcHRpb248L3A+PC90ZD4NCjx0ZD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkZldWNodGVtZXNzc3lzdGVtIHp1ciBkaXJla3RlbiBNZXNzdW5nIGRlciByZWxhdGl2ZW4gRmV1Y2h0ZSB1bmQgZGVyIFRlbXBlcmF0dXIsIGJlc3RlaGVuZCBhdXMgZWluZW0gQW56ZWlnZWdlcsOkdCB1bmQgZWluZW0gU2Vuc29yIG1pdCBkZW4gTWHDn2VuOiBHZXNhbXRsw6RuZ2UgMjEwIG1tLCBMw6RuZ2UgU2Vuc29yZWxlbWVudCAzNSBtbSB1bmQgRHVyY2htZXNzZXIgMTQgbW0uPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+SHlncm9tZXRlciBmb3IgdGhlIGRpcmVjdCBtZWFzdXJlbWVudCBvZiByZWxhdGl2ZSBodW1pZGl0eSBhbmQgdGVtcGVyYXR1cmUsIGl0IGNvbnNpc3RzIG9mIGEgaGFuZGhlbGQgZGlzcGxheSB1bml0IGFuZCBhIHNlbnNvciB3aXRoIHRoZSBkaW1lbnNpb25zOiB0b3RhbCBsZW5ndGggMjEwIG1tLCBzZW5zb3IgbGVuZ2h0IDM1IG1tIGFuZCBkaWFtZXRlciAxNCBtbS48L2k+PC9wPg0KPC9kaXY+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBJdGVtIDE8L3A+PC90ZD4NCjx0ZD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkFuemVpZ2VnZXLDpHQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5EaXNwbGF5IHVuaXQ8L2k+PC9wPg0KPC9kaXY+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+TWFudWZhY3R1cmVyPC9wPjwvdGQ+DQo8dGQ+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+PHAgY2xhc3M9InRleHQtZGVmYXVsdCI+RmV1Y2h0ZW1lc3N0ZWNobmlrIEdtYkg8L3A+PC9kaXY+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+TW9kZWw8L3A+PC90ZD4NCjx0ZD48cD5EaXNwbGF5IDEyMzQtNTwvcD48L3RkPg0KPC90cj4NCjx0cj48L3RyPg0KPHRyPjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+SXNzdWVyPC9wPjwvdGQ+DQo8dGQ+PHA+bWFudWZhY3R1cmVyPC9wPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+U2VyaWVuIE5yLjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlNlcmlhbCBuby48L2k+PC9wPg0KPC9kaXY+PC90ZD4NCjx0ZD48cD4xMjM0NTY3ODkgTWE8L3A+PC90ZD4NCjwvdHI+DQo8dHI+PC90cj4NCjx0cj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5Jc3N1ZXI8L3A+PC90ZD4NCjx0ZD48cD5jdXN0b21lcjwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk1lc3NtaXR0ZWwgTnIuPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+TWVhc3VyZW1lbnQgZXF1aXBtZW50IG5vLjwvaT48L3A+DQo8L2Rpdj48L3RkPg0KPHRkPjxwPjEyMzQ1Njc4OSBIdTwvcD48L3RkPg0KPC90cj4NCjx0cj48L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPklzc3VlcjwvcD48L3RkPg0KPHRkPjxwPmNhbGlicmF0aW9uTGFib3JhdG9yeTwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkVxdWlwbWVudCBOci48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5FcXVpcG1lbnQgbm8uPC9pPjwvcD4NCjwvZGl2PjwvdGQ+DQo8dGQ+PHA+RXEgMTIzNDU2Nzg5PC9wPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDigKIgSXRlbSAyPC9wPjwvdGQ+DQo8dGQ+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5GZXVjaHRlc2Vuc29yPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+SHVtaWRpdHkgc2Vuc29yPC9pPjwvcD4NCjwvZGl2PjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk1hbnVmYWN0dXJlcjwvcD48L3RkPg0KPHRkPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjxwIGNsYXNzPSJ0ZXh0LWRlZmF1bHQiPkZldWNodGVtZXNzdGVjaG5payBHbWJIPC9wPjwvZGl2PjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk1vZGVsPC9wPjwvdGQ+DQo8dGQ+PHA+SDJPTWVhcyA2Nzg5LTE8L3A+PC90ZD4NCjwvdHI+DQo8dHI+PC90cj4NCjx0cj48L3RyPg0KPHRyPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPklzc3VlcjwvcD48L3RkPg0KPHRkPjxwPm1hbnVmYWN0dXJlcjwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPlNlcmllbiBOci48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5TZXJpYWwgbm8uPC9pPjwvcD4NCjwvZGl2PjwvdGQ+DQo8dGQ+PHA+RnMgMTM1NzkyNDY4IEh1PC9wPjwvdGQ+DQo8L3RyPg0KPHRyPjwvdHI+DQo8dHI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+SXNzdWVyPC9wPjwvdGQ+DQo8dGQ+PHA+Y3VzdG9tZXI8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5NZXNzbWl0dGVsIE5yLjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPk1lYXN1cmVtZW50IGVxdWlwbWVudCBuby48L2k+PC9wPg0KPC9kaXY+PC90ZD4NCjx0ZD48cD5CZSAxMjM0NTY3ODkga2s8L3A+PC90ZD4NCjwvdHI+DQo8dHI+PC90cj4NCjx0cj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5Jc3N1ZXI8L3A+PC90ZD4NCjx0ZD48cD5jYWxpYnJhdGlvbkxhYm9yYXRvcnk8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5FcXVpcG1lbnQgTnIuPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+RXF1aXBtZW50IG5vLjwvaT48L3A+DQo8L2Rpdj48L3RkPg0KPHRkPjxwPkNsIDEyMzQ1Njc4OSBCeTwvcD48L3RkPg0KPC90cj4NCjx0ciBjbGFzcz0icC1yb3ctYm90dG9tIj48dGQ+PHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5DYWxpYnJhdGlvbiBMYWJvcmF0b3J5PC9wPjwvdGQ+PC90cj4NCjx0ciBjbGFzcz0icC1yb3ctYm90dG9tIj4NCjx0ZD48L3RkPg0KPHRkPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjxwIGNsYXNzPSJ0ZXh0LWRlZmF1bHQiPkthbGlicmllcmZpcm1hIEdtYkg8L3A+PC9kaXY+PC90ZD4NCjwvdHI+DQo8dHIgY2xhc3M9InAtcm93LWJvdHRvbSI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RS1NYWlsPC9wPjwvdGQ+DQo8dGQ+PHA+aW5mb0BrYWxpYnJpZXJmaXJtYS54eDwvcD48L3RkPg0KPC90cj4NCjx0ciBjbGFzcz0icC1yb3ctYm90dG9tIj4NCjx0ZD48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5QaG9uZTwvcD48L3RkPg0KPHRkPis0OSAxMjMgNDU2Ny04OTwvdGQ+DQo8L3RyPg0KPHRyIGNsYXNzPSJwLXJvdy1ib3R0b20iPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkZheDwvcD48L3RkPg0KPHRkPjxwPis0OSAxMjMgNDU2Ny05MDwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cD5DaXR5PC9wPjwvdGQ+DQo8dGQ+PHA+TXVzdGVyc3RhZHQ8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHA+Q291bnRyeSBDb2RlPC9wPjwvdGQ+DQo8dGQ+PHA+REU8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHA+UG9zdCBDb2RlPC9wPjwvdGQ+DQo8dGQ+PHA+MDA5MDA8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHA+U3RyZWV0PC9wPjwvdGQ+DQo8dGQ+PHA+TXVzdGVyc3RyYcOfZTwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cD5TdHJlZXQgTm8uPC9wPjwvdGQ+DQo8dGQ+PHA+MTwvcD48L3RkPg0KPC90cj4NCjx0ciBjbGFzcz0icC1yb3ctYm90dG9tIj48dGQ+PC90ZD48L3RyPg0KPHRyPg0KPHRkPjxwPkZ1cnRoZXI8L3A+PC90ZD4NCjx0ZD48cD48L3A+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+PHAgY2xhc3M9InRleHQtZGVmYXVsdCI+d3d3LmthbGlicmllcmZpcm1hLnh4PC9wPjwvZGl2PjxwPjwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZCBjbGFzcz0idi1hbGlnbi1ib3R0b20iPjxwIGNsYXNzPSJzdWItaGVhZGluZyI+UmVzcG9uc2libGUgUGVyc29uczwvcD48L3RkPg0KPHRkPjwvdGQ+DQo8L3RyPg0KPHRyPg0KPHRkIGNsYXNzPSJ2LWFsaWduLWJvdHRvbSI+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+TWFpbiByZXNwb25zaWJsZTwvcD48L3RkPg0KPHRkPjxwPk1pY2hhZWxhIE11c3RlcmZyYXU8L3A+PC90ZD4NCjx0ZD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZCBjbGFzcz0idi1hbGlnbi1ib3R0b20iPjwvdGQ+DQo8dGQgY2xhc3M9InYtYWxpZ24tYm90dG9tIj48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij48cCBjbGFzcz0idGV4dC1kZWZhdWx0Ij5NaWNoYWVsIE11c3Rlcm1hbm48L3A+PC9kaXY+PC90ZD4NCjx0ZCBjbGFzcz0idi1hbGlnbi1ib3R0b20iPjwvdGQ+DQo8L3RyPg0KPHRyIGNsYXNzPSJwLXJvdy1ib3R0b20iPg0KPHRkPjxwIGNsYXNzPSJzdWItaGVhZGluZyI+Q3VzdG9tZXI8L3A+PC90ZD4NCjx0ZD48cD48L3A+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+PHAgY2xhc3M9InRleHQtZGVmYXVsdCI+S3VuZGUgR21iSDwvcD48L2Rpdj48cD48L3A+PC90ZD4NCjwvdHI+DQo8dHIgY2xhc3M9InAtcm93LWJvdHRvbSI+DQo8dGQ+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RS1NYWlsPC9wPjwvdGQ+DQo8dGQ+PHA+aW5mb0BrdW5kZS54eDwvcD48L3RkPg0KPC90cj4NCjx0cj4NCjx0ZD48cD5DaXR5PC9wPjwvdGQ+DQo8dGQ+PHA+TXVzdGVyc3RhZHQ8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHA+Q291bnRyeSBDb2RlPC9wPjwvdGQ+DQo8dGQ+PHA+REU8L3A+PC90ZD4NCjwvdHI+DQo8dHI+DQo8dGQ+PHA+UG9zdCBDb2RlPC9wPjwvdGQ+DQo8dGQ+PHA+MDA5MDA8L3A+PC90ZD4NCjwvdHI+DQo8dHIgY2xhc3M9InAtcm93LWJvdHRvbSI+PHRkPjwvdGQ+PC90cj4NCjx0cj4NCjx0ZD48cD5GdXJ0aGVyPC9wPjwvdGQ+DQo8dGQ+PHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+S3VuZGVuIE5yLiAxMjM0NTY3ODk8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5DdXN0b21lciBJRCBuby4gMTIzNDU2Nzg5PC9pPjwvcD4NCjwvZGl2PjxwPjwvcD48L3RkPg0KPC90cj4NCjwvdGJvZHk+PC90YWJsZT4NCjxkaXYgY2xhc3M9Im1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5TdGF0ZW1lbnRzPC9wPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBTdGF0ZW1lbnQgMTwvcD4NCjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkRhdHVtLCB3YW5uIG5hY2ggZGVyIEZlc3RsZWd1bmcgZHVyY2ggZGVuIEt1bmRlbiBzcMOkdGVzdGVucyBkZXIgS2FsaWJyaWVyZ2VnZW5zdGFuZCByZWthbGlicmllcnQgd2VyZGVuIHNvbGw6PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+RGF0ZSB3aGVuIHRoZSBjYWxpYnJhdGlvbiBpdGVtIGlzIHRvIGJlIHJlY2FsaWJyYXRlZCBhdCB0aGUgbGF0ZXN0IGFjY29yZGluZyB0byB0aGUgY3VzdG9tZXIncyBzcGVjaWZpY2F0aW9uOjwvaT48L3A+DQo8L2Rpdj48cD48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EYXRlOiAxOTU5LTEwLTIyPC9wPg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjwvZGl2PjxwPjwvcD4NCg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+UmVzcG9uc2libGUgQXV0aG9yaXR5PC9wPg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjxwIGNsYXNzPSJ0ZXh0LWRlZmF1bHQiPkt1bmRlIEdtYkg8L3A+PC9kaXY+PHA+PC9wPg0KDQoNCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkUtTWFpbDwvcD4NCjxwPmluZm9Aa3VuZGUueHg8L3A+DQoNCg0KPHA+Q2l0eTwvcD4NCjxwPk11c3RlcnN0YWR0PC9wPg0KDQoNCjxwPkNvdW50cnkgQ29kZTwvcD4NCjxwPkRFPC9wPg0KDQoNCjxwPlBvc3QgQ29kZTwvcD4NCjxwPjAwOTAwPC9wPg0KDQo8YnI+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBTdGF0ZW1lbnQgMjwvcD4NCjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkRpZSBLb25mb3JtaXTDpHRzYXVzc2FnZSBlcmZvbGd0IGFuaGFuZCBkZXIgVm9yZ2FiZW4gZGVzIEt1bmRlbi4gU2llIHNpbmQgaW0gRENDIG1pdCBhdWZnZWbDvGhydC48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5UaGUgY29uZm9ybWl0eSBzdGF0ZW1lbnQgaXMgbWFkZSBvbiB0aGUgYmFzaXMgb2YgdGhlIGN1c3RvbWVyJ3Mgc3BlY2lmaWNhdGlvbnMuIFRoZXkgYXJlIGxpc3RlZCBpbiB0aGUgRENDLjwvaT48L3A+DQo8L2Rpdj48cD48L3A+DQo8cD48L3A+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+PC9kaXY+PHA+PC9wPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+Q29uZm9ybWl0eTwvcD4NCjxwPnBhc3M8L3A+DQoNCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPlJlc3BvbnNpYmxlIEF1dGhvcml0eTwvcD4NCjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij48cCBjbGFzcz0idGV4dC1kZWZhdWx0Ij5LdW5kZSBHbWJIPC9wPjwvZGl2PjxwPjwvcD4NCg0KDQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5FLU1haWw8L3A+DQo8cD5pbmZvQGt1bmRlLnh4PC9wPg0KDQoNCjxwPkNpdHk8L3A+DQo8cD5NdXN0ZXJzdGFkdDwvcD4NCg0KDQo8cD5Db3VudHJ5IENvZGU8L3A+DQo8cD5ERTwvcD4NCg0KDQo8cD5Qb3N0IENvZGU8L3A+DQo8cD4wMDkwMDwvcD4NCg0KPGJyPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDigKIgU3RhdGVtZW50IDM8L3A+DQo8cD48L3A+PGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EaWUgRXJnZWJuaXNzZSBnZWx0ZW4genVtIFplaXRwdW5rdCBkZXIgS2FsaWJyaWVydW5nLiBFcyBvYmxpZWd0IGRlbSBBbnRyYWdzdGVsbGVyLCB6dSBnZWdlYmVuZXIgWmVpdCBlaW5lIFJla2FsaWJyaWVydW5nIHp1IHZlcmFubGFzc2VuLjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSByZXN1bHRzIHJlZmVyIG9ubHkgdG8gdGhlIG9iamVjdCBjYWxpYnJhdGVkIGluIHRoaXMgRENDLiBUaGUgbWVhc3VyZW1lbnQgcmVzdWx0cyBhcmUgdmFsaWQgYXQgdGhlIHRpbWUgb2YgY2FsaWJyYXRpb24uIFRoZSBhcHBsaWNhbnQgaXMgcmVzcG9uc2libGUgZm9yIGFycmFuZ2luZyBhIHJlY2FsaWJyYXRpb24gaW4gZHVlIHRpbWUuPC9pPjwvcD4NCjwvZGl2PjxwPjwvcD4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk5vcm06IERJTiBFTiBJU08vSUVDIDE3MDI1OjIwMTgtMDM8L3A+DQo8YnI+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+UmVmZXJlbmNlOiA3LjguNC4zPC9wPg0KPGJyPjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij48L2Rpdj48cD48L3A+DQo8YnI+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBTdGF0ZW1lbnQgNDwvcD4NCjxwPjwvcD48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkFuZ2FiZSBkZXMga2FsaWJyaWVydGVuIEJlcmVpY2hzIGRlciByZWxhdGl2ZW4gRmV1Y2h0ZSBiZWkgZGVyIHZvcmdlZ2ViZW5lbiBHYXN0ZW1wZXJhdHVyOiA8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5TcGVjaWZpY2F0aW9uIG9mIHRoZSBjYWxpYnJhdGVkIHJhbmdlIG9mIHRoZSByZWxhdGl2ZSBodW1pZGl0eSBhdCB0aGUgZ2l2ZW4gZ2FzIHRlbXBlcmF0dXJlOjwvaT48L3A+DQo8L2Rpdj48cD48L3A+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlVudGVyZXMgTGltaXQgZGVzIGthbGlicmllcnRlbiBCZXJlaWNoczwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPkxvd2VyIGxpbWl0IG9mIHRoZSBjYWxpYnJhdGVkIHJhbmdlPC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPjAuMTwvcD5cb25lPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPjEwPC9wPlxwZXJjZW50PC9kaXY+DQo8L2Rpdj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+T2JlcmVzIExpbWl0IGRlcyBrYWxpYnJpZXJ0ZW4gQmVyZWljaHM8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5VcHBlciBsaW1pdCBvZiB0aGUgY2FsaWJyYXRlZCByYW5nZTwvcD4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD4wLjg8L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD44MDwvcD5ccGVyY2VudDwvZGl2Pg0KPC9kaXY+PC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlZvcmdlZ2ViZW5lIEdhc3RlbXBlcmF0dXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5HaXZlbiBnYXMgdGVtcGVyYXR1cmU8L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+MjkzLjE1PC9wPlxrZWx2aW48L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+MjA8L3A+XGRlZ3JlZWNlbHNpdXM8L2Rpdj4NCjwvZGl2PjwvZGl2Pg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjwvZGl2PjxwPjwvcD4NCjxicj48cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4oCiIFN0YXRlbWVudCA1PC9wPg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+QW5nYWJlIGRlcyBCZXJlaWNocywgaW4gZGVtIGdlbWVzc2VuIHd1cmRlOjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlNwZWNpZmljYXRpb24gb2YgdGhlIHJhbmdlIGluIHdoaWNoIHRoZSBtZWFzdXJlbWVudCB3YXMgcGVyZm9ybWVkOjwvaT48L3A+DQo8L2Rpdj48cD48L3A+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlVudGVyZXMgTGltaXQgZGVzIE1lc3NiZXJlaWNoczwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPkxvd2VyIGxpbWl0IG9mIHRoZSBtZWFzdXJtZW50IHJhbmdlPC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPjA8L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD4wPC9wPlxwZXJjZW50PC9kaXY+DQo8L2Rpdj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+T2JlcmVzIExpbWl0IGRlcyBNZXNzYmVyZWljaHM8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5VcHBlciBsaW1pdCBvZiB0aGUgbWVhc3VybWVudCByYW5nZTwvcD4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD4xPC9wPlxvbmU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+MTAwPC9wPlxwZXJjZW50PC9kaXY+DQo8L2Rpdj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+Vm9yZ2VnZWJlbmUgVGVtcGVyYXR1cjo8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5HaXZlbiB0ZW1wZXJhdHVyZTo8L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+MjkzLjE1PC9wPlxrZWx2aW48L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+MjA8L3A+XGRlZ3JlZWNlbHNpdXM8L2Rpdj4NCjwvZGl2PjwvZGl2Pg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjwvZGl2PjxwPjwvcD4NCjxicj4NCjwvZGl2Pg0KPHAgY2xhc3M9InRvcC1oZWFkaW5nIj5NZWFzdXJlbWVudCBSZXN1bHRzPC9wPg0KPGRpdiBjbGFzcz0ibWVhc3VyZW1lbnRSZXN1bHQiPg0KPHA+PC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5NZXNzZXJnZWJuaXNzZTwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPk1lYXN1cmVtZW50IHJlc3VsdHM8L2k+PC9wPg0KPC9kaXY+PHA+PC9wPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj4NCiAgICAgICAgICAgICAgICAgICAgICAgIFVzZWQgTWV0aG9kcw0KICAgICAgICAgICAgICAgICAgICA8L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij4NCiAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBVc2VkIG1ldGhvZCAxPC9wPg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5FcndlaXRlcnRlIE1lc3N1bnNpY2hlcmhlaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5FeHBhbmRlZCB1bmNlcnRhaW50eTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+QW5nZWdlYmVuIGlzdCBkaWUgZXJ3ZWl0ZXJ0ZSBNZXNzdW5zaWNoZXJoZWl0LCBkaWUgc2ljaCBhdXMgZGVyIFN0YW5kYXJkbWVzc3Vuc2ljaGVyaGVpdCBkdXJjaCBNdWx0aXBsaWthdGlvbiBtaXQgZGVtIEVyd2VpdGVydW5nc2Zha3RvciBrID0gMiBlcmdpYnQuIFNpZSB3dXJkZSBnZW3DpMOfIGRlbSAiR3VpZGUgdG8gdGhlIEV4cHJlc3Npb24gb2YgVW5jZXJ0YWludHkgaW4gTWVhc3VyZW1lbnQgKEdVTSkiIGVybWl0dGVsdC4gRGVyIFdlcnQgZGVyIE1lc3NncsO2w59lIGxpZWd0IGRhbm4gaW0gUmVnZWxmYWxsIG1pdCBlaW5lciBXYWhyc2NoZWlubGljaGtlaXQgdm9uIGFubsOkaGVybmQgOTUgJSBpbSB6dWdlb3JkbmV0ZW4gw5xiZXJkZWNrdW5nc2ludGVydmFsbC48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5UaGUgdW5jZXJ0YWludHkgc3RhdGVkIGlzIHRoZSBleHBhbmRlZCBtZWFzdXJlbWVudCB1bmNlcnRhaW50eSBvYnRhaW5lZCBieSBtdWx0aXBseWluZyB0aGUgc3RhbmRhcmQgbWVhc3VyZW1lbnQgdW5jZXJ0YWludHkgYnkgdGhlIGNvdmVyYWdlIGZhY3RvciBrPTIuIEl0IGhhcyBiZWVuIGRldGVybWluZWQgaW4gYWNjb3JkYW5jZSB3aXRoICB0aGUg4oCcR3VpZGUgdG8gdGhlIEV4cHJlc3Npb24gb2YgVW5jZXJ0YWludHkgaW4gTWVhc3VyZW1lbnQgKEdVTSnigJ0uIFRoZSB2YWx1ZSBvZiB0aGUgbWVhc3VyYW5kIHRoZW4gbm9ybWFsbHkgbGllcywgd2l0aCBhIHByb2JhYmlsaXR5IG9mIGFwcHJveGltYXRlbHkgOTUlLCB3aXRoaW4gdGhlIGF0dHJpYnV0ZWQgY292ZXJhZ2UgaW50ZXJ2YWwuPC9pPjwvcD4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk5vcm06Jm5ic3A7PC9wPkdVTTwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj48L2Rpdj4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPg0KICAgICAgICAgICAgICAgICAgICAgICAg4oCiIFVzZWQgbWV0aG9kIDI8L3A+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk1lc3N1bnNpY2hlcmhlaXQgZGVzIFZlcmZhaHJlbnM8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5NZWFzdXJlbWVudCB1bmNlcnRhaW5pdHkgb2YgdGhlIG1lYXN1cmVtZW50IHByb2NlZHVyZTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RGllIE1lc3N1bnNpY2hlcmhlaXQgZGVyIEFid2VpY2h1bmcgZGVzIHZvbiBkZXIgQW56ZWlnZSBkZXMgR2Vyw6R0ZXMgYWJnZWxlc2VuZW4gV2VydGVzIHZvbSBSZWZlcmVuendlcnQgZGVyIHJlbGF0aXZlbiBGZXVjaHRlIGlzdCBpbiBkZXIgVGFiZWxsZSBmw7xyIGRpZSBlaW56ZWxuZW4gS2FsaWJyaWVycHVua3RlIGFuZ2VnZWJlbi4gQmVyw7xja3NpY2h0aWd0IHd1cmRlbiBkYWJlaSBCZWl0csOkZ2UgYXVzIGRlciBNZXNzdW5nIGRlciBUYXVwdW5rdHRlbXBlcmF0dXIsIHNvd2llIGRlciBNZXNzdW5nIGRlciBCZXp1Z3N0ZW1wZXJhdHVyIChLYWxpYnJpZXJ1bmcgZGVzIFB0LTEwMCBzb3dpZSBUZW1wZXJhdHVyaW5ob21vZ2VuaXTDpHQgZGVyIEtsaW1ha2FtbWVyKSB1bmQgZGVyIEt1cnp6ZWl0c3RhYmlsaXTDpHQgZGVzIEthbGlicmllcmdlZ2Vuc3RhbmRlcyB3w6RocmVuZCBkZXIgTWVzc3VuZy4gRWluIEJlaXRyYWcgZsO8ciBkaWUgTGFuZ3plaXRzdGFiaWxpdMOkdCBvZGVyIGRlcyBIeXN0ZXJlc2V2ZXJoYWx0ZW5zIGRlcyBLYWxpYnJpZXJnZWdlbnN0YW5kZXMgaXN0IG5pY2h0IGJlcsO8Y2tzaWNodGlndC48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5UaGUgbWVhc3VyZW1lbnQgdW5jZXJ0YWluaXR5IG9mIHRoZSBkaWZmZXJlbmNlIG9mIHRoZSByZWFkIHZhbHVlIGZyb20gdGhlIGRpc3BsYXkgb2YgdGhlIGRldmljZSBhbmQgdGhlIHJlZmVyZW5jZSB2YWx1ZSBvZiB0aGUgcmVsYXRpdmUgaHVtaWRpdHkgaXMgZ2l2ZW4gaW4gdGhlIHRhYmxlIGZvciBlYWNoIHNpbmdsZSBwb2ludCBvZiBjYWxpYnJhdGlvbi4gQ29udHJpYnV0aW9uIGR1ZSB0byB0aGUgbWVhc3VyZW1lbnQgb2YgdGhlIGRldyBwb2ludCB0bWVwZXJhdHVyZSwgYW5kIHRoZSByZWZlcmVuY2UgdGVtcGVyYXR1cmUgKGNhbGlicmF0aW9uIG9mIHRoZSBQdC0xMDAgYXMgd2VsbCBhcyBpbmhvbW9nZW5laXR5IG9mIHRoZSBjbGltYXRpYyBjaGFtYmVyKSwgYW5kIHNob3J0IHRlcm0gc3RhYmlsaXR5IG9mIHRoZSBkZXZpY2UgdW5kZXIgY2FsaWJyYXRpb24gZHVyaW5nIHRoZSBtZWF1c3VyZW1lbnQgYXJlIGNvbnNpZGVyZWQuIENvbnRyaWJ1dGlvbnMgZHVlIHRvIGxvbmcgdGVybSBzdGFiaWxpdHkgb3IgaHlzdGVyZXNpcyBvZiB0aGUgZGV2aWNlIHVuZGVyIHRlc3QgYXJlIG5vdCBjb25zaWRlcmVkLjwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5Ob3JtOiZuYnNwOzwvcD5HVU08L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PC9kaXY+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij4NCiAgICAgICAgICAgICAgICAgICAgICAgIOKAoiBVc2VkIG1ldGhvZCAzPC9wPg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5LYWxpYnJpZXJ2ZXJmYWhyZW48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5DYWxpYnJhdGlvbiBtZXRob2Q8L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkRpZSBGZXVjaHRla2FsaWJyaWVydW5nIHd1cmRlIG5hY2ggZGVyIERLRC1SaWNodGxpbmllIERLRC1SIDUtOCDigJ5LYWxpYnJpZXJ1bmcgdm9uIEh5Z3JvbWV0ZXJuIHp1ciBkaXJla3RlbiBFcmZhc3N1bmcgZGVyIHJlbGF0aXZlbiBGZXVjaHRl4oCcLCBBdXNnYWJlIDAyLzIwMTkgbmFjaCBBYmxhdWYgQTIgKGF1ZnfDpHJ0cy9hYnfDpHJ0cykgZHVyY2hnZWbDvGhydC48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5UaGUgaHVtaWRpdHkgY2FsaWJyYXRpb24gd2FzIGNhcnJpZWQgb3V0IGFjY29yZGluZyB0byB0aGUgREtEIGd1aWRlbGluZSBES0QtUiA1LTggyrpDYWxpYnJhdGlvbiBvZiBoeWdyb21ldGVycyBmb3IgdGhlIGRpcmVjdCBtZWFzdXJlbWVudCBvZiByZWxhdGl2ZSBodW1pZGl0ecq6LCBFZGl0aW9uIDEwLzIwMTksIGluIGFjY29yZGFuY2Ugd2l0aCBzZXF1ZW5jZSBBMiAodXB3YXJkL2Rvd253YXJkKS48L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+Tm9ybTombmJzcDs8L3A+REtELVIgNS04PC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+UmVmZXJlbmNlOiZuYnNwOzwvcD5odHRwczovL2RvaS5vcmcvMTAuNzc5NS81NTAuMjAxOTAyMTQ8L2Rpdj4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPg0KICAgICAgICAgICAgICAgICAgICAgICAg4oCiIFVzZWQgbWV0aG9kIDQ8L3A+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPk1lc3NiZWRpbmd1bmdlbjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPk1lYXN1cmVtZW50IGNvbmRpdGlvbnM8L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkRpZSBLYWxpYnJpZXJ1bmcgd3VyZGUgaW4gZWluZW0gS2xpbWFzY2hyYW5rIGJlaSBlaW5lciBTdHLDtm11bmdzZ2VzY2h3aW5kaWdrZWl0IHZvbiBjYS4gMiBtL3MgZHVyY2hnZWbDvGhydC48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EaWUgS2FsaWJyaWVydW5nIHd1cmRlIGluIEx1ZnQgZHVyY2hnZWbDvGhydC48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EZXIgZXh0ZXJuZSBGw7xobGVyIGRlcyBLYWxpYnJpZXJnZWdlbnN0YW5kZXMgd3VyZGUgaW5rbHVzaXZlIDEgbSBzZWluZXIgQW5zY2hsdXNzbGVpdHVuZyBpbSBLbGltYXNjaHJhbmsgcG9zaXRpb25pZXJ0LiBEYXMgQW56ZWlnZWdlcsOkdCB3YXIgd8OkaHJlbmQgZGVyIEthbGlicmllcnVuZyBhdcOfZXJoYWxiIGRlciBNZXNza2FtbWVyIGRlbiBSYXVtYmVkaW5ndW5nZW4gYXVzZ2VzZXR6dC48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EaWUgQW5nbGVpY2h6ZWl0IGbDvHIgamVkZW4gS2FsaWJyaWVycHVua3QgYmV0cnVnIG1pbmRlc3RlbnMgMTUwIG1pbi48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EZXIgU3RhcnR3ZXJ0IGbDvHIgZGllIEthbGlicmllcnVuZyB3YXIgZGllIGFuZ2VnZWJlbmUgVW1nZWJ1bmdzYmVkaW5ndW5nLjwvcD4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkRlciBXZXJ0IGRlciBIeXN0ZXJlc2UgaXN0IGluIGRlciBNZXNzdW5zaWNoZXJoZWl0IG5pY2h0IGJlcsO8Y2tzaWNodGlndC48L3A+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EZXIgUmVmZXJlbnp3ZXJ0IGRlciByZWxhdGl2ZW4gRmV1Y2h0ZSB3dXJkZSBhdXMgZGVuIE1lc3N3ZXJ0ZW4gZGVyIEdhc3RlbXBlcmF0dXIgdW5kIFRhdXB1bmt0dGVtcGVyYXR1ciBkZXIgQmV6dWdzbm9ybWFsZSBiZXJlY2huZXQuPC9wPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RGllIGFuZ2VnZWJlbmVuIHJlbGF0aXZlbiBGZXVjaHRld2VydGUgYmV6aWVoZW4gc2ljaCBhdWYgZGllIFPDpHR0aWd1bmcgw7xiZXIgV2Fzc2VyLjwvcD4NCjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkFuZ2VnZWJlbiBzaW5kIGRpZSBNZXNzZXJnZWJuaXNzZSBpbiBkZXIgUmVpaGVuZm9sZ2UgZGVyIEthbGlicmllcnVuZy48L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5UaGUgY2FsaWJyYXRpb24gd2FzIGNhcnJpZWQgb3V0IGluIGEgY2xpbWF0aWMgY2hhbWJlciBhdCBhIGZsb3cgdmVsb2NpdHkgb2YgYXBwcm94aW1hdGVseSAyIG0vcy48L2k+PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+VGhlIGNhbGlicmF0aW9uIHdhcyBjYXJyaWVkIG91dCBpbiBhaXIuPC9pPjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSBleHRlcm5hbCBzZW5zb3Igb2YgdGhlIGNhbGlicmF0aW9uIGl0ZW0gd2FzIHBvc2l0aW9uZWQgaW4gdGhlIGNsaW1hdGljIGNoYW1iZXIsIGluY2x1ZGluZyAxIG0gb2YgaXRzIGNvbm5lY3RpbmcgY2FibGUuIFRoZSBkaXNwbGF5IHVuaXQgd2FzIGV4cG9zZWQgdG8gcm9vbSBjb25kaXRpb25zIG91dHNpZGUgdGhlIG1lYXN1cmluZyBjaGFtYmVyIGR1cmluZyBjYWxpYnJhdGlvbi48L2k+PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+VGhlIGFkanVzdG1lbnQgdGltZSBmb3IgZWFjaCBjYWxpYnJhdGlvbiBwb2ludCB3YXMgYXQgbGVhc3QgMTUwIG1pbi48L2k+PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+VGhlIHN0YXJ0aW5nIHZhbHVlIGZvciB0aGUgY2FsaWJyYXRpb24gd2FzIHRoZSBzcGVjaWZpZWQgZW52aXJvbm1lbnRhbCBjb25kaXRpb24uPC9pPjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSB2YWx1ZSBvZiB0aGUgaHlzdGVyZXNpcyBpcyBub3QgY29uc2lkZXJlZCBpbiB0aGUgbWVhc3VyZW1lbnQgdW5jZXJ0YWludHkuPC9pPjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSByZWZlcmVuY2UgdmFsdWUgb2YgdGhlIHJlbGF0aXZlIGh1bWlkaXR5IHdhcyBjYWxjdWxhdGVkIGZyb20gdGhlIG1lYXN1cmVkIHZhbHVlcyBvZiB0aGUgZ2FzIHRlbXBlcmF0dXJlIGFuZCBkZXcgcG9pbnQgdGVtcGVyYXR1cmUgb2YgdGhlIHJlZmVyZW5jZSBzdGFuZGFyZHMuPC9pPjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSBnaXZlbiB2YWx1ZXMgb2YgcmVsYXRpdmUgaHVtaWRpdHkgcmVmZXIgdG8gdGhlIHNhdHVyYXRpb24gYWJvdmUgd2F0ZXIuPC9pPjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlRoZSBtZWFzdXJlbWVudCByZXN1bHRzIGFyZSBzaG93biBpbiBvcmRlciBvZiB0aGUgY2FsaWJyYXRpb24uPC9pPjwvcD4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PC9kaXY+DQo8cCBjbGFzcz0ic3ViLWhlYWRpbmciPg0KICAgICAgICAgICAgICAgICAgICAgICAgTWVhc3VyaW5nIEVxdWlwbWVudHMNCiAgICAgICAgICAgICAgICAgICAgPC9wPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICDigKIgTWVhc3VyaW5nIEVxdWlwbWVudCAxPC9wPg0KPHA+UHQgMTAwIFdpZGVyc3RhbmRzdGhlcm1vbWV0ZXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5QdCAxMDAgdGhlcm1vbWV0ZXI8L3A+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij48cCBjbGFzcz0idGV4dC1kZWZhdWx0Ij53d3cua2FsaWJyaWVyZmlybWEueHgvY2VydGlmaWNhdGUtZG93bmxvYWQ8L3A+PC9kaXY+DQo8cD5DZXJ0aWZpY2F0ZTogR1AtbUUtQ2VydGlmaWNhdGUteDwvcD4NCjxwPlByb2NlZHVyZTogYW5hbG9ndWU8L3A+DQo8cD5WYWx1ZTogYW5hbG9ndWU8L3A+DQo8cD5Jc3N1ZXIgKElkZW50aWZpY2F0aW9uKTogbWFudWZhY3R1cmVyPC9wPg0KPHA+VmFsdWUgKElkZW50aWZpY2F0aW9uKTogVGVtcGVyYXR1cm1lc3N0ZWNobmlrIEdtYkg8L3A+DQo8YnI+PHAgY2xhc3M9InRleHQtcHJpbWFyeSI+DQogICAgICAgICAgICAgICAgICAgICAgICDigKIgTWVhc3VyaW5nIEVxdWlwbWVudCAyPC9wPg0KPHA+VGF1cHVua3RzcGllZ2VsLUh5Z3JvbWV0ZXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5EZXcgcG9pbnQgaHlncm9tZXRlcjwvcD4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPjxwIGNsYXNzPSJ0ZXh0LWRlZmF1bHQiPnd3dy5rYWxpYnJpZXJmaXJtYS54eC9jZXJ0aWZpY2F0ZS1kb3dubG9hZDwvcD48L2Rpdj4NCjxwPkNlcnRpZmljYXRlOiBHUC1tRS1DZXJ0aWZpY2F0ZS15PC9wPg0KPHA+UHJvY2VkdXJlOiBTSEEyNTY8L3A+DQo8cD5WYWx1ZTogU0hBMjU2LXZhbHVlPC9wPg0KPGJyPjxwIGNsYXNzPSJzdWItaGVhZGluZyI+DQogICAgICAgICAgICAgICAgICAgICAgICBJbmZsdWVuY2UgQ29uZGl0aW9ucw0KICAgICAgICAgICAgICAgICAgICA8L3A+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJzdWItaGVhZGluZyI+VW1nZWJ1bmdzYmVkaW5ndW5nIFRlbXBlcmF0dXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5BbWJpZW50IGNvbmRpdGlvbiB0ZW1wZXJhdHVyZTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5NaW5pbWFsZSBVbWdlYnVuZ3N0ZW1wZXJhdHVyPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+TWluaW11bSBhbWJpZW50IHRlbXBlcmF0dXJlPC9wPlxrZWx2aW48L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjI5NS4xNTwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5NaW5pbWFsZSBVbWdlYnVuZ3N0ZW1wZXJhdHVyPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+TWluaW11bSBhbWJpZW50IHRlbXBlcmF0dXJlPC9wPlxkZWdyZWVjZWxzaXVzPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4yMjwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCAgYXZvaWQtYnJlYWsiPjwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPk1heGltYWxlIFVtZ2VidW5nc3RlbXBlcmF0dXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5NYXhpbXVtIGFtYmllbnQgdGVtcGVyYXR1cmU8L3A+XGtlbHZpbjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+Mjk3LjE1PC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPk1heGltYWxlIFVtZ2VidW5nc3RlbXBlcmF0dXI8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5NYXhpbXVtIGFtYmllbnQgdGVtcGVyYXR1cmU8L3A+XGRlZ3JlZWNlbHNpdXM8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjI0PC9kaXY+DQo8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0ICBhdm9pZC1icmVhayI+PC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5VbWdlYnVuZ3NiZWRpbmd1bmcgcmVsYXRpdmUgTHVmdGZldWNodGU8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5BbWJpZW50IGNvbmRpdGlvbiByZWxhdGl2ZSBhaXIgaHVtaWRpdHk8L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+TWluaW1hbGUgcmVsYXRpdmUgTHVmdGZldWNodGUgZGVyIFVtZ2VidW5nPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+TWluaW11bSByZWxhdGl2ZSBodW1pZGl0eSBvZiB0aGUgYW1iaWVudCBhaXI8L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4zNTwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5NaW5pbWFsZSByZWxhdGl2ZSBMdWZ0ZmV1Y2h0ZSBkZXIgVW1nZWJ1bmc8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5NaW5pbXVtIHJlbGF0aXZlIGh1bWlkaXR5IG9mIHRoZSBhbWJpZW50IGFpcjwvcD5ccGVyY2VudDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MzU8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgIGF2b2lkLWJyZWFrIj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5NYXhpbWFsZSByZWxhdGl2ZSBMdWZ0ZmV1Y2h0ZSBkZXIgVW1nZWJ1bmc8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5NYXhpbXVtIHJlbGF0aXZlIGh1bWlkaXR5IG9mIHRoZSBhbWJpZW50IGFpcjwvcD5cb25lPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjU1PC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPk1heGltYWxlIHJlbGF0aXZlIEx1ZnRmZXVjaHRlIGRlciBVbWdlYnVuZzwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPk1heGltdW0gcmVsYXRpdmUgaHVtaWRpdHkgb2YgdGhlIGFtYmllbnQgYWlyPC9wPlxwZXJjZW50PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj41NTwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCAgYXZvaWQtYnJlYWsiPjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJzdWItaGVhZGluZyI+QW5nbGVpY2h6ZWl0IGbDvHIgamVkZW4gS2FsaWJyaWVycHVua3Q8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5BZGp1c3RtZW50IHRpbWUgZm9yIGVhY2ggY2FsaWJyYXRpb24gcG9pbnQ8L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+QW5nbGVpY2h6ZWl0IGbDvHIgamVkZW4gS2FsaWJyaWVycHVua3Q8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5BZGp1c3RtZW50IHRpbWUgZm9yIGVhY2ggY2FsaWJyYXRpb24gcG9pbnQ8L3A+XHNlY29uZDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+OTAwMDwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5BbmdsZWljaHplaXQgZsO8ciBqZWRlbiBLYWxpYnJpZXJwdW5rdDwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPkFkanVzdG1lbnQgdGltZSBmb3IgZWFjaCBjYWxpYnJhdGlvbiBwb2ludDwvcD5cbWludXRlPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4xNTA8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgIGF2b2lkLWJyZWFrIj48L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0ic3ViLWhlYWRpbmciPkFuc3Ryw7ZtZ2VzY2h3aW5kaWdrZWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+RmxvdyB2ZWxvY2l0eTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+PGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+QW5zdHLDtm1nZXNjaHdpbmRpZ2tlaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5GbG93IHZlbG9jaXR5PC9wPg0KPHA+XG1ldHJlXHNlY29uZFx0b3RoZXstMX08L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjImbmJzcDsNCiAgICAgICAgICAgIDwvZGl2Pg0KPC9kaXY+PC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5BbmdlemVpZ3RlIEVpbmhlaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij48aT5Vbml0IG9mIGRpc3BsYXk8L2k+PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPkFuZ2V6ZWlndGUgRWluaGVpdDwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPlVuaXQgb2YgZGlzcGxheTwvcD4NCjxwPlxwZXJjZW50PC9wPg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4xJm5ic3A7DQogICAgICAgICAgICA8L2Rpdj4NCjwvZGl2PjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij4NCjxwIGNsYXNzPSJzdWItaGVhZGluZyI+QXVmbMO2c3VuZyBkZXIgQW56ZWlnZTwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPlJlc29sdXRpb24gb2YgZGlzcGxheTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5BdWZsw7ZzdW5nIGRlciBBbnplaWdlPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+UmVzb2x1dGlvbiBvZiBkaXNwbGF5PC9wPlxvbmU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMDAxPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPkF1ZmzDtnN1bmcgZGVyIEFuemVpZ2U8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5SZXNvbHV0aW9uIG9mIGRpc3BsYXk8L3A+XHBlcmNlbnQ8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMTwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCAgYXZvaWQtYnJlYWsiPjwvZGl2Pg0KPC9kaXY+DQo8cCBjbGFzcz0ic3ViLWhlYWRpbmciPg0KICAgICAgICAgICAgICAgICAgICAgICAgUmVzdWx0cw0KICAgICAgICAgICAgICAgICAgICA8L3A+DQo8ZGl2IGNsYXNzPSJyZXN1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0icmVzdWx0LWhlYWRpbmciPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj5NZXNzZXJnZWJuaXNzZTwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxpPk1lYXN1cmVtZW50IHJlc3VsdHM8L2k+PC9wPg0KPC9kaXY+PC9kaXY+DQo8ZGl2IGNsYXNzPSJyZXN1bHQtZGF0YSI+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+RGF0ZVRpbWUgTGlzdDwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPjxicj48L3A+DQo8YnI+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMDY6MDA6MDE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMDk6MzA6MDA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMTM6MDA6MDA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMTY6MzA6MDA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMjA6MDA6MDA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjdUMjM6MzA6MDA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwMjEtMDctMjhUMDM6MDA6MDA8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+UmVmZXJlbnp3ZXJ0IHJlbGF0aXZlIEZldWNodGU8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5SZWZlcmVuY2UgdmFsdWUgcmVsYXRpdmUgaHVtaWRpdHk8L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4yMDE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuNTAwPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjgwMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC45MDE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuODAxPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjUwMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4yMDA8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+UmVmZXJlbnp3ZXJ0IHJlbGF0aXZlIEZldWNodGU8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5SZWZlcmVuY2UgdmFsdWUgcmVsYXRpdmUgaHVtaWRpdHk8L3A+XHBlcmNlbnQ8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwLjE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjUwLjA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjgwLjA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjkwLjE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjgwLjE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjUwLjA8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjIwLjA8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgIGF2b2lkLWJyZWFrIj48L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EYXRlVGltZSBMaXN0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGJyPjwvcD4NCjxicj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QwNjowMDowMTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QwOTozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QxMzowMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QxNjozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QyMDowMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QyMzozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yOFQwMzowMDowMDwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5BbmdlemVpZ3RlciBNZXNzd2VydCBLYWxpYnJpZXJnZWdlbnN0YW5kPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+RGlzcGxheWVkIHZhbHVlIGNhbGlicmF0aW9uIGl0ZW08L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4xOTc8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuNDk5PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjgwMzwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC45MTI8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuODEzPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjUwNjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4xOTc8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+QW5nZXplaWd0ZXIgTWVzc3dlcnQgS2FsaWJyaWVyZ2VnZW5zdGFuZDwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPkRpc3BsYXllZCB2YWx1ZSBjYWxpYnJhdGlvbiBpdGVtPC9wPlxwZXJjZW50PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4xOS43PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj40OS45PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj44MC4zPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj45MS4yPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj44MS4zPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj41MC42PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4xOS43PC9kaXY+DQo8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0ICBhdm9pZC1icmVhayI+PC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+TWVzc2Fid2VpY2h1bmc8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5NZWFzdXJlbWVudCBlcnJvcjwvcD5cb25lPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4tMC4wMDQ8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0wLjAwMTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4wMDM8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMDExPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjAxMjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4wMDY8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0wLjAwMzwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5NZXNzYWJ3ZWljaHVuZzwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPk1lYXN1cmVtZW50IGVycm9yPC9wPlxwZXJjZW50PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4tMC40PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4tMC4xPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjM8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjEuMTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MS4yPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjY8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0wLjM8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgIGF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlVuY2VydGFpbnR5IExpc3Q8L3A+XG9uZTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4wMDY8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMDA4PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjAxMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4wMTE8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMDEwPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjAwODwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC4wMDY8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+Q292ZXJhZ2UgRmFjdG9yIExpc3Q8L3A+DQo8YnI+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjI8L2Rpdj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+Q292ZXJhZ2UgUHJvYmFiaWxpdHkgTGlzdDwvcD4NCjxicj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MC45NTwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjxwIGNsYXNzPSJzdWItaGVhZGluZyI+TWVhc3VyZW1lbnQgTWV0YSBEYXRhPC9wPjxkaXYgY2xhc3M9ImF2b2lkLWJyZWFrIG1iLWRlZmF1bHQiPg0KPHAgY2xhc3M9InRleHQtcHJpbWFyeSI+S29uZm9ybWl0w6R0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+Q29uZm9ybWl0eTwvaT48L3A+DQo8L2Rpdj48ZGl2IGNsYXNzPSJhdm9pZC1icmVhayBtYi1kZWZhdWx0Ij48L2Rpdj48ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+VW50ZXJlcyBUb2xlcmFuemxpbWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+TG93ZXIgdG9sZXJhbmNlIGxpbWl0PC9wPlxvbmU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0wLjAyMjwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5VbnRlcmVzIFRvbGVyYW56bGltaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5Mb3dlciB0b2xlcmFuY2UgbGltaXQ8L3A+XHBlcmNlbnQ8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0yLjI8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+PGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0ICBhdm9pZC1icmVhayI+PC9kaXY+PGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlVudGVyZXMgQWt6ZXB0YW56bGltaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5Mb3dlciBhY2NlcHRhbmNlIGxpbWl0PC9wPlxvbmU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPi0wLjAyMDwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5VbnRlcmVzIEFremVwdGFuemxpbWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+TG93ZXIgYWNjZXB0YW5jZSBsaW1pdDwvcD5ccGVyY2VudDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+LTIuMDwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj48ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgIGF2b2lkLWJyZWFrIj48L2Rpdj48ZGl2IGNsYXNzPSJmbGV4IG1iLWRlZmF1bHQgYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iY29sIj4NCjxkaXYgY2xhc3M9ImNlbGwiPg0KPHA+T2JlcmVzIEFremVwdGFuemxpbWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+VXBwZXIgYWNjZXB0YW5jZSBsaW1pdDwvcD5cb25lPC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4wLjAyMDwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5PYmVyZXMgQWt6ZXB0YW56bGltaXQ8L3A+DQo8cCBjbGFzcz0iZGVzY3JpcHRpb24tc2Vjb25kYXJ5Ij5VcHBlciBhY2NlcHRhbmNlIGxpbWl0PC9wPlxwZXJjZW50PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4yLjA8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+PGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0ICBhdm9pZC1icmVhayI+PC9kaXY+PGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0IGF2b2lkLWJyZWFrIj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPk9iZXJlcyBUb2xlcmFuemxpbWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+VXBwZXIgdG9sZXJhbmNlIGxpbWl0PC9wPlxvbmU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjAuMDIyPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPk9iZXJlcyBUb2xlcmFuemxpbWl0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+VXBwZXIgdG9sZXJhbmNlIGxpbWl0PC9wPlxwZXJjZW50PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4yLjI8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+PGRpdiBjbGFzcz0iZmxleCBtYi1kZWZhdWx0ICBhdm9pZC1icmVhayI+PC9kaXY+PHRhYmxlIGNsYXNzPSJtZWFzdXJlbWVudC1tZXRhZGF0YS10YWJsZSBhdm9pZC1icmVhayI+DQoNCg0KDQo8dGJvZHk+PHRyIGNsYXNzPSJwLXJvdy1ib3R0b20iPg0KPHRkPjxwIGNsYXNzPSJ0ZXh0LXByaW1hcnkiPkNvbmZvcm1pdHkgTGlzdDwvcD48L3RkPg0KPHRkPjxwPnBhc3M8L3A+PC90ZD4NCjwvdHI+DQoNCg0KDQoNCg0KDQoNCg0KPC90Ym9keT48L3RhYmxlPg0KPHAgY2xhc3M9InN1Yi1oZWFkaW5nIj4NCiAgICAgICAgICAgICAgICBJbmZsdWVuY2UgQ29uZGl0aW9ucw0KICAgICAgICAgICAgPC9wPg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsiPg0KPGRpdiBjbGFzcz0iYXZvaWQtYnJlYWsgbWItZGVmYXVsdCI+DQo8cCBjbGFzcz0ic3ViLWhlYWRpbmciPlJlZmVyZW56d2VydCBHYXN0ZW1wZXJhdHVyPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGk+UmVmZXJlbmNlIHZhbHVlIGdhcyB0ZW1wZXJhdHVyZTwvaT48L3A+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCBhdm9pZC1icmVhayI+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cCBjbGFzcz0idGV4dC1wcmltYXJ5Ij5EYXRlVGltZSBMaXN0PC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+PGJyPjwvcD4NCjxicj4NCjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QwNjowMDowMTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QwOTozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QxMzowMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QxNjozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QyMDowMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yN1QyMzozMDowMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAyMS0wNy0yOFQwMzowMDowMDwvZGl2Pg0KPC9kaXY+DQo8ZGl2IGNsYXNzPSJjb2wiPg0KPGRpdiBjbGFzcz0iY2VsbCI+DQo8cD5SZWZlcmVuendlcnQgR2FzdGVtcGVyYXR1cjwvcD4NCjxwIGNsYXNzPSJkZXNjcmlwdGlvbi1zZWNvbmRhcnkiPlJlZmVyZW5jZSB2YWx1ZSBnYXMgdGVtcGVyYXR1cmU8L3A+XGtlbHZpbjwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjkzLjE1PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4yOTMuMTU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjI5My4xNTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjkzLjE1PC9kaXY+DQo8ZGl2IGNsYXNzPSJjZWxsIj4yOTMuMTU8L2Rpdj4NCjxkaXYgY2xhc3M9ImNlbGwiPjI5My4xNTwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjkzLjE1PC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImNvbCI+DQo8ZGl2IGNsYXNzPSJjZWxsIj4NCjxwPlJlZmVyZW56d2VydCBHYXN0ZW1wZXJhdHVyPC9wPg0KPHAgY2xhc3M9ImRlc2NyaXB0aW9uLXNlY29uZGFyeSI+UmVmZXJlbmNlIHZhbHVlIGdhcyB0ZW1wZXJhdHVyZTwvcD5cZGVncmVlY2Vsc2l1czwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPGRpdiBjbGFzcz0iY2VsbCI+MjAuMDwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjxkaXYgY2xhc3M9ImZsZXggbWItZGVmYXVsdCAgYXZvaWQtYnJlYWsiPjwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjwvZGl2Pg0KPC9kaXY+DQo8L2Rpdj4NCjwvYm9keT48L2h0bWw+
+    </dcc:dataBase64>
+  </dcc:document>
+</dcc:digitalCalibrationCertificate>
+
+
+
+
+
+
+
+

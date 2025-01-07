@@ -1,0 +1,833 @@
+{
+  "administrativeData" : {
+    "dccSoftware" : [
+      {
+        "name" : {
+          "content" : [
+            {
+              "lang" : "de",
+              "text" : "gemimeg-backend-test"
+            }
+          ]
+        },
+        "version" : "1.0.0"
+      }
+    ],
+    "customer" : {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Kunibert Kunde"
+          }
+        ]
+      },
+      "phoneNumber" : "+4930123456",
+      "location" : {
+        "countryCode" : "DE",
+        "stateCode" : "BE",
+        "city" : "Berlin",
+        "postalCode" : "10627",
+        "street" : "Testgasse",
+        "houseNumber" : "123"
+      },
+      "emailAddress" : "kunibert.kunde@mail.de"
+    },
+    "calibrationLaboratory" : {
+      "calibrationLaboratoryCode" : "PTB-9.4",
+      "contact" : {
+        "name" : {
+          "content" : [
+            {
+              "lang" : "de",
+              "text" : "Toni Tester"
+            }
+          ]
+        },
+        "phoneNumber" : "+49303481-9876",
+        "location" : {
+          "countryCode" : "DE",
+          "stateCode" : "BE",
+          "city" : "Berlin",
+          "postalCode" : "10587",
+          "street" : "Abbestr.",
+          "houseNumber" : "2-12"
+        },
+        "emailAddress" : "toni.tester@ptb.de"
+      }
+    },
+    "items" : [
+      {
+        "name" : {
+          "content" : [
+            {
+              "lang" : "de",
+              "text" : "Gegenstand"
+            }
+          ]
+        },
+        "manufacturer" : {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Hersteller"
+              }
+            ]
+          }
+        },
+        "identifications" : [
+          {
+            "value" : "manufacturer"
+          }
+        ]
+      }
+    ],
+    "uniqueIdentifier" : "d9795820-36ca-4180-a5eb-5d309d01ac20",
+    "countryCode" : "DE",
+    "languageCodes" : [
+      "de"
+    ],
+    "receiptDate" : "2024-09-12",
+    "startDate" : "2024-09-13",
+    "endDate" : "2024-09-14",
+    "responsiblePersons" : [
+      {
+        "name" : {
+          "content" : [
+            {
+              "lang" : "de",
+              "text" : "Verantwortlicher"
+            }
+          ]
+        }
+      }
+    ],
+    "statements" : [
+      {
+        "countryCodes" : [
+          "DE"
+        ],
+        "date" : "2024-09-12",
+        "period" : "P1Y2M3DT10H30M0S",
+        "validXMLList" : [
+          true,
+          false
+        ],
+        "responsibleAuthority" : {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "PTB"
+              }
+            ]
+          },
+          "phoneNumber" : "+493034819875",
+          "location" : {
+            "countryCode" : "DE",
+            "stateCode" : "BE",
+            "city" : "Berlin",
+            "postalCode" : "10587",
+            "street" : "Abbestr.",
+            "houseNumber" : "2-12"
+          },
+          "emailAddress" : "info@ptb.de"
+        }
+      }
+    ]
+  },
+  "measurementResults" : [
+    {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Weighing_for_Calibration 0..1 kgs"
+          }
+        ]
+      },
+      "usedSoftware" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "NI LabView"
+              }
+            ]
+          },
+          "version" : "2021 SP1"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "dimension" : {
+                  "value" : 0.01,
+                  "unit" : "kg"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "classId" : "Waage",
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "RAD-8620"
+              }
+            ]
+          },
+          "model" : "RAD-8620",
+          "manufacturer" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "Pfreundt GmbH"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819876",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "manufacturer@ptb.de"
+          },
+          "software" : [
+            {
+              "name" : {
+                "content" : [
+                  {
+                    "lang" : "de",
+                    "text" : "RAD-8620"
+                  }
+                ]
+              },
+              "version" : "1.0.0"
+            }
+          ]
+        }
+      ],
+      "statements" : [
+        {
+          "countryCodes" : [
+            "DE"
+          ],
+          "date" : "2024-09-12",
+          "period" : "P1Y2M3DT10H30M0S",
+          "validXMLList" : [
+            true,
+            false
+          ],
+          "responsibleAuthority" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "PTB"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819875",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "info@ptb.de"
+          }
+        }
+      ]
+    },
+    {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Weighing_for_Calibration 0..1 kgs"
+          }
+        ]
+      },
+      "usedSoftware" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "NI LabView"
+              }
+            ]
+          },
+          "version" : "2021 SP1"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "dimension" : {
+                  "value" : 0.05,
+                  "unit" : "kg"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "classId" : "Waage",
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "RAD-8620"
+              }
+            ]
+          },
+          "model" : "RAD-8620",
+          "manufacturer" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "Pfreundt GmbH"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819876",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "manufacturer@ptb.de"
+          },
+          "software" : [
+            {
+              "name" : {
+                "content" : [
+                  {
+                    "lang" : "de",
+                    "text" : "RAD-8620"
+                  }
+                ]
+              },
+              "version" : "1.0.0"
+            }
+          ]
+        }
+      ],
+      "statements" : [
+        {
+          "countryCodes" : [
+            "DE"
+          ],
+          "date" : "2024-09-12",
+          "period" : "P1Y2M3DT10H30M0S",
+          "validXMLList" : [
+            true,
+            false
+          ],
+          "responsibleAuthority" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "PTB"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819875",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "info@ptb.de"
+          }
+        }
+      ]
+    },
+    {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Weighing_for_Calibration 0..1 kgs"
+          }
+        ]
+      },
+      "usedSoftware" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "NI LabView"
+              }
+            ]
+          },
+          "version" : "2021 SP1"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "dimension" : {
+                  "value" : 0.1,
+                  "unit" : "kg"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "classId" : "Waage",
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "RAD-8620"
+              }
+            ]
+          },
+          "model" : "RAD-8620",
+          "manufacturer" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "Pfreundt GmbH"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819876",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "manufacturer@ptb.de"
+          },
+          "software" : [
+            {
+              "name" : {
+                "content" : [
+                  {
+                    "lang" : "de",
+                    "text" : "RAD-8620"
+                  }
+                ]
+              },
+              "version" : "1.0.0"
+            }
+          ]
+        }
+      ],
+      "statements" : [
+        {
+          "countryCodes" : [
+            "DE"
+          ],
+          "date" : "2024-09-12",
+          "period" : "P1Y2M3DT10H30M0S",
+          "validXMLList" : [
+            true,
+            false
+          ],
+          "responsibleAuthority" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "PTB"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819875",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "info@ptb.de"
+          }
+        }
+      ]
+    },
+    {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Weighing_for_Calibration 0..1 kgs"
+          }
+        ]
+      },
+      "usedSoftware" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "NI LabView"
+              }
+            ]
+          },
+          "version" : "2021 SP1"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "dimension" : {
+                  "value" : 0.5,
+                  "unit" : "kg"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "classId" : "Waage",
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "RAD-8620"
+              }
+            ]
+          },
+          "model" : "RAD-8620",
+          "manufacturer" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "Pfreundt GmbH"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819876",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "manufacturer@ptb.de"
+          },
+          "software" : [
+            {
+              "name" : {
+                "content" : [
+                  {
+                    "lang" : "de",
+                    "text" : "RAD-8620"
+                  }
+                ]
+              },
+              "version" : "1.0.0"
+            }
+          ]
+        }
+      ],
+      "statements" : [
+        {
+          "countryCodes" : [
+            "DE"
+          ],
+          "date" : "2024-09-12",
+          "period" : "P1Y2M3DT10H30M0S",
+          "validXMLList" : [
+            true,
+            false
+          ],
+          "responsibleAuthority" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "PTB"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819875",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "info@ptb.de"
+          }
+        }
+      ]
+    },
+    {
+      "name" : {
+        "content" : [
+          {
+            "lang" : "de",
+            "text" : "Weighing_for_Calibration 0..1 kgs"
+          }
+        ]
+      },
+      "usedSoftware" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "NI LabView"
+              }
+            ]
+          },
+          "version" : "2021 SP1"
+        }
+      ],
+      "usedMethods" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Weighing_for_Calibration 0..1 kgs"
+              }
+            ]
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "dimension" : {
+                  "value" : 1.0,
+                  "unit" : "kg"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "classId" : "Waage",
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "RAD-8620"
+              }
+            ]
+          },
+          "model" : "RAD-8620",
+          "manufacturer" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "Pfreundt GmbH"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819876",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "manufacturer@ptb.de"
+          },
+          "software" : [
+            {
+              "name" : {
+                "content" : [
+                  {
+                    "lang" : "de",
+                    "text" : "RAD-8620"
+                  }
+                ]
+              },
+              "version" : "1.0.0"
+            }
+          ]
+        }
+      ],
+      "statements" : [
+        {
+          "countryCodes" : [
+            "DE"
+          ],
+          "date" : "2024-09-12",
+          "period" : "P1Y2M3DT10H30M0S",
+          "validXMLList" : [
+            true,
+            false
+          ],
+          "responsibleAuthority" : {
+            "name" : {
+              "content" : [
+                {
+                  "lang" : "de",
+                  "text" : "PTB"
+                }
+              ]
+            },
+            "phoneNumber" : "+493034819875",
+            "location" : {
+              "countryCode" : "DE",
+              "stateCode" : "BE",
+              "city" : "Berlin",
+              "postalCode" : "10587",
+              "street" : "Abbestr.",
+              "houseNumber" : "2-12"
+            },
+            "emailAddress" : "info@ptb.de"
+          }
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : "3.2.1"
+}

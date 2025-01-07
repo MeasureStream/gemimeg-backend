@@ -1,0 +1,164 @@
+{
+  "administrativeData" : {
+    "dccSoftware" : [
+      {
+        "name" : {
+          "**" : "GEMIMEG Tool"
+        },
+        "version" : "v1.0.0"
+      },
+      {
+        "name" : {
+          "**" : "OP-Layer DCC"
+        },
+        "version" : "v0.1.0"
+      }
+    ],
+    "customer" : {
+      "name" : {
+        "de" : "PTBist"
+      },
+      "location" : {
+        "city" : "Braunschweig"
+      },
+      "emailAddress" : "info@ptb.de"
+    },
+    "calibrationLaboratory" : {
+      "contact" : {
+        "name" : {
+          "de" : "Messstation Thementag"
+        },
+        "location" : {
+          "countryCode" : "DE",
+          "city" : "Braunschweig"
+        },
+        "emailAddress" : "manuel.meiborg@ptb.de"
+      }
+    },
+    "items" : [
+      {
+        "name" : {
+          "de" : "PTBist"
+        },
+        "model" : "Mitarbeiter",
+        "manufacturer" : {
+          "name" : {
+            "de" : "unbekannt"
+          }
+        },
+        "identifications" : [
+          {
+            "name" : {
+              "de" : "Personalnummer"
+            },
+            "issuer" : "other",
+            "value" : "123"
+          }
+        ]
+      }
+    ],
+    "uniqueIdentifier" : "DCC_Laenge_Simple",
+    "countryCode" : "DE",
+    "languageCodes" : [
+      "de",
+      "en"
+    ],
+    "receiptDate" : "2022-11-01",
+    "startDate" : "2022-11-11",
+    "endDate" : "2022-11-11",
+    "performanceLocation" : "laboratoryBranch",
+    "responsiblePersons" : [
+      {
+        "name" : {
+          "de" : "Samuel Eickelberg"
+        },
+        "phoneNumber" : "+49 30 34817760",
+        "emailAddress" : "samuel.eickelberg@ptb.de"
+      },
+      {
+        "name" : {
+          "de" : "Manuel Meiborg"
+        },
+        "phoneNumber" : "+49 30 34819416",
+        "emailAddress" : "manuel.meiborg@ptb.de"
+      }
+    ],
+    "statements" : [
+      {
+        "convention" : "Augenmaß",
+        "date" : "2022-11-11"
+      }
+    ]
+  },
+  "measurementResults" : [
+    {
+      "name" : {
+        "de" : "Längenmessung"
+      },
+      "usedMethods" : [
+        {
+          "name" : {
+            "de" : "Messung durch Gliedermaßstab"
+          }
+        }
+      ],
+      "results" : [
+        {
+          "name" : {
+            "de" : "Körpergröße"
+          },
+          "data" : [
+            {
+              "list" : {
+                "quantities" : [
+                  {
+                    "label" : "Länge",
+                    "dimension" : {
+                      "value" : 100.0,
+                      "unit" : "cm"
+                    },
+                    "quantityTypeName" : "real"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "influenceConditions" : [
+        {
+          "name" : {
+            "de" : "Temperatur"
+          },
+          "status" : "beforeAdjustment",
+          "data" : [
+            {
+              "list" : {
+                "quantities" : [
+                  {
+                    "name" : {
+                      "de" : "Umgebungstemperatur"
+                    },
+                    "dimension" : {
+                      "value" : 20.0,
+                      "unit" : "C"
+                    },
+                    "quantityTypeName" : "real"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "name" : {
+            "de" : "Zollstock, 200cm"
+          }
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : "3.3.0"
+}

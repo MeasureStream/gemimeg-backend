@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--ISO/IEC 17025:2017 7.8.2.1a-->
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcc="https://ptb.de/dcc"
+                                   xmlns:si="https://ptb.de/si"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://www.ptb.de/dcc/dcc.xsd https://ptb.de/si https://www.ptb.de/si/SI_Format.xsd"
+                                   schemaVersion="3.3.0">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>Notepad++</dcc:content>
+        </dcc:name>
+        <dcc:release>v8.5.2</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:refTypeDefinitions>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="en">general terms</dcc:content>
+        </dcc:name>
+        <dcc:namespace>basic</dcc:namespace>
+        <dcc:link>DCCWiki</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="en">mass terms</dcc:content>
+        </dcc:name>
+        <dcc:namespace>mass</dcc:namespace>
+        <dcc:link>DKD Expert report</dcc:link>
+      </dcc:refTypeDefinition>
+    </dcc:refTypeDefinitions>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>en</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>13412-adf2-3</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification refType="basic_orderNo">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>06.02.03#0002</dcc:value>
+          <dcc:name>
+            <dcc:content lang="en">File number</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:beginPerformanceDate>2019-04-01</dcc:beginPerformanceDate><!--ISO/IEC 17025:2017 7.8.2.1 i)-->
+      <dcc:endPerformanceDate>2019-06-28</dcc:endPerformanceDate><!--ISO/IEC 17025:2017 7.8.2.1 i)-->
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation><!--ISO/IEC 17025:2017 7.8.2.1 c)-->
+      <dcc:issueDate>2019-07-03</dcc:issueDate><!--ISO/IEC 17025:2017 7.8.2.1 j)-->
+    </dcc:coreData>
+    <dcc:items><!--ISO/IEC 17025:2017 7.8.2.1 g)-->
+      <dcc:name>
+        <dcc:content lang="en">1 OIML set of weights with 2 weights, 1 kg and 2 kg</dcc:content>
+      </dcc:name>
+      <dcc:equipmentClass>
+        <dcc:reference>OIML R111-1:2004</dcc:reference>
+        <dcc:classID>E2</dcc:classID>
+      </dcc:equipmentClass>
+      <dcc:description>
+        <dcc:content lang="en">Case The weights are accommodated in a box of varnished wood; the calibration mark is
+          applied to the box.
+        </dcc:content>
+      </dcc:description>
+      <dcc:manufacturer>
+        <dcc:name>
+          <dcc:content>Weights Co Ltd.</dcc:content>
+        </dcc:name>
+      </dcc:manufacturer>
+      <dcc:identifications>
+        <dcc:identification refType="basic_serialNo">
+          <dcc:issuer>manufacturer</dcc:issuer>
+          <dcc:value>xyz1234567</dcc:value>
+          <dcc:name>
+            <dcc:content lang="en">Serial Number</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="en">1 kg</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="en">Description of box/case (optional)</dcc:content>
+        </dcc:description>
+        <dcc:identifications>
+          <dcc:identification refType="basic_marking">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>**</dcc:value>
+            <dcc:name>
+              <dcc:content lang="en">marking</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification refType="mass_setPositionNo">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>01A4</dcc:value>
+            <dcc:name>
+              <dcc:content lang="en">set position number</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+        <dcc:itemQuantities>
+          <dcc:itemQuantity refType="basic_nominalValue">
+            <dcc:name>
+              <dcc:content lang="en">Nominal mass</dcc:content>
+            </dcc:name>
+            <si:real>
+              <si:value>1</si:value>
+              <si:unit>\kilogram</si:unit>
+            </si:real>
+          </dcc:itemQuantity>
+        </dcc:itemQuantities>
+      </dcc:item>
+      <dcc:item id="WeighingInstrument1">
+        <dcc:name>
+          <dcc:content lang="en">2 kg</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="en">Description of box/case (optional)</dcc:content>
+        </dcc:description>
+        <dcc:identifications>
+          <dcc:identification refType="basic_marking">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>-</dcc:value>
+            <dcc:name>
+              <dcc:content lang="en">marking</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification refType="mass_setPositionNo">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>87B3</dcc:value>
+            <dcc:name>
+              <dcc:content lang="en">set position number</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+        <dcc:itemQuantities>
+          <dcc:itemQuantity refType="basic_nominalValue" refId="WeighingInstrument1">
+            <dcc:name>
+              <dcc:content lang="en">Nominal mass</dcc:content>
+            </dcc:name>
+            <si:real>
+              <si:value>2</si:value>
+              <si:unit>\kilogram</si:unit>
+            </si:real>
+          </dcc:itemQuantity>
+        </dcc:itemQuantities>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory><!--ISO/IEC 17025:2017 7.8.2.1 b)-->
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content>Physikalisch-Technische Bundesanstalt (PTB)</dcc:content>
+        </dcc:name>
+        <dcc:eMail>info@ptb.de</dcc:eMail>
+        <dcc:location>
+          <dcc:further>
+            <dcc:content lang="en">Division 1 Mechanics and Acoustics</dcc:content>
+          </dcc:further>
+          <dcc:street>Bundesallee</dcc:street>
+          <dcc:streetNo>100</dcc:streetNo>
+          <dcc:postCode>38116</dcc:postCode>
+          <dcc:city>Braunschweig</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Michael</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@ptb.de</dcc:eMail>
+        </dcc:person>
+        <dcc:role>authorisation of certificate</dcc:role>
+        <dcc:mainSigner>true</dcc:mainSigner><!--ISO/IEC 17025:2017 7.8.2.1 o)-->
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content>Customer</dcc:content>
+      </dcc:name>
+      <dcc:location>
+        <dcc:streetNo>6</dcc:streetNo>
+        <dcc:street>Hello Street</dcc:street>
+        <dcc:postCode>10</dcc:postCode>
+        <dcc:city>Braunschweig</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:declaration><!--ISO/IEC 17025:2017 7.8.2.1 l)-->
+          <dcc:content lang="en">The results refer only to the object calibrated in this DCC.</dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement refType="basic_isInCMC"><!--ISO/IEC 17025:2017 7.8.4.1 c)-->
+        <dcc:reference>D-K-xxxxx-yy-zz</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="en">This calibration certificate documents the metrologicaltraceability to national
+            standards, which realize the units of measurement according to the International System of Units (SI).
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:valid>true</dcc:valid>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content>DAkkS</dcc:content>
+          </dcc:name>
+          <dcc:eMail>kontakt@dakks.de</dcc:eMail>
+          <dcc:phone>+49 (0)30 670591-0</dcc:phone>
+          <dcc:link>https://www.dakks.de/</dcc:link>
+          <dcc:location>
+            <dcc:street>Bundesallee 100</dcc:street>
+            <dcc:city>Braunschweig</dcc:city>
+            <dcc:postCode>38116</dcc:postCode>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:respAuthority>
+      </dcc:statement>
+      <dcc:statement><!--ISO/IEC 17025:2017 7.8.4.3-->
+        <dcc:declaration>
+          <dcc:content lang="en">The measurement results are valid at the time of calibration. The user is responsible
+            for arranging a recalibration in due time.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement refType="basic_decisionRule">
+        <dcc:reference>OIML R111-1:2004</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="en">binary</dcc:content>
+        </dcc:declaration>
+        <dcc:data>
+          <dcc:quantity refType="basic_minTUR">
+            <dcc:name>
+              <dcc:content lang="en">Minimum allowed Test Uncertainty ratio - for smaller TUR values, no conformity
+                statement is made
+              </dcc:content>
+            </dcc:name>
+            <si:real>
+              <si:value>3</si:value>
+              <si:unit>\one</si:unit>
+            </si:real>
+          </dcc:quantity>
+          <dcc:formula refType="basic_guardBand">
+            <dcc:latex>w=U</dcc:latex>
+          </dcc:formula>
+        </dcc:data>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="en">mass calibration</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <!--ISO/IEC 17025:2017 7.8.2.1 f)-->
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="en">Determination of the conventional weighing value</dcc:content>
+          </dcc:name>
+          <dcc:norm>OIML R111-1:2004</dcc:norm>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="basic_uncertainty">
+          <dcc:name>
+            <dcc:content lang="en">Measurement uncertainty</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="en">The reported expanded uncertainty is stated as the standard uncertainty multiplied by
+              a coverage factor k=2.
+              The coverage factor k=2 for a normal distribution corresponds to a coverage probability of approx. 95 %.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>EA-4/02 M:2022</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:influenceConditions>
+        <!--ISO/IEC 17025:2017 7.8.4.1 b)-->
+        <dcc:influenceCondition refType="mass_density">
+          <dcc:name>
+            <dcc:content lang="en">Density</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <!--ISO/IEC 17025:2017 7.8.2.1 p)-->
+              <dcc:content lang="en">Certificate XXXXX by yyyy dated YYYY-MM-DD</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>1.82-2017 qwe-1</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+          </dcc:certificate>
+          <dcc:data>
+            <dcc:quantity refType="basic_referencedValue">
+              <si:real>
+                <si:value>8010</si:value>
+                <si:unit>\kilogram\metre\tothe(-3)</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>30</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="en">temperature</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>294.05</si:value>
+                <si:unit>\kelvin</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.50</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="mass_airDensity">
+          <dcc:name>
+            <dcc:content lang="en">air density</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>1.1635</si:value>
+                <si:unit>\kilogram\metre\tothe(-3)</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.0035</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_relativeHumidity">
+          <dcc:name>
+            <dcc:content lang="en">relative humidity</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>0.417</si:value>
+                <si:unit>\one</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.020</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results><!--ISO/IEC 17025:2017 7.8.2.1 m)-->
+        <dcc:result refType="mass_conventionalMass basic_isInCMC">
+          <dcc:name>
+            <dcc:content lang="en">Conventional mass</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_nominalValue">
+              <dcc:name>
+                <dcc:content lang="en">Nominal value</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>2</si:value>
+                <si:unit>\kilogram</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_measuredValue">
+              <si:real>
+                <si:value>2.00000020</si:value>
+                <si:unit>\kilogram</si:unit>
+                <si:expandedUnc><!--ISO/IEC 17025:2017 7.8.4.1 a)-->
+                  <si:uncertainty>0.00000053</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_conformity"><!--ISO/IEC 17025:2017 7.8.4.1 e)-->
+                  <dcc:convention>section 5.3.2</dcc:convention>
+                  <dcc:norm>OIML R111-1:2004</dcc:norm>
+                  <dcc:conformity>pass</dcc:conformity>
+                  <dcc:data>
+                    <dcc:quantity refType="basic_toleranceLimitLower">
+                      <si:real>
+                        <si:value>1.999997</si:value>
+                        <si:unit>\kilogram</si:unit>
+                      </si:real>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_toleranceLimitUpper">
+                      <si:real>
+                        <si:value>2.000003</si:value>
+                        <si:unit>\kilogram</si:unit>
+                      </si:real>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_measurementError">
+              <si:real>
+                <si:value>0.0000002</si:value>
+                <si:unit>\kilogram</si:unit>
+                <si:expandedUnc><!--ISO/IEC 17025:2017 7.8.4.1 a)-->
+                  <si:uncertainty>0.00000053</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="en">mass calibration weight 2</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <!--ISO/IEC 17025:2017 7.8.2.1 f)-->
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="en">Determination of the conventional weighing value</dcc:content>
+          </dcc:name>
+          <dcc:norm>OIML R111-1:2004</dcc:norm>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="basic_uncertainty">
+          <dcc:name>
+            <dcc:content lang="en">Measurement uncertainty</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="en">The reported expanded uncertainty is stated as the standard uncertainty multiplied by
+              a coverage factor k=2.
+              The coverage factor k=2 for a normal distribution corresponds to a coverage probability of approx. 95 %.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>EA-4/02 M:2022</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="mass_density">
+          <dcc:name>
+            <dcc:content lang="en">Density</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <!--ISO/IEC 17025:2017 7.8.2.1 p)-->
+              <dcc:content lang="en">Certificate XXXXX by yyyy dated YYYY-MM-DD</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>1.82-2017 qwe-1</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+          </dcc:certificate>
+          <dcc:data>
+            <dcc:quantity refType="basic_referencedValue">
+              <si:real>
+                <si:value>8010</si:value>
+                <si:unit>\kilogram\metre\tothe(-3)</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>30</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="en">temperature</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>294.05</si:value>
+                <si:unit>\kelvin</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.50</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="mass_airDensity">
+          <dcc:name>
+            <dcc:content lang="en">air pressure</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>1.1635</si:value>
+                <si:unit>\kilogram\metre\tothe(-3)</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.0035</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_relativeHumidity">
+          <dcc:name>
+            <dcc:content lang="en">relative humidity</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_mean">
+              <si:real>
+                <si:value>0.417</si:value>
+                <si:unit>\one</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.020</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result refType="mass_conventionalMass basic_isInCMC">
+          <dcc:name>
+            <dcc:content lang="en">Conventional mass</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_nominalValue">
+              <dcc:name>
+                <dcc:content lang="en">Nominal value</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\kilogram</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_measuredValue">
+              <si:real>
+                <si:value>1.00000012</si:value>
+                <si:unit>\kilogram</si:unit>
+                <si:expandedUnc><!--ISO/IEC 17025:2017 7.8.4.1 a)-->
+                  <si:uncertainty>0.00000030</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_conformity"><!--ISO/IEC 17025:2017 7.8.4.1 e)-->
+                  <dcc:convention>section 5.3.2</dcc:convention>
+                  <dcc:norm>OIML R111-1:2004</dcc:norm>
+                  <dcc:conformity>pass</dcc:conformity>
+                  <dcc:data>
+                    <dcc:quantity refType="basic_toleranceLimitLower">
+                      <si:real>
+                        <si:value>0.9999984</si:value>
+                        <si:unit>\kilogram</si:unit>
+                      </si:real>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_toleranceLimitUpper">
+                      <si:real>
+                        <si:value>1.0000016</si:value>
+                        <si:unit>\kilogram</si:unit>
+                      </si:real>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_measurementError">
+              <si:real>
+                <si:value>0.0000001</si:value>
+                <si:unit>\kilogram</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.0000003</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate><!--ISO/IEC 17025:2017 7.8.2.1 d)-->

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                   xmlns:dcc="https://ptb.de/dcc"
+                                   xmlns:si="https://ptb.de/si"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   schemaVersion="3.3.0">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>GEMIMEG Tool</dcc:content>
+        </dcc:name>
+        <dcc:release>v1.0.0</dcc:release>
+      </dcc:software>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>OP-Layer DCC</dcc:content>
+        </dcc:name>
+        <dcc:release>v0.1.0</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>DCC_Laenge_Simple</dcc:uniqueIdentifier>
+      <dcc:receiptDate>2022-11-01</dcc:receiptDate>
+      <dcc:beginPerformanceDate>2022-11-11</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>2022-11-11</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratoryBranch</dcc:performanceLocation>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:name>
+        <dcc:content lang="de">Ein PTBist</dcc:content>
+      </dcc:name>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="de">PTBist</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content lang="de">unbekannt</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:model>Mitarbeiter</dcc:model>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>other</dcc:issuer>
+            <dcc:value>123</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Personalnummer</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content lang="de">Messstation Thementag</dcc:content>
+        </dcc:name>
+        <dcc:eMail>manuel.meiborg@ptb.de</dcc:eMail>
+        <dcc:location>
+          <dcc:city>Braunschweig</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content lang="de">Samuel Eickelberg</dcc:content>
+          </dcc:name>
+          <dcc:eMail>samuel.eickelberg@ptb.de</dcc:eMail>
+          <dcc:phone>+49 30 34817760</dcc:phone>
+        </dcc:person>
+        <dcc:role>Entwickler</dcc:role>
+        <dcc:mainSigner>true</dcc:mainSigner>
+        <dcc:cryptElectronicSignature>true</dcc:cryptElectronicSignature>
+      </dcc:respPerson>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content lang="de">Manuel Meiborg</dcc:content>
+          </dcc:name>
+          <dcc:eMail>manuel.meiborg@ptb.de</dcc:eMail>
+          <dcc:phone>+49 30 34819416</dcc:phone>
+        </dcc:person>
+        <dcc:role>Entwickler</dcc:role>
+        <dcc:cryptElectronicSeal>true</dcc:cryptElectronicSeal>
+        <dcc:cryptElectronicSignature>true</dcc:cryptElectronicSignature>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content lang="de">PTBist</dcc:content>
+      </dcc:name>
+      <dcc:eMail>info@ptb.de</dcc:eMail>
+      <dcc:location>
+        <dcc:city>Braunschweig</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+        <dcc:convention>Augenmaß</dcc:convention>
+        <dcc:traceable>true</dcc:traceable>
+        <dcc:valid>true</dcc:valid>
+        <dcc:date>2022-11-11</dcc:date>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Längenmessung</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Messung durch Gliedermaßstab</dcc:content>
+          </dcc:name>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">Zollstock, 200cm</dcc:content>
+          </dcc:name>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition>
+          <dcc:name>
+            <dcc:content lang="de">Temperatur</dcc:content>
+          </dcc:name>
+          <dcc:status>beforeAdjustment</dcc:status>
+          <dcc:data>
+            <dcc:list>
+              <dcc:quantity>
+                <dcc:name>
+                  <dcc:content lang="de">Umgebungstemperatur</dcc:content>
+                </dcc:name>
+                <si:real>
+                  <si:value>20</si:value>
+                  <si:unit>C</si:unit>
+                </si:real>
+              </dcc:quantity>
+            </dcc:list>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Körpergröße</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:list>
+              <dcc:quantity>
+                <si:real>
+                  <si:label>Länge</si:label>
+                  <si:value>100</si:value>
+                  <si:unit>cm</si:unit>
+                </si:real>
+              </dcc:quantity>
+            </dcc:list>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

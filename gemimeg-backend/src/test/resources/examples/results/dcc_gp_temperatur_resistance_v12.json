@@ -1,0 +1,688 @@
+{
+  "administrativeData" : {
+    "dccSoftware" : [
+      {
+        "name" : {
+          "**" : "Notepad++ (32-bit)"
+        },
+        "version" : "v 8.2"
+      }
+    ],
+    "customer" : {
+      "name" : {
+        "**" : "Kunde GmbH"
+      },
+      "location" : {
+        "countryCode" : "DE",
+        "city" : "Musterstadt",
+        "postalCode" : "00900",
+        "additionalInformation" : {
+          "textContent" : {
+            "de" : "Kunden Nr. 1024418",
+            "en" : "Customer ID no. 1024418"
+          }
+        }
+      },
+      "emailAddress" : "info@kunde.xx"
+    },
+    "calibrationLaboratory" : {
+      "contact" : {
+        "name" : {
+          "**" : "Kalibrierfirma GmbH"
+        },
+        "phoneNumber" : "+49 123 4567-89",
+        "location" : {
+          "countryCode" : "DE",
+          "city" : "Musterstadt",
+          "postalCode" : "00900",
+          "street" : "Musterstraße",
+          "houseNumber" : "1",
+          "additionalInformation" : {
+            "textContent" : {
+              "**" : "www.kalibrierfirma.xx"
+            }
+          }
+        },
+        "emailAddress" : "info@kalibrierfirma.xx"
+      }
+    },
+    "items" : [
+      {
+        "name" : {
+          "de" : "Platin-Widerstands Thermometer (Pt100)",
+          "en" : "Platinum resistance thermometer (Pt100)"
+        },
+        "model" : "String",
+        "manufacturer" : {
+          "name" : {
+            "**" : "String"
+          }
+        },
+        "identifications" : [
+          {
+            "name" : {
+              "de" : "Serien Nr.",
+              "en" : "Serial no."
+            },
+            "issuer" : "manufacturer",
+            "value" : "string-manufacturer-item"
+          },
+          {
+            "name" : {
+              "de" : "Messmittel Nr.",
+              "en" : "Measurement equipment no."
+            },
+            "issuer" : "customer",
+            "value" : "string-customer-item"
+          },
+          {
+            "name" : {
+              "de" : "Equipment Nr.",
+              "en" : "Equipment no."
+            },
+            "issuer" : "calibrationLaboratory",
+            "value" : "string-calibrationLaboratory-item"
+          }
+        ]
+      }
+    ],
+    "uniqueIdentifier" : "GP_DCC_temperature_resistance_1.2",
+    "countryCode" : "DE",
+    "languageCodes" : [
+      "de",
+      "en"
+    ],
+    "startDate" : "1957-08-13",
+    "endDate" : "1957-08-13",
+    "performanceLocation" : "laboratory",
+    "responsiblePersons" : [
+      {
+        "name" : {
+          "**" : "Michaela Musterfrau"
+        }
+      },
+      {
+        "name" : {
+          "**" : "Michael Mustermann"
+        }
+      }
+    ],
+    "statements" : [
+      {
+        "norms" : [
+          "ISO/IEC 17025:2018-03"
+        ],
+        "declaration" : {
+          "textContent" : {
+            "de" : "Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Es obliegt dem Antragsteller, zu\n            gegebener Zeit eine Rekalibrierung zu veranlassen.\n          ",
+            "en" : "The results refer only to the object calibrated in this DCC. The measurement results\n            are valid at the time of calibration. The applicant is responsible for arranging a recalibration in due\n            time.\n          "
+          }
+        }
+      },
+      {
+        "data" : [
+          {
+            "quantity" : {
+              "refTypes" : [
+                "basic_validityRangeMin"
+              ],
+              "name" : {
+                "de" : "Unteres Limit",
+                "en" : "Lower limit"
+              },
+              "dimension" : {
+                "value" : 273.0,
+                "unit" : "\\kelvin"
+              },
+              "quantityTypeName" : "real"
+            }
+          },
+          {
+            "quantity" : {
+              "refTypes" : [
+                "basic_validityRangeMax"
+              ],
+              "name" : {
+                "de" : "Oberes Limit",
+                "en" : "Upper limit"
+              },
+              "dimension" : {
+                "value" : 333.0,
+                "unit" : "\\kelvin"
+              },
+              "quantityTypeName" : "real"
+            }
+          }
+        ],
+        "declaration" : {
+          "textContent" : {
+            "de" : "Specification of the temperature range in which the constants are valid:"
+          }
+        }
+      },
+      {
+        "date" : "1959-10-22",
+        "declaration" : {
+          "textContent" : {
+            "de" : "Date when the calibration item is to be recalibrated at the latest according to the\n            customer's specification:\n          "
+          }
+        }
+      }
+    ]
+  },
+  "measurementResults" : [
+    {
+      "name" : {
+        "**" : "Messergebnisse"
+      },
+      "usedMethods" : [
+        {
+          "refTypes" : [
+            "basic_uncertainty"
+          ],
+          "name" : {
+            "de" : "Erweiterte Messunsicherheit",
+            "en" : "Expanded uncertainty"
+          },
+          "norms" : [
+            "GUM"
+          ],
+          "description" : {
+            "textContent" : {
+              "de" : "Angegeben ist die erweiterte Messunsicherheit, die sich aus der\n              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k=2 ergibt. Sie wurde gemäß dem\n              „Guide to the Expression of Uncertainty in Measurement (GUM)“ ermittelt. Der Wert der Messgröße liegt dann\n              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.\n            ",
+              "en" : "The expanded uncertainty was calculated from the contributions of uncertainty\n              originating from the standards used, from the weighings and the air buoyancy corrections. The reported\n              uncertainty does not include an estimate of long-term variations.\n            "
+            }
+          }
+        },
+        {
+          "refTypes" : [
+            "gp_resistanceThermometer"
+          ],
+          "name" : {
+            "de" : "Kalibrierung von Widerstandsthermometern",
+            "en" : "Calibration of resistance thermometers"
+          },
+          "norms" : [
+            "DKD-R 5-1:2018"
+          ]
+        },
+        {
+          "refTypes" : [
+            "gp_dinEn60751"
+          ],
+          "name" : {
+            "**" : "Koeffizienten"
+          },
+          "norms" : [
+            "DIN EN 60751"
+          ],
+          "description" : {
+            "textContent" : {
+              "de" : "Die Koeffizienten wurden gemäß der Callendar–Van-Dusen - Gleichung bestimmt.\n            ",
+              "en" : "The coefficients were determined according to the Callendar–Van-Dusen - equation.\n            "
+            }
+          }
+        }
+      ],
+      "results" : [
+        {
+          "refTypes" : [
+            "gp_measuringResult1"
+          ],
+          "name" : {
+            "de" : "Messergebnisse",
+            "en" : "Measuring results"
+          },
+          "data" : [
+            {
+              "list" : {
+                "refTypes" : [
+                  "gp_table1"
+                ],
+                "quantities" : [
+                  {
+                    "refTypes" : [
+                      "basic_referenceValue"
+                    ],
+                    "name" : {
+                      "de" : "Referenzwert",
+                      "en" : "Reference value"
+                    },
+                    "quantityTypeName" : "hybrid",
+                    "hybridValues" : {
+                      "dimensions" : [
+                        {
+                          "value" : 273.149,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 283.151,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 293.151,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 303.149,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 313.149,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 323.149,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 333.15,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 303.151,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : 273.151,
+                          "unit" : "\\kelvin"
+                        },
+                        {
+                          "value" : -0.001,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 10.001,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 20.001,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 29.999,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 39.999,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 49.999,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 60.0,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 30.001,
+                          "unit" : "\\degreecelsius"
+                        },
+                        {
+                          "value" : 0.001,
+                          "unit" : "\\degreecelsius"
+                        }
+                      ],
+                      "quantitySubTypeNames" : [
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList",
+                        "realListXMLList"
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "basic_measuredValue"
+                    ],
+                    "name" : {
+                      "de" : "Angezeigter Messwert Kalibriergegenstand",
+                      "en" : "Indicated measured value probe"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 100.022,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 103.9329,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 107.83,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 111.713,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 115.5841,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 119.4422,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 123.288,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 111.7131,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        },
+                        {
+                          "value" : 100.0224,
+                          "unit" : "\\kilogram\\metre\\tothe{2}\\ampere\\tothe{-2}\\second\\tothe{-3}"
+                        }
+                      ],
+                      "uncertainties" : [
+                        {
+                          "uncertainty" : 0.0039,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0041,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0042,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0044,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0045,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0047,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0048,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0044,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        },
+                        {
+                          "uncertainty" : 0.0039,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "gp_coefficients"
+          ],
+          "name" : {
+            "de" : "Koeffizienten",
+            "en" : "Coefficients"
+          },
+          "data" : [
+            {
+              "list" : {
+                "refTypes" : [
+                  "gp_table2"
+                ],
+                "quantities" : [
+                  {
+                    "label" : "R0",
+                    "dimension" : {
+                      "value" : 100.0225,
+                      "unit" : "\\kilogram\\metre\\tothe{2}\\second\\tothe{-3}\\ampere\\tothe{-2}"
+                    },
+                    "quantityTypeName" : "real",
+                    "description" : {
+                      "formulaContent" : {
+                        "content" : "Ul97MH0=",
+                        "type" : "LATEX"
+                      }
+                    }
+                  },
+                  {
+                    "label" : "A",
+                    "dimension" : {
+                      "value" : 0.0039155,
+                      "unit" : "\\kelvin\\tothe{-1}"
+                    },
+                    "quantityTypeName" : "real",
+                    "description" : {
+                      "formulaContent" : {
+                        "content" : "QQ==",
+                        "type" : "LATEX"
+                      }
+                    }
+                  },
+                  {
+                    "label" : "B",
+                    "dimension" : {
+                      "value" : -6.469E-7,
+                      "unit" : "\\kelvin\\tothe{-2}"
+                    },
+                    "quantityTypeName" : "real",
+                    "description" : {
+                      "formulaContent" : {
+                        "content" : "Qg==",
+                        "type" : "LATEX"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "influenceConditions" : [
+        {
+          "refTypes" : [
+            "gp_current"
+          ],
+          "name" : {
+            "de" : "Stromstärke",
+            "en" : "Current"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Die in den Kalibriergegenstand eingeprägte Stromstärke betrug 1 mA.",
+              "en" : "The current applied in the calibration item was 1 mA."
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "label" : "Stromstärke",
+                "dimension" : {
+                  "value" : 0.001,
+                  "unit" : "\\ampere"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "gp_immersionDepth"
+          ],
+          "name" : {
+            "de" : "Eintauchtiefe im Wasserbad",
+            "en" : "Immersion depth in water bath"
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Eintauchtiefe",
+                  "en" : "Immersion depth"
+                },
+                "dimension" : {
+                  "value" : 0.1,
+                  "unit" : "\\metre"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "basic_temperature"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung Temperatur",
+            "en" : "Ambient condition temperature"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Diese Werte wurden nicht gemessen, sondern wurden anhand der typischen\n              Wetterbedingungen zu einer Jahreszeit angegeben.\n            ",
+              "en" : "These values were not measured, but were given based on typical weather conditions at\n              a time of year.\n            "
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_temperatureMin"
+                ],
+                "name" : {
+                  "de" : "Temperatur min",
+                  "en" : "temperature min"
+                },
+                "dimension" : {
+                  "value" : 293.0,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real"
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_temperatureMax"
+                ],
+                "name" : {
+                  "de" : "Temperatur max",
+                  "en" : "temperature max"
+                },
+                "dimension" : {
+                  "value" : 299.0,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "basic_humidityRelative"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung relative Luftfeuchte",
+            "en" : "Ambient condition relative humidity"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Diese Werte wurden nicht gemessen, sondern wurden anhand der typischen\n              Wetterbedingungen zu einer Jahreszeit angegeben.\n            ",
+              "en" : "These values were not measured, but were given based on typical weather conditions at\n              a time of year.\n            "
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_humidityRelativeMin"
+                ],
+                "name" : {
+                  "de" : "Feuchte min",
+                  "en" : "humidity min"
+                },
+                "dimension" : {
+                  "value" : 0.2,
+                  "unit" : "\\one"
+                },
+                "quantityTypeName" : "real"
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "basic_humidityRelativeMax"
+                ],
+                "name" : {
+                  "de" : "Feuchte max",
+                  "en" : "humidity max"
+                },
+                "dimension" : {
+                  "value" : 0.7,
+                  "unit" : "\\one"
+                },
+                "quantityTypeName" : "real"
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "name" : {
+            "de" : "Pt 100 Widerstandsthermometer",
+            "en" : "Pt 100 thermometer"
+          },
+          "identifications" : [
+            {
+              "issuer" : "manufacturer",
+              "value" : "string-manufacturer-measuringEquipment"
+            }
+          ],
+          "certificateValue" : "analogue",
+          "certificateReferral" : {
+            "**" : "www.kalibrierfirma.xx/certificate-download"
+          },
+          "certificateReferralId" : "GP-mE-Certificate",
+          "certificateProcedure" : "analogue"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : "3.3.0"
+}

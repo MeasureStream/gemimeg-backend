@@ -1,0 +1,1377 @@
+{
+  "administrativeData" : {
+    "dccSoftware" : [
+      {
+        "name" : {
+          "**" : "GEMIMEG Tool"
+        },
+        "version" : "v1.1.2"
+      },
+      {
+        "name" : {
+          "**" : "dccTableTool"
+        },
+        "version" : "0.2.1"
+      }
+    ],
+    "customer" : {
+      "name" : {
+        "**" : "Accelerator Meas GmbH"
+      },
+      "location" : {
+        "countryCode" : "DE",
+        "city" : "Musterstadt",
+        "postalCode" : "42420",
+        "street" : "Hirschbach im Mühlkreis",
+        "houseNumber" : "42"
+      },
+      "emailAddress" : "info@acclemeas.de"
+    },
+    "calibrationLaboratory" : {
+      "contact" : {
+        "name" : {
+          "**" : "Physikalisch Technische Bundesanstalt AG 1.71 Darstellung Beschleunigung"
+        },
+        "phoneNumber" : "+49 531 592 1223",
+        "location" : {
+          "countryCode" : "DE",
+          "city" : "Braunschweig",
+          "postalCode" : "38116",
+          "street" : "Bundesallee",
+          "houseNumber" : "100"
+        },
+        "emailAddress" : "acceleration@ptb.de"
+      }
+    },
+    "items" : [
+      {
+        "name" : {
+          "de" : "Beschleunigungsaufnehmer-Bezugsnormal",
+          "en" : "Acceleration reference standard sensor"
+        },
+        "model" : "8305",
+        "manufacturer" : {
+          "name" : {
+            "**" : "Brüel Kjær Dänemark"
+          }
+        },
+        "identifications" : [
+          {
+            "name" : {
+              "de" : "Serien Nr.",
+              "en" : "Serial no."
+            },
+            "issuer" : "manufacturer",
+            "value" : "1842876"
+          }
+        ]
+      }
+    ],
+    "uniqueIdentifier" : "PTB-17042-2022",
+    "countryCode" : "DE",
+    "languageCodes" : [
+      "de",
+      "en"
+    ],
+    "receiptDate" : "2022-09-06",
+    "startDate" : "2022-07-08",
+    "endDate" : "2022-07-08",
+    "performanceLocation" : "laboratory",
+    "responsiblePersons" : [
+      {
+        "name" : {
+          "**" : "Dr.-Ing. Leonard Klaus"
+        }
+      },
+      {
+        "name" : {
+          "**" : "Dipl.-Ing (FH) Denis Nordmann"
+        }
+      }
+    ],
+    "statements" : [
+      {
+        "norms" : [
+          "DIN EN ISO/IEC 17025"
+        ],
+        "declaration" : {
+          "textContent" : {
+            "de" : "Die Physikalisch-Technische Bundesanstalt (PTB) in Braunschweig und Berlin ist das\n            nationale Metrologieinstitut und die technische Oberbehörde der Bundesrepublik Deutschland für das\n            Messwesen. Die PTB gehört zum Geschäftsbereich des Bundesministeriums für Wirtschaft und\n            Klimaschutz. Sie erfüllt die Anforderungen an Kalibrier- und Prüflaboratorien auf der Grundlage der\n            DIN EN ISO/IEC 17025.\n            Zentrale Aufgabe der PTB ist es, die gesetzlichen Einheiten in Übereinstimmung mit dem\n            Internationalen Einheitensystem (SI) darzustellen, zu bewahren und weiterzugeben. Die PTB steht\n            damit an oberster Stelle der metrologischen Hierarchie in Deutschland. Die Kalibrierscheine der PTB\n            dokumentieren eine auf nationale Normale rückgeführte Kalibrierung.\n            Dieser Ergebnisbericht ist in Übereinstimmung mit den Kalibrier- und Messmöglichkeiten (CMCs), wie\n            sie im Anhang C des gegenseitigen Abkommens (MRA) des Internationalen Komitees für Maße und\n            Gewichte enthalten sind. Im Rahmen des MRA wird die Gültigkeit der Ergebnisberichte von allen\n            teilnehmenden Instituten für die im Anhang C spezifizierten Messgrößen, Messbereiche und\n            Messunsicherheiten gegenseitig anerkannt (nähere Informationen unter http://www.bipm.org).\n            Diese Aussage und das CIPM-MRA-Logo beziehen sich nur auf die Messergebnisse in diesem\n            Kalibrierschein.\n          ",
+            "en" : "The Physikalisch-Technische Bundesanstalt (PTB) in Braunschweig and Berlin is the\n            National Metrology Institute and the supreme technical authority of the Federal Republic of Germany\n            for metrology. The PTB comes under the auspices of the Federal Ministry for Economic Affairs and\n            Climate Action. It meets the requirements for calibration and testing laboratories as defined in\n            DIN EN ISO/IEC 17025.\n            The central task of PTB is to realize, to maintain and to disseminate the legal units in compliance with\n            the International System of Units (SI). PTB thus is at the top of the metrological hierarchy in Germany.\n            The calibration certificates issued by PTB document a calibration traceable to national measurement\n            standards.\n            This certificate is consistent with the Calibration and Measurement Capabilities (CMCs) that are\n            included in Appendix C of the Mutual Recognition Arrangement (MRA) drawn up by the International\n            Committee for Weights and Measures (CIPM). Under the MRA, all participating institutes recognize\n            the validity of each other’s calibration and measurement certificates for the quantities, ranges and\n            measurement uncertainties specified in Appendix C (for details, see http://www.bipm.org).\n            The CIPM MRA Logo and this statement attest only to the measurement component of the certificate\n          "
+          }
+        }
+      }
+    ]
+  },
+  "measurementResults" : [
+    {
+      "name" : {
+        "de" : "Messergebnisse",
+        "en" : "Measurement results"
+      },
+      "usedMethods" : [
+        {
+          "refTypes" : [
+            "basic_uncertainty"
+          ],
+          "name" : {
+            "de" : "Erweiterte Messunsicherheit",
+            "en" : "Expanded uncertainty"
+          },
+          "norms" : [
+            "GUM"
+          ],
+          "description" : {
+            "textContent" : {
+              "de" : "Angegeben ist die erweiterte Messunsicherheit, die sich aus der\n              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k=2 ergibt. Sie wurde gemäß dem\n              „Guide to the Expression of Uncertainty in Measurement (GUM)“ ermittelt. Der Wert der Messgröße liegt dann\n              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.\n            ",
+              "en" : "The expanded uncertainty was calculated from the contributions of uncertainty\n              originating from the standards used, from the weighings and the air buoyancy corrections. The reported\n              uncertainty does not include an estimate of long-term variations.\n            "
+            }
+          }
+        },
+        {
+          "refTypes" : [
+            "vib_sineCalibration"
+          ],
+          "name" : {
+            "de" : "Primäre Schwingungskalibration durch Laserinterferometrie unter Verwendung von Sinus\n              Approximation\n            ",
+            "en" : "Primary vibration calibration with Laser Interferometry using Sine-approximation\n            "
+          },
+          "norms" : [
+            "ISO 16063-11 1999"
+          ],
+          "description" : {
+            "textContent" : {
+              "de" : "Das Beschleunigungsaufnehmer-Bezugsnormal wurde auf einem elektrodynamischen\n              Schwingungserreger, der mit einem luftgelagerten Schwingteil ausgerüstet ist, zu geradlinigen\n              sinusförmigen Schwingungen angeregt. Der Aufnehmer wurde als Single-Ended-Aufnehmer angekoppelt. Die\n              Montageflächen waren leicht eingefettet, das Anzugsdrehmoment betrug 2 N·m.\n              Die Schwingungsanregung erfolgte im Frequenzbereich von 10 Hz bis 10 kHz mit dem Schwingungserreger der\n              Hochfrequenz-Beschleunigungs-Normalmesseinrichtung (nationales Normal).\n              Die Messungen der Schwingwegamplitude und der Phasenverschiebung Δφqa des komplexen\n              Ladungsübertragungskoeffizienten Sqa wurden nach dem Sinusausgleichsverfahren ausgeführt. Um von den\n              Augenblickswerten des Schwingwegs zu der Amplitude und dem Nullphasenwinkel zu gelangen, wird die\n              Approximation mit einem Sinusansatz durchgeführt. Mit einem rechnergestützten Transientenrekorder werden\n              das zweikanalige Interferometer-Ausgangssignal und das Ausgangssignal der Normal-Messkette synchron\n              erfasst.\n              Das Kalibrierverfahren ist in Übereinstimmung mit der entsprechenden Norm ISO 16063-11:1999.\n              Die auf den Aufnehmer einwirkende Beschleunigung wurde aus der gemessenen Schwingwegamplitude und der\n              bekannten Anregungsfrequenz berechnet.\n              Der Betrag Sqa des komplexen Ladungsübertragungskoeffizienten Sqa ergibt sich als Verhältnis der Amplitude\n              der Ausgangsspannung der Normal-Messkette zur Amplitude der Anregungsbeschleunigung. Die Ausgangsladung\n              des Aufnehmers wurde mit Hilfe eines kalibrierten Normal-Ladungsverstärkers bestimmt.\n              Die Phasenverschiebung Δφqa des komplexen Ladungsübertragungskoeffizienten Sqa ergibt sich als Differenz\n              aus dem Nullphasenwinkel der Ausgangsladung φq und dem Nullphasenwinkel der Beschleunigung φa.\n              Entsprechend ISO 2041 ist die Phasenverschiebung definiert zu Δφqa = φq – φa. Der Beschleunigungsvektor\n              wird als positiv betrachtet, wenn er von seiner Montagefläche zum Beschleunigungs-aufnehmer gerichtet ist.\n            ",
+              "en" : "The accelerometer reference standard was excited to rectilinear sinusoidal vibrations\n              on an electrodynamic vibration exciter equipped with an air-bearing oscillating section. The transducer\n              was coupled as a single-ended transducer. The mounting surfaces were lightly greased, and the tightening\n              torque was 2 N-m.\n              Vibration excitation was performed in the frequency range of 10 Hz to 10 kHz using the vibration exciter\n              of the high-frequency acceleration standard measuring device (national standard).\n              The measurements of the vibration displacement amplitude and the phase shift Δφqa of the complex charge\n              transfer coefficient Sqa were performed using the sinusoidal compensation method. In order to get from the\n              instantaneous values of the vibration displacement to the amplitude and zero phase angle, the\n              approximation is performed with a sinusoidal approach. A computerized transient recorder is used to\n              synchronously acquire the two-channel interferometer output signal and the output signal of the normal\n              measurement chain.\n              The calibration procedure is in accordance with the corresponding standard ISO 16063-11:1999.\n              The acceleration acting on the transducer was calculated from the measured vibration displacement\n              amplitude and the known excitation frequency.\n              The magnitude Sqa of the complex charge transfer coefficient Sqa is obtained as the ratio of the amplitude\n              of the output voltage of the normal electrode to the amplitude of the excitation acceleration. The output\n              charge of the transducer was determined using a calibrated normal charge amplifier.\n              The phase shift Δφqa of the complex charge transfer coefficient Sqa is obtained as the difference between\n              the zero phase angle of the output charge φq and the zero phase angle of the acceleration φa.\n              According to ISO 2041, the phase shift is defined as Δφqa = φq - φa. The acceleration vector is considered\n              positive if it is directed from its mounting surface to the accelerometer.\n            "
+            }
+          }
+        }
+      ],
+      "results" : [
+        {
+          "refTypes" : [
+            "vib_chargeTransferFunction"
+          ],
+          "name" : {
+            "de" : "Ladungsübertragungsfunktion",
+            "en" : "Charge transfer function"
+          },
+          "data" : [
+            {
+              "list" : {
+                "refTypes" : [
+                  "basic_1IndexTable"
+                ],
+                "quantities" : [
+                  {
+                    "refTypes" : [
+                      "vib_frequency",
+                      "vib_nominalFrequency",
+                      "basic_TableIndex0"
+                    ],
+                    "name" : {
+                      "de" : "Frequenz",
+                      "en" : "Frequency"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 10.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 12.5,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 16.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 20.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 25.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 31.5,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 40.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 63.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 80.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 125.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 160.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 200.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 250.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 315.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 400.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 500.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 630.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 800.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 1000.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 1250.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 1600.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 2000.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 2500.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 3150.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 4000.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 5000.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 6300.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 8000.0,
+                          "unit" : "\\hertz"
+                        },
+                        {
+                          "value" : 10000.0,
+                          "unit" : "\\hertz"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "vib_nominalAccelerationAmplitude",
+                      "vib_accelerationAmplitude"
+                    ],
+                    "name" : {
+                      "de" : "Beschleunigungsamplitude",
+                      "en" : "Acceleration Amplitude"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 5.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 5.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 5.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 10.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 10.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 10.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 10.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 50.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        },
+                        {
+                          "value" : 100.0,
+                          "unit" : "\\metre\\per\\second\\tothe{2}"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "vib_magnitudeTransferCoefCharge"
+                    ],
+                    "name" : {
+                      "de" : "Ladungsübertragungskoeffizent Betrag",
+                      "en" : "Charge transfer coefficient magnitude"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13016,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13016,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13016,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13013,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13013,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13012,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13012,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13012,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13012,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13014,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13014,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13015,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13018,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13017,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13027,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13033,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13044,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13058,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13085,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13124,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13188,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.133,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.13467,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.1375,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.1429,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        },
+                        {
+                          "value" : 0.1497,
+                          "unit" : "\\pico\\coulomb\\per\\metre\\second\\tothe{-2}"
+                        }
+                      ],
+                      "uncertainties" : [
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 1.3E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 4.0E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 4.0E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 4.0E-4,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "refTypes" : [
+                      "vib_phase"
+                    ],
+                    "name" : {
+                      "de" : "Phasenverzögerung",
+                      "en" : "Phase delay"
+                    },
+                    "quantityTypeName" : "realListXMLList",
+                    "xmlValues" : {
+                      "values" : [
+                        {
+                          "value" : -3.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -4.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -4.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -3.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -2.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -3.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 2.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -2.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -2.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 5.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 3.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 1.0E-4,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : 0.0,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.034,
+                          "unit" : "\\radian"
+                        },
+                        {
+                          "value" : -0.002,
+                          "unit" : "\\radian"
+                        }
+                      ],
+                      "uncertainties" : [
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.0035,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        },
+                        {
+                          "uncertainty" : 0.009,
+                          "coverageFactor" : 2.0,
+                          "coverageProbability" : 0.95,
+                          "distribution" : "normal"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "influenceConditions" : [
+        {
+          "refTypes" : [
+            "vib_ambientTemperature"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung Temperatur",
+            "en" : "Ambient condition temperature"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Die Werte wurden während der Kalibrierung überwacht.",
+              "en" : "Values measured while calibration was performed."
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Raumtemperatur währenden der Kalibration",
+                  "en" : "Room temperature during calibration"
+                },
+                "dimension" : {
+                  "value" : 296.15,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real",
+                "uncertainty" : {
+                  "uncertainty" : 1.0,
+                  "coverageFactor" : 1.73,
+                  "coverageProbability" : 1.0,
+                  "distribution" : "rectangular"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "vib_ambientHumidityRelative"
+          ],
+          "name" : {
+            "de" : "Umgebungsbedingung relative Luftfeuchte",
+            "en" : "Ambient condition relative humidity"
+          },
+          "description" : {
+            "textContent" : {
+              "de" : "Die Werte wurden während der Kalibrierung überwacht.",
+              "en" : "Values measured while calibration was performed."
+            }
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Ungebungsluftfeuchtigkeit",
+                  "en" : "Ambient humidity"
+                },
+                "dimension" : {
+                  "value" : 60.0,
+                  "unit" : "\\percent"
+                },
+                "quantityTypeName" : "real",
+                "uncertainty" : {
+                  "uncertainty" : 15.0,
+                  "coverageFactor" : 1.73,
+                  "coverageProbability" : 1.0,
+                  "distribution" : "rectangular"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "vib_mountingConditions"
+          ],
+          "name" : {
+            "de" : "Sensormontagebediungen",
+            "en" : "Sensor mounting conditions"
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "vib_mountingTorque"
+                ],
+                "name" : {
+                  "de" : "Anzugdrehmoment",
+                  "en" : "mounting torque"
+                },
+                "dimension" : {
+                  "value" : 2.0,
+                  "unit" : "\\newton\\metre"
+                },
+                "quantityTypeName" : "real",
+                "uncertainty" : {
+                  "uncertainty" : 0.1,
+                  "coverageFactor" : 2.0,
+                  "coverageProbability" : 0.95,
+                  "distribution" : "normal"
+                }
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "vib_mountingLaserPositiones"
+                ],
+                "name" : {
+                  "de" : "Mounting of the sensore and laser spot position",
+                  "en" : "Ankopplung des Aufnehmers und Laser-Positionen"
+                },
+                "noQuantity" : {
+                  "textContent" : {
+                    "de" : "Die Ankopplung des Aufnehmers erfolgte als Single-Ended-Aufnehmer. Die\n                  Laserstrahlen der Interferometer wurden symmetrisch und diametral neben dem Aufnehmer auf das\n                  Schwingteil justiert.\n                ",
+                    "en" : "The transducer was coupled as a single-ended transducer. The laser beams of the\n                  interferometers were adjusted symmetrically and diametrically next to the transducer on the\n                  oscillating part.\n                "
+                  }
+                }
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "vib_orientationInGravityfield",
+                  "vib_OrientationInGravityfieldVertical"
+                ],
+                "name" : {
+                  "de" : "Ausrichtung im Erdschwerefeld",
+                  "en" : "Orientation in the earth gravity field"
+                },
+                "noQuantity" : {
+                  "name" : {
+                    "de" : "Ausrichtung im Erdschwerefeld",
+                    "en" : "Orientation in the earth gravity field"
+                  },
+                  "textContent" : {
+                    "de" : "vertikal",
+                    "en" : "vertical"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id" : "ConfigSet_a3548501",
+          "refTypes" : [
+            "vib_chargeAmplifyerConfSet"
+          ],
+          "name" : {
+            "de" : "Einstellungen des Ladungsverstärkers",
+            "en" : "Configuration of charge amplifier"
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Transducer Sensitivity"
+                },
+                "noQuantity" : {
+                  "textContent" : {
+                    "**" : "1,000 pC/Unit"
+                  }
+                }
+              }
+            },
+            {
+              "quantity" : {
+                "refTypes" : [
+                  "vib_chargeAmplifierLPFreq"
+                ],
+                "name" : {
+                  "de" : "Lower Frequency Limit"
+                },
+                "dimension" : {
+                  "value" : 0.3,
+                  "unit" : "\\hertz"
+                },
+                "quantityTypeName" : "real"
+              }
+            },
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Upper Frequency Limit"
+                },
+                "noQuantity" : {
+                  "textContent" : {
+                    "**" : "Lin"
+                  }
+                }
+              }
+            },
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Transducer Range (1-11 pC/Unit)"
+                },
+                "noQuantity" : {
+                  "textContent" : {
+                    "**" : "0,1 V/Unit out"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "vib_sensorTemperature"
+          ],
+          "name" : {
+            "de" : "Temperatur des Aufnehmers während der Kalibrierung",
+            "en" : "Sensor temperature during calibration"
+          },
+          "data" : [
+            {
+              "quantity" : {
+                "name" : {
+                  "de" : "Temperatur des Aufnehmers",
+                  "en" : "Sensor temperature"
+                },
+                "dimension" : {
+                  "value" : 296.15,
+                  "unit" : "\\kelvin"
+                },
+                "quantityTypeName" : "real",
+                "uncertainty" : {
+                  "uncertainty" : 1.0,
+                  "coverageFactor" : 1.73,
+                  "coverageProbability" : 1.0,
+                  "distribution" : "rectangular"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "equipment" : [
+        {
+          "refTypes" : [
+            "vib_chargeAmplifier"
+          ],
+          "name" : {
+            "de" : "Ladungsverstärker",
+            "en" : "Charge amplifier"
+          },
+          "model" : "Brüel Kjær 2650",
+          "identifications" : [
+            {
+              "name" : {
+                "de" : "Serien Nr.",
+                "en" : "Serial no."
+              },
+              "issuer" : "manufacturer",
+              "value" : "1502245"
+            }
+          ]
+        },
+        {
+          "refTypes" : [
+            "vib_vibrationExciter"
+          ],
+          "name" : {
+            "de" : "Schwingerreger",
+            "en" : "Vibration exciter"
+          },
+          "model" : "Spektra SE-09"
+        }
+      ]
+    }
+  ],
+  "schemaVersion" : "3.3.0"
+}

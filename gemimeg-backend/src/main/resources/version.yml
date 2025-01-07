@@ -1,0 +1,5 @@
+mvn:
+  pathPart: 'dcc'
+  artifactId: '@artifactId@'
+  version: '@version@'
+  timestamp: '@timestamp@'

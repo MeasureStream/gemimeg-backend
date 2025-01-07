@@ -1,0 +1,125 @@
+.flex {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+.cell {
+  padding: 10px;
+  border: 1px black solid;
+  margin:-1px 0 0 -1px;
+  white-space: nowrap;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #FFC107;
+  border-radius: 5px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.w-100 {
+  width: 100%
+}
+
+.mb-default {
+  margin-bottom: 10px !important;
+}
+
+.mt-default {
+  margin-top: 10px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+p {
+  margin: 0;
+}
+
+.heading {
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.sub-heading {
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+.administrative-data-table tr td {
+  vertical-align: top;
+}
+
+.administrative-data-table tr td:first-child {
+  width: 200px;
+}
+
+.administrative-data-table tr td:first-child p:nth-child(2), .td-translated p:nth-child(2) {
+  font-style: italic;
+  font-size: 8pt;
+}
+
+.p-row-bottom td {
+  padding-bottom: 10px;
+}
+
+.v-align-bottom {
+  vertical-align: bottom !important;
+}
+
+.description {
+  white-space: pre-line;
+  margin-bottom: 0;
+}
+
+.description-secondary {
+  font-style: italic;
+  font-size: 8pt;
+  margin-bottom: 0;
+}
+
+.dcc-table, .dcc-table th, .dcc-table td {
+  border-collapse: collapse;
+  border: 1px black solid;
+}
+
+.dcc-table thead td {
+  padding: 0;
+}
+
+.dcc-table tbody td {
+  padding: 10px;
+}
+
+.page-break {
+  margin-bottom: 2rem;
+}
+
+.avoid-break {
+  page-break-inside: avoid;
+}
+
+@media print {
+  .page-break {
+    margin-bottom: 0;
+    clear: both;
+    page-break-after: always;
+  }
+}

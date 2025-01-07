@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcc="https://ptb.de/dcc"
+                                   xmlns:si="https://ptb.de/si"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   schemaVersion="3.3.0">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>GEMIMEG Tool</dcc:content>
+        </dcc:name>
+        <dcc:release>v1.1.2</dcc:release>
+      </dcc:software>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>dccTableTool</dcc:content>
+        </dcc:name>
+        <dcc:release>0.2.1</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>PTB-17042-2022</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification>
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>1.71-1254/0622</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Geschäftszeichen:</dcc:content>
+            <dcc:content lang="en">Reference no.:</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:receiptDate>2022-09-06</dcc:receiptDate>
+      <dcc:beginPerformanceDate>2022-07-08</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>2022-07-08</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:item refType="vib_Item vib_AccelerationReferenceStandard">
+        <dcc:name>
+          <dcc:content lang="de">Beschleunigungsaufnehmer-Bezugsnormal</dcc:content>
+          <dcc:content lang="en">Acceleration reference standard sensor</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content>Brüel Kjær Dänemark</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:model>8305</dcc:model>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>1842876</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Serien Nr.</dcc:content>
+              <dcc:content lang="en">Serial no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content>Physikalisch Technische Bundesanstalt AG 1.71 Darstellung Beschleunigung</dcc:content>
+        </dcc:name>
+        <dcc:eMail>acceleration@ptb.de</dcc:eMail>
+        <dcc:phone>+49 531 592 1223</dcc:phone>
+        <dcc:fax>+49 531 592 691227</dcc:fax>
+        <dcc:location>
+          <dcc:city>Braunschweig</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+          <dcc:postCode>38116</dcc:postCode>
+          <dcc:street>Bundesallee</dcc:street>
+          <dcc:streetNo>100</dcc:streetNo>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Dr.-Ing. Leonard Klaus</dcc:content>
+          </dcc:name>
+        </dcc:person>
+        <dcc:mainSigner>true</dcc:mainSigner>
+      </dcc:respPerson>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Dipl.-Ing (FH) Denis Nordmann</dcc:content>
+          </dcc:name>
+        </dcc:person>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content>Accelerator Meas GmbH</dcc:content>
+      </dcc:name>
+      <dcc:eMail>info@acclemeas.de</dcc:eMail>
+      <dcc:location>
+        <dcc:city>Musterstadt</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+        <dcc:postCode>42420</dcc:postCode>
+        <dcc:street>Hirschbach im Mühlkreis</dcc:street>
+        <dcc:streetNo>42</dcc:streetNo>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:name>
+          <dcc:content lang="en">CIPM MRA</dcc:content>
+          <dcc:content lang="de">CIPM MRA</dcc:content>
+        </dcc:name>
+        <dcc:norm>DIN EN ISO/IEC 17025</dcc:norm>
+        <dcc:declaration>
+          <dcc:content lang="en">The Physikalisch-Technische Bundesanstalt (PTB) in Braunschweig and Berlin is the
+            National Metrology Institute and the supreme technical authority of the Federal Republic of Germany
+            for metrology. The PTB comes under the auspices of the Federal Ministry for Economic Affairs and
+            Climate Action. It meets the requirements for calibration and testing laboratories as defined in
+            DIN EN ISO/IEC 17025.
+            The central task of PTB is to realize, to maintain and to disseminate the legal units in compliance with
+            the International System of Units (SI). PTB thus is at the top of the metrological hierarchy in Germany.
+            The calibration certificates issued by PTB document a calibration traceable to national measurement
+            standards.
+            This certificate is consistent with the Calibration and Measurement Capabilities (CMCs) that are
+            included in Appendix C of the Mutual Recognition Arrangement (MRA) drawn up by the International
+            Committee for Weights and Measures (CIPM). Under the MRA, all participating institutes recognize
+            the validity of each other’s calibration and measurement certificates for the quantities, ranges and
+            measurement uncertainties specified in Appendix C (for details, see http://www.bipm.org).
+            The CIPM MRA Logo and this statement attest only to the measurement component of the certificate
+          </dcc:content>
+          <dcc:content lang="de">Die Physikalisch-Technische Bundesanstalt (PTB) in Braunschweig und Berlin ist das
+            nationale Metrologieinstitut und die technische Oberbehörde der Bundesrepublik Deutschland für das
+            Messwesen. Die PTB gehört zum Geschäftsbereich des Bundesministeriums für Wirtschaft und
+            Klimaschutz. Sie erfüllt die Anforderungen an Kalibrier- und Prüflaboratorien auf der Grundlage der
+            DIN EN ISO/IEC 17025.
+            Zentrale Aufgabe der PTB ist es, die gesetzlichen Einheiten in Übereinstimmung mit dem
+            Internationalen Einheitensystem (SI) darzustellen, zu bewahren und weiterzugeben. Die PTB steht
+            damit an oberster Stelle der metrologischen Hierarchie in Deutschland. Die Kalibrierscheine der PTB
+            dokumentieren eine auf nationale Normale rückgeführte Kalibrierung.
+            Dieser Ergebnisbericht ist in Übereinstimmung mit den Kalibrier- und Messmöglichkeiten (CMCs), wie
+            sie im Anhang C des gegenseitigen Abkommens (MRA) des Internationalen Komitees für Maße und
+            Gewichte enthalten sind. Im Rahmen des MRA wird die Gültigkeit der Ergebnisberichte von allen
+            teilnehmenden Instituten für die im Anhang C spezifizierten Messgrößen, Messbereiche und
+            Messunsicherheiten gegenseitig anerkannt (nähere Informationen unter http://www.bipm.org).
+            Diese Aussage und das CIPM-MRA-Logo beziehen sich nur auf die Messergebnisse in diesem
+            Kalibrierschein.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Messergebnisse</dcc:content>
+        <dcc:content lang="en">Measurement results</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="basic_uncertainty">
+          <dcc:name>
+            <dcc:content lang="de">Erweiterte Messunsicherheit</dcc:content>
+            <dcc:content lang="en">Expanded uncertainty</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Angegeben ist die erweiterte Messunsicherheit, die sich aus der
+              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k=2 ergibt. Sie wurde gemäß dem
+              „Guide to the Expression of Uncertainty in Measurement (GUM)“ ermittelt. Der Wert der Messgröße liegt dann
+              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.
+            </dcc:content>
+            <dcc:content lang="en">The expanded uncertainty was calculated from the contributions of uncertainty
+              originating from the standards used, from the weighings and the air buoyancy corrections. The reported
+              uncertainty does not include an estimate of long-term variations.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>GUM</dcc:norm>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="vib_sineCalibration">
+          <dcc:name>
+            <dcc:content lang="en">Primary vibration calibration with Laser Interferometry using Sine-approximation
+            </dcc:content>
+            <dcc:content lang="de">Primäre Schwingungskalibration durch Laserinterferometrie unter Verwendung von Sinus
+              Approximation
+            </dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="en">The accelerometer reference standard was excited to rectilinear sinusoidal vibrations
+              on an electrodynamic vibration exciter equipped with an air-bearing oscillating section. The transducer
+              was coupled as a single-ended transducer. The mounting surfaces were lightly greased, and the tightening
+              torque was 2 N-m.
+              Vibration excitation was performed in the frequency range of 10 Hz to 10 kHz using the vibration exciter
+              of the high-frequency acceleration standard measuring device (national standard).
+              The measurements of the vibration displacement amplitude and the phase shift Δφqa of the complex charge
+              transfer coefficient Sqa were performed using the sinusoidal compensation method. In order to get from the
+              instantaneous values of the vibration displacement to the amplitude and zero phase angle, the
+              approximation is performed with a sinusoidal approach. A computerized transient recorder is used to
+              synchronously acquire the two-channel interferometer output signal and the output signal of the normal
+              measurement chain.
+              The calibration procedure is in accordance with the corresponding standard ISO 16063-11:1999.
+              The acceleration acting on the transducer was calculated from the measured vibration displacement
+              amplitude and the known excitation frequency.
+              The magnitude Sqa of the complex charge transfer coefficient Sqa is obtained as the ratio of the amplitude
+              of the output voltage of the normal electrode to the amplitude of the excitation acceleration. The output
+              charge of the transducer was determined using a calibrated normal charge amplifier.
+              The phase shift Δφqa of the complex charge transfer coefficient Sqa is obtained as the difference between
+              the zero phase angle of the output charge φq and the zero phase angle of the acceleration φa.
+              According to ISO 2041, the phase shift is defined as Δφqa = φq - φa. The acceleration vector is considered
+              positive if it is directed from its mounting surface to the accelerometer.
+            </dcc:content>
+            <dcc:content lang="de">Das Beschleunigungsaufnehmer-Bezugsnormal wurde auf einem elektrodynamischen
+              Schwingungserreger, der mit einem luftgelagerten Schwingteil ausgerüstet ist, zu geradlinigen
+              sinusförmigen Schwingungen angeregt. Der Aufnehmer wurde als Single-Ended-Aufnehmer angekoppelt. Die
+              Montageflächen waren leicht eingefettet, das Anzugsdrehmoment betrug 2 N·m.
+              Die Schwingungsanregung erfolgte im Frequenzbereich von 10 Hz bis 10 kHz mit dem Schwingungserreger der
+              Hochfrequenz-Beschleunigungs-Normalmesseinrichtung (nationales Normal).
+              Die Messungen der Schwingwegamplitude und der Phasenverschiebung Δφqa des komplexen
+              Ladungsübertragungskoeffizienten Sqa wurden nach dem Sinusausgleichsverfahren ausgeführt. Um von den
+              Augenblickswerten des Schwingwegs zu der Amplitude und dem Nullphasenwinkel zu gelangen, wird die
+              Approximation mit einem Sinusansatz durchgeführt. Mit einem rechnergestützten Transientenrekorder werden
+              das zweikanalige Interferometer-Ausgangssignal und das Ausgangssignal der Normal-Messkette synchron
+              erfasst.
+              Das Kalibrierverfahren ist in Übereinstimmung mit der entsprechenden Norm ISO 16063-11:1999.
+              Die auf den Aufnehmer einwirkende Beschleunigung wurde aus der gemessenen Schwingwegamplitude und der
+              bekannten Anregungsfrequenz berechnet.
+              Der Betrag Sqa des komplexen Ladungsübertragungskoeffizienten Sqa ergibt sich als Verhältnis der Amplitude
+              der Ausgangsspannung der Normal-Messkette zur Amplitude der Anregungsbeschleunigung. Die Ausgangsladung
+              des Aufnehmers wurde mit Hilfe eines kalibrierten Normal-Ladungsverstärkers bestimmt.
+              Die Phasenverschiebung Δφqa des komplexen Ladungsübertragungskoeffizienten Sqa ergibt sich als Differenz
+              aus dem Nullphasenwinkel der Ausgangsladung φq und dem Nullphasenwinkel der Beschleunigung φa.
+              Entsprechend ISO 2041 ist die Phasenverschiebung definiert zu Δφqa = φq – φa. Der Beschleunigungsvektor
+              wird als positiv betrachtet, wenn er von seiner Montagefläche zum Beschleunigungs-aufnehmer gerichtet ist.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>ISO 16063-11 1999</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment refType="vib_chargeAmplifier">
+          <dcc:name>
+            <dcc:content lang="de">Ladungsverstärker</dcc:content>
+            <dcc:content lang="en">Charge amplifier</dcc:content>
+          </dcc:name>
+          <dcc:model>Brüel Kjær 2650</dcc:model>
+          <dcc:identifications>
+            <dcc:identification>
+              <dcc:issuer>manufacturer</dcc:issuer>
+              <dcc:value>1502245</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Serien Nr.</dcc:content>
+                <dcc:content lang="en">Serial no.</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+        <dcc:measuringEquipment refType="vib_vibrationExciter">
+          <dcc:name>
+            <dcc:content lang="en">Vibration exciter</dcc:content>
+            <dcc:content lang="de">Schwingerreger</dcc:content>
+          </dcc:name>
+          <dcc:model>Spektra SE-09</dcc:model>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="vib_ambientTemperature">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung Temperatur</dcc:content>
+            <dcc:content lang="en">Ambient condition temperature</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Werte wurden während der Kalibrierung überwacht.</dcc:content>
+            <dcc:content lang="en">Values measured while calibration was performed.</dcc:content>
+          </dcc:description>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="en">Room temperature during calibration</dcc:content>
+                <dcc:content lang="de">Raumtemperatur währenden der Kalibration</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>296.15</si:value>
+                <si:unit>\kelvin</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>1</si:uncertainty>
+                  <si:coverageFactor>1.73</si:coverageFactor>
+                  <si:coverageProbability>1</si:coverageProbability>
+                  <si:distribution>rectangular</si:distribution>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="vib_ambientHumidityRelative">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung relative Luftfeuchte</dcc:content>
+            <dcc:content lang="en">Ambient condition relative humidity</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Werte wurden während der Kalibrierung überwacht.</dcc:content>
+            <dcc:content lang="en">Values measured while calibration was performed.</dcc:content>
+          </dcc:description>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="en">Ambient humidity</dcc:content>
+                <dcc:content lang="de">Ungebungsluftfeuchtigkeit</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>60</si:value>
+                <si:unit>\percent</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>15</si:uncertainty>
+                  <si:coverageFactor>1.73</si:coverageFactor>
+                  <si:coverageProbability>1</si:coverageProbability>
+                  <si:distribution>rectangular</si:distribution>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="vib_mountingConditions">
+          <dcc:name>
+            <dcc:content lang="en">Sensor mounting conditions</dcc:content>
+            <dcc:content lang="de">Sensormontagebediungen</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="vib_mountingTorque">
+              <dcc:name>
+                <dcc:content lang="en">mounting torque</dcc:content>
+                <dcc:content lang="de">Anzugdrehmoment</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>2</si:value>
+                <si:unit>\newton\metre</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>0.1</si:uncertainty>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                  <si:distribution>normal</si:distribution>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="vib_mountingLaserPositiones">
+              <dcc:name>
+                <dcc:content lang="en">Ankopplung des Aufnehmers und Laser-Positionen</dcc:content>
+                <dcc:content lang="de">Mounting of the sensore and laser spot position</dcc:content>
+              </dcc:name>
+              <dcc:noQuantity>
+                <dcc:content lang="en">The transducer was coupled as a single-ended transducer. The laser beams of the
+                  interferometers were adjusted symmetrically and diametrically next to the transducer on the
+                  oscillating part.
+                </dcc:content>
+                <dcc:content lang="de">Die Ankopplung des Aufnehmers erfolgte als Single-Ended-Aufnehmer. Die
+                  Laserstrahlen der Interferometer wurden symmetrisch und diametral neben dem Aufnehmer auf das
+                  Schwingteil justiert.
+                </dcc:content>
+              </dcc:noQuantity>
+            </dcc:quantity>
+            <dcc:quantity refType="vib_orientationInGravityfield vib_OrientationInGravityfieldVertical">
+              <dcc:name>
+                <dcc:content lang="de">Ausrichtung im Erdschwerefeld</dcc:content>
+                <dcc:content lang="en">Orientation in the earth gravity field</dcc:content>
+              </dcc:name>
+              <dcc:noQuantity>
+                <dcc:name>
+                  <dcc:content lang="en">Orientation in the earth gravity field</dcc:content>
+                  <dcc:content lang="de">Ausrichtung im Erdschwerefeld</dcc:content>
+                </dcc:name>
+                <dcc:content lang="de">vertikal</dcc:content>
+                <dcc:content lang="en">vertical</dcc:content>
+              </dcc:noQuantity>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="vib_chargeAmplifyerConfSet" id="ConfigSet_a3548501">
+          <dcc:name>
+            <dcc:content lang="de">Einstellungen des Ladungsverstärkers</dcc:content>
+            <dcc:content lang="en">Configuration of charge amplifier</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Transducer Sensitivity</dcc:content>
+              </dcc:name>
+              <dcc:noQuantity>
+                <dcc:content>1,000 pC/Unit</dcc:content>
+              </dcc:noQuantity>
+            </dcc:quantity>
+            <dcc:quantity refType="vib_chargeAmplifierLPFreq">
+              <dcc:name>
+                <dcc:content lang="de">Lower Frequency Limit</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.3</si:value>
+                <si:unit>\hertz</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Upper Frequency Limit</dcc:content>
+              </dcc:name>
+              <dcc:noQuantity>
+                <dcc:content>Lin</dcc:content>
+              </dcc:noQuantity>
+            </dcc:quantity>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Transducer Range (1-11 pC/Unit)</dcc:content>
+              </dcc:name>
+              <dcc:noQuantity>
+                <dcc:content>0,1 V/Unit out</dcc:content>
+              </dcc:noQuantity>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="vib_sensorTemperature">
+          <dcc:name>
+            <dcc:content lang="en">Sensor temperature during calibration</dcc:content>
+            <dcc:content lang="de">Temperatur des Aufnehmers während der Kalibrierung</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="en">Sensor temperature</dcc:content>
+                <dcc:content lang="de">Temperatur des Aufnehmers</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>296.15</si:value>
+                <si:unit>\kelvin</si:unit>
+                <si:expandedUnc>
+                  <si:uncertainty>1</si:uncertainty>
+                  <si:coverageFactor>1.73</si:coverageFactor>
+                  <si:coverageProbability>1</si:coverageProbability>
+                  <si:distribution>rectangular</si:distribution>
+                </si:expandedUnc>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result refType="vib_chargeTransferFunction">
+          <dcc:name>
+            <dcc:content lang="de">Ladungsübertragungsfunktion</dcc:content>
+            <dcc:content lang="en">Charge transfer function</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:list refType="basic_1IndexTable">
+              <dcc:quantity refType="vib_frequency vib_nominalFrequency basic_TableIndex0">
+                <dcc:name>
+                  <dcc:content lang="de">Frequenz</dcc:content>
+                  <dcc:content lang="en">Frequency</dcc:content>
+                </dcc:name>
+                <si:realListXMLList>
+                  <si:valueXMLList>10.0 12.5 16.0 20.0 25.0 31.5 40.0 50.0 63.0 80.0 100.0 125.0 160.0 200.0 250.0 315.0
+                    400.0 500.0 630.0 800.0 1000.0 1250.0 1600.0 2000.0 2500.0 3150.0 4000.0 5000.0 6300.0 8000.0
+                    10000.0
+                  </si:valueXMLList>
+                  <si:unitXMLList>\hertz</si:unitXMLList>
+                </si:realListXMLList>
+              </dcc:quantity>
+              <dcc:quantity refType="vib_nominalAccelerationAmplitude vib_accelerationAmplitude">
+                <dcc:name>
+                  <dcc:content lang="de">Beschleunigungsamplitude</dcc:content>
+                  <dcc:content lang="en">Acceleration Amplitude</dcc:content>
+                </dcc:name>
+                <si:realListXMLList>
+                  <si:valueXMLList>5.0 5.0 5.0 10.0 10.0 10.0 10.0 50.0 50.0 50.0 50.0 50.0 50.0 50.0 50.0 50.0 50.0
+                    50.0 50.0 50.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0 100.0
+                  </si:valueXMLList>
+                  <si:unitXMLList>\metre\per\second\tothe{2}</si:unitXMLList>
+                </si:realListXMLList>
+              </dcc:quantity>
+              <dcc:quantity refType="vib_magnitudeTransferCoefCharge">
+                <dcc:name>
+                  <dcc:content lang="de">Ladungsübertragungskoeffizent Betrag</dcc:content>
+                  <dcc:content lang="en">Charge transfer coefficient magnitude</dcc:content>
+                </dcc:name>
+                <si:realListXMLList>
+                  <si:valueXMLList>0.13017 0.13017 0.13016 0.13016 0.13017 0.13017 0.13017 0.13016 0.13013 0.13013
+                    0.13012 0.13012 0.13012 0.13012 0.13014 0.13014 0.13015 0.13018 0.13017 0.13027 0.13033 0.13044
+                    0.13058 0.13085 0.13124 0.13188 0.13300 0.13467 0.1375 0.1429 0.1497
+                  </si:valueXMLList>
+                  <si:unitXMLList>\pico\coulomb\per\metre\second\tothe{-2}</si:unitXMLList>
+                  <si:expandedUncXMLList>
+                    <si:uncertaintyXMLList>0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013
+                      0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013
+                      0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.00013 0.0004 0.0004 0.0004
+                    </si:uncertaintyXMLList>
+                    <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                    <si:coverageProbabilityXMLList>0.95</si:coverageProbabilityXMLList>
+                    <si:distributionXMLList>normal</si:distributionXMLList>
+                  </si:expandedUncXMLList>
+                </si:realListXMLList>
+                <dcc:relativeUncertainty>
+                  <dcc:relativeUncertaintyXmlList>
+                    <si:valueXMLList>0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001
+                      0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.003 0.003
+                      0.003
+                    </si:valueXMLList>
+                    <si:unitXMLList>\one</si:unitXMLList>
+                  </dcc:relativeUncertaintyXmlList>
+                </dcc:relativeUncertainty>
+              </dcc:quantity>
+              <dcc:quantity refType="vib_phase">
+                <dcc:name>
+                  <dcc:content lang="de">Phasenverzögerung</dcc:content>
+                  <dcc:content lang="en">Phase delay</dcc:content>
+                </dcc:name>
+                <si:realListXMLList>
+                  <si:valueXMLList>-0.0003 -0.0004 -0.0004 -0.0003 -0.0001 -0.0002 -0.0003 -0.0001 0.0000 0.0002 -0.0002
+                    -0.0002 -0.0000 -0.0000 0.0001 0.0001 0.0000 0.0001 0.0005 0.0003 0.0001 -0.000 0.000 0.000 0.000
+                    0.000 -0.000 -0.000 0.000 -0.034 -0.002
+                  </si:valueXMLList>
+                  <si:unitXMLList>\radian</si:unitXMLList>
+                  <si:expandedUncXMLList>
+                    <si:uncertaintyXMLList>0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035
+                      0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.0035 0.009 0.009 0.009 0.009
+                      0.009 0.009 0.009 0.009 0.009 0.009
+                    </si:uncertaintyXMLList>
+                    <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                    <si:coverageProbabilityXMLList>0.95</si:coverageProbabilityXMLList>
+                    <si:distributionXMLList>normal</si:distributionXMLList>
+                  </si:expandedUncXMLList>
+                </si:realListXMLList>
+              </dcc:quantity>
+            </dcc:list>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

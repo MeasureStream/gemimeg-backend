@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                   xmlns:dcc="https://ptb.de/dcc"
+                                   xmlns:si="https://ptb.de/si"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   schemaVersion="3.3.0">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>Notepad++ (32-bit)</dcc:content>
+        </dcc:name>
+        <dcc:release>v 8.3.2</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>GP_DCC_PressureGauges</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification>
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>string-calibrationLaboratory-coreData</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Auftrags Nr.</dcc:content>
+            <dcc:content lang="en">Order no.</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:beginPerformanceDate>1957-08-13</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>1957-08-13</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:item>
+        <dcc:name>
+          <dcc:content lang="de">Druckmessgerät</dcc:content>
+          <dcc:content lang="en">Pressure gauge</dcc:content>
+        </dcc:name>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content>Manufacturer Name</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:model>Model</dcc:model>
+        <dcc:identifications>
+          <dcc:identification>
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>string-manufacturer-item</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Serien Nr.</dcc:content>
+              <dcc:content lang="en">Serial no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>customer</dcc:issuer>
+            <dcc:value>string-customer-item</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Messmittel Nr.</dcc:content>
+              <dcc:content lang="en">Measurement equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification>
+            <dcc:issuer>calibrationLaboratory</dcc:issuer>
+            <dcc:value>string-calibrationLaboratory-item</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Equipment Nr.</dcc:content>
+              <dcc:content lang="en">Equipment no.</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content>Kalibrierfirma GmbH</dcc:content>
+        </dcc:name>
+        <dcc:eMail>info@kalibrierfirma.xx</dcc:eMail>
+        <dcc:phone>+49 123 4567-89</dcc:phone>
+        <dcc:fax>+49 123 4567-90</dcc:fax>
+        <dcc:location>
+          <dcc:city>Musterstadt</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+          <dcc:postCode>00900</dcc:postCode>
+          <dcc:street>Musterstraße</dcc:street>
+          <dcc:streetNo>1</dcc:streetNo>
+          <dcc:further>
+            <dcc:content>www.kalibrierfirma.xx</dcc:content>
+            <dcc:file>
+              <dcc:fileName>logo.png</dcc:fileName>
+              <dcc:mimeType>image/png</dcc:mimeType>
+              <dcc:dataBase64>
+                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
+              </dcc:dataBase64>
+            </dcc:file>
+          </dcc:further>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Michaela Musterfrau</dcc:content>
+          </dcc:name>
+        </dcc:person>
+        <dcc:mainSigner>true</dcc:mainSigner>
+      </dcc:respPerson>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>Michael Mustermann</dcc:content>
+          </dcc:name>
+        </dcc:person>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content>Kunde GmbH</dcc:content>
+      </dcc:name>
+      <dcc:eMail>info@kunde.xx</dcc:eMail>
+      <dcc:location>
+        <dcc:city>Musterstadt</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+        <dcc:postCode>00900</dcc:postCode>
+        <dcc:further>
+          <dcc:content lang="de">Kunden Nr. 1024418</dcc:content>
+          <dcc:content lang="en">Customer ID no. 1024418</dcc:content>
+        </dcc:further>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+        <dcc:norm>DIN 1301-3</dcc:norm>
+        <dcc:reference>„Einheiten – Teil 3: Umrechnung von Nicht-SI-Einheiten“ (2018)</dcc:reference>
+        <dcc:nonSIDefinition>Millibar</dcc:nonSIDefinition>
+        <dcc:nonSIUnit>|mbar</dcc:nonSIUnit>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:declaration>
+          <dcc:content lang="de">Der Kalibriergegenstand zeigt den Luftdruck in der nicht-SI-Einheit Millibar an.
+          </dcc:content>
+          <dcc:content lang="en">The calibration object displays the pressure in non-SI-Unit Millibar.</dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement refType="basic_LaboratoryOpinion">
+        <dcc:declaration>
+          <dcc:name>
+            <dcc:content lang="de">Meinung</dcc:content>
+            <dcc:content lang="en">Opinion</dcc:content>
+          </dcc:name>
+          <dcc:content lang="de">Das Kalibriergut gibt die Messwerte nicht in SI-Einheiten an. Eine entsprechende
+            Kennzeichnung am Gerät sollte vorgenommen werden.
+          </dcc:content>
+          <dcc:content lang="en">The calibration item does not specify the measured values in SI units. A corresponding
+            marking should be made on the device.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement refType="basic_staticPerformanceLocation">
+        <dcc:declaration>
+          <dcc:name>
+            <dcc:content lang="de">Ort der Kalibrierung</dcc:content>
+            <dcc:content lang="en">Location of the calibration</dcc:content>
+          </dcc:name>
+        </dcc:declaration>
+        <dcc:location>
+          <dcc:city>Musterstadt</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+          <dcc:postCode>12345</dcc:postCode>
+          <dcc:street>Musterstraße</dcc:street>
+          <dcc:streetNo>1</dcc:streetNo>
+          <dcc:further>
+            <dcc:content lang="de">Abteilung Druck</dcc:content>
+            <dcc:content lang="en">Department pressure</dcc:content>
+          </dcc:further>
+        </dcc:location>
+      </dcc:statement>
+      <dcc:statement refType="basic_recalibration">
+        <dcc:declaration>
+          <dcc:content lang="de">Datum, wann nach der Festlegung durch den Kunden spätestens der Kalibriergegenstand
+            rekalibriert werden soll:
+          </dcc:content>
+          <dcc:content lang="en">Date when the calibration item is to be recalibrated at the latest according to the
+            customer's specification:
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:date>1959-10-22</dcc:date>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content>Kunde GmbH</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@kunde.xx</dcc:eMail>
+          <dcc:location>
+            <dcc:city>Musterstadt</dcc:city>
+            <dcc:countryCode>DE</dcc:countryCode>
+            <dcc:postCode>00900</dcc:postCode>
+          </dcc:location>
+        </dcc:respAuthority>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:convention>Traceability</dcc:convention>
+        <dcc:traceable>true</dcc:traceable>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Messung ist rückführbar auf nationale Normale.</dcc:content>
+          <dcc:content lang="en">The measurement is traceable to national standards.</dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:norm>DIN EN ISO/IEC 17025:2018-03</dcc:norm>
+        <dcc:reference>7.8.4.3</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Es obliegt dem Antragsteller, zu
+            gegebener Zeit eine Rekalibrierung zu veranlassen.
+          </dcc:content>
+          <dcc:content lang="en">The results refer only to the object calibrated in this DCC. The measurement results
+            are valid at the time of calibration. The applicant is responsible for arranging a recalibration in due
+            time.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:declaration refType="gp_uncertainty">
+          <dcc:content lang="de">Die im Element „results“ angegebene Messunsicherheit gilt nach Korrektion der Anzeige
+            des Kalibriergegenstands entsprechend der angegebenen Messabweichung.
+            Angegeben ist die erweiterte Messunsicherheit, die sich aus der Standardmessunsicherheit durch
+            Multiplikation mit dem Erweiterungsfaktor k = 2 ergibt. Sie wurde gemäß dem „Guide to the Expression of
+            Uncertainty in Measurement (GUM)” ermittelt. Der Wert der Messgröße liegt dann im Regelfall mit einer
+            Wahrscheinlichkeit von annähernd 95% im zugeordneten Überdeckungsintervall.
+          </dcc:content>
+          <dcc:content lang="en">The measurement uncertainty specified in the "results" element applies after correction
+            of the display of the calibration item according to the specified measurement deviation.
+            The expanded measurement uncertainty is given, which results from the standard measurement uncertainty by
+            multiplying it by the coverage factor k = 2. It was determined according to the "Guide to the Expression of
+            Uncertainty in Measurement (GUM)". The value of the measurand then usually lies within the assigned coverage
+            interval with a probability of approximately 95%.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:declaration>
+          <dcc:content lang="de">Das Druckmessgerät trägt eine Klebemarke mit dem Kalibrierzeichen.</dcc:content>
+          <dcc:content lang="en">The pressure measuring device bears an adhesive label with the calibration mark.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Ergebnis</dcc:content>
+        <dcc:content lang="en">Result</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="gp_method">
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierverfahren</dcc:content>
+            <dcc:content lang="en">Calibration method</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="en">The pressure measuring device was calibrated by means of a comparison with the
+              pressure standards of the Physikalisch-Technische Bundesanstalt (PTB). The calibration sequence consisted
+              of two measuring cycles (each with measuring series of increasing and decreasing pressure).
+            </dcc:content>
+            <dcc:content lang="en">According to DKD-guideline DKD-R 6-1 „Calibration of Pressure Gauges“, edition
+              03/2014, revision 3 using calibration sequence(increasing/decreasing).
+            </dcc:content>
+            <dcc:content lang="de">Das Druckmessgerät wurde kalibriert durch einen Vergleich mit den Drucknormalen der
+              Physikalisch-Technischen Bundesanstalt (PTB). Der Kalibrierablauf bestand aus zwei Messzyklen (jeweils
+              Messreihen mit steigendem und fallendem Druck).
+              Gemäß DKD-Richtlinie DKD-R 6-1 „Kalibrierung von Druckmessgeräten“, Ausgabe 03/2014, Revision 3 nach
+              Ablauf A (aufwärts/abwärts) durchgeführt.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>DKD-R 6-1</dcc:norm>
+          <dcc:reference>https://doi.org/10.7795/550.20201221</dcc:reference>
+        </dcc:usedMethod>
+        <dcc:usedMethod>
+          <dcc:name>
+            <dcc:content lang="de">Auf den Kalibriergegenstand abgestimmte Kalibrierbedinungen:</dcc:content>
+            <dcc:content lang="en">Calibration conditions adapted to the calibration material:</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="en">Type of measureable pressures with the calibrated object: Absolute pressure
+            </dcc:content>
+            <dcc:content lang="en">Reference layer: middle of pressure connector</dcc:content>
+            <dcc:content lang="en">Measured value output: Digital display</dcc:content>
+            <dcc:content lang="en">Pressure-transmitting medium: Air</dcc:content>
+            <dcc:content lang="en">Type: Desk instrument</dcc:content>
+            <dcc:content lang="de">Art der mit dem Kalibriergegenstand messbaren Drücke: Absolutdruck
+              Bezugsebene: Mitte des Druckanschlusses
+              Messwertausgabe: Digitale Anzeige
+              Druckübertragungsmedium: Luft
+              Ausrichtung: Tischgerät
+            </dcc:content>
+          </dcc:description>
+        </dcc:usedMethod>
+        <dcc:usedMethod refType="basic_uncertainty">
+          <dcc:name>
+            <dcc:content lang="de">Erweiterte Messunsicherheit</dcc:content>
+            <dcc:content lang="en">Expanded uncertainty</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Angegeben ist die erweiterte Messunsicherheit, die sich aus der
+              Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k = 2 ergibt. Sie wurde gemäß dem
+              "Guide to the Expression of Uncertainty in Measurement (GUM)" ermittelt. Der Wert der Messgröße liegt dann
+              im Regelfall mit einer Wahrscheinlichkeit von annähernd 95 % im zugeordneten Überdeckungsintervall.
+            </dcc:content>
+            <dcc:content lang="en">The expanded measurement uncertainty is given, which results from the standard
+              measurement uncertainty by multiplying it by the coverage factor k = 2. It was determined according to the
+              "Guide to the Expression of Uncertainty in Measurement (GUM)". The value of the measurand is then usually
+              within the assigned coverage interval with a probability of approximately 95%.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>GUM</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung Temperatur</dcc:content>
+            <dcc:content lang="en">Ambient condition temperature</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="basic_temperatureMin">
+              <dcc:name>
+                <dcc:content lang="de">Temperatur min</dcc:content>
+                <dcc:content lang="en">temperature min</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>293.55</si:value>
+                  <si:unit>\kelvin</si:unit>
+                  <si:expandedUnc>
+                    <si:uncertainty>0.2</si:uncertainty>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedUnc>
+                </si:real>
+                <si:real>
+                  <si:value>20.4</si:value>
+                  <si:unit>\degreecelsius</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+            <dcc:quantity refType="basic_temperatureMax">
+              <dcc:name>
+                <dcc:content lang="de">Temperatur max</dcc:content>
+                <dcc:content lang="en">temperature max</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>294.45</si:value>
+                  <si:unit>\kelvin</si:unit>
+                  <si:expandedUnc>
+                    <si:uncertainty>0.2</si:uncertainty>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedUnc>
+                </si:real>
+                <si:real>
+                  <si:value>21.3</si:value>
+                  <si:unit>\degreecelsius</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result>
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierergebnisse</dcc:content>
+            <dcc:content lang="en">Calibration results</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die angegebenen Werte sind Mittelwerte aus je zwei Messzyklen.</dcc:content>
+            <dcc:content lang="en">The values given are mean values from two measuring cycles each.</dcc:content>
+          </dcc:description>
+          <dcc:data>
+            <dcc:list refType="gp_pressure">
+              <dcc:quantity refType="basic_referenceValue">
+                <dcc:name>
+                  <dcc:content lang="de">Absolutdruck in Höhe der Bezugsebene des Kalibriergegenstands</dcc:content>
+                  <dcc:content lang="en">Absolute pressure at the height of the reference plane of the calibration
+                    object
+                  </dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>94998.4 97044.4 97921.5 99089.7 99967.1 101135.4 102012.6 102890.0 104935.8
+                    </si:valueXMLList>
+                    <si:unitXMLList>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unitXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>949.984 970.444 979.215 990.897 999.671 1011.354 1020.126 1028.900 1049.358
+                    </si:valueXMLList>
+                    <si:unitXMLList>|mbar</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_measuredValue">
+                <dcc:name>
+                  <dcc:content lang="de">Mittelwert der Anzeige des Kalibriergegenstands</dcc:content>
+                  <dcc:content lang="en">Mean value of the display of the calibration item</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>94939.5 96984.7 97861.7 99029.7 99906.9 101074.9 101952.1 102829.1 104873.8
+                    </si:valueXMLList>
+                    <si:unitXMLList>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unitXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>949.395 969.847 978.617 990.297 999.069 1010.749 1019.521 1028.291 1048.738
+                    </si:valueXMLList>
+                    <si:unitXMLList>|mbar</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_measurementError">
+                <dcc:name>
+                  <dcc:content lang="de">Messabweichung</dcc:content>
+                  <dcc:content lang="en">Measurement error</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>-58.9 -59.7 -59.8 -60.0 -60.2 -60.5 -60.5 -60.9 -62.0</si:valueXMLList>
+                    <si:unitXMLList>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unitXMLList>
+                    <si:expandedUncXMLList>
+                      <si:uncertaintyXMLList>2.7 2.9 2.9 2.9 2.9 3.0 2.9 3.0 3.1</si:uncertaintyXMLList>
+                      <si:coverageFactorXMLList>2</si:coverageFactorXMLList>
+                      <si:coverageProbabilityXMLList>0.95</si:coverageProbabilityXMLList>
+                      <si:distributionXMLList>normal</si:distributionXMLList>
+                    </si:expandedUncXMLList>
+                  </si:realListXMLList>
+                  <si:realListXMLList>
+                    <si:valueXMLList>-0.589 -0.597 -0.598 -0.6 -0.602 -0.605 -0.605 -0.609 -0.620</si:valueXMLList>
+                    <si:unitXMLList>|mbar</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:influenceConditions>
+                <dcc:influenceCondition refType="basic_singleMeasurementCondition">
+                  <dcc:name>
+                    <dcc:content lang="de">Messbedingung 1</dcc:content>
+                    <dcc:content lang="en">measurement condition 1</dcc:content>
+                  </dcc:name>
+                  <dcc:data>
+                    <dcc:quantity refType="basic_valueSettlingTime">
+                      <dcc:name>
+                        <dcc:content lang="de">Wartezeit bis zur Ablesung nach jeder Druckänderung</dcc:content>
+                        <dcc:content lang="en">Waiting time until reading after each pressure change</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>180</si:value>
+                          <si:unit>\second</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>3</si:value>
+                          <si:unit>\minute</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:influenceCondition>
+                <dcc:influenceCondition refType="basic_cycleDelay">
+                  <dcc:name>
+                    <dcc:content lang="de">Messbedingung 2</dcc:content>
+                    <dcc:content lang="de">Measurement condition 2</dcc:content>
+                  </dcc:name>
+                  <dcc:data>
+                    <dcc:quantity refType="basic_valueSettlingTime">
+                      <dcc:name>
+                        <dcc:content lang="de">Wartezeit zwischen den beiden Messreihen eines Zyklus unter Beibehaltung
+                          des Druckes
+                        </dcc:content>
+                        <dcc:content lang="en">Waiting time between the two measurement series of a cycle while
+                          maintaining the pressure
+                        </dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>600</si:value>
+                          <si:unit>\second</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>10</si:value>
+                          <si:unit>\minute</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:influenceCondition>
+              </dcc:influenceConditions>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_measurementRange">
+                  <dcc:data>
+                    <dcc:quantity refType="basic_measurementDimension">
+                      <dcc:name>
+                        <dcc:content lang="de">Angezeigte Einheit des Kalibriergegenstandes</dcc:content>
+                        <dcc:content lang="en">Unit of display of unit under test</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>1</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_measurementRangeMin">
+                      <dcc:name>
+                        <dcc:content lang="de">Unteres Limit des Messbereichs</dcc:content>
+                        <dcc:content lang="en">Lower limit of the calibrated range</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>80000</si:value>
+                          <si:unit>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>800</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_measurementRangeMax">
+                      <dcc:name>
+                        <dcc:content lang="de">Oberes Limit des Messbereichs</dcc:content>
+                        <dcc:content lang="en">Upper limit of the calibrated range</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>110000</si:value>
+                          <si:unit>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>1100</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_validityRangeMin">
+                      <dcc:name>
+                        <dcc:content lang="de">Unteres Limit des kalibrierten Bereichs</dcc:content>
+                        <dcc:content lang="en">Lower limit of the calibrated range</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>95000</si:value>
+                          <si:unit>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>950</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_validityRangeMax">
+                      <dcc:name>
+                        <dcc:content lang="de">Oberes Limit des kalibrierten Bereichs</dcc:content>
+                        <dcc:content lang="en">Upper limit of the calibrated range</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>105000</si:value>
+                          <si:unit>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>1050</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                    <dcc:quantity refType="basic_measurementRangeScaleInterval">
+                      <dcc:name>
+                        <dcc:content lang="de">Auflösung</dcc:content>
+                        <dcc:content lang="en">Resolution</dcc:content>
+                      </dcc:name>
+                      <si:hybrid>
+                        <si:real>
+                          <si:value>1</si:value>
+                          <si:unit>\kilogram\metre\tothe{-1}\second\tothe{-2}</si:unit>
+                        </si:real>
+                        <si:real>
+                          <si:value>0.01</si:value>
+                          <si:unit>|mbar</si:unit>
+                        </si:real>
+                      </si:hybrid>
+                    </dcc:quantity>
+                  </dcc:data>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:list>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData refType="basic_warmUpTime">
+          <dcc:data>
+            <dcc:quantity refType="basic_valueSettlingTime">
+              <dcc:name>
+                <dcc:content lang="de">Einschaltdauer vor Beginn der ersten Messreihe</dcc:content>
+                <dcc:content lang="en">Duty cycle before starting the first series of measurements</dcc:content>
+              </dcc:name>
+              <si:hybrid>
+                <si:real>
+                  <si:value>43200</si:value>
+                  <si:unit>\second</si:unit>
+                </si:real>
+                <si:real>
+                  <si:value>12</si:value>
+                  <si:unit>\hour</si:unit>
+                </si:real>
+              </si:hybrid>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

@@ -1,0 +1,19 @@
+version: '3.9'
+services:
+
+  oplayer-dcc:
+    environment:
+      - $DEPLOYMENT_ENVIRONMENT
+    image: $IMAGE_TAG
+    container_name: $DEPLOYMENT_ENVIRONMENT-oplayer-dcc
+    networks:
+      - $DEPLOYMENT_ENVIRONMENT
+    restart: unless-stopped
+
+
+networks:
+  docker:
+    name: docker
+    external: true
+  $DEPLOYMENT_ENVIRONMENT:
+    name: $DEPLOYMENT_ENVIRONMENT
