@@ -19,11 +19,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>de.ptb.common</groupId>
-      <artifactId>service-commons-api</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-expression</artifactId>
       <version>${spring.version}</version>
