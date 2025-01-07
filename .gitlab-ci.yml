@@ -5,22 +5,141 @@
 # Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
 # Note that environment variables can be set in several places
 # See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+
+.set_environmentvariables: &set_environmentvariables
+  - export HTTP_PROXY="http://194.94.94.194:8080/"
+  - export HTTPS_PROXY="http://194.94.94.194:8080/"
+  - export http_proxy="http://194.94.94.194:8080/"
+  - export https_proxy="http://194.94.94.194:8080/"
+  - export no_proxy="localhost,*.bs.ptb.de,*.berlin.ptb.de,*.ptb.de"
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+
+cache:
+  key: maven_cache
+  paths:
+    - .m2/repository
+
+
+
 stages:
-- build
 - test
+- build
+- package
 - deploy
-- review
-- dast
-- staging
-- canary
-- production
-- incremental rollout 10%
-- incremental rollout 25%
-- incremental rollout 50%
-- incremental rollout 100%
-- performance
-- cleanup
-sast:
+- release
+#- review
+#- dast
+#- staging
+#- canary
+#- production
+#- incremental rollout 10%
+#- incremental rollout 25%
+#- incremental rollout 50%
+#- incremental rollout 100%
+#- performance
+#- cleanup
+
+
+
+maven-test:
   stage: test
-include:
-- template: Auto-DevOps.gitlab-ci.yml
+  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.6-eclipse-temurin-21
+  tags:
+    - oplayer-berlin
+  before_script:
+    - *set_environmentvariables
+    - cp .mavenrc /root/.mavenrc
+    - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
+  script: "mvn -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository test"
+
+maven-package:
+  stage: build
+  only:
+    - tags
+  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.6-eclipse-temurin-21
+  tags:
+    - oplayer-berlin
+  before_script:
+    - *set_environmentvariables
+    - cp .mavenrc /root/.mavenrc
+    - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
+  script:
+    - "mvn -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -DskipTests=true package"
+  artifacts:
+    paths:
+      - gemimeg-backend/target/gemimeg-backend.jar
+    expire_in: 4 weeks
+
+build-image:
+  stage: package
+  only:
+    - tags
+  tags:
+    - oplayer-berlin
+  image:
+    name: gcr.io/kaniko-project/executor:v1.20.1-debug
+    entrypoint: [ "" ]
+  before_script:
+    - *set_environmentvariables
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${IMAGE_TAG}"
+      --verbosity=debug
+
+
+deploy-production:
+  variables:
+    DEPLOYMENT_ENVIRONMENT: gmg
+  environment:
+    name: gmg
+  stage: deploy
+  tags:
+    - oplayer-berlin
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^\d+.\d+.\d+-?.*$/
+  image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/alpine:latest
+  before_script:
+    - *set_environmentvariables
+    # install envsubst and ssh-add
+    - apk add --no-cache gettext openssh-client
+  script:
+    # create the new docker-compose.yml
+    - envsubst < docker-compose.tmpl > docker-compose.yml
+    - echo "==== Contents of docker-compose-staging ====" ; cat docker-compose.yml
+    # start ssh-agent and import ssh private key
+    - eval `ssh-agent`
+    - ssh-add <(echo "$a94083")
+    # add server to list of known hosts
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - touch ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/known_hosts
+    - echo $a94083_HOST_KEY >> ~/.ssh/known_hosts
+    - ssh duser@a94083.berlin.ptb.de "cd /home/duser/oplayer/gmg/backend;docker-compose -p gmg -f docker-compose.yml down";
+    # upload docker-compose to the server
+    - scp docker-compose.yml duser@a94083.berlin.ptb.de:/home/duser/oplayer/gmg/backend/docker-compose.yml
+    # docker login and restart services
+    - ssh duser@a94083.berlin.ptb.de "cd /home/duser/oplayer/gmg/backend;docker-compose -p gmg -f docker-compose.yml up -d";
+
+
+
+release-job:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^\d+.\d+.\d+-?.*$/
+  script:
+    - echo "running release_job"
+  release:
+    tag_name: '$CI_COMMIT_TAG'
+    description: '$CI_COMMIT_TAG'
+
+#sast:
+#  stage: test
+#include:
+#- template: Auto-DevOps.gitlab-ci.yml
