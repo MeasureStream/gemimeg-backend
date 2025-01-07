@@ -96,7 +96,7 @@ deploy-production:
   variables:
     DEPLOYMENT_ENVIRONMENT: gmg
   environment:
-    name: gmg-standalone
+    name: gmg
   stage: deploy
   tags:
     - oplayer-berlin
