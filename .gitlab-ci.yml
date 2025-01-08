@@ -59,7 +59,7 @@ maven-test:
       coverage_report:
         coverage_format: jacoco
         path: gemimeg-backend/target/site/jacoco/jacoco.xml
-    coverage: '/\[TOTAL\]\s+(\d+\.\d+)%/'
+  coverage: '/\[TOTAL\]\s+(\d+\.\d+)%/'
 
 
 
