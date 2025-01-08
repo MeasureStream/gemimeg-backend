@@ -54,12 +54,13 @@ maven-test:
     - cp .mavenrc /root/.mavenrc
     - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
   script: "mvn clean -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report"
+  coverage: /Total.*?([0-9]{1,3})%/
   artifacts:
     reports:
       coverage_report:
         coverage_format: jacoco
         path: gemimeg-backend/target/site/jacoco/jacoco.xml
-  coverage: '/\[TOTAL\]\s+(\d+\.\d+)%/'
+ 
 
 
 
