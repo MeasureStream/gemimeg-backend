@@ -80,16 +80,6 @@ public class CalibrationCertificateController {
     }
   }
 
-  @Operation(description = "Self-signs a CalibrationCertificate (JSON) using " + SELF_SIGNING_HASH_ALGORITHM)
-  @PostMapping(path = DCC_SELF_SIGN_PATH, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
-  public CalibrationCertificateDto selfSign(@RequestBody CalibrationCertificateDto dcc) {
-    try {
-      return service.selfSign(dcc);
-    } catch (NoSuchAlgorithmException | JsonProcessingException e) {
-      throw new BadRequestStatus(createLogEntry(e));
-    }
-  }
-
   @Operation(description = "Convert a DCC DTO as JSON to a human-readable HTML page")
   @PostMapping(path = DCC_HTML_PATH, consumes = APPLICATION_JSON_VALUE, produces = TEXT_HTML_VALUE)
   public String validateAndProduceHtml(@RequestBody CalibrationCertificateDto dcc) {

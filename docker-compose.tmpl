@@ -1,11 +1,11 @@
 version: '3.9'
 services:
 
-  oplayer-dcc:
+  gemimeg-backend:
     environment:
       - $DEPLOYMENT_ENVIRONMENT
     image: $IMAGE_TAG
-    container_name: $DEPLOYMENT_ENVIRONMENT-oplayer-backend
+    container_name: $DEPLOYMENT_ENVIRONMENT-gemimeg-backend
     networks:
       - $DEPLOYMENT_ENVIRONMENT
     restart: unless-stopped

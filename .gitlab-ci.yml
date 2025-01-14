@@ -53,7 +53,24 @@ maven-test:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc
     - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
-  script: "mvn -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository test"
+  script: 
+    - "mvn clean -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report"
+    - cat gemimeg-backend/target/site/jacoco/index.html
+  coverage: /Total.*?([0-9]{1,3})%/
+  artifacts:
+    expose_as: 'code coverage'
+    paths:
+      - "gemimeg-backend/target/surefire-reports"
+      - "gemimeg-backend/target/site/jacoco/index.html"
+    reports:
+      junit:
+        - "gemimeg-backend/target/surefire-reports/TEST-*.xml"
+      coverage_report:
+        coverage_format: jacoco
+        path: gemimeg-backend/target/site/jacoco/jacoco.xml
+ 
+
+
 
 maven-package:
   stage: build
