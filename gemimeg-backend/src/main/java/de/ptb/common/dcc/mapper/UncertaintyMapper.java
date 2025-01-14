@@ -4,7 +4,7 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.UncertaintyDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;

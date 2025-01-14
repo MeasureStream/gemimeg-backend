@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.TestConfiguration;
 import de.ptb.common.dcc.api.v1.CalibrationCertificateBuilder;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.config.CalibrationCertificateConfiguration;
 import de.ptb.common.dcc.service.CalibrationCertificateService;
 import jakarta.xml.bind.JAXBException;

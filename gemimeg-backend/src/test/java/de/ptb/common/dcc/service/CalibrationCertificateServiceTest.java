@@ -3,8 +3,8 @@ package de.ptb.common.dcc.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.api.v1.CalibrationCertificateBuilder;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
-import de.ptb.common.dcc.api.v1.dto.SignatureDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
 import de.ptb.common.dcc.config.CalibrationCertificateConfiguration;
 import de.ptb.common.dcc.data.CalibrationCertificateRepository;
 import de.ptb.common.dcc.mapper.CalibrationCertificateMapper;
@@ -67,7 +67,7 @@ public class CalibrationCertificateServiceTest {
 
   @Test
   void convert_Ok() throws JAXBException, IOException, SAXException {
-    when(dccRepository.saveAndFlush(any())).thenReturn(calibrationCertificate);
+    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
     String actual = service.validate(service.convert(calibrationCertificateDto));
     assertNotNull(actual);
     assertFalse(StringUtils.isEmpty(actual));
@@ -75,7 +75,7 @@ public class CalibrationCertificateServiceTest {
 
   @Test
   void validateAndConvert_Ok() throws IOException, JAXBException, SAXException {
-    when(dccRepository.saveAndFlush(any())).thenReturn(calibrationCertificate);
+    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
     String xml = IOUtils.toString(Objects.requireNonNull(this.getClass()
         .getResourceAsStream("/examples/test-dcc.xml")), StandardCharsets.UTF_8);
     CalibrationCertificateDto actual = service.validateAndConvert(xml);
@@ -84,7 +84,7 @@ public class CalibrationCertificateServiceTest {
 
   @Test
   void validateAndProduceHtml_Ok() throws JAXBException, IOException, TransformerException, SAXException {
-    when(dccRepository.saveAndFlush(any())).thenReturn(calibrationCertificate);
+    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
     String actual = service.validateAndProduceHtml(calibrationCertificateDto);
     assertNotNull(actual);
   }

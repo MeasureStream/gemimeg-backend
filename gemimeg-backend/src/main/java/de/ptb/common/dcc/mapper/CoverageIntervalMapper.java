@@ -4,7 +4,7 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.CoverageIntervalDto;
+import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalDto;
 import de.ptb.common.dcc.xjc.generated.CoverageIntervalType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;

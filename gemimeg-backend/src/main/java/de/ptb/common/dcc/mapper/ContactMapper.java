@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.ContactDto;
+import de.ptb.common.dcc.api.v1.dcc.ContactDto;
 import de.ptb.common.dcc.xjc.generated.ContactType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.apache.commons.lang3.StringUtils;

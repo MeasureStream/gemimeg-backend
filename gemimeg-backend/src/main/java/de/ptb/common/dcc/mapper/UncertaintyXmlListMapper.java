@@ -4,8 +4,8 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.UncertaintyDto;
-import de.ptb.common.dcc.api.v1.dto.UncertaintyListDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyListDto;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncXMLListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.apache.commons.lang3.StringUtils;

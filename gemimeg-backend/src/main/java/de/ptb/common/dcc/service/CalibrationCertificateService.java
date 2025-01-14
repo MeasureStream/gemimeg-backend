@@ -2,14 +2,13 @@ package de.ptb.common.dcc.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.ptb.common.dcc.api.v1.dto.AddSignatureDto;
-import de.ptb.common.dcc.api.v1.dto.AdministrativeDataDto;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
-import de.ptb.common.dcc.api.v1.dto.LanguageSpecificStringsDto;
-import de.ptb.common.dcc.api.v1.dto.SignatureDto;
-import de.ptb.common.dcc.api.v1.dto.SignatureListDto;
-import de.ptb.common.dcc.api.v1.dto.SoftwareDto;
-import de.ptb.common.dcc.api.v1.dto.SoftwareListDto;
+import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.LanguageSpecificStringsDto;
+import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
+import de.ptb.common.dcc.api.v1.dcc.SignatureListDto;
+import de.ptb.common.dcc.api.v1.dcc.SoftwareDto;
+import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.data.CalibrationCertificateRepository;
 import de.ptb.common.dcc.mapper.CalibrationCertificateMapper;
 import de.ptb.common.dcc.model.CalibrationCertificate;
@@ -141,18 +140,6 @@ public class CalibrationCertificateService {
   }
 
   @Nonnull
-  public CalibrationCertificateDto addSignature(@Nonnull AddSignatureDto addSignature) {
-    CalibrationCertificateDto result = addSignature.getOriginalDto();
-    SignatureListDto signatureList = result.getSignatures();
-    if (signatureList == null) {
-      signatureList = new SignatureListDto();
-    }
-    signatureList.add(addSignature.getSignatureDto());
-    result.setSignatures(signatureList);
-    return result;
-  }
-
-  @Nonnull
   public CalibrationCertificateDto selfSign(@Nonnull CalibrationCertificateDto dto) throws NoSuchAlgorithmException,
       JsonProcessingException {
     SignatureDto signature = new SignatureDto();
@@ -229,7 +216,7 @@ public class CalibrationCertificateService {
       entity.setId(uniqueIdentifierOrId);
       try {
         entity.setDccJson(objectMapper.writeValueAsString(dcc));
-        log.info("Given DCC stored successfully with ID: " + dccRepository.saveAndFlush(entity).getId());
+        log.info("Given DCC stored successfully with ID: " + dccRepository.save(entity).getId());
       } catch (JsonProcessingException e) {
         log.error(e.getMessage());
       }

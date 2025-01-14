@@ -4,13 +4,13 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.ConditionListDto;
-import de.ptb.common.dcc.api.v1.dto.EquipmentListDto;
-import de.ptb.common.dcc.api.v1.dto.MeasurementResultDto;
-import de.ptb.common.dcc.api.v1.dto.MethodListDto;
-import de.ptb.common.dcc.api.v1.dto.ResultListDto;
-import de.ptb.common.dcc.api.v1.dto.SoftwareListDto;
-import de.ptb.common.dcc.api.v1.dto.StatementListDto;
+import de.ptb.common.dcc.api.v1.dcc.ConditionListDto;
+import de.ptb.common.dcc.api.v1.dcc.EquipmentListDto;
+import de.ptb.common.dcc.api.v1.dcc.MeasurementResultDto;
+import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
+import de.ptb.common.dcc.api.v1.dcc.ResultListDto;
+import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
+import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.InfluenceConditionListType;
 import de.ptb.common.dcc.xjc.generated.MeasurementMetaDataListType;

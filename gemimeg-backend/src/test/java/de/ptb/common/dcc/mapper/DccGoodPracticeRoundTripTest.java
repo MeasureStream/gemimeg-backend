@@ -5,7 +5,7 @@
 package de.ptb.common.dcc.mapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.DigitalCalibrationCertificateType;
 import jakarta.xml.bind.JAXBContext;

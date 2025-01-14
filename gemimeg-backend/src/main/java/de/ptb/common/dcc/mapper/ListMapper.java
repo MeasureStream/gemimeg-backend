@@ -1,8 +1,8 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.ListDto;
-import de.ptb.common.dcc.api.v1.dto.MethodListDto;
-import de.ptb.common.dcc.api.v1.dto.QuantityListDto;
+import de.ptb.common.dcc.api.v1.dcc.ListDto;
+import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
+import de.ptb.common.dcc.api.v1.dcc.QuantityListDto;
 import de.ptb.common.dcc.xjc.generated.ListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.QuantityType;

@@ -4,8 +4,8 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.DataDto;
-import de.ptb.common.dcc.api.v1.dto.DataListDto;
+import de.ptb.common.dcc.api.v1.dcc.DataDto;
+import de.ptb.common.dcc.api.v1.dcc.DataListDto;
 import de.ptb.common.dcc.xjc.generated.ByteDataType;
 import de.ptb.common.dcc.xjc.generated.DataType;
 import de.ptb.common.dcc.xjc.generated.FormulaType;

@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.CalibrationLaboratoryDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationLaboratoryDto;
 import de.ptb.common.dcc.xjc.generated.CalibrationLaboratoryType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;

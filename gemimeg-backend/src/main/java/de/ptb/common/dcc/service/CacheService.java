@@ -1,0 +1,53 @@
+package de.ptb.common.dcc.service;
+
+import de.ptb.common.dcc.api.v1.cache.ReadResponseDto;
+import de.ptb.common.dcc.api.v1.cache.RequestDto;
+import de.ptb.common.dcc.api.v1.cache.StoreResponseDto;
+import de.ptb.common.dcc.data.CacheItemRepository;
+import de.ptb.common.dcc.model.CacheItem;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Nonnull;
+import java.util.Optional;
+
+import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.BASE_PATH_ID;
+import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.ID_PLACEHOLDER;
+
+@Service
+public class CacheService {
+
+  private final CacheItemRepository repository;
+
+  @Autowired
+  public CacheService(CacheItemRepository repository) {
+    this.repository = repository;
+  }
+
+  @Nonnull
+  public StoreResponseDto store(@Nonnull RequestDto request) {
+    CacheItem cacheItem = new CacheItem();
+    cacheItem.setFileName(request.getFileName());
+    cacheItem.setFileContent(request.getFileContent());
+    cacheItem.setCallbackUrl(request.getCallbackUrl());
+    cacheItem.setMimeType(request.getMimeType());
+    cacheItem = repository.save(cacheItem);
+    StoreResponseDto response = new StoreResponseDto();
+    response.setRetrievalUrl(BASE_PATH_ID.replace(ID_PLACEHOLDER, cacheItem.getId()));
+    return response;
+  }
+
+  @Nonnull
+  public Optional<ReadResponseDto> findById(@Nonnull String id) {
+    Optional<CacheItem> cacheItem = repository.findById(id);
+    if (cacheItem.isPresent()) {
+      ReadResponseDto readResponse = new ReadResponseDto();
+      readResponse.setFileName(cacheItem.get().getFileName());
+      readResponse.setFileContent(cacheItem.get().getFileContent());
+      readResponse.setMimeType(cacheItem.get().getMimeType());
+      repository.deleteById(id);
+      return Optional.of(readResponse);
+    }
+    return Optional.empty();
+  }
+}

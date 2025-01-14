@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.controller;
 
-import de.ptb.common.dcc.api.v1.dto.VersionDto;
+import de.ptb.common.dcc.api.v1.dcc.VersionDto;
 import de.ptb.common.dcc.config.VersionConfiguration;
 import de.ptb.common.http.BadRequestStatus;
 import io.swagger.v3.oas.annotations.Operation;

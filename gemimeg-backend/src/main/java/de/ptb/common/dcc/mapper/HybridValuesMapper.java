@@ -4,12 +4,12 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.CoverageIntervalDto;
-import de.ptb.common.dcc.api.v1.dto.CoverageIntervalListDto;
-import de.ptb.common.dcc.api.v1.dto.DimensionListDto;
-import de.ptb.common.dcc.api.v1.dto.QuantityDto;
-import de.ptb.common.dcc.api.v1.dto.UncertaintyDto;
-import de.ptb.common.dcc.api.v1.dto.UncertaintyListDto;
+import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalDto;
+import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalListDto;
+import de.ptb.common.dcc.api.v1.dcc.DimensionListDto;
+import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyListDto;
 import de.ptb.common.dcc.xjc.generated.ConstantQuantityType;
 import de.ptb.common.dcc.xjc.generated.HybridType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;

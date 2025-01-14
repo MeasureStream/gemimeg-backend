@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.api.v1;
 
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

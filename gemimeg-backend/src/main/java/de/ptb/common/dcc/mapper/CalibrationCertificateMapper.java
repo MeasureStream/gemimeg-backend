@@ -4,9 +4,9 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
-import de.ptb.common.dcc.api.v1.dto.MeasurementResultListDto;
-import de.ptb.common.dcc.api.v1.dto.SignatureListDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.MeasurementResultListDto;
+import de.ptb.common.dcc.api.v1.dcc.SignatureListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.DigitalCalibrationCertificateType;
 import de.ptb.common.dcc.xjc.generated.MeasurementResultListType;

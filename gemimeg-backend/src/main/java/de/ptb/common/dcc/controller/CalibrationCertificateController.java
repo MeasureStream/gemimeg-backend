@@ -1,7 +1,7 @@
 package de.ptb.common.dcc.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.service.CalibrationCertificateService;
 import de.ptb.common.http.BadRequestStatus;
 import de.ptb.common.http.NotFoundStatus;

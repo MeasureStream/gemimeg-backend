@@ -4,7 +4,7 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.ConditionDto;
+import de.ptb.common.dcc.api.v1.dcc.ConditionDto;
 import de.ptb.common.dcc.xjc.generated.ConditionType;
 import de.ptb.common.dcc.xjc.generated.HashType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;

@@ -1,8 +1,8 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.IdentificationListDto;
-import de.ptb.common.dcc.api.v1.dto.ItemDto;
-import de.ptb.common.dcc.api.v1.dto.SoftwareListDto;
+import de.ptb.common.dcc.api.v1.dcc.IdentificationListDto;
+import de.ptb.common.dcc.api.v1.dcc.ItemDto;
+import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.xjc.generated.EquipmentClassType;
 import de.ptb.common.dcc.xjc.generated.IdentificationListType;
 import de.ptb.common.dcc.xjc.generated.ItemType;
@@ -11,8 +11,6 @@ import de.ptb.common.dcc.xjc.generated.SoftwareListType;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;

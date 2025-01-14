@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.StatementDto;
+import de.ptb.common.dcc.api.v1.dcc.StatementDto;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.StatementMetaDataType;
 import de.ptb.common.dcc.xjc.generated.StringConformityStatementStatusType;

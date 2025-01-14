@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.SignatureDto;
+import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
 import de.ptb.common.dcc.xjc.generated.CanonicalizationMethodType;
 import de.ptb.common.dcc.xjc.generated.KeyInfoType;
 import de.ptb.common.dcc.xjc.generated.KeyValueType;
@@ -26,12 +26,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.KEY_VALUE_KEY;
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.PGP_KEY;
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.RETRIEVAL_METHOD_KEY;
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.SPKI_KEY;
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.STRING_KEY;
-import static de.ptb.common.dcc.api.v1.dto.SignatureDto.KeyInfo.X509_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.KEY_VALUE_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.PGP_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.RETRIEVAL_METHOD_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.SPKI_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.STRING_KEY;
+import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.X509_KEY;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;
 import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;
 

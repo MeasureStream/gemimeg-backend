@@ -1,7 +1,7 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.LocationDto;
-import de.ptb.common.dcc.api.v1.dto.RichContentDto;
+import de.ptb.common.dcc.api.v1.dcc.LocationDto;
+import de.ptb.common.dcc.api.v1.dcc.RichContentDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.LocationType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;

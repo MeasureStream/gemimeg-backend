@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.FormulaDto;
+import de.ptb.common.dcc.api.v1.dcc.FormulaDto;
 import de.ptb.common.dcc.xjc.generated.FormulaType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.XmlType;

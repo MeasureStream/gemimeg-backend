@@ -1,10 +1,10 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.DimensionDto;
-import de.ptb.common.dcc.api.v1.dto.MethodListDto;
-import de.ptb.common.dcc.api.v1.dto.QuantityDto;
-import de.ptb.common.dcc.api.v1.dto.UncertaintyDto;
-import de.ptb.common.dcc.api.v1.dto.XmlValuesDto;
+import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
+import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
+import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
+import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
+import de.ptb.common.dcc.api.v1.dcc.XmlValuesDto;
 import de.ptb.common.dcc.xjc.generated.ConstantQuantityType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.QuantityType;

@@ -1,7 +1,7 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.IdentificationListDto;
-import de.ptb.common.dcc.api.v1.dto.ItemListDto;
+import de.ptb.common.dcc.api.v1.dcc.IdentificationListDto;
+import de.ptb.common.dcc.api.v1.dcc.ItemListDto;
 import de.ptb.common.dcc.xjc.generated.EquipmentClassType;
 import de.ptb.common.dcc.xjc.generated.IdentificationListType;
 import de.ptb.common.dcc.xjc.generated.ItemListType;

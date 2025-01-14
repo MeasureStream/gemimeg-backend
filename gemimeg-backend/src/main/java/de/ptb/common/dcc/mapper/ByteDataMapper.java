@@ -1,6 +1,6 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.ByteDataDto;
+import de.ptb.common.dcc.api.v1.dcc.ByteDataDto;
 import de.ptb.common.dcc.xjc.generated.ByteDataType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.apache.commons.lang3.StringUtils;

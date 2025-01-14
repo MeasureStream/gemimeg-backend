@@ -4,8 +4,8 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.CoverageIntervalDto;
-import de.ptb.common.dcc.api.v1.dto.CoverageIntervalListDto;
+import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalDto;
+import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalListDto;
 import de.ptb.common.dcc.xjc.generated.CoverageIntervalXMLListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.apache.commons.lang3.StringUtils;

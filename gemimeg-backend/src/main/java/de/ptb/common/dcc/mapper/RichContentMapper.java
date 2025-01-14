@@ -1,7 +1,7 @@
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.LanguageSpecificStringsDto;
-import de.ptb.common.dcc.api.v1.dto.RichContentDto;
+import de.ptb.common.dcc.api.v1.dcc.LanguageSpecificStringsDto;
+import de.ptb.common.dcc.api.v1.dcc.RichContentDto;
 import de.ptb.common.dcc.xjc.generated.ByteDataType;
 import de.ptb.common.dcc.xjc.generated.FormulaType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Nonnull;
 
-import static de.ptb.common.dcc.api.v1.dto.LanguageSpecificStringsDto.LANGUAGE_DE;
+import static de.ptb.common.dcc.api.v1.dcc.LanguageSpecificStringsDto.LANGUAGE_DE;
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;
 import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;

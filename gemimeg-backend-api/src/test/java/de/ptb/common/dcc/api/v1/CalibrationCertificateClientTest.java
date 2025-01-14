@@ -2,7 +2,7 @@ package de.ptb.common.dcc.api.v1;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.ptb.common.dcc.api.v1.dto.CalibrationCertificateDto;
+import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
