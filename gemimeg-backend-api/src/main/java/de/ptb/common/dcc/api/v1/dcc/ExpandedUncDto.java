@@ -7,9 +7,10 @@ package de.ptb.common.dcc.api.v1.dcc;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
+@Deprecated
 @Data
 @Schema
-public class UncertaintyDto {
+public class ExpandedUncDto {
 
   @Schema
   private double uncertainty;

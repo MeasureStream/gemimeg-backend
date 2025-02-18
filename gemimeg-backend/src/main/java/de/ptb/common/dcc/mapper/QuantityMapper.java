@@ -1,9 +1,9 @@
 package de.ptb.common.dcc.mapper;
 
 import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedMUDto;
 import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
 import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
-import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
 import de.ptb.common.dcc.api.v1.dcc.XmlValuesDto;
 import de.ptb.common.dcc.xjc.generated.ConstantQuantityType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
@@ -44,26 +44,34 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
   private final RichContentMapper richContentMapper;
   private final HybridValuesMapper hybridValuesMapper;
   private final MethodMapper methodMapper;
-  private final UncertaintyMapper uncertaintyMapper;
+  private final ExpandedMUMapper expandedMUMapper;
+  @Deprecated
+  private final ExpandedUncMapper expandedUncMapper;
   private final CoverageIntervalMapper coverageIntervalMapper;
   private final CoverageIntervalXmlListMapper coverageIntervalXmlListMapper;
-  private final UncertaintyXmlListMapper uncertaintyXmlListMapper;
+  private final ExpandedMUXmlListMapper expandedMUXmlListMapper;
+  @Deprecated
+  private final ExpandedUncXmlListMapper expandedUncXmlListMapper;
   private final ObjectFactory objectFactory;
 
   @Autowired
   public QuantityMapper(LanguageSpecificStringsMapper languageSpecificStringsMapper, RichContentMapper richContentMapper,
                         HybridValuesMapper hybridValuesMapper, MethodMapper methodMapper,
-                        UncertaintyMapper uncertaintyMapper, CoverageIntervalMapper coverageIntervalMapper,
+                        ExpandedMUMapper expandedMUMapper, ExpandedUncMapper expandedUncMapper,
+                        CoverageIntervalMapper coverageIntervalMapper,
                         CoverageIntervalXmlListMapper coverageIntervalXmlListMapper,
-                        UncertaintyXmlListMapper uncertaintyXmlListMapper, ObjectFactory objectFactory) {
+                        ExpandedMUXmlListMapper expandedMUXmlListMapper, ExpandedUncXmlListMapper expandedUncXmlListMapper,
+                        ObjectFactory objectFactory) {
     this.languageSpecificStringsMapper = languageSpecificStringsMapper;
     this.richContentMapper = richContentMapper;
     this.hybridValuesMapper = hybridValuesMapper;
     this.methodMapper = methodMapper;
-    this.uncertaintyMapper = uncertaintyMapper;
+    this.expandedMUMapper = expandedMUMapper;
+    this.expandedUncMapper = expandedUncMapper;
     this.coverageIntervalMapper = coverageIntervalMapper;
     this.coverageIntervalXmlListMapper = coverageIntervalXmlListMapper;
-    this.uncertaintyXmlListMapper = uncertaintyXmlListMapper;
+    this.expandedMUXmlListMapper = expandedMUXmlListMapper;
+    this.expandedUncXmlListMapper = expandedUncXmlListMapper;
     this.objectFactory = objectFactory;
   }
 
@@ -86,7 +94,7 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
         target.setTimestamp(realQuantity.getDateTime().toGregorianCalendar().toZonedDateTime().toLocalDateTime());
       }
       if (realQuantity.getExpandedUnc() != null && isValid(realQuantity.getExpandedUnc())) {
-        target.setUncertainty(uncertaintyMapper.mapToDto(realQuantity.getExpandedUnc()));
+        target.setExpandedUnc(expandedUncMapper.mapToDto(realQuantity.getExpandedUnc()));
       }
       if (realQuantity.getCoverageInterval() != null && isValid(realQuantity.getCoverageInterval())) {
         target.setCoverageInterval(coverageIntervalMapper.mapToDto(realQuantity.getCoverageInterval()));
@@ -100,10 +108,10 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
         target.setTimestamp(constantQuantity.getDateTime().toGregorianCalendar().toZonedDateTime().toLocalDateTime());
       }
       if (constantQuantity.getUncertainty() != null || StringUtils.isNotBlank(constantQuantity.getDistribution())) {
-        UncertaintyDto uncertainty = new UncertaintyDto();
-        uncertainty.setUncertainty(constantQuantity.getUncertainty());
-        uncertainty.setDistribution(constantQuantity.getDistribution());
-        target.setUncertainty(uncertainty);
+        ExpandedMUDto expandedMU = new ExpandedMUDto();
+        expandedMU.setUncertainty(constantQuantity.getUncertainty());
+        expandedMU.setDistribution(constantQuantity.getDistribution());
+        target.setExpandedMU(expandedMU);
       }
     }
     if (jaxbObject.getRealListXMLList() != null) {
@@ -121,7 +129,7 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
             .mapToDto(jaxbObject.getRealListXMLList().getCoverageIntervalXMLList()));
       }
       if (jaxbObject.getRealListXMLList().getExpandedUncXMLList() != null) {
-        xmlValues.setUncertainties(uncertaintyXmlListMapper
+        xmlValues.setExpandedUncList(expandedUncXmlListMapper
             .mapToDto(jaxbObject.getRealListXMLList().getExpandedUncXMLList()));
       }
       target.setXmlValues(xmlValues);
@@ -175,8 +183,8 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
           log.error(e.getMessage());
         }
       }
-      if (dto.getUncertainty() != null) {
-        realQuantity.setExpandedUnc(uncertaintyMapper.mapToJaxbObject(dto.getUncertainty()));
+      if (dto.getExpandedUnc() != null) {
+        realQuantity.setExpandedUnc(expandedUncMapper.mapToJaxbObject(dto.getExpandedUnc()));
       }
       if (dto.getCoverageInterval() != null) {
         realQuantity.setCoverageInterval(coverageIntervalMapper.mapToJaxbObject(dto.getCoverageInterval()));
@@ -195,9 +203,9 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
           log.error(e.getMessage());
         }
       }
-      if (dto.getUncertainty() != null) {
-        constantQuantity.setUncertainty(dto.getUncertainty().getUncertainty());
-        constantQuantity.setDistribution(dto.getUncertainty().getDistribution());
+      if (dto.getExpandedMU() != null) {
+        constantQuantity.setUncertainty(dto.getExpandedMU().getUncertainty());
+        constantQuantity.setDistribution(dto.getExpandedMU().getDistribution());
       }
       target.setConstant(constantQuantity);
     } else if (StringUtils.equalsIgnoreCase(dto.getQuantityTypeName(), REAL_LIST_XML_LIST)) {
@@ -211,9 +219,9 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
           .map(DimensionDto::getUnit)
           .distinct()
           .toList());
-      if (xmlValues.getUncertainties() != null && !xmlValues.getUncertainties().isEmpty()) {
-        realListXMLList.setExpandedUncXMLList(uncertaintyXmlListMapper
-            .mapToJaxbObject(xmlValues.getUncertainties()));
+      if (xmlValues.getExpandedUncList() != null && !xmlValues.getExpandedUncList().isEmpty()) {
+        realListXMLList.setExpandedUncXMLList(expandedUncXmlListMapper
+            .mapToJaxbObject(xmlValues.getExpandedUncList()));
       }
       if (xmlValues.getCoverageIntervals() != null && !xmlValues.getCoverageIntervals().isEmpty()) {
         realListXMLList.setCoverageIntervalXMLList(coverageIntervalXmlListMapper

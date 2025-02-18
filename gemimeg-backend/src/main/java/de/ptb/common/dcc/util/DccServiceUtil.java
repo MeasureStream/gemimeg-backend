@@ -5,6 +5,8 @@ import de.ptb.common.dcc.api.v1.dcc.ContactDto;
 import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalDto;
 import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
 import de.ptb.common.dcc.api.v1.dcc.EquipmentDto;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedMUDto;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedUncDto;
 import de.ptb.common.dcc.api.v1.dcc.FormulaDto;
 import de.ptb.common.dcc.api.v1.dcc.HasId;
 import de.ptb.common.dcc.api.v1.dcc.HasRefIds;
@@ -14,9 +16,10 @@ import de.ptb.common.dcc.api.v1.dcc.LocationDto;
 import de.ptb.common.dcc.api.v1.dcc.RichContentDto;
 import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementDto;
-import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
 import de.ptb.common.dcc.xjc.generated.CoverageIntervalType;
 import de.ptb.common.dcc.xjc.generated.CoverageIntervalXMLListType;
+import de.ptb.common.dcc.xjc.generated.ExpandedMUType;
+import de.ptb.common.dcc.xjc.generated.ExpandedMUXMLListType;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncType;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncXMLListType;
 import lombok.Getter;
@@ -89,14 +92,24 @@ public class DccServiceUtil {
         expandedUnc.getCoverageProbability() != 0;
   }
 
+  public static boolean isValid(@Nonnull ExpandedMUType expandedMUType) {
+    return expandedMUType.getValueExpandedMU() != 0 || expandedMUType.getCoverageFactor() != 0 ||
+        expandedMUType.getCoverageProbability() != 0;
+  }
+
   public static boolean isValid(@Nonnull CoverageIntervalType coverageInterval) {
     return (coverageInterval.getCoverageProbability() != 0 || coverageInterval.getStandardUnc() != 0) &&
         (coverageInterval.getIntervalMin() < coverageInterval.getIntervalMax());
   }
 
-  public static boolean isValid(@Nonnull UncertaintyDto uncertainty) {
-    return uncertainty.getUncertainty() != 0 || uncertainty.getCoverageFactor() != 0 ||
-        uncertainty.getCoverageProbability() != 0;
+  public static boolean isValid(@Nonnull ExpandedMUDto expandedMU) {
+    return expandedMU.getUncertainty() != 0 || expandedMU.getCoverageFactor() != 0 ||
+        expandedMU.getCoverageProbability() != 0;
+  }
+
+  public static boolean isValid(@Nonnull ExpandedUncDto expandedUnc) {
+    return expandedUnc.getUncertainty() != 0 || expandedUnc.getCoverageFactor() != 0 ||
+        expandedUnc.getCoverageProbability() != 0;
   }
 
   public static boolean isValid(@Nonnull CoverageIntervalDto coverageInterval) {
@@ -123,6 +136,20 @@ public class DccServiceUtil {
     double coverageProbability = 0.0;
     if (expandedUncXMLList.getCoverageProbabilityXMLList().size() > index) {
       coverageProbability = expandedUncXMLList.getCoverageProbabilityXMLList().get(index);
+    }
+    return uncertainty != 0 || coverageFactor != 0 || coverageProbability != 0;
+  }
+
+  public static boolean isValid(@Nonnull ExpandedMUXMLListType expandedMUXMLListType,
+                                @Nonnegative int index) {
+    double uncertainty = expandedMUXMLListType.getValueExpandedMUXMLList().get(index);
+    double coverageFactor = 0.0;
+    if (expandedMUXMLListType.getCoverageFactorXMLList().size() > index) {
+      coverageFactor = expandedMUXMLListType.getCoverageFactorXMLList().get(index);
+    }
+    double coverageProbability = 0.0;
+    if (expandedMUXMLListType.getCoverageProbabilityXMLList().size() > index) {
+      coverageProbability = expandedMUXMLListType.getCoverageProbabilityXMLList().get(index);
     }
     return uncertainty != 0 || coverageFactor != 0 || coverageProbability != 0;
   }

@@ -45,7 +45,7 @@ public class CalibrationCertificateServiceTest {
   private CalibrationCertificateConfiguration calibrationCertificateConfiguration;
 
   @MockBean
-  private CalibrationCertificateRepository dccRepository;
+  private CalibrationCertificateRepository repository;
 
   @Autowired
   private CalibrationCertificateMapper calibrationCertificateMapper;
@@ -61,13 +61,16 @@ public class CalibrationCertificateServiceTest {
   @BeforeEach
   void setUp() throws JAXBException, JsonProcessingException, DatatypeConfigurationException {
     when(calibrationCertificateConfiguration.getNamespaceUri()).thenReturn("https://ptb.de/dcc");
-    service = new CalibrationCertificateService(calibrationCertificateMapper, objectMapper, dccRepository);
+    when(calibrationCertificateConfiguration.getPersistEnabled()).thenReturn(false);
+    when(calibrationCertificateConfiguration.getPersistLifespan()).thenReturn(600);
+    service = new CalibrationCertificateService(calibrationCertificateConfiguration, calibrationCertificateMapper,
+        objectMapper, repository);
     createDigitalCalibrationCertificate();
   }
 
   @Test
   void convert_Ok() throws JAXBException, IOException, SAXException {
-    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
+    when(repository.save(any())).thenReturn(calibrationCertificate);
     String actual = service.validate(service.convert(calibrationCertificateDto));
     assertNotNull(actual);
     assertFalse(StringUtils.isEmpty(actual));
@@ -75,7 +78,7 @@ public class CalibrationCertificateServiceTest {
 
   @Test
   void validateAndConvert_Ok() throws IOException, JAXBException, SAXException {
-    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
+    when(repository.save(any())).thenReturn(calibrationCertificate);
     String xml = IOUtils.toString(Objects.requireNonNull(this.getClass()
         .getResourceAsStream("/examples/test-dcc.xml")), StandardCharsets.UTF_8);
     CalibrationCertificateDto actual = service.validateAndConvert(xml);
@@ -84,7 +87,7 @@ public class CalibrationCertificateServiceTest {
 
   @Test
   void validateAndProduceHtml_Ok() throws JAXBException, IOException, TransformerException, SAXException {
-    when(dccRepository.save(any())).thenReturn(calibrationCertificate);
+    when(repository.save(any())).thenReturn(calibrationCertificate);
     String actual = service.validateAndProduceHtml(calibrationCertificateDto);
     assertNotNull(actual);
   }

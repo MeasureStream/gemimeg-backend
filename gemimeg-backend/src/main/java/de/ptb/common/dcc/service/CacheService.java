@@ -3,12 +3,15 @@ package de.ptb.common.dcc.service;
 import de.ptb.common.dcc.api.v1.cache.ReadResponseDto;
 import de.ptb.common.dcc.api.v1.cache.RequestDto;
 import de.ptb.common.dcc.api.v1.cache.StoreResponseDto;
+import de.ptb.common.dcc.config.CacheConfiguration;
 import de.ptb.common.dcc.data.CacheItemRepository;
 import de.ptb.common.dcc.model.CacheItem;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Nonnull;
+import java.util.Date;
 import java.util.Optional;
 
 import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.BASE_PATH_ID;
@@ -17,10 +20,12 @@ import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.ID_PLACEHOLDER;
 @Service
 public class CacheService {
 
+  private final CacheConfiguration configuration;
   private final CacheItemRepository repository;
 
   @Autowired
-  public CacheService(CacheItemRepository repository) {
+  public CacheService(CacheConfiguration configuration, CacheItemRepository repository) {
+    this.configuration = configuration;
     this.repository = repository;
   }
 
@@ -49,5 +54,13 @@ public class CacheService {
       return Optional.of(readResponse);
     }
     return Optional.empty();
+  }
+
+  @Scheduled(cron = "0 */5 * ? * *")
+  public void deleteExpiredCacheItems() {
+    final long milliseconds = configuration.getPersistLifespan().longValue() * 1000L;
+    final Date expirationDate = new Date(System.currentTimeMillis() - milliseconds);
+    repository.findByCreatedAtLessThan(expirationDate)
+        .forEach(repository::delete);
   }
 }

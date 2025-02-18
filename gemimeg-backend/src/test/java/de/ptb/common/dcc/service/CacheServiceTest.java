@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.api.v1.cache.ReadResponseDto;
 import de.ptb.common.dcc.api.v1.cache.RequestDto;
 import de.ptb.common.dcc.api.v1.cache.StoreResponseDto;
+import de.ptb.common.dcc.config.CacheConfiguration;
 import de.ptb.common.dcc.config.VersionConfiguration;
 import de.ptb.common.dcc.data.CacheItemRepository;
 import de.ptb.common.dcc.model.CacheItem;
@@ -37,6 +38,9 @@ class CacheServiceTest {
   private VersionConfiguration versionConfiguration;
 
   @MockBean
+  private CacheConfiguration configuration;
+
+  @MockBean
   private CacheItemRepository repository;
 
   @Autowired
@@ -49,13 +53,14 @@ class CacheServiceTest {
   void setUp() {
     when(versionConfiguration.getArtifactId()).thenReturn("cache-service-test");
     when(versionConfiguration.getVersion()).thenReturn("1.0.0");
+    when(configuration.getPersistLifespan()).thenReturn(600);
     cacheItem = new CacheItem();
     cacheItem.setId(UUID.randomUUID().toString());
     cacheItem.setMimeType("text/plain");
     cacheItem.setFileName("test.txt");
     cacheItem.setCallbackUrl("http://test/callbackAction");
     cacheItem.setFileContent(Base64.getEncoder().encode("Für die Horde!".getBytes(StandardCharsets.UTF_8)));
-    service = new CacheService(repository);
+    service = new CacheService(configuration, repository);
   }
 
   @Test

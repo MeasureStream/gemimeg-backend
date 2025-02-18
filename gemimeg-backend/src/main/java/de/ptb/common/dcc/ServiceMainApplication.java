@@ -7,6 +7,7 @@ import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.ComponentScan;
     "de.ptb.common.dcc",
     "de.ptb.common.dcc.api.v1"
 })
+@EnableScheduling
 public class ServiceMainApplication extends SpringBootServletInitializer {
 
   public static void main(String[] args) {

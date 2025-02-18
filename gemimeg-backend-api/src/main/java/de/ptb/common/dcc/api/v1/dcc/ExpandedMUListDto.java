@@ -9,5 +9,5 @@ import java.util.ArrayList;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Schema
-public class UncertaintyListDto extends ArrayList<UncertaintyDto> {
+public class ExpandedMUListDto extends ArrayList<ExpandedMUDto> {
 }

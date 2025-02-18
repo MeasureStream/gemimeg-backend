@@ -52,7 +52,10 @@ public class QuantityDto implements HasId, HasRefIds, HasRefTypes {
   private MethodListDto usedMethods;
 
   @Schema
-  private UncertaintyDto uncertainty;
+  private ExpandedUncDto expandedUnc;
+
+  @Schema
+  private ExpandedMUDto expandedMU;
 
   @Schema
   private CoverageIntervalDto coverageInterval;
@@ -75,7 +78,10 @@ public class QuantityDto implements HasId, HasRefIds, HasRefTypes {
     private List<LocalDateTime> dateTimeList;
 
     @Schema
-    private UncertaintyListDto uncertaintyList;
+    private ExpandedUncListDto expandedUncList;
+
+    @Schema
+    private ExpandedMUListDto expandedMUList;
 
     @Schema
     private CoverageIntervalListDto coverageIntervalList;

@@ -9,11 +9,13 @@ import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
 import de.ptb.common.dcc.api.v1.dcc.SignatureListDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
+import de.ptb.common.dcc.config.CalibrationCertificateConfiguration;
 import de.ptb.common.dcc.data.CalibrationCertificateRepository;
 import de.ptb.common.dcc.mapper.CalibrationCertificateMapper;
 import de.ptb.common.dcc.model.CalibrationCertificate;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.DigitalCalibrationCertificateType;
+import jakarta.transaction.Transactional;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
@@ -23,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
@@ -45,6 +48,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Date;
 import java.util.Optional;
 
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateConstants.DEFAULT_CHARSET;
@@ -68,19 +72,22 @@ public class CalibrationCertificateService {
     }
   }
 
+  private final CalibrationCertificateConfiguration configuration;
   private final JAXBContext context;
   private final CalibrationCertificateMapper calibrationCertificateMapper;
   private final ObjectMapper objectMapper;
-  private final CalibrationCertificateRepository dccRepository;
+  private final CalibrationCertificateRepository repository;
 
   @Autowired
-  public CalibrationCertificateService(CalibrationCertificateMapper calibrationCertificateMapper,
+  public CalibrationCertificateService(CalibrationCertificateConfiguration configuration,
+                                       CalibrationCertificateMapper calibrationCertificateMapper,
                                        ObjectMapper objectMapper,
-                                       CalibrationCertificateRepository dccRepository) throws JAXBException {
+                                       CalibrationCertificateRepository repository) throws JAXBException {
+    this.configuration = configuration;
     context = JAXBContext.newInstance(DigitalCalibrationCertificateType.class);
     this.calibrationCertificateMapper = calibrationCertificateMapper;
     this.objectMapper = objectMapper;
-    this.dccRepository = dccRepository;
+    this.repository = repository;
   }
 
   @Nonnull
@@ -93,11 +100,8 @@ public class CalibrationCertificateService {
     amendSoftwareInfo(dcc);
     save(dcc);
     try (Writer xmlWriter = new StringWriter()) {
-      log.info("Provided JSON for conversion to XML: " + objectMapper.writeValueAsString(dcc));
       marshaller.marshal(calibrationCertificateMapper.mapToJAXBElement(dcc), xmlWriter);
-      String resultingXml = xmlWriter.toString();
-      log.info("Generated XML: " + resultingXml);
-      return resultingXml;
+      return xmlWriter.toString();
     }
   }
 
@@ -173,9 +177,17 @@ public class CalibrationCertificateService {
 
   @Nonnull
   public Optional<CalibrationCertificateDto> findById(@Nonnull String id) {
-    return dccRepository.findById(id)
+    return repository.findById(id)
         .map(CalibrationCertificate::getDccJson)
         .map(this::extractDto);
+  }
+
+  @Scheduled(cron = "0 */5 * ? * *")
+  public void deleteExpiredCertificates() {
+    final long milliseconds = configuration.getPersistLifespan().longValue() * 1000L;
+    final Date expirationDate = new Date(System.currentTimeMillis() - milliseconds);
+    repository.findByCreatedAtLessThan(expirationDate)
+        .forEach(repository::delete);
   }
 
   @Nonnull
@@ -203,25 +215,29 @@ public class CalibrationCertificateService {
     }
   }
 
+  @Transactional
   private void save(@Nonnull CalibrationCertificateDto dcc) {
-    String uniqueIdentifierOrId = null;
-    if (dcc.getAdministrativeData() != null && StringUtils.isNotBlank(dcc.getAdministrativeData().getUniqueIdentifier())) {
-      uniqueIdentifierOrId = dcc.getAdministrativeData().getUniqueIdentifier();
-    }
-    if (StringUtils.isNotBlank(dcc.getId())) {
-      uniqueIdentifierOrId = dcc.getId();
-    }
-    if (StringUtils.isNotBlank(uniqueIdentifierOrId)) {
-      CalibrationCertificate entity = new CalibrationCertificate();
-      entity.setId(uniqueIdentifierOrId);
-      try {
-        entity.setDccJson(objectMapper.writeValueAsString(dcc));
-        log.info("Given DCC stored successfully with ID: " + dccRepository.save(entity).getId());
-      } catch (JsonProcessingException e) {
-        log.error(e.getMessage());
+    if (configuration.getPersistEnabled()) {
+      String uniqueIdentifierOrId = null;
+      if (dcc.getAdministrativeData() != null && StringUtils.isNotBlank(dcc.getAdministrativeData().getUniqueIdentifier())) {
+        uniqueIdentifierOrId = dcc.getAdministrativeData().getUniqueIdentifier();
       }
-    } else {
-      log.warn("Given DCC cannot be stored, because it doesn't have either an ID, or a unique identifier.");
+      if (StringUtils.isNotBlank(dcc.getId())) {
+        uniqueIdentifierOrId = dcc.getId();
+      }
+      if (StringUtils.isNotBlank(uniqueIdentifierOrId)) {
+        CalibrationCertificate entity = new CalibrationCertificate();
+        entity.setId(uniqueIdentifierOrId);
+        entity.setCreatedAt(new Date(System.currentTimeMillis()));
+        try {
+          entity.setDccJson(objectMapper.writeValueAsString(dcc));
+          repository.save(entity);
+        } catch (JsonProcessingException e) {
+          log.error(e.getMessage());
+        }
+      } else {
+        log.warn("DCC cannot be stored, because it doesn't have either an ID, or a unique identifier.");
+      }
     }
   }
 

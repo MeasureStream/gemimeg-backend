@@ -4,8 +4,8 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
-import de.ptb.common.dcc.xjc.generated.ExpandedUncType;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedMUDto;
+import de.ptb.common.dcc.xjc.generated.ExpandedMUType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,20 +13,20 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Nonnull;
 
 @Component
-public class UncertaintyMapper implements JaxbDtoBidirectionalMapper<ExpandedUncType, UncertaintyDto> {
+public class ExpandedMUMapper implements JaxbDtoBidirectionalMapper<ExpandedMUType, ExpandedMUDto> {
 
   private final ObjectFactory objectFactory;
 
   @Autowired
-  public UncertaintyMapper(ObjectFactory objectFactory) {
+  public ExpandedMUMapper(ObjectFactory objectFactory) {
     this.objectFactory = objectFactory;
   }
 
   @Override
   @Nonnull
-  public UncertaintyDto mapToDto(@Nonnull ExpandedUncType jaxbObject) {
-    UncertaintyDto target = new UncertaintyDto();
-    target.setUncertainty(jaxbObject.getUncertainty());
+  public ExpandedMUDto mapToDto(@Nonnull ExpandedMUType jaxbObject) {
+    ExpandedMUDto target = new ExpandedMUDto();
+    target.setUncertainty(jaxbObject.getValueExpandedMU());
     target.setCoverageProbability(jaxbObject.getCoverageProbability());
     target.setDistribution(jaxbObject.getDistribution());
     target.setCoverageFactor(jaxbObject.getCoverageFactor());
@@ -35,9 +35,9 @@ public class UncertaintyMapper implements JaxbDtoBidirectionalMapper<ExpandedUnc
 
   @Override
   @Nonnull
-  public ExpandedUncType mapToJaxbObject(@Nonnull UncertaintyDto dto) {
-    ExpandedUncType target = objectFactory.createExpandedUncType();
-    target.setUncertainty(dto.getUncertainty());
+  public ExpandedMUType mapToJaxbObject(@Nonnull ExpandedMUDto dto) {
+    ExpandedMUType target = objectFactory.createExpandedMUType();
+    target.setValueExpandedMU(dto.getUncertainty());
     target.setCoverageProbability(dto.getCoverageProbability());
     target.setDistribution(dto.getDistribution());
     target.setCoverageFactor(dto.getCoverageFactor());

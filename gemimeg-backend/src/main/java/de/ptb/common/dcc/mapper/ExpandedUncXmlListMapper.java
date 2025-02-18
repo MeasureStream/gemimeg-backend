@@ -4,8 +4,8 @@
 
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dcc.UncertaintyDto;
-import de.ptb.common.dcc.api.v1.dcc.UncertaintyListDto;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedUncDto;
+import de.ptb.common.dcc.api.v1.dcc.ExpandedUncListDto;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncXMLListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import org.apache.commons.lang3.StringUtils;
@@ -18,20 +18,21 @@ import javax.annotation.Nullable;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.isValid;
 
+@Deprecated
 @Component
-public class UncertaintyXmlListMapper implements JaxbDtoBidirectionalMapper<ExpandedUncXMLListType, UncertaintyListDto> {
+public class ExpandedUncXmlListMapper implements JaxbDtoBidirectionalMapper<ExpandedUncXMLListType, ExpandedUncListDto> {
 
   private final ObjectFactory objectFactory;
 
   @Autowired
-  public UncertaintyXmlListMapper(ObjectFactory objectFactory) {
+  public ExpandedUncXmlListMapper(ObjectFactory objectFactory) {
     this.objectFactory = objectFactory;
   }
 
   @Override
   @Nonnull
-  public UncertaintyListDto mapToDto(@Nonnull ExpandedUncXMLListType jaxbObject) {
-    UncertaintyListDto target = new UncertaintyListDto();
+  public ExpandedUncListDto mapToDto(@Nonnull ExpandedUncXMLListType jaxbObject) {
+    ExpandedUncListDto target = new ExpandedUncListDto();
     for (int i = 0; i < jaxbObject.getUncertaintyXMLList().size(); i++) {
       if (isValid(jaxbObject, i)) {
         target.add(mapSingleToDto(jaxbObject, i));
@@ -41,8 +42,8 @@ public class UncertaintyXmlListMapper implements JaxbDtoBidirectionalMapper<Expa
   }
 
   @Nonnull
-  public UncertaintyDto mapSingleToDto(@Nullable ExpandedUncXMLListType jaxbObject, @Nonnegative int index) {
-    UncertaintyDto target = new UncertaintyDto();
+  public ExpandedUncDto mapSingleToDto(@Nullable ExpandedUncXMLListType jaxbObject, @Nonnegative int index) {
+    ExpandedUncDto target = new ExpandedUncDto();
     if (jaxbObject != null) {
       int currentSize = jaxbObject.getUncertaintyXMLList().size();
       int maxIndex = index >= currentSize ? currentSize - 1 : index;
@@ -73,9 +74,9 @@ public class UncertaintyXmlListMapper implements JaxbDtoBidirectionalMapper<Expa
 
   @Override
   @Nonnull
-  public ExpandedUncXMLListType mapToJaxbObject(@Nonnull UncertaintyListDto dto) {
+  public ExpandedUncXMLListType mapToJaxbObject(@Nonnull ExpandedUncListDto dto) {
     ExpandedUncXMLListType target = objectFactory.createExpandedUncXMLListType();
-    for (UncertaintyDto uncertainty : dto) {
+    for (ExpandedUncDto uncertainty : dto) {
       double uncertaintyValue = uncertainty.getUncertainty();
       if (uncertaintyValue != 0.0) {
         target.getUncertaintyXMLList().add(uncertaintyValue);

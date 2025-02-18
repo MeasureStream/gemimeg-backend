@@ -8,11 +8,8 @@ import org.springframework.context.annotation.Configuration;
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties(prefix = "common.dcc")
-public class CalibrationCertificateConfiguration {
+@ConfigurationProperties(prefix = "common.cache")
+public class CacheConfiguration {
 
-  private String schemaUrl;
-  private String namespaceUri;
-  private Boolean persistEnabled;
   private Integer persistLifespan;
 }

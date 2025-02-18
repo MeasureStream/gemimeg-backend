@@ -197,6 +197,12 @@
       <artifactId>xmlunit-matchers</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>de.flapdoodle.embed</groupId>
+      <artifactId>de.flapdoodle.embed.mongo.spring3x</artifactId>
+      <version>${de.flapdoodle.embed.mongo.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
