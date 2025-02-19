@@ -1,6 +1,5 @@
 package de.ptb.common.dcc.api.v1;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
 import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
@@ -31,7 +30,6 @@ import de.ptb.common.dcc.api.v1.dcc.SoftwareDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nonnull;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -45,7 +43,6 @@ import java.util.UUID;
 
 import static de.ptb.common.dcc.api.v1.json.SerializationUtils.createObjectMapper;
 
-@Slf4j
 public class CalibrationCertificateBuilder {
 
   private final ObjectMapper objectMapper;
@@ -240,7 +237,7 @@ public class CalibrationCertificateBuilder {
     return this;
   }
 
-  public CalibrationCertificateDto build() throws JsonProcessingException, DatatypeConfigurationException {
+  public CalibrationCertificateDto build() throws DatatypeConfigurationException {
     CalibrationCertificateDto digitalCalibrationCertificate = new CalibrationCertificateDto();
     AdministrativeDataDto administrativeData = new AdministrativeDataDto();
     administrativeData.setCountryCode("DE");
@@ -293,7 +290,6 @@ public class CalibrationCertificateBuilder {
     digitalCalibrationCertificate.setMeasurementResults(measurementResultList);
     digitalCalibrationCertificate.setSignatures(signatures);
     digitalCalibrationCertificate.setSchemaVersion(schemaVersion);
-    log.info("Created DCC as JSON: " + objectMapper.writeValueAsString(digitalCalibrationCertificate));
     return digitalCalibrationCertificate;
   }
 

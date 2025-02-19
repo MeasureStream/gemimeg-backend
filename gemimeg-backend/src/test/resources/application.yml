@@ -27,7 +27,7 @@ de:
   flapdoodle:
     mongodb:
       embedded:
-        version: 8.0.0
+        version: 6.0.4
 common:
   security:
     enabled: ${server.ssl.enabled}
