@@ -6,18 +6,18 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 
 import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataJpaTest
+@DataMongoTest
 class CalibrationCertificateRepositoryTest {
 
   @Autowired
-  private CalibrationCertificateRepository dccRepository;
+  private CalibrationCertificateRepository repository;
 
   @Autowired
   private CalibrationCertificateConfiguration configuration;
@@ -38,20 +38,20 @@ class CalibrationCertificateRepositoryTest {
     notExpired.setId("FDH_" + currentTimeMillis);
     notExpired.setDccJson("{}");
     notExpired.setCreatedAt(new Date(currentTimeMillis));
-    dccRepository.saveAll(List.of(expired, notExpired));
-    assertEquals(2, dccRepository.count());
+    repository.saveAll(List.of(expired, notExpired));
+    assertEquals(2, repository.count());
   }
 
   @Test
   void findByCreatedAtLessThan_Ok() {
-    List<CalibrationCertificate> actual = dccRepository.findByCreatedAtLessThan(new Date(currentTimeMillis - 1000L));
+    List<CalibrationCertificate> actual = repository.findByCreatedAtLessThan(new Date(currentTimeMillis - 1000L));
     assertEquals(1, actual.size());
     assertEquals(expiredId, actual.getFirst().getId());
   }
 
   @AfterEach
   void tearDown() {
-    dccRepository.deleteAll();
-    assertEquals(0, dccRepository.count());
+    repository.deleteAll();
+    assertEquals(0, repository.count());
   }
 }
