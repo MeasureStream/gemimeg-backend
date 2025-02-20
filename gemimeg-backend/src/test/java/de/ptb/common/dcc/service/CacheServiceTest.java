@@ -8,6 +8,7 @@ import de.ptb.common.dcc.config.CacheConfiguration;
 import de.ptb.common.dcc.config.VersionConfiguration;
 import de.ptb.common.dcc.data.CacheItemRepository;
 import de.ptb.common.dcc.model.CacheItem;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Optional;
-import java.util.UUID;
 
 import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.BASE_PATH_ID;
 import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.ID_PLACEHOLDER;
@@ -49,13 +49,15 @@ class CacheServiceTest {
   private CacheService service;
   private CacheItem cacheItem;
 
+  private final Long cacheItemId = RandomUtils.nextLong();
+
   @BeforeEach
   void setUp() {
     when(versionConfiguration.getArtifactId()).thenReturn("cache-service-test");
     when(versionConfiguration.getVersion()).thenReturn("1.0.0");
     when(configuration.getPersistLifespan()).thenReturn(600);
     cacheItem = new CacheItem();
-    cacheItem.setId(UUID.randomUUID().toString());
+    cacheItem.setId(cacheItemId);
     cacheItem.setMimeType("text/plain");
     cacheItem.setFileName("test.txt");
     cacheItem.setCallbackUrl("http://test/callbackAction");
@@ -73,7 +75,7 @@ class CacheServiceTest {
     when(repository.save(any())).thenReturn(cacheItem);
     StoreResponseDto actual = service.store(request);
     assertNotNull(actual);
-    assertEquals(BASE_PATH_ID.replace(ID_PLACEHOLDER, cacheItem.getId()), actual.getRetrievalUrl());
+    assertEquals(BASE_PATH_ID.replace(ID_PLACEHOLDER, cacheItem.getId().toString()), actual.getRetrievalUrl());
   }
 
   @Test
@@ -91,11 +93,11 @@ class CacheServiceTest {
 
   @Test
   void findById_NotFound() {
-    when(repository.findById("missingId")).thenReturn(Optional.empty());
-    Optional<ReadResponseDto> actual = service.findById("missingId");
+    when(repository.findById(cacheItemId + 1)).thenReturn(Optional.empty());
+    Optional<ReadResponseDto> actual = service.findById(cacheItemId + 1);
     assertNotNull(actual);
     assertFalse(actual.isPresent());
-    verify(repository).findById("missingId");
+    verify(repository).findById(cacheItemId + 1);
     verifyNoMoreInteractions(repository);
   }
 }

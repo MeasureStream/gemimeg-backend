@@ -23,7 +23,6 @@
   <properties>
     <dcc-namespace-uri>https://ptb.de/dcc</dcc-namespace-uri>
     <byte-buddy.version>1.15.1</byte-buddy.version>
-    <de.flapdoodle.embed.mongo.version>4.18.0</de.flapdoodle.embed.mongo.version>
   </properties>
 
   <!-- SCM settings -->

@@ -43,7 +43,7 @@ public class CacheController {
 
   @Operation(description = "Gets the cached item by its ID.")
   @GetMapping(path = BASE_PATH_ID, produces = APPLICATION_JSON_VALUE)
-  public ReadResponseDto findById(@PathVariable(name = ID_PARAM_NAME) String id) {
+  public ReadResponseDto findById(@PathVariable(name = ID_PARAM_NAME) Long id) {
     return service.findById(id)
         .orElseThrow(() -> new NotFoundStatus("Cached file with ID " + id + " could not be found."));
   }

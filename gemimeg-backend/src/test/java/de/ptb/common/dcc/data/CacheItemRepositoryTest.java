@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
-import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@DataMongoTest
+@DataJpaTest
 class CacheItemRepositoryTest {
 
   private final static String XML = """
@@ -31,9 +31,6 @@ class CacheItemRepositoryTest {
   @Autowired
   private CacheConfiguration configuration;
 
-  @Autowired
-  private MongoTemplate mongoTemplate;
-
   private final long currentTimeMillis = System.currentTimeMillis();
 
   @BeforeEach
@@ -44,13 +41,13 @@ class CacheItemRepositoryTest {
     expired.setFileName("FDH_expired.xml");
     expired.setFileContent(XML.getBytes(StandardCharsets.UTF_8));
     expired.setCreatedAt(new Date(expiredTimeMillis));
-    mongoTemplate.insert(expired);
     CacheItem notExpired = new CacheItem();
     notExpired.setMimeType("application/xml");
     notExpired.setFileName("FDH_notExpired.xml");
     notExpired.setFileContent(XML.getBytes(StandardCharsets.UTF_8));
     notExpired.setCreatedAt(new Date(currentTimeMillis));
-    mongoTemplate.insert(notExpired);
+    repository.saveAll(List.of(expired, notExpired));
+    assertEquals(2, repository.count());
   }
 
   @Test
@@ -62,6 +59,7 @@ class CacheItemRepositoryTest {
 
   @AfterEach
   void tearDown() {
-    mongoTemplate.getDb().drop();
+    repository.deleteAll();
+    assertEquals(0, repository.count());
   }
 }

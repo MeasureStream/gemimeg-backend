@@ -38,12 +38,12 @@ public class CacheService {
     cacheItem.setMimeType(request.getMimeType());
     cacheItem = repository.save(cacheItem);
     StoreResponseDto response = new StoreResponseDto();
-    response.setRetrievalUrl(BASE_PATH_ID.replace(ID_PLACEHOLDER, cacheItem.getId()));
+    response.setRetrievalUrl(BASE_PATH_ID.replace(ID_PLACEHOLDER, cacheItem.getId().toString()));
     return response;
   }
 
   @Nonnull
-  public Optional<ReadResponseDto> findById(@Nonnull String id) {
+  public Optional<ReadResponseDto> findById(@Nonnull Long id) {
     Optional<CacheItem> cacheItem = repository.findById(id);
     if (cacheItem.isPresent()) {
       ReadResponseDto readResponse = new ReadResponseDto();
