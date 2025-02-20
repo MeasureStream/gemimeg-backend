@@ -11,12 +11,18 @@ import de.ptb.common.dcc.model.CacheItem;
 import org.apache.commons.lang3.RandomUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.scheduling.annotation.Scheduled;
 
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import static de.ptb.common.dcc.api.v1.CacheControllerRoutes.BASE_PATH_ID;
@@ -46,10 +52,14 @@ class CacheServiceTest {
   @Autowired
   private ObjectMapper objectMapper;
 
+  @Captor
+  private ArgumentCaptor<Date> dateCaptor;
+
   private CacheService service;
   private CacheItem cacheItem;
 
   private final Long cacheItemId = RandomUtils.nextLong();
+  private final Date createdAt = new Date(System.currentTimeMillis());
 
   @BeforeEach
   void setUp() {
@@ -62,6 +72,7 @@ class CacheServiceTest {
     cacheItem.setFileName("test.txt");
     cacheItem.setCallbackUrl("http://test/callbackAction");
     cacheItem.setFileContent(Base64.getEncoder().encode("Für die Horde!".getBytes(StandardCharsets.UTF_8)));
+    cacheItem.setCreatedAt(createdAt);
     service = new CacheService(configuration, repository);
   }
 
@@ -98,6 +109,20 @@ class CacheServiceTest {
     assertNotNull(actual);
     assertFalse(actual.isPresent());
     verify(repository).findById(cacheItemId + 1);
+    verifyNoMoreInteractions(repository);
+  }
+
+  @Test
+  void deleteExpiredCacheItems_Ok() throws NoSuchMethodException {
+    when(repository.findByCreatedAtLessThan(any(Date.class))).thenReturn(List.of(cacheItem));
+    Method deleteExpiredCacheItems = service.getClass().getMethod("deleteExpiredCacheItems");
+    assertEquals("0 */5 * ? * *", deleteExpiredCacheItems.getAnnotation(Scheduled.class).cron());
+    Date now = new Date(System.currentTimeMillis());
+    service.deleteExpiredCacheItems();
+    verify(repository).findByCreatedAtLessThan(dateCaptor.capture());
+    assertEquals((now.getTime() - configuration.getPersistLifespan() * 1000L) / 100L,
+        dateCaptor.getValue().getTime() / 100L);
+    verify(repository).delete(cacheItem);
     verifyNoMoreInteractions(repository);
   }
 }
