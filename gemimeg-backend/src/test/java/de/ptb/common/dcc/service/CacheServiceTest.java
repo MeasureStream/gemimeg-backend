@@ -1,6 +1,5 @@
 package de.ptb.common.dcc.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.api.v1.cache.ReadResponseDto;
 import de.ptb.common.dcc.api.v1.cache.RequestDto;
 import de.ptb.common.dcc.api.v1.cache.StoreResponseDto;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -48,9 +46,6 @@ class CacheServiceTest {
 
   @MockBean
   private CacheItemRepository repository;
-
-  @Autowired
-  private ObjectMapper objectMapper;
 
   @Captor
   private ArgumentCaptor<Date> dateCaptor;

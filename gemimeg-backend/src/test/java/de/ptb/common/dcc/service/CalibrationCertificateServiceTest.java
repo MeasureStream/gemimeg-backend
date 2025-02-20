@@ -14,17 +14,23 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.xml.sax.SAXException;
 
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -36,13 +42,15 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class CalibrationCertificateServiceTest {
 
   @MockBean
-  private CalibrationCertificateConfiguration calibrationCertificateConfiguration;
+  private CalibrationCertificateConfiguration configuration;
 
   @MockBean
   private CalibrationCertificateRepository repository;
@@ -53,6 +61,9 @@ public class CalibrationCertificateServiceTest {
   @Autowired
   private ObjectMapper objectMapper;
 
+  @Captor
+  private ArgumentCaptor<Date> dateCaptor;
+
   private CalibrationCertificateService service;
 
   private CalibrationCertificateDto calibrationCertificateDto;
@@ -60,10 +71,10 @@ public class CalibrationCertificateServiceTest {
 
   @BeforeEach
   void setUp() throws JAXBException, JsonProcessingException, DatatypeConfigurationException {
-    when(calibrationCertificateConfiguration.getNamespaceUri()).thenReturn("https://ptb.de/dcc");
-    when(calibrationCertificateConfiguration.getPersistEnabled()).thenReturn(false);
-    when(calibrationCertificateConfiguration.getPersistLifespan()).thenReturn(600);
-    service = new CalibrationCertificateService(calibrationCertificateConfiguration, calibrationCertificateMapper,
+    when(configuration.getNamespaceUri()).thenReturn("https://ptb.de/dcc");
+    when(configuration.getPersistEnabled()).thenReturn(false);
+    when(configuration.getPersistLifespan()).thenReturn(600);
+    service = new CalibrationCertificateService(configuration, calibrationCertificateMapper,
         objectMapper, repository);
     createDigitalCalibrationCertificate();
   }
@@ -137,5 +148,19 @@ public class CalibrationCertificateServiceTest {
     calibrationCertificate = new CalibrationCertificate();
     calibrationCertificate.setId(UUID.randomUUID().toString());
     calibrationCertificate.setDccJson(objectMapper.writeValueAsString(calibrationCertificateDto));
+  }
+
+  @Test
+  void deleteExpiredCertificates_Ok() throws NoSuchMethodException {
+    when(repository.findByCreatedAtLessThan(any(Date.class))).thenReturn(List.of(calibrationCertificate));
+    Method deleteExpiredCertificates = service.getClass().getMethod("deleteExpiredCertificates");
+    assertEquals("0 */5 * ? * *", deleteExpiredCertificates.getAnnotation(Scheduled.class).cron());
+    Date now = new Date(System.currentTimeMillis());
+    service.deleteExpiredCertificates();
+    verify(repository).findByCreatedAtLessThan(dateCaptor.capture());
+    assertEquals((now.getTime() - configuration.getPersistLifespan() * 1000L) / 100L,
+        dateCaptor.getValue().getTime() / 100L);
+    verify(repository).delete(calibrationCertificate);
+    verifyNoMoreInteractions(repository);
   }
 }
