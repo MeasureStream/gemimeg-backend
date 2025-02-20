@@ -1,11 +1,3 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/pipeline/#customization
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
-
 .set_environmentvariables: &set_environmentvariables
   - export HTTP_PROXY="http://194.94.94.194:8080/"
   - export HTTPS_PROXY="http://194.94.94.194:8080/"
@@ -16,13 +8,10 @@
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 
-
 cache:
   key: maven_cache
   paths:
     - .m2/repository
-
-
 
 stages:
 - test
@@ -30,19 +19,6 @@ stages:
 - package
 - deploy
 - release
-#- review
-#- dast
-#- staging
-#- canary
-#- production
-#- incremental rollout 10%
-#- incremental rollout 25%
-#- incremental rollout 50%
-#- incremental rollout 100%
-#- performance
-#- cleanup
-
-
 
 maven-test:
   stage: test
@@ -54,7 +30,7 @@ maven-test:
     - cp .mavenrc /root/.mavenrc
     - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
   script: 
-    - "mvn clean -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report"
+    - "mvn clean Dhttps.proxyHost=webproxy.berlin.ptb.de -Dhttps.proxyPort=8080 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report"
     - cat gemimeg-backend/target/site/jacoco/index.html
   coverage: /Total.*?([0-9]{1,3})%/
   artifacts:
@@ -84,7 +60,7 @@ maven-package:
     - cp .mavenrc /root/.mavenrc
     - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
   script:
-    - "mvn -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -DskipTests=true package"
+    - "mvn -Dhttps.proxyHost=webproxy.berlin.ptb.de -Dhttps.proxyPort=8080 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -DskipTests=true package"
   artifacts:
     paths:
       - gemimeg-backend/target/gemimeg-backend.jar
@@ -97,7 +73,7 @@ build-image:
   tags:
     - oplayer-berlin
   image:
-    name: gcr.io/kaniko-project/executor:v1.20.1-debug
+    name: gcr.io/kaniko-project/executor:v1.23.2-debug
     entrypoint: [ "" ]
   before_script:
     - *set_environmentvariables
@@ -107,7 +83,6 @@ build-image:
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
       --destination "${IMAGE_TAG}"
       --verbosity=debug
-
 
 deploy-production:
   variables:
@@ -143,8 +118,6 @@ deploy-production:
     # docker login and restart services
     - ssh duser@a94083.berlin.ptb.de "cd /home/duser/oplayer/gmg/backend;docker-compose -p gmg -f docker-compose.yml up -d";
 
-
-
 release-job:
   stage: release
   image: registry.gitlab.com/gitlab-org/release-cli:latest
@@ -155,8 +128,3 @@ release-job:
   release:
     tag_name: '$CI_COMMIT_TAG'
     description: '$CI_COMMIT_TAG'
-
-#sast:
-#  stage: test
-#include:
-#- template: Auto-DevOps.gitlab-ci.yml
