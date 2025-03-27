@@ -13,10 +13,6 @@
       </head>
       <body>
         <div class="dcc-wrapper">
-          <div class="dcc-logos">
-            <img class="ptb-logo" src="{$base}assets/svg/PTB-black.svg" alt="ptb-logo"/>
-            <img class="bundesadler-logo" src="{$base}assets/svg/Bundesadler_Siegel.svg" alt="bundesadler-logo"/>
-          </div>
           <div class="dcc-content p-l">
             <h1>Kalibrierzertifikat</h1>
             <p class="english-title">Digital Calibration Certificate</p>

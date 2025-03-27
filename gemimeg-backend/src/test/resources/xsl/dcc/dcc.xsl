@@ -13,11 +13,7 @@
       </head>
       <body>
         <div class="w-100">
-          <div>
-            <img src="{$base}assets/PTB.svg" width="250"/>
-          </div>
           <div class="text-center">
-            <img src="{$base}assets/Bundesadler_Siegel.svg" width="100"/>
             <p class="heading">Kalibrierschein</p>
             <i>Calibration Certificate</i>
           </div>
