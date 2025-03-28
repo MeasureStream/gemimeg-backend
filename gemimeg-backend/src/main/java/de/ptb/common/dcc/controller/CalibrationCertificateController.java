@@ -1,6 +1,33 @@
+/**
+ * Copyright 2025 Physikalisch-Technische Bundesanstalt
+ * <p>
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ * <p>
+ * 1. Redistributions of source code must retain the above copyright notice,
+ * this list of conditions and the following disclaimer.
+ * <p>
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ * <p>
+ * 3. Neither the name of the copyright holder nor the names of its contributors
+ * may be used to endorse or promote products derived from this software without
+ * specific prior written permission.
+ * <p>
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+ * IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+ * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+ * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+ * OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
 package de.ptb.common.dcc.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.service.CalibrationCertificateService;
 import de.ptb.common.http.BadRequestStatus;
@@ -25,16 +52,13 @@ import org.xml.sax.SAXParseException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.security.NoSuchAlgorithmException;
 
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_HTML_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_JSON_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_PATH_ID;
-import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_SELF_SIGN_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_XML_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_XML_PATH_ID;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.ID_PARAM_NAME;
-import static de.ptb.common.dcc.service.CalibrationCertificateService.SELF_SIGNING_HASH_ALGORITHM;
 import static de.ptb.common.dcc.util.DccServiceUtil.createLogEntry;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
