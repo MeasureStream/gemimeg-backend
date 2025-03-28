@@ -18,7 +18,7 @@
       <configuration>
         <httpHeaders>
           <property>
-            <name>Job-Token</name>
+            <name>PRIVATE-TOKEN</name>
             <value>${REGISTRY_AUTH_TOKEN}</value>
           </property>
         </httpHeaders>
