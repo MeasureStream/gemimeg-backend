@@ -16,7 +16,6 @@
       </head>
       <body>
         <div class="dcc-wrapper">
-
           <div class="dcc-content p-l">
             <h1>Kalibrierzertifikat</h1>
             <p class="english-title">Digital Calibration Certificate</p>
@@ -220,31 +219,14 @@
   </xsl:template>
   <!--  template name -->
   <xsl:template match="dcc:name">
-<!--    <xsl:for-each select="dcc:content[@lang='de']">-->
-<!--      <xsl:call-template name="showIfNotEmpty">-->
-<!--        <xsl:with-param name="label" select="concat('Name-de ', position())"/>-->
-<!--        <xsl:with-param name="english-label" select="concat('Name ', position())"/>-->
-<!--        <xsl:with-param name="value" select="."/>-->
-<!--        <xsl:with-param name="isDate" select="'false'"/>-->
-<!--      </xsl:call-template>-->
-<!--    </xsl:for-each>-->
-<!--    <xsl:for-each select="dcc:content[@lang='en']">-->
-<!--      <xsl:call-template name="showIfNotEmpty">-->
-<!--        <xsl:with-param name="label" select="concat('Name-en ', position())"/>-->
-<!--        <xsl:with-param name="english-label" select="concat('Name ', position())"/>-->
-<!--        <xsl:with-param name="value" select="."/>-->
-<!--        <xsl:with-param name="isDate" select="'false'"/>-->
-<!--      </xsl:call-template>-->
-<!--    </xsl:for-each>-->
-
       <xsl:variable name="count" select="count(dcc:content)"/>
       <xsl:for-each select="dcc:content">
         <xsl:variable name="lang" select="@lang"/>
         <xsl:variable name="pos" select="position()"/>
 
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="concat('Name', ' ', $pos)"/>
-          <xsl:with-param name="english-label" select="concat('Name ', $pos)"/>
+          <xsl:with-param name="label" select="concat('Name',$pos)"/>
+          <xsl:with-param name="english-label" select="concat('Name',$pos)"/>
           <xsl:with-param name="value" select="."/>
           <xsl:with-param name="isDate" select="'false'"/>
           <xsl:with-param name="lang" select="$lang"/>
@@ -544,32 +526,8 @@
     </table>
 
   </xsl:template>
+
   <!-- if-not-empty -->
-<!--  <xsl:template name="showIfNotEmpty">-->
-<!--    <xsl:param name="label"/>-->
-<!--    <xsl:param name="english-label"/>-->
-<!--    <xsl:param name="value"/>-->
-<!--    <xsl:param name="isDate"/>-->
-<!--    <xsl:if test="string($value) != ''">-->
-<!--      <tr>-->
-<!--        <td>-->
-<!--          <p><xsl:value-of select="$label"/></p>-->
-<!--          <p class="english-label"><xsl:value-of select="$english-label"/></p>-->
-<!--        </td>-->
-<!--        <td>-->
-<!--          <p>-->
-<!--            <xsl:choose>-->
-<!--              <xsl:when test="$isDate = 'true'">-->
-<!--                <xsl:value-of select="substring-before($value, '+')"/>-->
-<!--              </xsl:when>-->
-<!--              <xsl:otherwise>-->
-<!--                <xsl:value-of select="$value"/>-->
-<!--              </xsl:otherwise>-->
-<!--            </xsl:choose>-->
-<!--          </p> <p> </p></td>-->
-<!--      </tr>-->
-<!--    </xsl:if>-->
-<!--  </xsl:template>-->
   <xsl:template name="showIfNotEmpty">
     <xsl:param name="label"/>
     <xsl:param name="english-label"/>
@@ -582,7 +540,6 @@
         <td>
           <p><xsl:value-of select="$label"/></p>
           <p class="english-label"><xsl:value-of select="$english-label"/></p>
-          <p class="language">[Sprache: <xsl:value-of select="$lang"/>]</p> <!-- Sprache anzeigen -->
         </td>
         <td>
           <p>
