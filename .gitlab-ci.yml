@@ -23,8 +23,6 @@ stages:
 maven-test:
   stage: test
   image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.6-eclipse-temurin-21
-  tags:
-    - oplayer-berlin
   before_script:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc
@@ -50,8 +48,6 @@ maven-package:
   only:
     - tags
   image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.6-eclipse-temurin-21
-  tags:
-    - oplayer-berlin
   before_script:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc
@@ -67,8 +63,6 @@ build-image:
   stage: package
   only:
     - tags
-  tags:
-    - oplayer-berlin
   image:
     name: gcr.io/kaniko-project/executor:v1.23.2-debug
     entrypoint: [ "" ]
@@ -90,7 +84,7 @@ deploy-production:
   tags:
     - oplayer-berlin
   rules:
-    - if: $CI_COMMIT_TAG =~ /^\d+.\d+.\d+-?.*$/
+    - if: '$CI_COMMIT_TAG =~ /^\d+.\d+.\d+-?.*$/ && $CI_SERVER_HOST == "itgit.bs.ptb.de"'
   image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/alpine:latest
   before_script:
     - *set_environmentvariables
