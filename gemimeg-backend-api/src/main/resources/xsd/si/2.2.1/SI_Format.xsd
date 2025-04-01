@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema version="2.2.1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="https://ptb.de/si"
-           xmlns:si="https://ptb.de/si"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:si="https://ptb.de/si"
            xmlns:qudt="http://qudt.org/vocab/"
+           version="2.2.1"
+           targetNamespace="https://ptb.de/si"
            elementFormDefault="qualified">
   <xs:annotation>
     <xs:documentation xml:lang="en">

@@ -14,11 +14,11 @@ cache:
     - .m2/repository
 
 stages:
-- test
-- build
-- package
-- deploy
-- release
+  - test
+  - build
+  - package
+  - deploy
+  - release
 
 maven-test:
   stage: test
@@ -27,7 +27,7 @@ maven-test:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc
     - cp settings.xml  ${MAVEN_HOME}/conf/settings.xml
-  script: 
+  script:
     - "mvn -Dhttps.proxyHost=webproxy.berlin.ptb.de -Dhttps.proxyPort=8080 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository org.jacoco:jacoco-maven-plugin:prepare-agent test jacoco:report"
     - cat gemimeg-backend/target/site/jacoco/index.html
   coverage: /Total.*?([0-9]{1,3})%/

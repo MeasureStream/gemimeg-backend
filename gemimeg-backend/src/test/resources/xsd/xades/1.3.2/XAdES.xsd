@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://uri.etsi.org/01903/v1.3.2#" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            xmlns="http://uri.etsi.org/01903/v1.3.2#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+            targetNamespace="http://uri.etsi.org/01903/v1.3.2#" xmlns="http://uri.etsi.org/01903/v1.3.2#"
             elementFormDefault="qualified">
   <xsd:import namespace="http://www.w3.org/2000/09/xmldsig#"
               schemaLocation="../../ds/1.2/xmldsig-core-schema.xsd"/>

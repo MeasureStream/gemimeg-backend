@@ -34,7 +34,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.nio.charset.StandardCharsets;
@@ -52,14 +51,11 @@ class CacheItemRepositoryTest {
         Für die Horde!
       </metadata>
       """;
-
+  private final long currentTimeMillis = System.currentTimeMillis();
   @Autowired
   private CacheItemRepository repository;
-
   @Autowired
   private CacheConfiguration configuration;
-
-  private final long currentTimeMillis = System.currentTimeMillis();
 
   @BeforeEach
   void setUp() {

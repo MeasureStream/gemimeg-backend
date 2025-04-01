@@ -38,14 +38,11 @@ import java.util.List;
 public class SoftwareDto implements HasId, HasRefIds, HasRefTypes {
 
   @Schema
-  private String id;
-
-  @Schema
   List<String> refIds;
-
   @Schema
   List<String> refTypes;
-
+  @Schema
+  private String id;
   @Schema
   private LanguageSpecificStringsDto name;
 

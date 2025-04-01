@@ -39,19 +39,14 @@ public class IdentificationDto implements HasId, HasRefIds, HasRefTypes {
 
   @Schema
   protected String id;
-
-  @Schema
-  private List<String> refIds;
-
-  @Schema
-  private List<String> refTypes;
-
   @Schema
   protected LanguageSpecificStringsDto name;
-
   @Schema
   protected String issuer;
-
   @Schema
   protected String value;
+  @Schema
+  private List<String> refIds;
+  @Schema
+  private List<String> refTypes;
 }

@@ -61,7 +61,6 @@ import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.SPKI_KEY;
 import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.STRING_KEY;
 import static de.ptb.common.dcc.api.v1.dcc.SignatureDto.KeyInfo.X509_KEY;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;
-import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;
 
 @Component
 public class SignatureMapper implements JaxbDtoBidirectionalMapper<SignatureType, SignatureDto> {
@@ -71,6 +70,42 @@ public class SignatureMapper implements JaxbDtoBidirectionalMapper<SignatureType
   @Autowired
   public SignatureMapper(ObjectFactory objectFactory) {
     this.objectFactory = objectFactory;
+  }
+
+  @Nonnull
+  private static SignatureDto.SignedInfo getSignedInfo(SignatureType jaxbObject) {
+    SignatureDto.SignedInfo signedInfo = new SignatureDto.SignedInfo();
+    signedInfo.setId(jaxbObject.getSignedInfo().getId());
+    if (jaxbObject.getSignedInfo().getSignatureMethod() != null) {
+      signedInfo.setMethodContent(jaxbObject.getSignedInfo().getSignatureMethod().getContent());
+      signedInfo.setMethodAlgorithm(jaxbObject.getSignedInfo().getSignatureMethod().getAlgorithm());
+    }
+    if (jaxbObject.getSignedInfo().getCanonicalizationMethod() != null) {
+      signedInfo.setCanonicalizationContent(jaxbObject.getSignedInfo().getCanonicalizationMethod().getContent());
+      signedInfo.setCanonicalizationAlgorithm(jaxbObject.getSignedInfo().getCanonicalizationMethod().getAlgorithm());
+    }
+    return signedInfo;
+  }
+
+  @Nonnull
+  private static SignatureDto.KeyInfo.RetrievalMethod getRetrievalMethod(RetrievalMethodType content) {
+    SignatureDto.KeyInfo.RetrievalMethod retrievalMethod = new SignatureDto.KeyInfo.RetrievalMethod();
+    retrievalMethod.setType(content.getType());
+    retrievalMethod.setUri(content.getURI());
+    if (content.getTransforms() != null) {
+      List<TransformType> transformTypes = content.getTransforms().getTransform();
+      if (transformTypes != null && !transformTypes.isEmpty()) {
+        List<String> transformAlgorithms = new ArrayList<>();
+        List<List<Object>> transforms = new ArrayList<>();
+        transformTypes.forEach(transformType -> {
+          transformAlgorithms.add(transformType.getAlgorithm());
+          transforms.add(transformType.getContent());
+        });
+        retrievalMethod.setTransformAlgorithms(transformAlgorithms);
+        retrievalMethod.setTransforms(transforms);
+      }
+    }
+    return retrievalMethod;
   }
 
   @Override
@@ -228,41 +263,5 @@ public class SignatureMapper implements JaxbDtoBidirectionalMapper<SignatureType
       });
     }
     return target;
-  }
-
-  @Nonnull
-  private static SignatureDto.SignedInfo getSignedInfo(SignatureType jaxbObject) {
-    SignatureDto.SignedInfo signedInfo = new SignatureDto.SignedInfo();
-    signedInfo.setId(jaxbObject.getSignedInfo().getId());
-    if (jaxbObject.getSignedInfo().getSignatureMethod() != null) {
-      signedInfo.setMethodContent(jaxbObject.getSignedInfo().getSignatureMethod().getContent());
-      signedInfo.setMethodAlgorithm(jaxbObject.getSignedInfo().getSignatureMethod().getAlgorithm());
-    }
-    if (jaxbObject.getSignedInfo().getCanonicalizationMethod() != null) {
-      signedInfo.setCanonicalizationContent(jaxbObject.getSignedInfo().getCanonicalizationMethod().getContent());
-      signedInfo.setCanonicalizationAlgorithm(jaxbObject.getSignedInfo().getCanonicalizationMethod().getAlgorithm());
-    }
-    return signedInfo;
-  }
-
-  @Nonnull
-  private static SignatureDto.KeyInfo.RetrievalMethod getRetrievalMethod(RetrievalMethodType content) {
-    SignatureDto.KeyInfo.RetrievalMethod retrievalMethod = new SignatureDto.KeyInfo.RetrievalMethod();
-    retrievalMethod.setType(content.getType());
-    retrievalMethod.setUri(content.getURI());
-    if (content.getTransforms() != null) {
-      List<TransformType> transformTypes = content.getTransforms().getTransform();
-      if (transformTypes != null && !transformTypes.isEmpty()) {
-        List<String> transformAlgorithms = new ArrayList<>();
-        List<List<Object>> transforms = new ArrayList<>();
-        transformTypes.forEach(transformType -> {
-          transformAlgorithms.add(transformType.getAlgorithm());
-          transforms.add(transformType.getContent());
-        });
-        retrievalMethod.setTransformAlgorithms(transformAlgorithms);
-        retrievalMethod.setTransforms(transforms);
-      }
-    }
-    return retrievalMethod;
   }
 }
