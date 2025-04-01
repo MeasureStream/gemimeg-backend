@@ -79,6 +79,22 @@ public class CalibrationCertificateController {
     this.service = service;
   }
 
+  private static String getDetailedXmlError(String xml, Exception e) {
+    StringBuilder details = new StringBuilder(createLogEntry(e));
+    if (e instanceof JAXBException && (((JAXBException) e).getLinkedException() instanceof SAXParseException)) {
+      int line = ((SAXParseException) ((JAXBException) e).getLinkedException()).getLineNumber();
+      details.append(" Invalid xml: (line ").append(line).append(") :").append(System.lineSeparator());
+      Object[] xmlLines = xml.lines().toArray();
+      for (int i = Math.max(0, line - 3); i <= Math.min(xmlLines.length - 1, line + 3); i++) {
+        details.append(i).append(": ").append(xmlLines[i].toString()).append(System.lineSeparator());
+      }
+    }
+    String detailsMessage = details.toString();
+    log.error("Problem detected with provided XML: " + detailsMessage);
+    log.error("Problematic XML: " + xml);
+    return detailsMessage;
+  }
+
   @Operation(description = "Convert a DCC DTO as JSON to XML")
   @PostMapping(path = DCC_XML_PATH, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_XML_VALUE)
   public String convertAndValidate(@RequestBody CalibrationCertificateDto dcc) {
@@ -129,21 +145,5 @@ public class CalibrationCertificateController {
     } catch (JAXBException | IOException e) {
       throw new BadRequestStatus(createLogEntry(e));
     }
-  }
-
-  private static String getDetailedXmlError(String xml, Exception e) {
-    StringBuilder details = new StringBuilder(createLogEntry(e));
-    if (e instanceof JAXBException && (((JAXBException) e).getLinkedException() instanceof SAXParseException)) {
-      int line = ((SAXParseException) ((JAXBException) e).getLinkedException()).getLineNumber();
-      details.append(" Invalid xml: (line ").append(line).append(") :").append(System.lineSeparator());
-      Object[] xmlLines = xml.lines().toArray();
-      for (int i = Math.max(0, line - 3); i <= Math.min(xmlLines.length - 1, line + 3); i++) {
-        details.append(i).append(": ").append(xmlLines[i].toString()).append(System.lineSeparator());
-      }
-    }
-    String detailsMessage = details.toString();
-    log.error("Problem detected with provided XML: " + detailsMessage);
-    log.error("Problematic XML: " + xml);
-    return detailsMessage;
   }
 }

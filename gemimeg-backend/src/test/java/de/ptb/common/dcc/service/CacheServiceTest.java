@@ -66,23 +66,18 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 class CacheServiceTest {
 
-  @MockBean
-  private VersionConfiguration versionConfiguration;
-
-  @MockBean
-  private CacheConfiguration configuration;
-
-  @MockBean
-  private CacheItemRepository repository;
-
-  @Captor
-  private ArgumentCaptor<Date> dateCaptor;
-
-  private CacheService service;
-  private CacheItem cacheItem;
-
   private final Long cacheItemId = RandomUtils.nextLong();
   private final Date createdAt = new Date(System.currentTimeMillis());
+  @MockBean
+  private VersionConfiguration versionConfiguration;
+  @MockBean
+  private CacheConfiguration configuration;
+  @MockBean
+  private CacheItemRepository repository;
+  @Captor
+  private ArgumentCaptor<Date> dateCaptor;
+  private CacheService service;
+  private CacheItem cacheItem;
 
   @BeforeEach
   void setUp() {
