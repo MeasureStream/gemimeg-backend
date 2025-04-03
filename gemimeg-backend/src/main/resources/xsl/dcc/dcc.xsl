@@ -27,7 +27,7 @@
   OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dcc="https://ptb.de/dcc"
-                version="1.0">
+                xmlns:si="https://ptb.de/si" version="1.0">
 
   <xsl:output method="html" encoding="UTF-8" indent="yes"/>
   <xsl:variable name="base" select="'/'"/>
@@ -40,10 +40,225 @@
   <xsl:template match="dcc:digitalCalibrationCertificate">
     <html>
       <head>
-        <link rel="stylesheet" type="text/css" href="{$base}assets/css/humanReadable.css"/>
+        <!--        <link rel="stylesheet" type="text/css" href="{$base}assets/css/humanReadable.css"/>-->
+        <style>
+          /* ------ humanReadable ---------- */
+
+          .dcc-wrapper {
+          border: 1px solid rgb(112, 112, 112);
+          border-radius: 10px;
+          min-width: 300px;
+          width: auto;
+          padding: 15px;
+
+          .dcc-logos {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          height: 120px;
+          border-bottom: 1px solid rgb(130, 130, 131);
+
+          .ptb-logo {
+          width: 250px;
+          /* border: 2px solid blue; */
+          }
+
+          .bundesadler-logo {
+          width: 100px;
+          /* border: 2px solid blue; */
+          }
+          }
+
+          .dcc-content {
+
+
+          h1 {
+          margin-top: 20px;
+          margin-bottom: 5px;
+          font-size: 36px;
+          font-weight: 600;
+          }
+
+          .english-title {
+          font-size: 18px;
+          font-style: italic;
+          }
+
+
+          .administrative-data {
+          .p-l {
+          border-bottom: 1px solid rgb(0, 0, 0, 0.08);
+          padding: 10px 0;
+          }
+
+          h2,
+          h3,
+          h4 {
+          margin-top: 10px;
+          margin-bottom: 5px;
+          }
+
+          h2 {
+          font-size: 24px;
+          font-weight: 600;
+          }
+
+          h3 {
+          font-size: 18px;
+          font-weight: 600;
+          }
+
+          h4 {
+
+          font-size: 16px !important;
+          font-weight: 600 !important;
+          }
+
+          .english-label {
+          font-size: 12px;
+          font-style: italic;
+          }
+
+          table {
+          min-width: 200px;
+          border-collapse: collapse;
+          margin: 10px;
+          }
+
+          thead tr {
+          border-bottom: 1px solid black;
+          }
+
+          th {
+          text-align: left;
+          border-bottom: 1px solid black;
+          }
+
+          td {
+          vertical-align: top;
+          }
+
+          td:first-child {
+          /* min-width: 180px;
+          max-width: 180px; */
+          width: 180px;
+          }
+
+          td p {
+          margin: 0;
+          width: 100%;
+          }
+
+          td p:last-child {
+          margin-bottom: 5px;
+          }
+
+
+          .nested-list {
+          border: none;
+
+          .nested-header {
+          margin-left: 0px;
+          font-size: 14px;
+          font-weight: 600;
+          display: inline;
+          }
+
+          .nested-english-label {
+          font-size: 14px;
+          font-weight: 500;
+          font-style: italic;
+          display: inline;
+          }
+
+          table {
+          margin-left: 0px;
+          min-width: 200px;
+          max-width: 700px;
+
+          }
+
+          table thead tr th {
+          border: none;
+          }
+
+          thead tr th {
+          font-weight: 500;
+          }
+
+          }
+
+          }
+
+          .nested-div-header {
+          width: 60%;
+          margin-left: 30px;
+
+          .nested-div-heading,
+          .nested-div-heading.nested-english-label {
+          font-size: 14px;
+          font-weight: 600;
+          display: inline;
+
+          }
+
+          .nested-div-content {
+          margin-top: 20px;
+          .nested-div-content-heading {
+          margin-top: 10px;
+          border-bottom: 1px solid black;
+
+          }
+
+          }
+
+          .table-wrapper {
+
+          width: 100%;
+          overflow-x: auto;
+
+          }
+
+          .table-quantity-metrics {
+          margin: 0;
+
+          thead {
+          background-color: rgb(239, 240, 240);
+
+          }
+
+          th,
+          td {
+          width: 300px;
+          /* min-width: 100px;
+          max-width: 100px; */
+          text-align: center;
+          border: 1px solid black;
+          padding: 5px;
+
+          }
+
+          th {
+          font-size: 13px;
+          font-weight: 500;
+
+          }
+
+          th p {
+          margin: 3px 0;
+          }
+
+          }
+          }
+          }
+          }
+
+        </style>
       </head>
       <body>
         <div class="dcc-wrapper">
+          <div id="logos-container"> </div>
           <div class="dcc-content p-l">
             <h1>Kalibrierzertifikat</h1>
             <p class="english-title">Digital Calibration Certificate</p>
@@ -66,7 +281,7 @@
       <div class="coreData-container p-l">
         <h3>Kerndaten</h3>
         <p class="english-label">Coredata</p>
-        <xsl:apply-templates select="dcc:coreData"/>
+        <xsl:apply-templates select="dcc:coreData" />
       </div>
       <div class="customer-container p-l">
         <h3>Kunde</h3>
@@ -112,16 +327,8 @@
         <tbody>
           <xsl:apply-templates select="dcc:name"/>
           <tr>
-            <td>
-              <p>Version:</p>
-              <p class="english-label">Release</p>
-            </td>
-            <td>
-              <p>
-                <xsl:value-of select="dcc:release"/>
-              </p>
-              <p></p>
-            </td>
+            <td><p>Version:</p><p class="english-label">Release</p></td>
+            <td><p><xsl:value-of select="dcc:release"/></p><p> </p></td>
           </tr>
         </tbody>
       </table>
@@ -133,59 +340,26 @@
 
     <table>
 
-      <tr>
-        <td>
-          <p>LänderCode</p>
-          <p class="english-label">Country Code</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="dcc:countryCodeISO3166_1"/>
-          </p>
-          <p></p>
-        </td>
+      <tr><td><p>LänderCode</p><p class="english-label">Country Code</p></td>
+        <td><p><xsl:value-of select="dcc:countryCodeISO3166_1"/></p><p> </p></td>
       </tr>
       <tr>
-        <td>
-          <p>Verwendete Sprachen</p>
-          <p class="english-label">Used Language(s)</p>
-        </td>
-        <td>
-          <p>
-            <xsl:for-each select="dcc:usedLangCodeISO639_1">
-              <xsl:value-of select="."/>
-              <xsl:if test="position() !=last()">,</xsl:if>
-            </xsl:for-each>
-          </p>
-          <p></p>
+        <td><p>Verwendete Sprachen</p><p class="english-label">Used Language(s)</p></td>
+        <td><p><xsl:for-each select="dcc:usedLangCodeISO639_1">
+          <xsl:value-of select="."/>
+          <xsl:if test="position() !=last()">, </xsl:if>
+        </xsl:for-each></p><p> </p>
         </td>
       </tr>
-      <tr>
-        <td>
-          <p>Pflichtsprache</p>
-          <p class="english-label">Mandatory Language(s)</p>
-        </td>
-        <td>
-          <p>
-            <xsl:for-each select="dcc:mandatoryLangCodeISO639_1">
-              <xsl:value-of select="."/>
-              <xsl:if test="position() !=last()">,</xsl:if>
-            </xsl:for-each>
-          </p>
-          <p></p>
+      <tr><td><p>Pflichtsprache</p><p class="english-label">Mandatory Language(s)</p></td>
+        <td><p><xsl:for-each select="dcc:mandatoryLangCodeISO639_1">
+          <xsl:value-of select="."/>
+          <xsl:if test="position() !=last()">, </xsl:if>
+        </xsl:for-each></p><p> </p>
         </td>
       </tr>
-      <tr>
-        <td>
-          <p>Kalibrierzeichen</p>
-          <p class="english-label">Unique Identdifier</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="dcc:uniqueIdentifier"/>
-          </p>
-          <p></p>
-        </td>
+      <tr><td><p>Kalibrierzeichen</p><p class="english-label">Unique Identdifier</p></td>
+        <td><p><xsl:value-of select="dcc:uniqueIdentifier"/></p><p> </p></td>
       </tr>
 
       <xsl:call-template name="showIfNotEmpty">
@@ -195,25 +369,11 @@
         <xsl:with-param name="isDate" select="'true'"/>
       </xsl:call-template>
 
-      <tr>
-        <td>
-          <p>Beginn der Labortätigkeit</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="substring-before(dcc:beginPerformanceDate, '+')"/>
-          </p>
-        </td>
+      <tr><td><p>Beginn der Labortätigkeit</p></td>
+        <td><p><xsl:value-of select="substring-before(dcc:beginPerformanceDate, '+')"/></p></td>
       </tr>
-      <tr>
-        <td>
-          <p>Ende der Labortätigkeit</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="substring-before(dcc:endPerformanceDate, '+')"></xsl:value-of>
-          </p>
-        </td>
+      <tr><td><p>Ende der Labortätigkeit</p></td>
+        <td><p><xsl:value-of select="substring-before(dcc:endPerformanceDate, '+')"> </xsl:value-of></p></td>
       </tr>
       <xsl:call-template name="showIfNotEmpty">
         <xsl:with-param name="label" select="'Ausführungsort'"/>
@@ -298,7 +458,7 @@
       </xsl:call-template>
 
     </table>
-    <xsl:call-template name="richContent"/>
+    <xsl:call-template  name="richContent"/>
   </xsl:template>
   <!--  template name -->
   <xsl:template match="dcc:name">
@@ -320,41 +480,22 @@
   <!-- template calibrationLaboratory-->
   <xsl:template match="dcc:calibrationLaboratory">
     <table>
-      <tr>
-        <td>
-          <p>Kennung</p>
-          <p class="english-label">Calibration Laboratory Code</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="dcc:calibrationLaboratoryCode"/>
-          </p>
-          <p></p>
-        </td>
-      </tr>
+      <tr><td><p>Kennung</p><p class="english-label">Calibration Laboratory Code</p></td><td><p><xsl:value-of select="dcc:calibrationLaboratoryCode"/></p><p> </p></td></tr>
       <xsl:apply-templates select="dcc:contact/dcc:name"/>
-      <tr>
-        <td>
-          <p>Telefon</p>
-          <p class="english-label">Phone</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="dcc:contact/dcc:phone"/>
-          </p>
-          <p></p>
+      <tr><td>
+        <p>Telefon</p><p class="english-label">Phone</p></td>
+        <td><p>
+          <xsl:value-of select="dcc:contact/dcc:phone"/>
+        </p>
+          <p> </p>
         </td>
       </tr>
-      <tr>
-        <td>
-          <p>E-mail</p>
-          <p class="english-label">E-mail</p>
-        </td>
-        <td>
-          <p>
-            <xsl:value-of select="dcc:contact/dcc:eMail"/>
-          </p>
-          <p></p>
+      <tr><td>
+        <p>E-mail</p><p class="english-label">E-mail</p></td>
+        <td><p>
+          <xsl:value-of select="dcc:contact/dcc:eMail"/>
+        </p>
+          <p> </p>
         </td>
       </tr>
       <xsl:apply-templates select="dcc:contact/dcc:location"/>
@@ -374,7 +515,7 @@
             </tr>
           </thead>
           <tbody>
-            <xsl:apply-templates select="dcc:name"/>
+            <xsl:apply-templates select="dcc:name" />
             <xsl:call-template name="showIfNotEmpty">
               <xsl:with-param name="label" select="'Telefon'"/>
               <xsl:with-param name="english-label" select="'Phone'"/>
@@ -400,17 +541,10 @@
     <table>
       <tr>
         <td>
-          <p>
-            <b>Hersteller</b>
-          </p>
-          <p class="english-label">
-            <b>Hersteller</b>
-          </p>
+          <p><b>Hersteller</b></p>
+          <p class="english-label"><b>Hersteller</b></p>
         </td>
-        <td>
-          <p></p>
-          <p></p>
-        </td>
+        <td><p> </p> <p> </p></td>
       </tr>
       <xsl:apply-templates select="dcc:name"/>
       <xsl:call-template name="showIfNotEmpty">
@@ -434,13 +568,12 @@
   <xsl:template match="dcc:identifications">
 
     <div class="nested-list">
-      <p class="nested-header">Identifikatoren</p>
-      <p class="nested-english-label">(identifications)</p>
+      <p class="nested-header">Identifikatoren</p><p class="nested-english-label"> (identifications)</p>
       <xsl:for-each select="dcc:identification">
         <table>
           <thead>
             <tr>
-              <th colspan="2">Identifikator
+              <th  colspan="2">Identifikator
                 <xsl:value-of select="position()"/>
               </th>
             </tr>
@@ -448,28 +581,12 @@
           <tbody>
 
             <tr>
-              <td>
-                <p>Herausgeber:</p>
-                <p class="english-label">Issuer</p>
-              </td>
-              <td>
-                <p>
-                  <xsl:value-of select="dcc:issuer"/>
-                </p>
-                <p></p>
-              </td>
+              <td><p>Herausgeber:</p><p class="english-label">Issuer</p></td>
+              <td><p><xsl:value-of select="dcc:issuer"/></p><p> </p></td>
             </tr>
             <tr>
-              <td>
-                <p>Identifikator:</p>
-                <p class="english-label">value</p>
-              </td>
-              <td>
-                <p>
-                  <xsl:value-of select="dcc:value"/>
-                </p>
-                <p></p>
-              </td>
+              <td><p>Identifikator:</p><p class="english-label">value</p></td>
+              <td><p><xsl:value-of select="dcc:value"/></p><p> </p></td>
             </tr>
             <xsl:apply-templates select="dcc:name"/>
           </tbody>
@@ -480,9 +597,7 @@
   <!-- template items-->
   <xsl:template match="dcc:items">
     <xsl:for-each select="dcc:item">
-      <h4>Kalibriergegenstand
-        <xsl:value-of select="position()"/>
-      </h4>
+      <h4>Kalibriergegenstand <xsl:value-of select="position()"/></h4>
       <table>
         <xsl:apply-templates select="dcc:name"/>
         <xsl:call-template name="showIfNotEmpty">
@@ -507,13 +622,12 @@
         </xsl:call-template>
 
       </table>
-      <xsl:call-template name="richContent"/>
-      <xsl:apply-templates select="dcc:manufacturer"/>
+      <xsl:call-template  name="richContent"/>
+      <xsl:apply-templates select="dcc:manufacturer" />
       <xsl:apply-templates select="dcc:identifications"/>
       <xsl:if test="dcc:installedSoftwares">
         <div class="nested-list">
-          <p class="nested-header">Installierte Software</p>
-          <p class="nested-english-label">(installed Software)</p>
+          <p class="nested-header">Installierte Software</p><p class="nested-english-label"> (installed Software)</p>
           <xsl:apply-templates select="dcc:installedSoftwares"/>
         </div>
       </xsl:if>
@@ -523,18 +637,14 @@
   <xsl:template match="dcc:statements">
     <xsl:for-each select="dcc:statement">
 
-      <h4>Statement
-        <xsl:value-of select="position()"/>
-      </h4>
+      <h4>Statement <xsl:value-of select="position()"/></h4>
       <xsl:if test="@refType">
-        <p>Ref-Type:
-          <xsl:value-of select="@refType"/>
-        </p>
+        <p>Ref-Type: <xsl:value-of select="@refType"/></p>
       </xsl:if>
       <table>
         <xsl:apply-templates select="dcc:name"/>
       </table>
-      <xsl:call-template name="richContent"/>
+      <xsl:call-template  name="richContent"/>
       <table>
 
         <xsl:call-template name="showIfNotEmpty">
@@ -621,31 +731,63 @@
       </table>
 
       <xsl:apply-templates select="dcc:respAuthority"/>
-
+      <xsl:apply-templates select="dcc:data" />
     </xsl:for-each>
   </xsl:template>
   <xsl:template match="dcc:data">
-    <xsl:apply-templates select="quantities"/>
+    <div class="nested-div-header">
+      <p class="nested-div-heading">Messgrößen</p><p class="nested-div-heading  nested-english-label"> (Quantities)</p>
+      <xsl:for-each select="dcc:quantity">
+        <xsl:apply-templates select=".">
+          <xsl:with-param name="pos" select="position()"/>
+        </xsl:apply-templates>
+      </xsl:for-each>
+    </div>
   </xsl:template>
-  <xsl:template match="dcc:quantities">
-  </xsl:template>
+
   <xsl:template match="dcc:quantity">
+    <xsl:param name="pos"/>
+    <div class="nested-div-content">
+      <p class="nested-div-content-heading">Messgröße<xsl:value-of select="$pos"/></p>
+
+      <table>
+        <xsl:if test="@refType">
+          <tr>
+            <td><p>Ref-Type</p><p class="english-label">Ref-Type</p></td>
+            <td><p><xsl:value-of select="@refType"/></p><p> </p></td>
+          </tr>
+        </xsl:if>
+        <xsl:apply-templates select="dcc:name"/>
+      </table>
+      <div class="table-wrapper">
+        <table class="table-quantity-metrics">
+          <thead>
+            <th><p>Position</p><p class="english-label">Position</p></th>
+            <th><p>Wert</p><p class="english-label">Value</p></th>
+            <th><p>Einheit</p><p class="english-label">Unit</p></th>
+
+          </thead>
+          <tbody>
+            <xsl:for-each select="si:hybrid/si:real">
+              <tr>
+                <td><xsl:value-of select="position()"/></td>
+                <td><xsl:value-of select="si:value"/></td>
+                <td><xsl:value-of select="si:unit"/></td>
+              </tr>
+            </xsl:for-each>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </xsl:template>
   <xsl:template match="dcc:respAuthority">
     <table>
       <tr>
         <td>
-          <p>
-            <b>Verantwortliche Stelle</b>
-          </p>
-          <p class="english-label">
-            <b>Responsible Authority</b>
-          </p>
+          <p><b>Verantwortliche Stelle</b></p>
+          <p class="english-label"><b>Responsible Authority</b></p>
         </td>
-        <td>
-          <p></p>
-          <p></p>
-        </td>
+        <td><p> </p> <p> </p></td>
       </tr>
       <xsl:apply-templates select="dcc:name"/>
       <xsl:call-template name="showIfNotEmpty">
@@ -678,12 +820,8 @@
     <xsl:if test="string($value) != ''">
       <tr>
         <td>
-          <p>
-            <xsl:value-of select="$label"/>
-          </p>
-          <p class="english-label">
-            <xsl:value-of select="$english-label"/>
-          </p>
+          <p><xsl:value-of select="$label"/></p>
+          <p class="english-label"><xsl:value-of select="$english-label"/></p>
         </td>
         <td>
           <p>
@@ -705,7 +843,7 @@
     <xsl:choose>
       <xsl:when test="dcc:further">
         <xsl:call-template name="richContentSection">
-          <xsl:with-param name="sectionName" select="dcc:further"/>
+          <xsl:with-param name="sectionName" select="dcc:further" />
           <xsl:with-param name="labelDe" select="'Weitere Information'"/>
           <xsl:with-param name="labelEn" select="'Further'"/>
         </xsl:call-template>
@@ -716,7 +854,7 @@
     <xsl:choose>
       <xsl:when test="dcc:description">
         <xsl:call-template name="richContentSection">
-          <xsl:with-param name="sectionName" select="dcc:description"/>
+          <xsl:with-param name="sectionName" select="dcc:description" />
           <xsl:with-param name="labelDe" select="'Beschreibung'"/>
           <xsl:with-param name="labelEn" select="'Description'"/>
         </xsl:call-template>
@@ -727,7 +865,7 @@
     <xsl:choose>
       <xsl:when test="dcc:declaration">
         <xsl:call-template name="richContentSection">
-          <xsl:with-param name="sectionName" select="dcc:declaration"/>
+          <xsl:with-param name="sectionName" select="dcc:declaration" />
           <xsl:with-param name="labelDe" select="'Deklaration'"/>
           <xsl:with-param name="labelEn" select="'Declaration'"/>
         </xsl:call-template>
@@ -742,41 +880,21 @@
     <table>
       <tr>
         <td>
-          <p>
-            <b>
-              <xsl:value-of select="$labelDe"/>
-            </b>
-          </p>
-          <p class="english-label">
-            <b>
-              <xsl:value-of select="$labelEn"/>
-            </b>
-          </p>
+          <p><b><xsl:value-of select="$labelDe"/> </b></p>
+          <p class="english-label"><b><xsl:value-of select="$labelEn"/></b></p>
         </td>
-        <td>
-          <p></p>
-          <p></p>
-        </td>
+        <td><p> </p> <p> </p></td>
       </tr>
       <xsl:apply-templates select="$sectionName/dcc:name"/>
       <xsl:for-each select="$sectionName/dcc:content[@lang='de']">
         <tr>
-          <td>
-            <p>Inhalt
-              <xsl:value-of select="position()"/>
-            </p>
-            <p class="english-label">Content
-              <xsl:value-of select="position()"/>
-            </p>
-          </td>
-          <td>
-            <p>
-              <xsl:value-of select="."/>
-            </p>
-            <p></p>
-          </td>
+          <td><p>Inhalt <xsl:value-of select="position()"/></p><p class="english-label">Content <xsl:value-of select="position()"/></p></td>
+          <td><p><xsl:value-of select="."/></p> <p> </p></td>
         </tr>
       </xsl:for-each>
     </table>
+
   </xsl:template>
+
+
 </xsl:stylesheet>
