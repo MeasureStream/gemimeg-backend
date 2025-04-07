@@ -28,22 +28,16 @@
 -->
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dcc="https://ptb.de/dcc"
                 xmlns:si="https://ptb.de/si" version="1.0">
-
   <xsl:output method="html" encoding="UTF-8" indent="yes"/>
   <xsl:variable name="base" select="'/'"/>
   <xsl:variable name="primaryLang"
                 select="dcc:digitalCalibrationCertificate/dcc:administrativeData/dcc:coreData/dcc:mandatoryLangCodeISO639_1"/>
-
   <xsl:variable name="secondaryLang"
                 select="dcc:digitalCalibrationCertificate/dcc:administrativeData/dcc:coreData/dcc:usedLangCodeISO639_1[text() != $primaryLang]"/>
-
   <xsl:template match="dcc:digitalCalibrationCertificate">
     <html>
       <head>
-        <!--        <link rel="stylesheet" type="text/css" href="{$base}assets/css/humanReadable.css"/>-->
         <style>
-          /* ------ humanReadable ---------- */
-
           .dcc-wrapper {
           border: 1px solid rgb(112, 112, 112);
           border-radius: 10px;
@@ -72,7 +66,6 @@
 
           .dcc-content {
 
-
           h1 {
           margin-top: 20px;
           margin-bottom: 5px;
@@ -84,7 +77,6 @@
           font-size: 18px;
           font-style: italic;
           }
-
 
           .administrative-data {
           .p-l {
@@ -186,21 +178,17 @@
           thead tr th {
           font-weight: 500;
           }
-
           }
-
           }
 
           .nested-div-header {
           width: 60%;
           margin-left: 30px;
-
           .nested-div-heading,
           .nested-div-heading.nested-english-label {
           font-size: 14px;
           font-weight: 600;
           display: inline;
-
           }
 
           .nested-div-content {
@@ -208,16 +196,12 @@
           .nested-div-content-heading {
           margin-top: 10px;
           border-bottom: 1px solid black;
-
           }
-
           }
 
           .table-wrapper {
-
           width: 100%;
           overflow-x: auto;
-
           }
 
           .table-quantity-metrics {
@@ -236,13 +220,11 @@
           text-align: center;
           border: 1px solid black;
           padding: 5px;
-
           }
 
           th {
           font-size: 13px;
           font-weight: 500;
-
           }
 
           th p {
@@ -253,12 +235,11 @@
           }
           }
           }
-
         </style>
       </head>
       <body>
         <div class="dcc-wrapper">
-          <div id="logos-container"></div>
+          <div id="logos-container"/>
           <div class="dcc-content p-l">
             <h1>Kalibrierzertifikat</h1>
             <p class="english-title">Digital Calibration Certificate</p>
@@ -310,8 +291,6 @@
       </div>
     </div>
   </xsl:template>
-
-  <!-- template used software -->
   <xsl:template match="dcc:dccSoftware | dcc:installedSoftwares">
     <xsl:for-each select="dcc:software">
       <table>
@@ -333,28 +312,25 @@
               <p>
                 <xsl:value-of select="dcc:release"/>
               </p>
-              <p></p>
+              <p/>
             </td>
           </tr>
         </tbody>
       </table>
     </xsl:for-each>
-
   </xsl:template>
-
-  <!--  template coreData  -->
   <xsl:template match="dcc:coreData">
     <table>
       <tr>
         <td>
-          <p>LänderCode</p>
+          <p>Ländercode</p>
           <p class="english-label">Country Code</p>
         </td>
         <td>
           <p>
             <xsl:value-of select="dcc:countryCodeISO3166_1"/>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <tr>
@@ -369,7 +345,7 @@
               <xsl:if test="position() !=last()">,</xsl:if>
             </xsl:for-each>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <tr>
@@ -384,7 +360,7 @@
               <xsl:if test="position() !=last()">,</xsl:if>
             </xsl:for-each>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <tr>
@@ -396,7 +372,7 @@
           <p>
             <xsl:value-of select="dcc:uniqueIdentifier"/>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <xsl:call-template name="showIfNotEmpty">
@@ -421,7 +397,7 @@
         </td>
         <td>
           <p>
-            <xsl:value-of select="substring-before(dcc:endPerformanceDate, '+')"></xsl:value-of>
+            <xsl:value-of select="substring-before(dcc:endPerformanceDate, '+')"/>
           </p>
         </td>
       </tr>
@@ -433,7 +409,6 @@
       </xsl:call-template>
     </table>
   </xsl:template>
-  <!--  template customer -->
   <xsl:template match="dcc:customer">
     <table>
       <xsl:apply-templates select="dcc:name"/>
@@ -452,7 +427,6 @@
       <xsl:apply-templates select="dcc:location"/>
     </table>
   </xsl:template>
-  <!--  template location -->
   <xsl:template match="dcc:location">
     <table>
       <xsl:call-template name="showIfNotEmpty">
@@ -525,7 +499,7 @@
           <p>
             <xsl:value-of select="dcc:calibrationLaboratoryCode"/>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <xsl:apply-templates select="dcc:contact/dcc:name"/>
@@ -538,7 +512,7 @@
           <p>
             <xsl:value-of select="dcc:contact/dcc:phone"/>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <tr>
@@ -550,13 +524,12 @@
           <p>
             <xsl:value-of select="dcc:contact/dcc:eMail"/>
           </p>
-          <p></p>
+          <p/>
         </td>
       </tr>
       <xsl:apply-templates select="dcc:contact/dcc:location"/>
     </table>
   </xsl:template>
-  <!-- template respPersons-->
   <xsl:template match="dcc:respPersons">
     <table>
       <xsl:for-each select="dcc:respPerson/dcc:person">
@@ -587,7 +560,6 @@
       </xsl:for-each>
     </table>
   </xsl:template>
-  <!-- template manufacturer-->
   <xsl:template match="dcc:manufacturer">
     <table>
       <tr>
@@ -600,8 +572,8 @@
           </p>
         </td>
         <td>
-          <p></p>
-          <p></p>
+          <p/>
+          <p/>
         </td>
       </tr>
       <xsl:apply-templates select="dcc:name"/>
@@ -620,7 +592,6 @@
     </table>
     <xsl:apply-templates select="dcc:location"/>
   </xsl:template>
-  <!-- template identifications-->
   <xsl:template match="dcc:identifications">
     <div class="nested-list">
       <p class="nested-header">Identifikatoren</p>
@@ -644,7 +615,7 @@
                 <p>
                   <xsl:value-of select="dcc:issuer"/>
                 </p>
-                <p></p>
+                <p/>
               </td>
             </tr>
             <tr>
@@ -656,7 +627,7 @@
                 <p>
                   <xsl:value-of select="dcc:value"/>
                 </p>
-                <p></p>
+                <p/>
               </td>
             </tr>
             <xsl:apply-templates select="dcc:name"/>
@@ -665,7 +636,6 @@
       </xsl:for-each>
     </div>
   </xsl:template>
-  <!-- template items-->
   <xsl:template match="dcc:items">
     <xsl:for-each select="dcc:item">
       <h4>Kalibriergegenstand
@@ -822,7 +792,7 @@
               <p>
                 <xsl:value-of select="@refType"/>
               </p>
-              <p></p>
+              <p/>
             </td>
           </tr>
         </xsl:if>
@@ -875,8 +845,8 @@
           </p>
         </td>
         <td>
-          <p></p>
-          <p></p>
+          <p/>
+          <p/>
         </td>
       </tr>
       <xsl:apply-templates select="dcc:name"/>
@@ -926,7 +896,6 @@
       </tr>
     </xsl:if>
   </xsl:template>
-  <!--  richContent -->
   <xsl:template name="richContent">
     <xsl:choose>
       <xsl:when test="dcc:further">
@@ -956,7 +925,6 @@
       </xsl:when>
     </xsl:choose>
   </xsl:template>
-  <!-- template Richcontent(Weitere Information/Beschreibung/Deklaration) -->
   <xsl:template name="richContentSection">
     <xsl:param name="sectionName"/>
     <xsl:param name="labelDe"/>
@@ -976,8 +944,8 @@
           </p>
         </td>
         <td>
-          <p></p>
-          <p></p>
+          <p/>
+          <p/>
         </td>
       </tr>
       <xsl:apply-templates select="$sectionName/dcc:name"/>
@@ -995,7 +963,7 @@
             <p>
               <xsl:value-of select="."/>
             </p>
-            <p></p>
+            <p/>
           </td>
         </tr>
       </xsl:for-each>
