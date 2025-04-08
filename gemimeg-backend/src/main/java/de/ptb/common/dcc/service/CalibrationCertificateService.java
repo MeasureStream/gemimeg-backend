@@ -52,6 +52,10 @@ import jakarta.xml.bind.Unmarshaller;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.fop.apps.FOUserAgent;
+import org.apache.fop.apps.Fop;
+import org.apache.fop.apps.FopFactory;
+import org.apache.xmlgraphics.util.MimeConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -60,15 +64,20 @@ import org.xml.sax.SAXException;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.xml.XMLConstants;
+import javax.xml.transform.Result;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.StringReader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URL;
@@ -76,6 +85,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
 
@@ -168,6 +179,27 @@ public class CalibrationCertificateService {
       }
     } else {
       return BLANK_HTML_PAGE;
+    }
+  }
+
+  @Nonnull
+  public byte[] validateAndProducePdf(@Nonnull CalibrationCertificateDto dcc)
+      throws JAXBException, IOException, TransformerException, SAXException {
+    FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
+    FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
+    foUserAgent.setAuthor("Physikalisch-Technische Bundesanstalt");
+    foUserAgent.setKeywords("dcc");
+    foUserAgent.setCreationDate(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+      Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
+      TransformerFactory factory = TransformerFactory.newInstance();
+      try (InputStream xslInputStream = this.getClass().getResourceAsStream(DCC_XSL_PATH)) {
+        Transformer transformer = factory.newTransformer(new StreamSource(xslInputStream));
+        StreamSource xmlSource = new StreamSource(new StringReader(convert(dcc)));
+        Result result = new SAXResult(fop.getDefaultHandler());
+        transformer.transform(xmlSource, result);
+        return out.toByteArray();
+      }
     }
   }
 

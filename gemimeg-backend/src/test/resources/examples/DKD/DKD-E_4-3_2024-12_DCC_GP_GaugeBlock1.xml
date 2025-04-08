@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd
+" xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si" schemaVersion="3.3.0">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software>
+        <dcc:name>
+          <dcc:content>1.23 DCC-CalLab</dcc:content>
+        </dcc:name>
+        <dcc:release>v1.X3</dcc:release>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:refTypeDefinitions>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">Begriffe Länge</dcc:content>
+          <dcc:content lang="en">Length terms</dcc:content>
+        </dcc:name>
+        <dcc:namespace>length</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=121</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">Mathematische Operationen</dcc:content>
+          <dcc:content lang="en">Mathematical operation</dcc:content>
+        </dcc:name>
+        <dcc:namespace>math</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=292</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">Allgemeine Begriffe</dcc:content>
+          <dcc:content lang="en">General terms</dcc:content>
+        </dcc:name>
+        <dcc:namespace>basic</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=2</dcc:link>
+      </dcc:refTypeDefinition>
+    </dcc:refTypeDefinitions>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>{GUID-NR}</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification refType="basic_orderNumber">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>{OrderNumber}</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Auftragsnummer</dcc:content>
+            <dcc:content lang="en">Order number</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+        <dcc:identification refType="basic_calibrationMark">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>000000 D-K-YYYYY-ZZ-NN jjjj-mm</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierzeichen</dcc:content>
+            <dcc:content lang="en">Calibration mark</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:receiptDate>2024-02-14</dcc:receiptDate>
+      <dcc:beginPerformanceDate>2024-02-15</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>2024-02-16</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+      <dcc:issueDate>2024-02-16</dcc:issueDate>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:name>
+        <dcc:content lang="de">Kalibriergegenstände</dcc:content>
+        <dcc:content lang="en">Calibration objects</dcc:content>
+      </dcc:name>
+      <dcc:description>
+        <dcc:content lang="de">Auflistung der Kalibriergegenstände in diesem DCC</dcc:content>
+        <dcc:content lang="en">List of calibration objects within this DCC</dcc:content>
+      </dcc:description>
+      <dcc:item refType="length_gaugeBlockSet" id="setOfItems">
+        <dcc:name>
+          <dcc:content lang="de">Parallelendmaßsatz</dcc:content>
+          <dcc:content lang="en">Set of gauge blocks</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">GP-Beispiel eines mehrteiligen Parallelendmaßsatzes mit zwei Einzelendmaßen
+          </dcc:content>
+          <dcc:content lang="en">GP example of a gauge block set with 2 gauge blocks</dcc:content>
+        </dcc:description>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content lang="de">{Hersteller}</dcc:content>
+            <dcc:content lang="en">{manufacturer}</dcc:content>
+          </dcc:name>
+        </dcc:manufacturer>
+        <dcc:identifications>
+          <dcc:identification refType="basic_serialNumber">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>{SerialNumberSet}</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Seriennummer des Satzes</dcc:content>
+              <dcc:content lang="en">Serial number of the set</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification refType="basic_identificationNumber">
+            <dcc:issuer>customer</dcc:issuer>
+            <dcc:value>{IdentificationNumberSetCustomer}</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Identifikationsnummer (vom Besitzer vergeben)</dcc:content>
+              <dcc:content lang="en">Identification number (assigned by owner)</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification refType="basic_identificationNumber">
+            <dcc:issuer>calibrationLaboratory</dcc:issuer>
+            <dcc:value>{IdentificationNumberSetLaboratory}</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Identifikationsnummer (vom Kalibrierlabor vergeben)</dcc:content>
+              <dcc:content lang="en">Identification number (assigned by calibration laboratory)</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+        <dcc:itemQuantities>
+          <dcc:itemQuantity refType="length_accuracyClass">
+            <dcc:name>
+              <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
+              <dcc:content lang="en">Accuracy class</dcc:content>
+            </dcc:name>
+            <dcc:charsXMLList>1</dcc:charsXMLList>
+          </dcc:itemQuantity>
+          <dcc:itemQuantity refType="length_linearThermalExpansionCoefficient">
+            <dcc:name>
+              <dcc:content lang="de">Linearer thermischer Längenausdehnungskoeffizient</dcc:content>
+              <dcc:content lang="en">Linear coefficient of thermal expansion</dcc:content>
+            </dcc:name>
+            <dcc:description>
+              <dcc:content lang="de">Quelle: DIN EN ISO 3650:1999</dcc:content>
+              <dcc:content lang="en">Source: DIN EN ISO 3650:1999</dcc:content>
+            </dcc:description>
+            <si:real>
+              <si:value>11.5e-6</si:value>
+              <si:unit>\kelvin\tothe{-1}</si:unit>
+              <si:measurementUncertaintyUnivariate>
+                <si:expandedMU>
+                  <si:valueExpandedMU>0.6e-6</si:valueExpandedMU>
+                  <si:coverageFactor>2</si:coverageFactor>
+                  <si:coverageProbability>0.95</si:coverageProbability>
+                </si:expandedMU>
+              </si:measurementUncertaintyUnivariate>
+            </si:real>
+          </dcc:itemQuantity>
+          <dcc:itemQuantity refType="length_material">
+            <dcc:name>
+              <dcc:content lang="de">Material</dcc:content>
+              <dcc:content lang="en">Material</dcc:content>
+            </dcc:name>
+            <dcc:noQuantity>
+              <dcc:content lang="de">Stahl</dcc:content>
+              <dcc:content lang="en">Steel</dcc:content>
+            </dcc:noQuantity>
+          </dcc:itemQuantity>
+        </dcc:itemQuantities>
+        <dcc:subItems>
+          <dcc:item refType="length_gaugeBlock" id="Item_1">
+            <dcc:name>
+              <dcc:content lang="de">Parallelendmaß 60 mm</dcc:content>
+              <dcc:content lang="en">Gauge block 60 mm</dcc:content>
+            </dcc:name>
+            <dcc:identifications>
+              <dcc:identification refType="basic_marking">
+                <dcc:issuer>manufacturer</dcc:issuer>
+                <dcc:value>{MarkingOnGaugeBlock}</dcc:value>
+                <dcc:name>
+                  <dcc:content lang="de">Markierung auf Parallelendmaß</dcc:content>
+                  <dcc:content lang="en">Marking on gauge block</dcc:content>
+                </dcc:name>
+              </dcc:identification>
+            </dcc:identifications>
+            <dcc:itemQuantities>
+              <dcc:itemQuantity refType="length_nominalLength">
+                <dcc:name>
+                  <dcc:content lang="de">Nennmaß</dcc:content>
+                  <dcc:content lang="en">Nominal length</dcc:content>
+                </dcc:name>
+                <si:real>
+                  <si:value>60e-3</si:value>
+                  <si:unit>\metre</si:unit>
+                </si:real>
+              </dcc:itemQuantity>
+            </dcc:itemQuantities>
+          </dcc:item>
+          <dcc:item refType="length_gaugeBlock" id="Item_2">
+            <dcc:name>
+              <dcc:content lang="de">Parallelendmaß 70 mm</dcc:content>
+              <dcc:content lang="en">Gauge block 70 mm</dcc:content>
+            </dcc:name>
+            <dcc:identifications>
+              <dcc:identification refType="basic_marking">
+                <dcc:issuer>manufacturer</dcc:issuer>
+                <dcc:value>{MarkingOnGaugeBlock}</dcc:value>
+                <dcc:name>
+                  <dcc:content lang="de">Markierung auf Parallelendmaß</dcc:content>
+                  <dcc:content lang="en">Marking on gauge block</dcc:content>
+                </dcc:name>
+              </dcc:identification>
+            </dcc:identifications>
+            <dcc:itemQuantities>
+              <dcc:itemQuantity refType="length_nominalLength">
+                <dcc:name>
+                  <dcc:content lang="de">Nennmaß</dcc:content>
+                  <dcc:content lang="en">Nominal length</dcc:content>
+                </dcc:name>
+                <si:real>
+                  <si:value>70e-3</si:value>
+                  <si:unit>\metre</si:unit>
+                </si:real>
+              </dcc:itemQuantity>
+            </dcc:itemQuantities>
+          </dcc:item>
+        </dcc:subItems>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content>{CalibrationLaboratory}</dcc:content>
+        </dcc:name>
+        <dcc:eMail>{email}</dcc:eMail>
+        <dcc:location>
+          <dcc:street>{Street}</dcc:street>
+          <dcc:streetNo>{StreetNumber}</dcc:streetNo>
+          <dcc:postCode>{PostCode}</dcc:postCode>
+          <dcc:city>{City}</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+        </dcc:location>
+      </dcc:contact>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>{FirstAndLastName}</dcc:content>
+          </dcc:name>
+          <dcc:eMail>{email}</dcc:eMail>
+        </dcc:person>
+        <dcc:mainSigner>true</dcc:mainSigner>
+      </dcc:respPerson>
+      <dcc:respPerson><!--optionale Angabe-->
+        <dcc:person>
+          <dcc:name>
+            <dcc:content>{FirstAndLastName}</dcc:content>
+          </dcc:name>
+          <dcc:eMail>{email}</dcc:eMail>
+        </dcc:person>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content>{customer}</dcc:content>
+      </dcc:name>
+      <dcc:eMail>{email}</dcc:eMail>
+      <dcc:location>
+        <dcc:street>{Street}</dcc:street>
+        <dcc:streetNo>{StreetNo}</dcc:streetNo>
+        <dcc:postCode>{PostCode}</dcc:postCode>
+        <dcc:city>{City}</dcc:city>
+        <dcc:countryCode>DE</dcc:countryCode>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement>
+        <dcc:norm>DIN EN ISO/IEC 17025:2018-03</dcc:norm>
+        <dcc:reference>7.8.2.1 l</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die dargestellten Ergebnisse beziehen sich nur auf die kalibrierten Gegenstände.
+          </dcc:content>
+          <dcc:content lang="en">The presented results relate only to the items calibrated.</dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:norm>ISO/IEC 17025:2018-03</dcc:norm>
+        <dcc:reference>7.8.4.3</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Es obliegt dem Anwender, zu
+            gegebener Zeit eine Rekalibrierung zu veranlassen.
+          </dcc:content>
+          <dcc:content lang="en">The measurement results are valid at the time of calibration. The applicant is
+            responsible for arranging a recalibration in due time.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement>
+        <dcc:norm>ILAC-P14:09/2020</dcc:norm>
+        <dcc:reference>5.2</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die angegebene erweiterte Messunsicherheit wurden nach EA-4/02 M:2022 ermittelt. Sie
+            ist als Standardmessunsicherheit multipliziert mit dem Erweiterungsfaktor k angegeben, sodass die
+            Überdeckungswahrscheinlichkeit in etwa 95 % entspricht.
+          </dcc:content>
+          <dcc:content lang="en">The stated expanded measurement uncertainty was determined in accordance with EA-4/02
+            M:2022. It is given as the standard measurement uncertainty multiplied by the coverage factor k, so that the
+            coverage probability corresponds to approximately 95 %.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="toSI" refType="basic_metrologicallyTraceableToSI">
+        <dcc:norm>ISO/IEC 17025; 7.8.4.1 c</dcc:norm>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Messergebnisse, die von einem dcc:valid-Element mit dem Wert "true" begleitet
+            werden, das durch eine refId auf dieses dcc:statement-Element verweist, geben an, dass die zugehörigen
+            Ergebnisse metrologisch auf das SI rückführbar sind.
+          </dcc:content>
+          <dcc:content lang="en">The measurement results that are accompanied by a dcc:valid element with the value
+            “true”, which refers to this dcc:statement element by a refId, indicate that the associated results are
+            metrologically traceable to the SI.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="inCMC" refType="basic_isInCMC">
+        <dcc:reference>D-K-xxxxx-yy-zz</dcc:reference>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Messergebnisse, die von einem dcc:valid-Element mit dem Wert "true" begleitet
+            werden, das durch eine refId auf dieses dcc:statement-Element verweist, erfüllen die Bedingung, dass die
+            zugehörigen Ergebnisse innerhalb des akkreditierten Bereichs liegen und die jeweilige Messunsicherheit
+            größer oder gleich der CMC-Messunsicherheit ist.
+          </dcc:content>
+          <dcc:content lang="en">The measurement results that are accompanied by a dcc:valid element with the value
+            “true”, which refers to this dcc:statement element by a refId, fulfill the condition that the associated
+            results are within the accredited range and the respective measurement uncertainty is greater than or equal
+            to the CMC measurement uncertainty.
+          </dcc:content>
+        </dcc:declaration>
+        <dcc:respAuthority>
+          <dcc:name>
+            <dcc:content>Deutsche Akkreditierungsstelle GmbH</dcc:content>
+          </dcc:name>
+          <dcc:eMail>kontakt@dakks.de</dcc:eMail>
+          <dcc:phone>+49306705910</dcc:phone>
+          <dcc:link>https://www.dakks.de/</dcc:link>
+          <dcc:location>
+            <dcc:street>Bundesallee 100</dcc:street>
+            <dcc:city>Braunschweig</dcc:city>
+            <dcc:postCode>38116</dcc:postCode>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:respAuthority>
+      </dcc:statement>
+      <dcc:statement refType="basic_membership">
+        <dcc:name>
+          <dcc:content lang="de">Mitgliedschaft DKD</dcc:content>
+          <dcc:content lang="en">Membership DKD</dcc:content>
+        </dcc:name>
+        <dcc:declaration>
+          <dcc:content lang="de">Mitglied im Deutschen Kalibrierdienst (DKD)</dcc:content>
+          <dcc:content lang="en">Member of the Deutscher Kalibrierdienst (DKD)</dcc:content>
+          <dcc:file>
+            <dcc:fileName>DKD-Logo-2023.svg</dcc:fileName>
+            <dcc:mimeType>image/svg+xml</dcc:mimeType>
+            <dcc:dataBase64>
+              PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4wICg0MDM1YTRmYjQ5LCAyMDIwLTA1LTAxKSIKICAgc29kaXBvZGk6ZG9jbmFtZT0iX0RLRC1MT0ZBLnN2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB3aWR0aD0iMzQ0LjE2MzA5IgogICBoZWlnaHQ9IjEwOS40MzcxNSIKICAgaWQ9InN2ZzQiCiAgIHZpZXdCb3g9IjAgMCAzNDQuMTYzMDkgMTA5LjQzNzE1Ij4KICA8c29kaXBvZGk6bmFtZWR2aWV3CiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ic3ZnNCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOndpbmRvdy15PSItOCIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iLTgiCiAgICAgaW5rc2NhcGU6Y3k9IjMwNy45MjEyMSIKICAgICBpbmtzY2FwZTpjeD0iMTgyLjMzNTIxIgogICAgIGlua3NjYXBlOnpvb209IjAuODcyOTU0NzciCiAgICAgZml0LW1hcmdpbi1ib3R0b209IjAiCiAgICAgZml0LW1hcmdpbi1yaWdodD0iMCIKICAgICBmaXQtbWFyZ2luLWxlZnQ9IjAiCiAgICAgZml0LW1hcmdpbi10b3A9IjAiCiAgICAgc2hvd2JvcmRlcj0idHJ1ZSIKICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSJ0cnVlIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpZD0ibmFtZWR2aWV3NiIKICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMTM3IgogICAgIGlua3NjYXBlOndpbmRvdy13aWR0aD0iMTkyMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIgogICAgIGd1aWRldG9sZXJhbmNlPSIxMCIKICAgICBncmlkdG9sZXJhbmNlPSIxMCIKICAgICBvYmplY3R0b2xlcmFuY2U9IjEwIgogICAgIGJvcmRlcm9wYWNpdHk9IjEiCiAgICAgYm9yZGVyY29sb3I9IiM2NjY2NjYiCiAgICAgcGFnZWNvbG9yPSIjZmZmZmZmIiAvPgogIDxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTEwIj4KICAgIDxyZGY6UkRGPgogICAgICA8Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+CiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICAgICAgPGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICAgIDxkYzp0aXRsZT48L2RjOnRpdGxlPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZGVmcwogICAgIGlkPSJkZWZzOCIgLz4KICA8cGF0aAogICAgIGQ9Ik0gMzIzLjU2NzksMC4xNDM5OTk5OSBDIDMzNi4zNjI0LDEzLjUzMjEgMzQ0LjI3NjUsMzMuNzEzMSAzNDQuMDEyNyw1NS42NzQ4IDM0My42ODMsNzYuNjQ3MiAzMzYuODksOTUuNjQxMSAzMjQuNjg5MSwxMDkuMjkzIEwgMjM4LjU1NywxMDkuMDk1MSBWIDAuMTQzOTk5OTkgWiBNIDI3OC45ODUsNzYuOTc3IGMgMi45Njc4LDEuMjUzIDYuMTk5NCwyLjUwNjEgOS44MjY3LDIuNTA2MSAxMy4xMjQzLDAgMjMuNDEyNiwtMTEuMzQzNiAyMy40MTI2LC0yNC44NjM1IDAsLTEzLjU4NiAtMTEuMDEzOCwtMjQuNDY3OSAtMjMuNDEyNiwtMjQuNDY3OSAtMy42MjczLDAgLTYuODU4OSwwLjY1OTUgLTkuODI2NywyLjQ0MDIgeiBNIDE2MC4yNzMxLDY5LjMyNjYgdiAzOC4zMTc2IDEuMzE5IEggMTIwLjc2ODUgViAxMDYuOTE4NyA1NC42ODU1IDAuMTQzOTk5OTkgaCAzOS41MDQ2IFYgMzIuOTIxNyBsIDE0LjkwNSwtMzIuNzc3NzAwMDEgaCA0NC4wNTUzIEwgMTkxLjAwNjMsNTMuMTY4NiBsIDMyLjUxMzksNTUuNzI4NyBoIC00MS44MTMgeiBtIC0zOS41MDQ2LDM3LjU5MjEgeiBtIDAsMi4wNDQ1IHYgMC4yNjM4IHogTSA4NC43NTkyLDAuMTQzOTk5OTkgQyA5Ny40ODc4LDEzLjQ2NjEgMTA1LjQwMTksMzMuNjQ3MSAxMDUuMTM4MSw1NS41NDI5IDEwNC43NDI0LDc2LjUxNTMgOTguMDE1NCw5NS41MDkyIDg2LjAxMjMsMTA5LjE2MTEgTCAwLjE0Mzk5OTk5LDEwOC45NjMyIFYgMC4xNDM5OTk5OSBaIE0gNDAuMzc0Miw3Ni45MTEgYyAzLjAzMzcsMS4yNTMxIDYuMjY1MywyLjM3NDIgOS44MjY3LDIuMzc0MiAxMi45OTIzLDAgMjMuMzQ2NiwtMTEuMzQzNSAyMy4zNDY2LC0yNC44NjM1IDAsLTEzLjUyIC0xMS4wMTM4LC0yNC40MDE5IC0yMy4zNDY2LC0yNC40MDE5IC0zLjU2MTQsMCAtNi43OTMsMC43OTE0IC05LjgyNjcsMi41MDYyIHoiCiAgICAgc3R5bGU9ImZpbGw6IzAwOWJjZTtmaWxsLW9wYWNpdHk6MTtmaWxsLXJ1bGU6ZXZlbm9kZDtzdHJva2U6IzAwOWJjZTtzdHJva2Utd2lkdGg6MC4yODg7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46bWl0ZXI7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS1vcGFjaXR5OjEiCiAgICAgaWQ9InBhdGgyIiAvPgo8L3N2Zz4K
+            </dcc:dataBase64>
+          </dcc:file>
+        </dcc:declaration>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:measurementResult refType="length_visualInspection">
+      <dcc:name>
+        <dcc:content lang="de">Sichtprüfung</dcc:content>
+        <dcc:content lang="en">Visual inspection</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="length_inspectionMethod">
+          <dcc:name>
+            <dcc:content lang="de">Die Sichtprüfung der Parallelendmaße erfolgt mit einer Lupe (3fach)</dcc:content>
+            <dcc:content lang="en">The gauge blocks are visually inspected using a magnifying glass (3x)</dcc:content>
+          </dcc:name>
+          <dcc:norm>VDI/VDE/DGQ 2618 Blatt 3.1:2004-01</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:results>
+        <dcc:result refId="setOfItems">
+          <dcc:name>
+            <dcc:content lang="de">Oberflächenbeschaffenheit</dcc:content>
+            <dcc:content lang="de">Surface condition</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Ergebnisse der Sichtprüfung der Messflächen</dcc:content>
+            <dcc:content lang="en">Results of the visual inspection of the measuring faces</dcc:content>
+          </dcc:description>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Befund</dcc:content>
+                <dcc:content lang="en">Findings</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <dcc:measurementMetaData>
+                <dcc:metaData>
+                  <dcc:declaration>
+                    <dcc:content lang="de">Wert=1:Keine Tastereindrücke, Kratzer, Ausbrüche; Wert=0:Tastereindrücke,
+                      Kratzer, Ausbrüche vorhanden
+                    </dcc:content>
+                    <dcc:content lang="en">Value=1: No indentations, scratches, spalling; Value=0: Indentations,
+                      scratches, spalling found
+                    </dcc:content>
+                  </dcc:declaration>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+    <dcc:measurementResult refType="length_wringability">
+      <dcc:name>
+        <dcc:content lang="de">Anschubprüfung</dcc:content>
+        <dcc:content lang="en">Wringability</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="length_inspectionMethod">
+          <dcc:name>
+            <dcc:content lang="de">Die Anschubprüfung erfolgt mit einem geeigneten Planglas</dcc:content>
+            <dcc:content lang="en">For the wringing test an appropriate plane face glass is used.</dcc:content>
+          </dcc:name>
+          <dcc:norm>VDI/VDE/DGQ 2618 Blatt 3.1:2004-01</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment>
+          <dcc:name>
+            <dcc:content lang="de">Planglas</dcc:content>
+            <dcc:content lang="en">plane face glass</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibrierzertifikat des Planglas</dcc:content>
+              <dcc:content lang="en">Calibration certificate of the plane face glass</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>{CertificateNumber}</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>noValue</dcc:value>
+          </dcc:certificate>
+          <dcc:identifications>
+            <dcc:identification refType="basic_identificationNumber">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>{IdentificationNumberLaboratory}</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Identifikationsnummer des Kalibrierlabors</dcc:content>
+                <dcc:content lang="en">Identification number of calibration laboratory</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:results>
+        <dcc:result refId="setOfItems">
+          <dcc:name>
+            <dcc:content lang="de">Ergebnis der Anschubprüfung</dcc:content>
+            <dcc:content lang="de">Results of the wringability inspection</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Befund</dcc:content>
+                <dcc:content lang="en">Findings</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+              <dcc:measurementMetaData>
+                <dcc:metaData>
+                  <dcc:declaration>
+                    <dcc:content lang="de">Wert=1:Anschiebbarkeit in Ordnung; Wert=0:Anschiebbarkeit nicht in Ordnung
+                    </dcc:content>
+                    <dcc:content lang="en">Value=1: Wringability is o.k.; Value=0: Wringability is not o.k.
+                    </dcc:content>
+                  </dcc:declaration>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+    <dcc:measurementResult refType="length_dimensionalResults">
+      <dcc:name>
+        <dcc:content lang="de">Kalibrierergebnisse für die Länge</dcc:content>
+        <dcc:content lang="en">Calibration results for length</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod refType="basic_calibrationMethod">
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierverfahren</dcc:content>
+            <dcc:content lang="en">Calibration method</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Kalibrierung erfolgt nach VDI/VDE/DGQ 2618 Blatt 3.1:2004-01 Option 1 -
+              Vollständige Kalibrierung.
+            </dcc:content>
+            <dcc:content lang="en">The calibration was carried out according to VDI/VDE/DGQ 2618 Part 3.1:2004-01 Option
+              1 - Complete calibration.
+            </dcc:content>
+          </dcc:description>
+          <dcc:norm>VDI/VDE/DGQ 2618 Blatt 3.1:2004-01</dcc:norm>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment refType="length_measuringDeviceLength">
+          <dcc:name>
+            <dcc:content lang="de">Parallelendmaßmessgerät</dcc:content>
+            <dcc:content lang="en">Gauge block measuring instrument</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibrierzertifikat des Parallelendmaßmessgerätes</dcc:content>
+              <dcc:content lang="en">Calibration certificate of the gauge block measuring instrument</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>{CertificateNumber}</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>noValue</dcc:value>
+          </dcc:certificate>
+          <dcc:identifications>
+            <dcc:identification refType="basic_identificationNumber">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>{IdentificationNumberLaboratory}</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Identifikationsnummer Kalibrierlabor</dcc:content>
+                <dcc:content lang="en">Identification number calibration laboratory</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+        <dcc:measuringEquipment refType="length_referenceMeasurementStandard">
+          <dcc:name>
+            <dcc:content lang="de">Parallelendmaßsatz</dcc:content>
+            <dcc:content lang="en">Gauge block set</dcc:content>
+          </dcc:name>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibrierzertifikat des Parallelendmaßsatz</dcc:content>
+              <dcc:content lang="en">Calibration certificate of the gauge block set</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>{CertificateNumber}</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>noValue</dcc:value>
+          </dcc:certificate>
+          <dcc:identifications>
+            <dcc:identification refType="basic_identificationNumber">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>{IdentificationNumberSetLaboratory2}</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Identifikationsnummer Kalibrerlabor</dcc:content>
+                <dcc:content lang="en">Identification number calibration laboratory</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungstemperatur Labor</dcc:content>
+            <dcc:content lang="en">Ambient temperature laboratory</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="math_minimum">
+              <dcc:name>
+                <dcc:content lang="de">Minimum</dcc:content>
+                <dcc:content lang="en">Minimum</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>19.7</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="math_maximum">
+              <dcc:name>
+                <dcc:content lang="de">Maximum</dcc:content>
+                <dcc:content lang="en">Maximum</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>20.3</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result refId="Item_1">
+          <dcc:name>
+            <dcc:content lang="de">Resultate des Parallelendmaßes mit Nennmaß 60 mm</dcc:content>
+            <dcc:content lang="en">Results of the gauge block with nominal dimension 60 mm</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="length_centralLength">
+              <dcc:name>
+                <dcc:content lang="de">Mittenmaß</dcc:content>
+                <dcc:content lang="en">Central length</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.06000014</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.136e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_deviationFromNominalLength">
+              <dcc:name>
+                <dcc:content lang="de">Abweichung vom Nennmaß</dcc:content>
+                <dcc:content lang="en">Deviation from the nominal length</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.14e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.136e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_upperDeviationFo">
+              <dcc:name>
+                <dcc:content lang="de">Obere Abweichung vom Mittenmaß fo</dcc:content>
+                <dcc:content lang="en">Upper deviation from the central length fo</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.07e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.07e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_lowerDeviationFu">
+              <dcc:name>
+                <dcc:content lang="de">Untere Abweichung vom Mittenmaß fu</dcc:content>
+                <dcc:content lang="en">Lower deviation from the central length fu</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.04e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.07e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_accuracyClass">
+              <dcc:name>
+                <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
+                <dcc:content lang="en">Accuracy class</dcc:content>
+              </dcc:name>
+              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_conformity">
+                  <dcc:name>
+                    <dcc:content lang="de">Konformität</dcc:content>
+                    <dcc:content lang="en">Conformity</dcc:content>
+                  </dcc:name>
+                  <dcc:norm>DIN EN ISO 3650:1999</dcc:norm>
+                  <dcc:conformity>pass</dcc:conformity>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+        <dcc:result refId="Item_2">
+          <dcc:name>
+            <dcc:content lang="de">Resultate des Parallelendmaßes mit Nennmaß 70 mm</dcc:content>
+            <dcc:content lang="en">Results of the gauge block with nominal dimension 70 mm</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="length_centralLength">
+              <dcc:name>
+                <dcc:content lang="de">Mittenmaß</dcc:content>
+                <dcc:content lang="en">Central length</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.07000012</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.136e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_deviationFromNominalLength">
+              <dcc:name>
+                <dcc:content lang="de">Abweichung vom Nennmaß</dcc:content>
+                <dcc:content lang="en">Deviation from the nominal length</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.12e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.136e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_upperDeviationFo">
+              <dcc:name>
+                <dcc:content lang="de">Obere Abweichung vom Mittenmaß fo</dcc:content>
+                <dcc:content lang="en">Upper deviation from the central length fo</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.08e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.97e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_lowerDeviationFu">
+              <dcc:name>
+                <dcc:content lang="de">Untere Abweichung vom Mittenmaß fu</dcc:content>
+                <dcc:content lang="en">Lower deviation from the central length fu</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.05e-06</si:value>
+                <si:unit>\metre</si:unit>
+                <si:measurementUncertaintyUnivariate>
+                  <si:expandedMU>
+                    <si:valueExpandedMU>0.07e-06</si:valueExpandedMU>
+                    <si:coverageFactor>2</si:coverageFactor>
+                    <si:coverageProbability>0.95</si:coverageProbability>
+                  </si:expandedMU>
+                </si:measurementUncertaintyUnivariate>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="length_accuracyClass">
+              <dcc:name>
+                <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
+                <dcc:content lang="en">Accuracy class</dcc:content>
+              </dcc:name>
+              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_conformity">
+                  <dcc:name>
+                    <dcc:content lang="de">Konformität</dcc:content>
+                    <dcc:content lang="en">Conformity</dcc:content>
+                  </dcc:name>
+                  <dcc:norm>DIN EN ISO 3650:1999</dcc:norm>
+                  <dcc:conformity>pass</dcc:conformity>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+        <dcc:result refId="setOfItems">
+          <dcc:name>
+            <dcc:content lang="de">Resultate, die dem Parallelendmaßsatz zugeordnet sind</dcc:content>
+            <dcc:content lang="en">Results assigned to the gauge block set</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="length_accuracyClass">
+              <dcc:name>
+                <dcc:content lang="de">Genauigkeitsklasse des Parallelendmaßsatzes</dcc:content>
+                <dcc:content lang="en">Accuracy class of the gauge block set</dcc:content>
+              </dcc:name>
+              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <dcc:measurementMetaData>
+                <dcc:metaData refType="basic_conformity">
+                  <dcc:name>
+                    <dcc:content lang="de">Konformität</dcc:content>
+                    <dcc:content lang="en">Conformity</dcc:content>
+                  </dcc:name>
+                  <dcc:norm>DIN EN ISO 3650:1999</dcc:norm>
+                  <dcc:conformity>pass</dcc:conformity>
+                </dcc:metaData>
+              </dcc:measurementMetaData>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+      <dcc:measurementMetaData>
+        <dcc:metaData refType="basic_referenceTemperature">
+          <dcc:convention>ITS-90</dcc:convention>
+          <dcc:declaration>
+            <dcc:content lang="de">Angabe der für die Kalibrierergebnisse geltenden Referenztemperatur.</dcc:content>
+            <dcc:content lang="en">Specification of the reference temperature applicable to the calibration results.
+            </dcc:content>
+          </dcc:declaration>
+          <dcc:data>
+            <dcc:quantity>
+              <dcc:name>
+                <dcc:content lang="de">Referenztemperatur</dcc:content>
+                <dcc:content lang="en">Reference temperature</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>20</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:metaData>
+        <dcc:metaData refId="toSI">
+          <dcc:valid>true</dcc:valid>
+        </dcc:metaData>
+        <dcc:metaData refId="inCMC">
+          <dcc:valid>true</dcc:valid>
+        </dcc:metaData>
+      </dcc:measurementMetaData>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>

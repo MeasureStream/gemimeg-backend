@@ -56,11 +56,13 @@ import java.net.MalformedURLException;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_HTML_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_JSON_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_PATH_ID;
+import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_PDF_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_XML_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_XML_PATH_ID;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.ID_PARAM_NAME;
 import static de.ptb.common.dcc.util.DccServiceUtil.createLogEntry;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_PDF_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
 
@@ -125,6 +127,16 @@ public class CalibrationCertificateController {
   public String validateAndProduceHtml(@RequestBody CalibrationCertificateDto dcc) {
     try {
       return service.validateAndProduceHtml(dcc);
+    } catch (JAXBException | SAXException | TransformerException | IOException | IllegalArgumentException e) {
+      throw new BadRequestStatus(createLogEntry(e));
+    }
+  }
+
+  @Operation(description = "Convert a DCC DTO as JSON to a human-readable PDF file")
+  @PostMapping(path = DCC_PDF_PATH, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_PDF_VALUE)
+  public byte[] validateAndProducePdf(@RequestBody CalibrationCertificateDto dcc) {
+    try {
+      return service.validateAndProducePdf(dcc);
     } catch (JAXBException | SAXException | TransformerException | IOException | IllegalArgumentException e) {
       throw new BadRequestStatus(createLogEntry(e));
     }

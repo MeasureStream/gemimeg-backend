@@ -40,6 +40,7 @@ public class CalibrationCertificateControllerRoutes {
   public static final String DCC_JSON_PATH = DCC_PATH + "/json";
   public static final String DCC_XML_PATH = DCC_PATH + "/xml";
   public static final String DCC_HTML_PATH = DCC_PATH + "/html";
+  public static final String DCC_PDF_PATH = DCC_PATH + "/pdf";
   public static final String DCC_SELF_SIGN_PATH = DCC_PATH + "/selfSign";
 
   private CalibrationCertificateControllerRoutes() {

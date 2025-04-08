@@ -51,6 +51,7 @@
   <properties>
     <dcc-namespace-uri>https://ptb.de/dcc</dcc-namespace-uri>
     <byte-buddy.version>1.15.1</byte-buddy.version>
+    <fop.version>2.10</fop.version>
   </properties>
 
   <!-- SCM settings -->
