@@ -45,7 +45,6 @@ import javax.annotation.Nonnull;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;
-import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;
 import static de.ptb.common.dcc.util.DccServiceUtil.setRefTypes;
 
 @Component
