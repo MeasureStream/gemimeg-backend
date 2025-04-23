@@ -42,6 +42,7 @@ import java.util.List;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
 import static de.ptb.common.dcc.util.DccServiceUtil.setId;
+import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;
 
 @Component
 public class LanguageSpecificStringsMapper implements JaxbDtoBidirectionalMapper<TextType, LanguageSpecificStringsDto> {
