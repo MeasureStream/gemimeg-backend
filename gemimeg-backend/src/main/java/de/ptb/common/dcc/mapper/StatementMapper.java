@@ -82,13 +82,18 @@ public class StatementMapper implements JaxbDtoBidirectionalMapper<StatementMeta
     if (jaxbObject.getName() != null) {
       target.setName(languageSpecificStringsMapper.mapToDto(jaxbObject.getName()));
     }
-    if (jaxbObject.getCountryCodeISO31661() != null && !jaxbObject.getCountryCodeISO31661().isEmpty()) {
+    if (isNotEmpty(jaxbObject.getCountryCodeISO31661())) {
       target.setCountryCodes(jaxbObject.getCountryCodeISO31661());
     }
     if (jaxbObject.getDescription() != null) {
       target.setDescription(richContentMapper.mapToDto(jaxbObject.getDescription()));
     }
-    target.setNorms(jaxbObject.getNorm());
+    if (isNotEmpty(jaxbObject.getNorm())) {
+      target.setNorms(jaxbObject.getNorm());
+    }
+    if (isNotEmpty(jaxbObject.getReference())) {
+      target.setReferences(jaxbObject.getReference());
+    }
     if (jaxbObject.getDeclaration() != null) {
       target.setDeclaration(richContentMapper.mapToDto(jaxbObject.getDeclaration()));
     }
@@ -152,6 +157,9 @@ public class StatementMapper implements JaxbDtoBidirectionalMapper<StatementMeta
     }
     if (isNotEmpty(dto.getNorms())) {
       target.getNorm().addAll(dto.getNorms());
+    }
+    if (isNotEmpty(dto.getReferences())) {
+      target.getReference().addAll(dto.getReferences());
     }
     if (isNotEmpty(dto.getDeclaration())) {
       target.setDeclaration(richContentMapper.mapToJaxbObject(dto.getDeclaration()));
