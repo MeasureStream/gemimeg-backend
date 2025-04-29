@@ -71,7 +71,9 @@ public class MethodMapper implements JaxbDtoBidirectionalMapper<UsedMethodType, 
     if (jaxbObject.getDescription() != null) {
       target.setDescription(richContentMapper.mapToDto(jaxbObject.getDescription()));
     }
-    target.setNorms(jaxbObject.getNorm());
+    if (isNotEmpty(jaxbObject.getNorm())) {
+      target.setNorms(jaxbObject.getNorm());
+    }
     return target;
   }
 

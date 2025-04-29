@@ -42,6 +42,7 @@ import de.ptb.common.dcc.xjc.generated.RespPersonType;
 import de.ptb.common.dcc.xjc.generated.SoftwareListType;
 import de.ptb.common.dcc.xjc.generated.StatementListType;
 import de.ptb.common.dcc.xjc.generated.StringPerformanceLocationType;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -53,6 +54,7 @@ import java.util.Set;
 import static de.ptb.common.dcc.util.DccServiceUtil.enumValue;
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
 
+@Slf4j
 @Component
 public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<AdministrativeDataType, AdministrativeDataDto> {
 
@@ -115,7 +117,8 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       if (coreData.getEndPerformanceDate() != null) {
         target.setEndDate(convertDate(coreData.getEndPerformanceDate()));
       }
-      if (coreData.getPerformanceLocation() != null) {
+      if (coreData.getPerformanceLocation() != null && coreData.getPerformanceLocation().getValue() != null &&
+          StringUtils.isNotBlank(coreData.getPerformanceLocation().getValue().value())) {
         target.setPerformanceLocation(coreData.getPerformanceLocation().getValue().value());
       }
     }
@@ -176,7 +179,14 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
     }
     PerformanceLocationType performanceLocation = objectFactory.createPerformanceLocationType();
     if (StringUtils.isNotBlank(dto.getPerformanceLocation())) {
-      performanceLocation.setValue(StringPerformanceLocationType.valueOf(enumValue(dto.getPerformanceLocation())));
+      try {
+        performanceLocation.setValue(StringPerformanceLocationType.valueOf(enumValue(dto.getPerformanceLocation())));
+      } catch (Throwable t) {
+        log.info("'" + dto.getPerformanceLocation() + "' is not permitted / not known. Using '" +
+            StringPerformanceLocationType.LABORATORY.value() + "' instead.");
+        log.warn(t.getMessage());
+        performanceLocation.setValue(StringPerformanceLocationType.LABORATORY);
+      }
     } else {
       performanceLocation.setValue(StringPerformanceLocationType.LABORATORY);
     }

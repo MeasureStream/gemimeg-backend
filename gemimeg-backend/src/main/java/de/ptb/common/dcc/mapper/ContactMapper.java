@@ -29,8 +29,10 @@
 package de.ptb.common.dcc.mapper;
 
 import de.ptb.common.dcc.api.v1.dcc.ContactDto;
+import de.ptb.common.dcc.api.v1.dcc.LanguageSpecificStringsDto;
 import de.ptb.common.dcc.xjc.generated.ContactType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
+import de.ptb.common.dcc.xjc.generated.TextType;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -65,10 +67,18 @@ public class ContactMapper implements JaxbDtoBidirectionalMapper<ContactType, Co
     setRefIds(target, jaxbObject.getRefId());
     setRefTypes(target, jaxbObject.getRefType());
     if (jaxbObject.getName() != null) {
-      target.setName(languageSpecificStringsMapper.mapToDto(jaxbObject.getName()));
+      LanguageSpecificStringsDto name = languageSpecificStringsMapper.mapToDto(jaxbObject.getName());
+      if (StringUtils.isBlank(name.getContent().getFirst().getLang())) {
+        name.getContent().getFirst().setLang("de");
+      }
+      target.setName(name);
     }
-    target.setEMailAddress(jaxbObject.getEMail());
-    target.setPhoneNumber(jaxbObject.getPhone());
+    if (StringUtils.isNotBlank(jaxbObject.getEMail())) {
+      target.setEMailAddress(jaxbObject.getEMail());
+    }
+    if (StringUtils.isNotBlank(jaxbObject.getPhone())) {
+      target.setPhoneNumber(jaxbObject.getPhone());
+    }
     if (jaxbObject.getLocation() != null) {
       target.setLocation(locationMapper.mapToDto(jaxbObject.getLocation()));
     }
@@ -89,10 +99,18 @@ public class ContactMapper implements JaxbDtoBidirectionalMapper<ContactType, Co
       target.getRefType().addAll(dto.getRefTypes());
     }
     if (isNotEmpty(dto.getName())) {
-      target.setName(languageSpecificStringsMapper.mapToJaxbObject(dto.getName()));
+      TextType name = languageSpecificStringsMapper.mapToJaxbObject(dto.getName());
+      if (StringUtils.isBlank(name.getContent().getFirst().getLang())) {
+        name.getContent().getFirst().setLang("de");
+      }
+      target.setName(name);
     }
-    target.setEMail(dto.getEMailAddress());
-    target.setPhone(dto.getPhoneNumber());
+    if (StringUtils.isNotBlank(dto.getEMailAddress())) {
+      target.setEMail(dto.getEMailAddress());
+    }
+    if (StringUtils.isNotBlank(dto.getPhoneNumber())) {
+      target.setPhone(dto.getPhoneNumber());
+    }
     if (isNotEmpty(dto.getLocation())) {
       target.setLocation(locationMapper.mapToJaxbObject(dto.getLocation()));
     }
