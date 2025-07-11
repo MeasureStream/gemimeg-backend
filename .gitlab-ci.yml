@@ -7,6 +7,7 @@
 
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  LATEST_TAG: $CI_REGISTRY_IMAGE:latest
 
 cache:
   key: maven_cache
@@ -72,6 +73,7 @@ build-image:
     - /kaniko/executor
       --context "${CI_PROJECT_DIR}"
       --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${LATEST_TAG}"
       --destination "${IMAGE_TAG}"
       --verbosity=debug
 
