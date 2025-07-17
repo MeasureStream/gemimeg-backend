@@ -266,7 +266,10 @@
     ],
     "uniqueIdentifier" : "Id 123456789 HtW",
     "countryCode" : "DE",
-    "languageCodes" : [
+    "mandatoryLanguageCodes" : [
+      "de"
+    ],
+    "usedLanguageCodes" : [
       "de",
       "en"
     ],

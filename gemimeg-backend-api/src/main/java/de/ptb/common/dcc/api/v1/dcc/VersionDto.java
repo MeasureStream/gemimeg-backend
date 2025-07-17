@@ -43,4 +43,7 @@ public class VersionDto {
 
   @Schema
   private String timestamp;
+
+  @Schema
+  private String tag;
 }

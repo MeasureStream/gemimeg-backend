@@ -58,7 +58,10 @@ public class AdministrativeDataDto {
   private String countryCode;
 
   @Schema
-  private Set<String> languageCodes;
+  private Set<String> mandatoryLanguageCodes;
+
+  @Schema
+  private Set<String> usedLanguageCodes;
 
   @Schema
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

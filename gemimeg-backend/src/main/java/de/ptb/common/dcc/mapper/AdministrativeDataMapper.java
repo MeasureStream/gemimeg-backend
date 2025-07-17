@@ -105,9 +105,14 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       CoreDataType coreData = jaxbObject.getCoreData();
       target.setUniqueIdentifier(coreData.getUniqueIdentifier());
       target.setCountryCode(coreData.getCountryCodeISO31661());
-      Set<String> languages = new HashSet<>(coreData.getMandatoryLangCodeISO6391());
-      languages.addAll(coreData.getUsedLangCodeISO6391());
-      target.setLanguageCodes(languages);
+      if (isNotEmpty(coreData.getMandatoryLangCodeISO6391())) {
+        Set<String> mandatoryLanguages = new HashSet<>(coreData.getMandatoryLangCodeISO6391());
+        target.setMandatoryLanguageCodes(mandatoryLanguages);
+      }
+      if (isNotEmpty(coreData.getUsedLangCodeISO6391())) {
+        Set<String> usedLanguages = new HashSet<>(coreData.getUsedLangCodeISO6391());
+        target.setUsedLanguageCodes(usedLanguages);
+      }
       if (coreData.getReceiptDate() != null) {
         target.setReceiptDate(convertDate(coreData.getReceiptDate()));
       }
@@ -164,9 +169,11 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
     CoreDataType coreData = objectFactory.createCoreDataType();
     coreData.setUniqueIdentifier(dto.getUniqueIdentifier());
     coreData.setCountryCodeISO31661(dto.getCountryCode());
-    if (isNotEmpty(dto.getLanguageCodes())) {
-      coreData.getMandatoryLangCodeISO6391().addAll(dto.getLanguageCodes());
-      coreData.getUsedLangCodeISO6391().addAll(dto.getLanguageCodes());
+    if (isNotEmpty(dto.getMandatoryLanguageCodes())) {
+      coreData.getMandatoryLangCodeISO6391().addAll(dto.getMandatoryLanguageCodes());
+    }
+    if (isNotEmpty(dto.getUsedLanguageCodes())) {
+      coreData.getUsedLangCodeISO6391().addAll(dto.getUsedLanguageCodes());
     }
     if (dto.getReceiptDate() != null) {
       coreData.setReceiptDate(convertDate(dto.getReceiptDate()));

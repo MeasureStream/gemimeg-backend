@@ -1,0 +1,4 @@
+{
+  "name": "gemimeg-backend",
+  "version": "$CI_COMMIT_TAG"
+}

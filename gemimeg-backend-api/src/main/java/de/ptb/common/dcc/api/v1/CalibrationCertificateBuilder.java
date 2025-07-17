@@ -269,7 +269,8 @@ public class CalibrationCertificateBuilder {
     CalibrationCertificateDto digitalCalibrationCertificate = new CalibrationCertificateDto();
     AdministrativeDataDto administrativeData = new AdministrativeDataDto();
     administrativeData.setCountryCode("DE");
-    administrativeData.setLanguageCodes(Set.of("de"));
+    administrativeData.setMandatoryLanguageCodes(Set.of("de"));
+    administrativeData.setUsedLanguageCodes(Set.of("de", "en"));
     administrativeData.setUniqueIdentifier(UUID.randomUUID().toString());
     CalibrationLaboratoryDto calibrationLaboratory = new CalibrationLaboratoryDto();
     calibrationLaboratory.setCalibrationLaboratoryCode(laboratoryName);
