@@ -9,8 +9,6 @@ log4j:
   appender:
     consoleAppender: org.apache.log4j.ConsoleAppender
 spring:
-  profiles:
-    active: user-${USERNAME}
   application:
     name: gemimeg-backend
   mvc:
