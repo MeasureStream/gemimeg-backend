@@ -71,7 +71,7 @@ public class SerializationUtilsTest {
     assertTrue(objectMapper.getRegisteredModuleIds().contains("jackson-datatype-jsr310"));
     SerializationConfig mapperConfig = objectMapper.getSerializationConfig();
     assertNotNull(mapperConfig);
-    assertEquals(21771068, mapperConfig.getSerializationFeatures());
+    assertEquals(55325500, mapperConfig.getSerializationFeatures());
   }
 
   @Test

@@ -35,8 +35,7 @@
   <parent>
     <groupId>de.ptb.common</groupId>
     <artifactId>gemimeg-backend-project</artifactId>
-    <version>${revision}</version>
-    <relativePath>../pom.xml</relativePath>
+    <version>1.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>gemimeg-backend</artifactId>
@@ -56,6 +55,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <version>${spring-boot.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
@@ -78,83 +78,102 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jetty</artifactId>
+      <version>${spring-boot.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-configuration-processor</artifactId>
+      <version>${spring-boot.version}</version>
       <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>${springdoc-openapi-starter.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <version>${spring-boot.version}</version>
     </dependency>
     <dependency>
       <groupId>org.mapstruct</groupId>
       <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
+      <version>${h2.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>net.bytebuddy</groupId>
       <artifactId>byte-buddy</artifactId>
+      <version>${byte-buddy.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
+      <version>${commons-lang3.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
+      <version>${slf4j-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j-api.version}</version>
     </dependency>
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
+      <version>${commons-io.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
-      <artifactId>jsr305</artifactId>
+      <groupId>com.github.spotbugs</groupId>
+      <artifactId>spotbugs-annotations</artifactId>
+      <version>${spotbugs-annotations.version}</version>
     </dependency>
     <dependency>
       <groupId>jakarta.xml.bind</groupId>
       <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>${jakarta.xml.bind-api.version}</version>
     </dependency>
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
+      <version>${jaxb-impl.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>jakarta.activation</groupId>
       <artifactId>jakarta.activation-api</artifactId>
+      <version>${jakarta.activation-api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.persistence</groupId>
       <artifactId>org.eclipse.persistence.moxy</artifactId>
+      <version>${eclipse.persistence.moxy.version}</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jaxb</groupId>
       <artifactId>jaxb-runtime</artifactId>
+      <version>${jaxb-runtime.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -164,10 +183,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.datatype</groupId>
       <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.apache.xmlgraphics</groupId>
@@ -177,6 +198,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring-boot.version}</version>
       <exclusions>
         <exclusion>
           <groupId>org.springframework.boot</groupId>
@@ -192,42 +214,49 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${mockito.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>net.bytebuddy</groupId>
       <artifactId>byte-buddy-agent</artifactId>
-      <version>${byte-buddy.version}</version> <!-- FIXME: weird problem with version not being set -->
+      <version>${byte-buddy.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.springframework.security</groupId>
       <artifactId>spring-security-test</artifactId>
+      <version>${spring-security.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.skyscreamer</groupId>
       <artifactId>jsonassert</artifactId>
+      <version>${jsonassert.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-core</artifactId>
+      <version>${xmlunit.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.xmlunit</groupId>
       <artifactId>xmlunit-matchers</artifactId>
+      <version>${xmlunit.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -238,10 +267,12 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.7.2</version>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
         <configuration>
           <jvmArguments>-Dspring.application.admin.enabled=true</jvmArguments>
           <mainClass>${start-class}</mainClass>
@@ -271,6 +302,7 @@
       <plugin>
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-maven-plugin</artifactId>
+        <version>1.5</version>
         <executions>
           <execution>
             <id>integration-test</id>
@@ -288,6 +320,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>3.4.2</version>
         <configuration>
           <excludes>
             <exclude>**/user*.yml</exclude>
@@ -297,6 +330,7 @@
       <plugin>
         <groupId>org.apache.cxf</groupId>
         <artifactId>cxf-xjc-plugin</artifactId>
+        <version>4.1.0</version>
         <executions>
           <execution>
             <id>generate-sources-dcc-xsd</id>

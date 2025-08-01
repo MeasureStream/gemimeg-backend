@@ -32,16 +32,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <artifactId>oplayer-parent</artifactId>
-    <groupId>de.ptb.common</groupId>
-    <version>1.0-SNAPSHOT</version>
-    <relativePath>../parent-pom/pom.xml</relativePath>
-  </parent>
-
+  <groupId>de.ptb.common</groupId>
   <artifactId>gemimeg-backend-project</artifactId>
   <packaging>pom</packaging>
-  <version>${revision}</version>
+  <version>1.0-SNAPSHOT</version>
 
   <modules>
     <module>gemimeg-backend</module>
@@ -50,57 +44,52 @@
 
   <properties>
     <dcc-namespace-uri>https://ptb.de/dcc</dcc-namespace-uri>
-    <byte-buddy.version>1.15.1</byte-buddy.version>
-    <fop.version>2.10</fop.version>
+    <java.version>21</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <timestamp>${maven.build.timestamp}</timestamp>
+    <maven.build.timestamp.format>dd.MM.yyyy HH:mm:ss</maven.build.timestamp.format>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <byte-buddy.version>1.17.6</byte-buddy.version>
+    <commons-codec.version>1.19.0</commons-codec.version>
+    <commons-io.version>2.20.0</commons-io.version>
+    <commons-lang3.version>3.18.0</commons-lang3.version>
+    <dependency-check-maven.version>12.1.3</dependency-check-maven.version>
+    <eclipse.persistence.moxy.version>4.0.7</eclipse.persistence.moxy.version>
+    <spotbugs-annotations.version>4.9.3</spotbugs-annotations.version>
+    <fop.version>2.11</fop.version>
+    <h2.version>2.3.232</h2.version>
+    <jackson.version>2.19.2</jackson.version>
+    <jakarta.xml.bind-api.version>4.0.2</jakarta.xml.bind-api.version>
+    <jakarta.activation-api.version>2.1.3</jakarta.activation-api.version>
+    <jaxb-impl.version>4.0.5</jaxb-impl.version>
+    <jaxb-runtime.version>4.0.5</jaxb-runtime.version>
+    <jsonassert.version>1.5.3</jsonassert.version>
+    <junit-jupiter.version>5.13.4</junit-jupiter.version>
+    <lombok.version>1.18.38</lombok.version>
+    <mapstruct.version>1.6.3</mapstruct.version>
+    <mockito.version>5.18.0</mockito.version>
+    <slf4j-api.version>2.0.17</slf4j-api.version>
+    <spring.version>6.2.9</spring.version>
+    <spring-boot.version>3.5.4</spring-boot.version>
+    <spring-security.version>6.5.2</spring-security.version>
+    <springdoc-openapi-starter.version>2.8.9</springdoc-openapi-starter.version>
+    <swagger-annotations-jakarta.version>2.2.18</swagger-annotations-jakarta.version>
+    <xmlunit.version>2.10.3</xmlunit.version>
   </properties>
-
-  <!-- SCM settings -->
-  <scm>
-    <connection>scm:git:ssh://git@itgit.bs.ptb.de:op-layer/gemimeg-backend-project.git</connection>
-    <!--suppress CheckTagEmptyBody -->
-    <tag></tag>
-    <developerConnection>${project.scm.connection}</developerConnection>
-  </scm>
-
-  <!-- module repositories -->
-  <repositories>
-    <repository>
-      <id>gitlab-maven</id>
-      <url>https://itgit.bs.ptb.de/api/v4/groups/451/-/packages/maven</url>
-    </repository>
-  </repositories>
-  <distributionManagement>
-    <repository>
-      <id>gitlab-maven</id>
-      <url>https://itgit.bs.ptb.de/api/v4/projects/1569/packages/maven</url>
-    </repository>
-    <snapshotRepository>
-      <id>gitlab-maven</id>
-      <url>https://itgit.bs.ptb.de/api/v4/projects/1569/packages/maven</url>
-    </snapshotRepository>
-  </distributionManagement>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>maven-central</id>
-      <url>https://itgit.bs.ptb.de/api/v4/projects/1569/packages/maven</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
 
   <build>
     <plugins>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.7.2</version>
       </plugin>
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.13</version>
         <executions>
           <execution>
             <goals>
@@ -119,4 +108,37 @@
     </plugins>
   </build>
 
+  <profiles>
+    <profile>
+      <id>dependency-check</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <!--suppress MavenModelInspection -->
+            <groupId>org.owasp</groupId>
+            <!--suppress MavenModelInspection -->
+            <artifactId>dependency-check-maven</artifactId>
+            <!--suppress MavenModelInspection -->
+            <version>${dependency-check-maven.version}</version>
+            <configuration>
+              <cveValidForHours>48</cveValidForHours>
+              <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
+              <nodeAnalyzerEnabled>false</nodeAnalyzerEnabled>
+              <nodeAuditAnalyzerEnabled>false</nodeAuditAnalyzerEnabled>
+            </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
