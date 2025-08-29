@@ -591,7 +591,7 @@
         </dcc:influenceCondition>
       </dcc:influenceConditions>
       <dcc:results>
-        <dcc:result refId="Item_1">
+        <dcc:result>
           <dcc:name>
             <dcc:content lang="de">Resultate des Parallelendmaßes mit Nennmaß 60 mm</dcc:content>
             <dcc:content lang="en">Results of the gauge block with nominal dimension 60 mm</dcc:content>
@@ -684,7 +684,7 @@
             </dcc:quantity>
           </dcc:data>
         </dcc:result>
-        <dcc:result refId="Item_2">
+        <dcc:result>
           <dcc:name>
             <dcc:content lang="de">Resultate des Parallelendmaßes mit Nennmaß 70 mm</dcc:content>
             <dcc:content lang="en">Results of the gauge block with nominal dimension 70 mm</dcc:content>
@@ -777,7 +777,7 @@
             </dcc:quantity>
           </dcc:data>
         </dcc:result>
-        <dcc:result refId="setOfItems">
+        <dcc:result>
           <dcc:name>
             <dcc:content lang="de">Resultate, die dem Parallelendmaßsatz zugeordnet sind</dcc:content>
             <dcc:content lang="en">Results assigned to the gauge block set</dcc:content>
@@ -824,10 +824,10 @@
             </dcc:quantity>
           </dcc:data>
         </dcc:metaData>
-        <dcc:metaData refId="toSI">
+        <dcc:metaData>
           <dcc:valid>true</dcc:valid>
         </dcc:metaData>
-        <dcc:metaData refId="inCMC">
+        <dcc:metaData>
           <dcc:valid>true</dcc:valid>
         </dcc:metaData>
       </dcc:measurementMetaData>
