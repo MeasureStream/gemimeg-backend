@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si" xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd
-" schemaVersion="3.3.0">
+<dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si" schemaVersion="3.3.0">
   <dcc:administrativeData>
     <dcc:dccSoftware>
       <dcc:software>
@@ -303,8 +304,8 @@
       <dcc:statement id="toSI" refType="basic_metrologicallyTraceableToSI">
         <dcc:norm>ISO/IEC 17025; 7.8.4.1 c</dcc:norm>
         <dcc:declaration>
-          <dcc:content lang="de">Die Messergebnisse, die von einem dcc:valid-Element mit dem Wert "true" begleitet
-            werden, das durch eine refId auf dieses dcc:statement-Element verweist, geben an, dass die zugehörigen
+          <dcc:content lang="de">Die Messergebnisse, die von einem valid-Element mit dem Wert "true" begleitet
+            werden, das durch eine refId auf dieses statement-Element verweist, geben an, dass die zugehörigen
             Ergebnisse metrologisch auf das SI rückführbar sind.
           </dcc:content>
           <dcc:content lang="en">The measurement results that are accompanied by a dcc:valid element with the value
@@ -316,8 +317,8 @@
       <dcc:statement id="inCMC" refType="basic_isInCMC">
         <dcc:reference>D-K-xxxxx-yy-zz</dcc:reference>
         <dcc:declaration>
-          <dcc:content lang="de">Die Messergebnisse, die von einem dcc:valid-Element mit dem Wert "true" begleitet
-            werden, das durch eine refId auf dieses dcc:statement-Element verweist, erfüllen die Bedingung, dass die
+          <dcc:content lang="de">Die Messergebnisse, die von einem valid-Element mit dem Wert "true" begleitet
+            werden, das durch eine refId auf dieses statement-Element verweist, erfüllen die Bedingung, dass die
             zugehörigen Ergebnisse innerhalb des akkreditierten Bereichs liegen und die jeweilige Messunsicherheit
             größer oder gleich der CMC-Messunsicherheit ist.
           </dcc:content>
@@ -399,7 +400,7 @@
               <dcc:measurementMetaData>
                 <dcc:metaData>
                   <dcc:declaration>
-                    <dcc:content lang="de">Wert=1:Keine Tastereindrücke, Kratzer, Ausbrüche; Wert=0:Tastereindrücke,
+                    <dcc:content lang="de">Wert=1: Keine Tastereindrücke, Kratzer, Ausbrüche; Wert=0:Tastereindrücke,
                       Kratzer, Ausbrüche vorhanden
                     </dcc:content>
                     <dcc:content lang="en">Value=1: No indentations, scratches, spalling; Value=0: Indentations,
@@ -473,7 +474,7 @@
               <dcc:measurementMetaData>
                 <dcc:metaData>
                   <dcc:declaration>
-                    <dcc:content lang="de">Wert=1:Anschiebbarkeit in Ordnung; Wert=0:Anschiebbarkeit nicht in Ordnung
+                    <dcc:content lang="de">Wert=1: Anschiebbarkeit in Ordnung; Wert=0:Anschiebbarkeit nicht in Ordnung
                     </dcc:content>
                     <dcc:content lang="en">Value=1: Wringability is o.k.; Value=0: Wringability is not o.k.
                     </dcc:content>
