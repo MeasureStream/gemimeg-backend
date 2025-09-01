@@ -28,8 +28,8 @@
   OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
-                                   xmlns:dcc="https://ptb.de/dcc" xmlns:si="https://ptb.de/si" schemaVersion="3.3.0">
+                                   xmlns:dcc="https://ptb.de/dcc"
+                                   xmlns:si="https://ptb.de/si" xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd" schemaVersion="3.3.0">
   <dcc:administrativeData>
     <dcc:dccSoftware>
       <dcc:software>
@@ -851,9 +851,6 @@
               </si:real>
             </dcc:quantity>
           </dcc:data>
-        </dcc:metaData>
-        <dcc:metaData>
-          <dcc:valid>true</dcc:valid>
         </dcc:metaData>
         <dcc:metaData>
           <dcc:valid>true</dcc:valid>
