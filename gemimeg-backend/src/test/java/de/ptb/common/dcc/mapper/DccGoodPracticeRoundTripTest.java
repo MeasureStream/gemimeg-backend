@@ -168,6 +168,7 @@ public class DccGoodPracticeRoundTripTest {
     loadFilesFromResource(classLoader.getResource("examples/Thementag"), ".xml", exampleFiles);
     loadFilesFromResource(classLoader.getResource("examples/FB1.7"), ".xml", exampleFiles);
     loadFilesFromResource(classLoader.getResource("examples/DKD"), ".xml", exampleFiles);
+    loadFilesFromResource(classLoader.getResource("examples/Tuebitak"), ".xml", exampleFiles);
     return exampleFiles;
   }
 
