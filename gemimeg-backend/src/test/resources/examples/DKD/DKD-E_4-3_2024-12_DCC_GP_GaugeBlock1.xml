@@ -29,7 +29,9 @@
 -->
 <dcc:digitalCalibrationCertificate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                                    xmlns:dcc="https://ptb.de/dcc"
-                                   xmlns:si="https://ptb.de/si" xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd" schemaVersion="3.3.0">
+                                   xmlns:si="https://ptb.de/si"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   schemaVersion="3.3.0">
   <dcc:administrativeData>
     <dcc:dccSoftware>
       <dcc:software>
@@ -152,7 +154,10 @@
               <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
               <dcc:content lang="en">Accuracy class</dcc:content>
             </dcc:name>
-            <dcc:charsXMLList>1</dcc:charsXMLList>
+            <si:real>
+              <si:value>1</si:value>
+              <si:unit>\one</si:unit>
+            </si:real>
           </dcc:itemQuantity>
           <dcc:itemQuantity refType="length_linearThermalExpansionCoefficient">
             <dcc:name>
@@ -698,7 +703,10 @@
                 <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
                 <dcc:content lang="en">Accuracy class</dcc:content>
               </dcc:name>
-              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
               <dcc:measurementMetaData>
                 <dcc:metaData refType="basic_conformity">
                   <dcc:name>
@@ -791,7 +799,10 @@
                 <dcc:content lang="de">Genauigkeitsklasse</dcc:content>
                 <dcc:content lang="en">Accuracy class</dcc:content>
               </dcc:name>
-              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
               <dcc:measurementMetaData>
                 <dcc:metaData refType="basic_conformity">
                   <dcc:name>
@@ -816,7 +827,10 @@
                 <dcc:content lang="de">Genauigkeitsklasse des Parallelendmaßsatzes</dcc:content>
                 <dcc:content lang="en">Accuracy class of the gauge block set</dcc:content>
               </dcc:name>
-              <dcc:charsXMLList>1</dcc:charsXMLList>
+              <si:real>
+                <si:value>1</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
               <dcc:measurementMetaData>
                 <dcc:metaData refType="basic_conformity">
                   <dcc:name>

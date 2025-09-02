@@ -187,7 +187,6 @@ public class DccGoodPracticeRoundTripTest {
             .filter(Files::isRegularFile)
             .map(Path::toFile)
             .filter(file -> file.getName().endsWith(suffix))
-            .filter(file -> !StringUtils.containsIgnoreCase(file.getName(), "DKD-E_4-3_2024-12_DCC_GP_GaugeBlock1.xml"))
             .toList());
       }
       targetFiles.forEach(file -> log.info("Using test resource " + file.getAbsolutePath()));
