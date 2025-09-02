@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright 2025 Physikalisch-Technische Bundesanstalt
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  1. Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+  2. Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+  3. Neither the name of the copyright holder nor the names of its contributors
+  may be used to endorse or promote products derived from this software without
+  specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+  OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<dcc:digitalCalibrationCertificate xmlns:si="https://ptb.de/si"
+                                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                   xsi:schemaLocation="https://ptb.de/dcc https://ptb.de/dcc/v3.3.0/dcc.xsd"
+                                   schemaVersion="3.3.0"
+                                   xmlns:dcc="https://ptb.de/dcc">
+  <dcc:administrativeData>
+    <dcc:dccSoftware>
+      <dcc:software id="software_calibrationProgram">
+        <dcc:name>
+          <dcc:content lang="de">Kalibrierprogramm XY</dcc:content>
+          <dcc:content lang="en">Calibration program XY</dcc:content>
+        </dcc:name>
+        <dcc:release>V1.1</dcc:release>
+        <dcc:type>application</dcc:type>
+        <dcc:description>
+          <dcc:content lang="de">Detailliertere optionale Beschreibung des Kalibrierprogramms</dcc:content>
+          <dcc:content lang="en">More detailed optional description of the calibration program</dcc:content>
+        </dcc:description>
+      </dcc:software>
+      <dcc:software id="software_textEditor">
+        <dcc:name>
+          <dcc:content lang="de">Notepad++ Quelltexteditor</dcc:content>
+          <dcc:content lang="en">Notepad++ source code editor</dcc:content>
+        </dcc:name>
+        <dcc:release>v8.7.5</dcc:release>
+        <dcc:type>application</dcc:type>
+        <dcc:description>
+          <dcc:content lang="de">Notepad++ ist ein freier Quellcodeeditor für MS Windows (GNU General Public License)
+          </dcc:content>
+          <dcc:content lang="en">Notepad++ is a free source code editor for MS Windows (GNU General Public License)
+          </dcc:content>
+        </dcc:description>
+      </dcc:software>
+    </dcc:dccSoftware>
+    <dcc:refTypeDefinitions>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">Definition der grundlegenden RefTypes</dcc:content>
+          <dcc:content lang="en">Basic RefTypes definition</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Der Namensraum 'basic' beinhaltet allgemeine RefTypes, die messgrößenübergreifend
+            genutzt werden.
+          </dcc:content>
+          <dcc:content lang="en">The 'basic' namespace contains RefTypes common for multiple communities.</dcc:content>
+        </dcc:description>
+        <dcc:namespace>basic</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=2&amp;/basic</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">Namensraum für RefTypes der Strömungsmessgrößen</dcc:content>
+          <dcc:content lang="en">Namespace for RefTypes of the flow community</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Der Namensraum 'flow' beinhaltet spezifische RefTypes, die für Strömungsmessgrößen
+            genutzt werden
+          </dcc:content>
+          <dcc:content lang="en">The 'flow' namespace contains RefTypes for flow quantities</dcc:content>
+        </dcc:description>
+        <dcc:namespace>flow</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=293&amp;/flow</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">RefTypes des Namensraum 'math'</dcc:content>
+          <dcc:content lang="en">RefTypes for namespace 'math'</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Der Namensraum 'math' beinhaltet grundlegende mathematische Begriffe.</dcc:content>
+          <dcc:content lang="en">The 'math' namespace contains basic mathematical terms.</dcc:content>
+        </dcc:description>
+        <dcc:namespace>math</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=292&amp;/math</dcc:link>
+      </dcc:refTypeDefinition>
+      <dcc:refTypeDefinition>
+        <dcc:name>
+          <dcc:content lang="de">RefTypes des Namensraum 'pressure'</dcc:content>
+          <dcc:content lang="en">RefTypes for namespace 'pressure'</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Der Namensraum 'pressure' beinhaltet RefTypes aus der Druck- und Vakuummetrologie.
+          </dcc:content>
+          <dcc:content lang="en">The 'pressure' namespace contains RefTypes of the pressure and vacuum metrology.
+          </dcc:content>
+        </dcc:description>
+        <dcc:namespace>pressure</dcc:namespace>
+        <dcc:link>https://digilab.ptb.de/dkd/refType/vocab/index.php?tema=263&amp;/pressure</dcc:link>
+      </dcc:refTypeDefinition>
+    </dcc:refTypeDefinitions>
+    <dcc:coreData>
+      <dcc:countryCodeISO3166_1>DE</dcc:countryCodeISO3166_1>
+      <dcc:usedLangCodeISO639_1>de</dcc:usedLangCodeISO639_1>
+      <dcc:usedLangCodeISO639_1>en</dcc:usedLangCodeISO639_1>
+      <dcc:mandatoryLangCodeISO639_1>de</dcc:mandatoryLangCodeISO639_1>
+      <dcc:uniqueIdentifier>54fbb91e-873e-4dc8-b514-0fe8247328f3</dcc:uniqueIdentifier>
+      <dcc:identifications>
+        <dcc:identification refType="basic_certificateIdentification">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>QMS.XY.123</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Interne Kalibrierscheinnummer QMS</dcc:content>
+            <dcc:content lang="en">Internal certificate ID QMS</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+        <dcc:identification refType="basic_certificateNumber">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>01234</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Laufende Kalibrierscheinnummer (z. B. laut DAkkS 71 SD 0 025, Anhang 3 oder
+              vergleichbaren Vorgaben)
+            </dcc:content>
+            <dcc:content lang="en">Sequential calibration certificate number (e.g. according to DAkkS 71 SD 0 025,
+              Appendix 3 or comparable specifications)
+            </dcc:content>
+          </dcc:name>
+        </dcc:identification>
+        <dcc:identification refType="basic_orderNumber">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>A.123456</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Auftragsnummer</dcc:content>
+            <dcc:content lang="en">Order number</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+        <dcc:identification refType="basic_calibrationMark">
+          <dcc:issuer>calibrationLaboratory</dcc:issuer>
+          <dcc:value>01234 D-K-YYYYY-ZZ-NN 2025-07</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Kalibrierzeichen</dcc:content>
+            <dcc:content lang="en">Calibration mark</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+        <dcc:identification id="identification_inventory"
+                            refType="flow_inventoryNumber">
+          <dcc:issuer>customer</dcc:issuer>
+          <dcc:value>LAB-0815a</dcc:value>
+          <dcc:name>
+            <dcc:content lang="de">Inventarnummer</dcc:content>
+            <dcc:content lang="en">Inventory number</dcc:content>
+          </dcc:name>
+        </dcc:identification>
+      </dcc:identifications>
+      <dcc:beginPerformanceDate>2025-07-10</dcc:beginPerformanceDate>
+      <dcc:endPerformanceDate>2025-07-11</dcc:endPerformanceDate>
+      <dcc:performanceLocation>laboratory</dcc:performanceLocation>
+      <dcc:issueDate>2025-07-11</dcc:issueDate>
+      <dcc:reportAmendedSubstituted>
+        <dcc:typeOfChange>substituted</dcc:typeOfChange>
+        <dcc:replacedUniqueIdentifier>28bd18c4-8f4e-4f3e-a19a-661af4e6eef9</dcc:replacedUniqueIdentifier>
+      </dcc:reportAmendedSubstituted>
+    </dcc:coreData>
+    <dcc:items>
+      <dcc:item id="item_impeller">
+        <dcc:name>
+          <dcc:content lang="de">TS-26/16-GE-mn80A-125-p0-ZG1</dcc:content>
+          <dcc:content lang="en">TS-26/16-GE-mn80A-125-p0-ZG1</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Flügelrad-Strömungssensor</dcc:content>
+          <dcc:content lang="en">Impeller flow sensor</dcc:content>
+        </dcc:description>
+        <dcc:owner>
+          <dcc:name>
+            <dcc:content lang="de">Christina Sankt</dcc:content>
+            <dcc:content lang="en">Christina Sankt</dcc:content>
+          </dcc:name>
+          <dcc:eMail>info@christinasankt.de</dcc:eMail>
+          <dcc:phone>00000 000001</dcc:phone>
+          <dcc:location>
+            <dcc:street>Knesebeckstrasse</dcc:street>
+            <dcc:streetNo>59</dcc:streetNo>
+            <dcc:postCode>57639</dcc:postCode>
+            <dcc:city>Oberdreis</dcc:city>
+            <dcc:state>NRW</dcc:state>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:owner>
+        <dcc:manufacturer>
+          <dcc:name>
+            <dcc:content lang="de">Höntzsch GmbH</dcc:content>
+            <dcc:content lang="en">Höntzsch GmbH</dcc:content>
+          </dcc:name>
+          <dcc:location>
+            <dcc:street>Gottlieb-Daimler-Straße</dcc:street>
+            <dcc:streetNo>37</dcc:streetNo>
+            <dcc:postCode>71334</dcc:postCode>
+            <dcc:city>Waiblingen</dcc:city>
+            <dcc:countryCode>DE</dcc:countryCode>
+          </dcc:location>
+        </dcc:manufacturer>
+        <dcc:model>TS-26/16-GE-mn80A-125-p0-ZG1</dcc:model>
+        <dcc:identifications>
+          <dcc:identification refType="basic_serialNumber">
+            <dcc:issuer>manufacturer</dcc:issuer>
+            <dcc:value>SN 00815</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Seriennummer</dcc:content>
+              <dcc:content lang="en">Serial number</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+          <dcc:identification refType="basic_marking">
+            <dcc:issuer>customer</dcc:issuer>
+            <dcc:value>LAB-00815a</dcc:value>
+            <dcc:name>
+              <dcc:content lang="de">Inventarnummer Kunde</dcc:content>
+              <dcc:content lang="en">Customer inventory number</dcc:content>
+            </dcc:name>
+          </dcc:identification>
+        </dcc:identifications>
+        <dcc:itemQuantities>
+          <dcc:itemQuantity>
+            <dcc:name>
+              <dcc:content lang="de">Sensorlänge</dcc:content>
+              <dcc:content lang="en">Length of the sensor</dcc:content>
+            </dcc:name>
+            <dcc:description>
+              <dcc:content lang="de">Maß 'L' für Kopf inklusive Schaft</dcc:content>
+              <dcc:content lang="en">Dimension 'L' for head including shank</dcc:content>
+            </dcc:description>
+            <si:real>
+              <si:value>0.2</si:value>
+              <si:unit>\metre</si:unit>
+            </si:real>
+          </dcc:itemQuantity>
+        </dcc:itemQuantities>
+      </dcc:item>
+    </dcc:items>
+    <dcc:calibrationLaboratory>
+      <dcc:calibrationLaboratoryCode>D-K-YYYYY-ZZ-NN</dcc:calibrationLaboratoryCode>
+      <dcc:contact>
+        <dcc:name>
+          <dcc:content lang="de">Laboratorium FLOW GmbH</dcc:content>
+          <dcc:content lang="en">Laboratory FLOW GmbH</dcc:content>
+        </dcc:name>
+        <dcc:eMail>info@labflowgmbh.de</dcc:eMail>
+        <dcc:location>
+          <dcc:street>Laborweg</dcc:street>
+          <dcc:streetNo>1a</dcc:streetNo>
+          <dcc:postCode>00000</dcc:postCode>
+          <dcc:city>Laborstadt</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+        </dcc:location>
+      </dcc:contact>
+      <dcc:cryptElectronicSeal>false</dcc:cryptElectronicSeal>
+      <dcc:cryptElectronicSignature>false</dcc:cryptElectronicSignature>
+      <dcc:cryptElectronicTimeStamp>false</dcc:cryptElectronicTimeStamp>
+    </dcc:calibrationLaboratory>
+    <dcc:respPersons>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content lang="de">Dr.-Ing. L. Aboratory</dcc:content>
+            <dcc:content lang="en">Dr. Eng. L. Aboratory</dcc:content>
+          </dcc:name>
+          <dcc:eMail>l.aboratory@labflowgmbh.de</dcc:eMail>
+          <dcc:phone>00000 00000-01</dcc:phone>
+          <dcc:location>
+            <dcc:street>Laborweg</dcc:street>
+            <dcc:streetNo>1a</dcc:streetNo>
+            <dcc:postCode>00000</dcc:postCode>
+            <dcc:city>Laborstadt</dcc:city>
+          </dcc:location>
+        </dcc:person>
+        <dcc:role>Leiter Laboratorium</dcc:role>
+        <dcc:mainSigner>true</dcc:mainSigner>
+        <dcc:cryptElectronicSeal>false</dcc:cryptElectronicSeal>
+        <dcc:cryptElectronicSignature>false</dcc:cryptElectronicSignature>
+        <dcc:cryptElectronicTimeStamp>false</dcc:cryptElectronicTimeStamp>
+      </dcc:respPerson>
+      <dcc:respPerson>
+        <dcc:person>
+          <dcc:name>
+            <dcc:content lang="de">B. E. Arbeiterin</dcc:content>
+            <dcc:content lang="en">B. E. Arbeiterin</dcc:content>
+          </dcc:name>
+          <dcc:eMail>b.e.arbeiterin@labflowgmbh.de</dcc:eMail>
+          <dcc:phone>00000 00000-02</dcc:phone>
+          <dcc:location>
+            <dcc:street>Laborweg</dcc:street>
+            <dcc:streetNo>1a</dcc:streetNo>
+            <dcc:postCode>00000</dcc:postCode>
+            <dcc:city>Laborstadt</dcc:city>
+          </dcc:location>
+        </dcc:person>
+        <dcc:role>Kalibrierpersonal</dcc:role>
+        <dcc:mainSigner>false</dcc:mainSigner>
+        <dcc:cryptElectronicSeal>false</dcc:cryptElectronicSeal>
+        <dcc:cryptElectronicSignature>false</dcc:cryptElectronicSignature>
+        <dcc:cryptElectronicTimeStamp>false</dcc:cryptElectronicTimeStamp>
+      </dcc:respPerson>
+    </dcc:respPersons>
+    <dcc:customer>
+      <dcc:name>
+        <dcc:content lang="de">Christina Sankt</dcc:content>
+        <dcc:content lang="en">Christina Sankt</dcc:content>
+      </dcc:name>
+      <dcc:eMail>info@christinasankt.de</dcc:eMail>
+      <dcc:phone>00000 000001</dcc:phone>
+      <dcc:location>
+        <dcc:street>Knesebeckstrasse</dcc:street>
+        <dcc:streetNo>59</dcc:streetNo>
+        <dcc:postCode>57639</dcc:postCode>
+        <dcc:city>Oberdreis</dcc:city>
+        <dcc:state>NRW</dcc:state>
+        <dcc:countryCode>DE</dcc:countryCode>
+      </dcc:location>
+    </dcc:customer>
+    <dcc:statements>
+      <dcc:statement id="statement_revision"
+                     refType="basic_revision">
+        <dcc:name>
+          <dcc:content lang="de">Revision</dcc:content>
+          <dcc:content lang="en">Revision</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Der Kalibrierschein (01233 D-K-YYYYY-ZZ-NN 2025-07) wurde ersetzt, weil die Anschrift
+            des Kunden korrigiert wurden.
+          </dcc:content>
+          <dcc:content lang="en">The calibration certificate (01233 D-K-YYYYY-ZZ-NN 2025-07) was replaced because the
+            customers address was corrected.
+          </dcc:content>
+          <dcc:file>
+            <dcc:fileName>2025-07_CaliCert_01233_D-K-YYYYY-ZZ-NN.xml</dcc:fileName>
+            <dcc:mimeType>text/xml</dcc:mimeType>
+            <dcc:dataBase64>SGFsbG8gV2VsdA==</dcc:dataBase64>
+          </dcc:file>
+        </dcc:description>
+        <dcc:date>2025-07-11</dcc:date>
+      </dcc:statement>
+      <dcc:statement id="statement_membership"
+                     refType="basic_membership">
+        <dcc:name>
+          <dcc:content lang="de">Mitgliedschaft DKD</dcc:content>
+          <dcc:content lang="en">Membership DKD</dcc:content>
+        </dcc:name>
+        <dcc:declaration>
+          <dcc:content lang="de">Mitglied im Deutschen Kalibrierdienst (DKD)</dcc:content>
+          <dcc:content lang="en">Member of the Deutscher Kalibrierdienst (DKD)</dcc:content>
+          <dcc:file>
+            <dcc:fileName>DKD-Logo-sample.svg</dcc:fileName>
+            <dcc:mimeType>image/svg+xml</dcc:mimeType>
+            <dcc:dataBase64>
+              PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnDQogICB2ZXJzaW9uPSIxLjEiDQogICB3aWR0aD0iMzQ0LjE2MzA5Ig0KICAgaGVpZ2h0PSIxMDkuNDM3MTUiDQogICBpZD0ic3ZnNCINCiAgIHZpZXdCb3g9IjAgMCAzNDQuMTYzMDkgMTA5LjQzNzE1Ig0KICAgc29kaXBvZGk6ZG9jbmFtZT0iZGtkbG9nb19zYW1wbGUuc3ZnIg0KICAgaW5rc2NhcGU6dmVyc2lvbj0iMS4xLjIgKGI4ZTI1YmU4MzMsIDIwMjItMDItMDUpIg0KICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiDQogICB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiDQogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciDQogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIg0KICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIg0KICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyINCiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+DQogIDxzb2RpcG9kaTpuYW1lZHZpZXcNCiAgICAgaWQ9Im5hbWVkdmlldzgiDQogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiINCiAgICAgYm9yZGVyY29sb3I9IiM5OTk5OTkiDQogICAgIGJvcmRlcm9wYWNpdHk9IjEiDQogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjAiDQogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIg0KICAgICBpbmtzY2FwZTpwYWdlY2hlY2tlcmJvYXJkPSIwIg0KICAgICBzaG93Z3JpZD0iZmFsc2UiDQogICAgIGlua3NjYXBlOnpvb209IjMuMjk3ODU1MSINCiAgICAgaW5rc2NhcGU6Y3g9IjE2NS43MTM3NyINCiAgICAgaW5rc2NhcGU6Y3k9IjQyLjE0ODYwNyINCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxOTIwIg0KICAgICBpbmtzY2FwZTp3aW5kb3ctaGVpZ2h0PSIxMDA5Ig0KICAgICBpbmtzY2FwZTp3aW5kb3cteD0iLTgiDQogICAgIGlua3NjYXBlOndpbmRvdy15PSItOCINCiAgICAgaW5rc2NhcGU6d2luZG93LW1heGltaXplZD0iMSINCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ic3ZnNCIgLz4NCiAgPG1ldGFkYXRhDQogICAgIGlkPSJtZXRhZGF0YTEwIj4NCiAgICA8cmRmOlJERj4NCiAgICAgIDxjYzpXb3JrDQogICAgICAgICByZGY6YWJvdXQ9IiI+DQogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0Pg0KICAgICAgICA8ZGM6dHlwZQ0KICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPg0KICAgICAgPC9jYzpXb3JrPg0KICAgIDwvcmRmOlJERj4NCiAgPC9tZXRhZGF0YT4NCiAgPGRlZnMNCiAgICAgaWQ9ImRlZnM4IiAvPg0KICA8cGF0aA0KICAgICBkPSJNIDMyMy41Njc5LDAuMTQzOTk5OTkgQyAzMzYuMzYyNCwxMy41MzIxIDM0NC4yNzY1LDMzLjcxMzEgMzQ0LjAxMjcsNTUuNjc0OCAzNDMuNjgzLDc2LjY0NzIgMzM2Ljg5LDk1LjY0MTEgMzI0LjY4OTEsMTA5LjI5MyBMIDIzOC41NTcsMTA5LjA5NTEgViAwLjE0Mzk5OTk5IFogTSAyNzguOTg1LDc2Ljk3NyBjIDIuOTY3OCwxLjI1MyA2LjE5OTQsMi41MDYxIDkuODI2NywyLjUwNjEgMTMuMTI0MywwIDIzLjQxMjYsLTExLjM0MzYgMjMuNDEyNiwtMjQuODYzNSAwLC0xMy41ODYgLTExLjAxMzgsLTI0LjQ2NzkgLTIzLjQxMjYsLTI0LjQ2NzkgLTMuNjI3MywwIC02Ljg1ODksMC42NTk1IC05LjgyNjcsMi40NDAyIHogTSAxNjAuMjczMSw2OS4zMjY2IHYgMzguMzE3NiAxLjMxOSBIIDEyMC43Njg1IFYgMTA2LjkxODcgNTQuNjg1NSAwLjE0Mzk5OTk5IGggMzkuNTA0NiBWIDMyLjkyMTcgbCAxNC45MDUsLTMyLjc3NzcwMDAxIGggNDQuMDU1MyBMIDE5MS4wMDYzLDUzLjE2ODYgbCAzMi41MTM5LDU1LjcyODcgaCAtNDEuODEzIHogbSAtMzkuNTA0NiwzNy41OTIxIHogbSAwLDIuMDQ0NSB2IDAuMjYzOCB6IE0gODQuNzU5MiwwLjE0Mzk5OTk5IEMgOTcuNDg3OCwxMy40NjYxIDEwNS40MDE5LDMzLjY0NzEgMTA1LjEzODEsNTUuNTQyOSAxMDQuNzQyNCw3Ni41MTUzIDk4LjAxNTQsOTUuNTA5MiA4Ni4wMTIzLDEwOS4xNjExIEwgMC4xNDM5OTk5OSwxMDguOTYzMiBWIDAuMTQzOTk5OTkgWiBNIDQwLjM3NDIsNzYuOTExIGMgMy4wMzM3LDEuMjUzMSA2LjI2NTMsMi4zNzQyIDkuODI2NywyLjM3NDIgMTIuOTkyMywwIDIzLjM0NjYsLTExLjM0MzUgMjMuMzQ2NiwtMjQuODYzNSAwLC0xMy41MiAtMTEuMDEzOCwtMjQuNDAxOSAtMjMuMzQ2NiwtMjQuNDAxOSAtMy41NjE0LDAgLTYuNzkzLDAuNzkxNCAtOS44MjY3LDIuNTA2MiB6Ig0KICAgICBzdHlsZT0iZmlsbDojMDA5YmNlO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpldmVub2RkO3N0cm9rZTojMDA5YmNlO3N0cm9rZS13aWR0aDowLjI4ODtzdHJva2UtbGluZWNhcDpidXR0O3N0cm9rZS1saW5lam9pbjptaXRlcjtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLW9wYWNpdHk6MSINCiAgICAgaWQ9InBhdGgyIiAvPg0KICA8dGV4dA0KICAgICB4bWw6c3BhY2U9InByZXNlcnZlIg0KICAgICBzdHlsZT0iZm9udC1zdHlsZTpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc2l6ZTo1OS4xODI4cHg7bGluZS1oZWlnaHQ6MS4yNTtmb250LWZhbWlseTpzYW5zLXNlcmlmO2ZpbGw6IzAwMDAwMDtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MS40Nzk1NyINCiAgICAgeD0iMzI5LjQ3ODczIg0KICAgICB5PSIxMDMuNzQ5MDQiDQogICAgIGlkPSJ0ZXh0MzM1OCINCiAgICAgdHJhbnNmb3JtPSJyb3RhdGUoLTExLjEwNTY4NSkiPjx0c3Bhbg0KICAgICAgIGlkPSJ0c3BhbjMzNTYiDQogICAgICAgeD0iMTU4LjkzODA2Ig0KICAgICAgIHk9IjEwMy43NDkwNCINCiAgICAgICBzdHlsZT0iZm9udC1zdHlsZTpub3JtYWw7Zm9udC12YXJpYW50Om5vcm1hbDtmb250LXdlaWdodDpub3JtYWw7Zm9udC1zdHJldGNoOm5vcm1hbDtmb250LWZhbWlseTonQXJpYWwgUm91bmRlZCBNVCBCb2xkJzstaW5rc2NhcGUtZm9udC1zcGVjaWZpY2F0aW9uOidBcmlhbCBSb3VuZGVkIE1UIEJvbGQsICc7dGV4dC1hbGlnbjpjZW50ZXI7dGV4dC1hbmNob3I6bWlkZGxlO2ZpbGw6I2ZmMDAwMDtmaWxsLW9wYWNpdHk6MC40MzI5Njc7c3Ryb2tlLXdpZHRoOjEuNDc5NTciPnNhbXBsZSBsb2dvPC90c3Bhbj48L3RleHQ+DQo8L3N2Zz4=
+            </dcc:dataBase64>
+          </dcc:file>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="statement_isInCMC"
+                     refType="basic_isInCMC">
+        <dcc:name>
+          <dcc:content lang="de">Aussage CMC</dcc:content>
+          <dcc:content lang="en">Statement CMC</dcc:content>
+        </dcc:name>
+        <dcc:declaration>
+          <dcc:content lang="de">Für Elemente, die durch eine refId auf dieses dcc:statement-Element (statement_IsInCMC)
+            verweisen, gilt: (a) die zugehörigen Ergebnisse liegen innerhalb des nach EN ISO/IEC 17025 akkreditierten
+            Bereichs UND (b) die mit den Werten verbundene Unsicherheit ist größer oder gleich der CMC-Unsicherheit.
+          </dcc:content>
+          <dcc:content lang="en">For elements that refer to this dcc:statement element (statement_IsInCMC) by a refId,
+            the following applies: (a) the associated results are within the range accredited according to EN ISO/IEC
+            17025 AND (b) the uncertainty associated with the values is greater than or equal to the CMC uncertainty.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="statement_traceableToSI"
+                     refType="basic_metrologicallyTraceableToSI">
+        <dcc:name>
+          <dcc:content lang="de">Aussage Rückverfolgbarkeit</dcc:content>
+          <dcc:content lang="en">Statement traceability</dcc:content>
+        </dcc:name>
+        <dcc:norm>ISO/IEC 17025:2017; 7.8.4.1 c)</dcc:norm>
+        <dcc:declaration>
+          <dcc:content lang="de">Alle Messergebnisse werden von einem dcc:traceable - Element begleitet, das durch eine
+            refId auf dieses dcc:statement - Element (statement_TraceableToSI) verweist. Einträge 'true' geben an, dass
+            die zugehörigen Ergebnisse metrologisch auf das SI rückführbar sind.
+          </dcc:content>
+          <dcc:content lang="en">All measurement results are accompanied by a dcc:traceable element with a refId
+            pointing to this dcc:statement element (statement_TraceableToSI). Entries 'true' denote that the associated
+            result(s) is/are metrologically traceable to the SI.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="statement_objectReference">
+        <dcc:name>
+          <dcc:content lang="de">Gegenstandsbezug</dcc:content>
+          <dcc:content lang="en">Reference to the object</dcc:content>
+        </dcc:name>
+        <dcc:norm>ISO/IEC 17025:2017; 7.8.2.1 l)</dcc:norm>
+        <dcc:declaration>
+          <dcc:content lang="de">Die hier berichteten Ergebnisse beziehen sich nur auf den kalibrierten Gegenstand
+          </dcc:content>
+          <dcc:content lang="en">The presented results relate only to the item calibrated</dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+      <dcc:statement id="statement_performanceLocation">
+        <dcc:name>
+          <dcc:content lang="de">Konkretisierung Durchführungsort</dcc:content>
+          <dcc:content lang="en">Concretization Location</dcc:content>
+        </dcc:name>
+        <dcc:declaration>
+          <dcc:content lang="de">Es wurde die Messkammer Nr. 2 genutzt</dcc:content>
+          <dcc:content lang="en">Measuring chamber no. 2 was used</dcc:content>
+        </dcc:declaration>
+        <dcc:location>
+          <dcc:street>Laborweg</dcc:street>
+          <dcc:streetNo>1a</dcc:streetNo>
+          <dcc:postCode>00000</dcc:postCode>
+          <dcc:city>Laborstadt</dcc:city>
+          <dcc:countryCode>DE</dcc:countryCode>
+        </dcc:location>
+      </dcc:statement>
+      <dcc:statement id="statement_decisionRule_A"
+                     refType="basic_decisionRule">
+        <dcc:norm>ILAC-G8:09/2019</dcc:norm>
+        <dcc:declaration>
+          <dcc:name>
+            <dcc:content lang="de">Entscheidungsregel A</dcc:content>
+            <dcc:content lang="en">Decision Rule A</dcc:content>
+          </dcc:name>
+          <dcc:content lang="de">Binäre Aussage mit Sicherheitsband (w=U) [ILAC G8 - 4.2.2]</dcc:content>
+          <dcc:content lang="en">Binary statement with guard band (w=U) [ILAC G8 - 4.2.2]</dcc:content>
+        </dcc:declaration>
+        <dcc:data>
+          <dcc:quantity>
+            <dcc:name>
+              <dcc:content lang="de">Maximale PFA</dcc:content>
+              <dcc:content lang="de">Maximum PFA</dcc:content>
+            </dcc:name>
+            <dcc:description>
+              <dcc:content lang="de">Maximale Wahrscheinlichkeit einer falschen Akzeptanz (PFA) im Zusammenhang mit der
+                angewandten Entscheidungsregel
+              </dcc:content>
+              <dcc:content lang="en">Maximum probability of false acceptance (PFA) associated with the applied decision
+                rule
+              </dcc:content>
+            </dcc:description>
+            <si:real>
+              <si:value>0.975</si:value>
+              <si:unit>\one</si:unit>
+            </si:real>
+          </dcc:quantity>
+        </dcc:data>
+      </dcc:statement>
+      <dcc:statement id="statement_decisionRule_B"
+                     refType="basic_decisionRule">
+        <dcc:reference>customer</dcc:reference>
+        <dcc:declaration>
+          <dcc:name>
+            <dcc:content lang="de">Entscheidungsregel B</dcc:content>
+            <dcc:content lang="en">Decision Rule B</dcc:content>
+          </dcc:name>
+          <dcc:content lang="de">Binäre Aussage für einfache Akzeptanzregel (w=0) [ILAC G8 - 4.2.1]</dcc:content>
+          <dcc:content lang="en">Binary Statement for Simple Acceptance Rule (𝑤=0) [ILAC G8 - 4.2.1]</dcc:content>
+        </dcc:declaration>
+        <dcc:data>
+          <dcc:quantity>
+            <dcc:name>
+              <dcc:content lang="de">Maximale PFA</dcc:content>
+              <dcc:content lang="de">Maximum PFA</dcc:content>
+            </dcc:name>
+            <dcc:description>
+              <dcc:content lang="de">Maximale Wahrscheinlichkeit einer falschen Akzeptanz (PFA) im Zusammenhang mit der
+                angewandten Entscheidungsregel
+              </dcc:content>
+              <dcc:content lang="en">Maximum probability of false acceptance (PFA) associated with the applied decision
+                rule
+              </dcc:content>
+            </dcc:description>
+            <si:real>
+              <si:value>0.5</si:value>
+              <si:unit>\one</si:unit>
+            </si:real>
+          </dcc:quantity>
+        </dcc:data>
+      </dcc:statement>
+      <dcc:statement id="statement_recalibration"
+                     refType="basic_recalibrationDate">
+        <dcc:name>
+          <dcc:content lang="de">Rekalibrierung</dcc:content>
+          <dcc:content lang="en">Recalibration</dcc:content>
+        </dcc:name>
+        <dcc:norm>ISO/IEC 17025:2017; 7.8.4.3</dcc:norm>
+        <dcc:declaration>
+          <dcc:content lang="de">Die Ergebnisse gelten zum Zeitpunkt der Kalibrierung. Der Anwender ist verantwortlich,
+            zu gegebener Zeit eine Rekalibrierung zu veranlassen.
+          </dcc:content>
+          <dcc:content lang="en">The results are valid at the time of calibration. The user is responsible for arranging
+            a recalibration at the appropriate time.
+          </dcc:content>
+        </dcc:declaration>
+      </dcc:statement>
+    </dcc:statements>
+  </dcc:administrativeData>
+  <dcc:measurementResults>
+    <dcc:usedMethods>
+      <dcc:usedMethod id="usedMethod_uncertainty"
+                      refType="basic_methodMeasurementUncertainty">
+        <dcc:name>
+          <dcc:content lang="de">Messunsicherheit</dcc:content>
+          <dcc:content lang="en">Measurement uncertainty</dcc:content>
+        </dcc:name>
+        <dcc:description>
+          <dcc:content lang="de">Angegeben ist die erweiterte Messunsicherheit, die sich aus der
+            Standardmessunsicherheit durch Multiplikation mit dem Erweiterungsfaktor k ergibt. Sie wurde gemäß dem
+            EA-4/02 M ermittelt. Der Wert der Messgröße liegt mit einer Wahrscheinlichkeit von etwa 95 % im zugeordneten
+            Werteintervall für normalverteile Größen und dem Faktor k=2.
+          </dcc:content>
+          <dcc:content lang="en">The expanded measurement uncertainty is stated, which is calculated by multiplying the
+            standard measurement uncertainty by the coverage factor k. It was determined in accordance with EA-4/02 M.
+            The value of the measured variable lies with a probability of around 95 % in the assigned value interval for
+            normally distributed variables and the factor k=2.
+          </dcc:content>
+        </dcc:description>
+        <dcc:norm>EA-4/02 M [2022-04-04]</dcc:norm>
+        <dcc:link>https://european-accreditation.org/publications/ea-4-02-m/</dcc:link>
+      </dcc:usedMethod>
+    </dcc:usedMethods>
+    <dcc:measurementResult>
+      <dcc:name>
+        <dcc:content lang="de">Kalibrierergebnisse Flügelrad-Strömungssensor</dcc:content>
+        <dcc:content lang="en">Calibration results impeller flow sensor</dcc:content>
+      </dcc:name>
+      <dcc:usedMethods>
+        <dcc:usedMethod id="usedMethod_inhouse_A1"
+                        refType="basic_calibrationMethod">
+          <dcc:name>
+            <dcc:content lang="de">Hausverfahren A1 [2024-06-06]</dcc:content>
+            <dcc:content lang="en">In-house procedure A1 [2024-06-06]</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Die Kalibrierung erfolgt anhand des Hausverfahrens A1 im Vergleichsverfahren
+            </dcc:content>
+            <dcc:content lang="en">Calibration is carried out using the in-house procedure A1 in the comparison method
+            </dcc:content>
+          </dcc:description>
+        </dcc:usedMethod>
+      </dcc:usedMethods>
+      <dcc:measuringEquipments>
+        <dcc:measuringEquipment id="equipment_referenceTemperature">
+          <dcc:name>
+            <dcc:content lang="de">Temperatur Referenz Prüfling</dcc:content>
+            <dcc:content lang="en">Temperature reference DUT</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Sensor zur Erfassung der Lufttemperatur am Prüfling</dcc:content>
+            <dcc:content lang="en">Sensor for detecting the air temperature at the device under test</dcc:content>
+          </dcc:description>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibriert vom akkreditierten Laboratorium D-K-YYYYY-RR-NN</dcc:content>
+              <dcc:content lang="en">Calibrated by the accredited laboratory D-K-YYYYY-RR-NN</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>01235 D-K-YYYYY-RR-NN 2025-01</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+            <dcc:inValidityRange>true</dcc:inValidityRange>
+            <dcc:traceable>true</dcc:traceable>
+          </dcc:certificate>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">TempSens Inc.</dcc:content>
+              <dcc:content lang="en">TempSens Inc.</dcc:content>
+            </dcc:name>
+          </dcc:manufacturer>
+          <dcc:model>TempSens-TS100</dcc:model>
+          <dcc:identifications>
+            <dcc:identification refType="basic_serialNumber">
+              <dcc:issuer>manufacturer</dcc:issuer>
+              <dcc:value>SN-TS-00314</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Seriennummer</dcc:content>
+                <dcc:content lang="en">Serial number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+            <dcc:identification refType="basic_marking">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>LAB-00314</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Inventarnummer Laboratorium</dcc:content>
+                <dcc:content lang="en">Laboratory inventory number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+        <dcc:measuringEquipment id="equipment_LDA">
+          <dcc:name>
+            <dcc:content lang="de">Laser Doppler Anemometer</dcc:content>
+            <dcc:content lang="en">Laser doppler anemometer</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">nicht-interferierende 2D-Punktmessung der Geschwindigkeit</dcc:content>
+            <dcc:content lang="en">non-intrusive 2D point measurement of velocity</dcc:content>
+          </dcc:description>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibriert vom akkreditierten Laboratorium D-K-YYYYY-SS-NN</dcc:content>
+              <dcc:content lang="en">Calibrated by the accredited laboratory D-K-YYYYY-SS-NN</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>02345 D-K-YYYYY-SS-NN 2025-03</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+            <dcc:inValidityRange>true</dcc:inValidityRange>
+            <dcc:traceable>true</dcc:traceable>
+          </dcc:certificate>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">LdaSens Inc.</dcc:content>
+              <dcc:content lang="en">LdaSens Inc.</dcc:content>
+            </dcc:name>
+          </dcc:manufacturer>
+          <dcc:model>LdaSens-LD2X</dcc:model>
+          <dcc:identifications>
+            <dcc:identification refType="basic_serialNumber">
+              <dcc:issuer>manufacturer</dcc:issuer>
+              <dcc:value>SN-LD-00543</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Seriennummer</dcc:content>
+                <dcc:content lang="en">Serial number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+            <dcc:identification refType="basic_marking">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>LAB-00543</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Inventarnummer Laboratorium</dcc:content>
+                <dcc:content lang="en">Laboratory inventory number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+        <dcc:measuringEquipment id="equipment_WK">
+          <dcc:name>
+            <dcc:content lang="de">Windkanal</dcc:content>
+            <dcc:content lang="en">Wind tunnel</dcc:content>
+          </dcc:name>
+          <dcc:description>
+            <dcc:content lang="de">Windkanal mit ovaler Düsenform und offener Messstrecke</dcc:content>
+            <dcc:content lang="en">Wind tunnel with oval nozzle shape and open measuring section</dcc:content>
+          </dcc:description>
+          <dcc:certificate>
+            <dcc:referral>
+              <dcc:content lang="de">Kalibriert vom akkreditierten Laboratorium D-K-YYYYY-UU-NN</dcc:content>
+              <dcc:content lang="en">Calibrated by the accredited laboratory D-K-YYYYY-UU-NN</dcc:content>
+            </dcc:referral>
+            <dcc:referralID>03456 D-K-YYYYY-UU-NN 2025-05</dcc:referralID>
+            <dcc:procedure>analogue</dcc:procedure>
+            <dcc:value>analogue</dcc:value>
+            <dcc:inValidityRange>true</dcc:inValidityRange>
+            <dcc:traceable>true</dcc:traceable>
+          </dcc:certificate>
+          <dcc:manufacturer>
+            <dcc:name>
+              <dcc:content lang="de">Kanal Manufaktur AG</dcc:content>
+              <dcc:content lang="en">Kanal Manufaktur AG</dcc:content>
+            </dcc:name>
+          </dcc:manufacturer>
+          <dcc:model>Kan-ABC</dcc:model>
+          <dcc:identifications>
+            <dcc:identification refType="basic_serialNumber">
+              <dcc:issuer>manufacturer</dcc:issuer>
+              <dcc:value>KAN-00654</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Seriennummer</dcc:content>
+                <dcc:content lang="en">Serial number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+            <dcc:identification refType="basic_marking">
+              <dcc:issuer>calibrationLaboratory</dcc:issuer>
+              <dcc:value>LAB-00544</dcc:value>
+              <dcc:name>
+                <dcc:content lang="de">Inventarnummer Laboratorium</dcc:content>
+                <dcc:content lang="en">Laboratory inventory number</dcc:content>
+              </dcc:name>
+            </dcc:identification>
+          </dcc:identifications>
+        </dcc:measuringEquipment>
+      </dcc:measuringEquipments>
+      <dcc:influenceConditions>
+        <dcc:influenceCondition refType="basic_temperature">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung Temperatur</dcc:content>
+            <dcc:content lang="en">Environmental condition temperature</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="math_minimum">
+              <dcc:name>
+                <dcc:content lang="de">Temperatur Minimum</dcc:content>
+                <dcc:content lang="en">Minimal temperature</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>21.3</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="math_maximum">
+              <dcc:name>
+                <dcc:content lang="de">Temperatur Maximum</dcc:content>
+                <dcc:content lang="en">Maximal temperature</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>22.8</si:value>
+                <si:unit>\degreecelsius</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="basic_humidityRelative">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung relative Feuchte</dcc:content>
+            <dcc:content lang="en">Environmental condition relative humidity</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="math_minimum">
+              <dcc:name>
+                <dcc:content lang="de">Relative Feuchte Minimum</dcc:content>
+                <dcc:content lang="en">Minimal relative humidity</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.344</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="math_maximum">
+              <dcc:name>
+                <dcc:content lang="de">Relative Feuchte Maximum</dcc:content>
+                <dcc:content lang="en">Maximal relative humidity</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>0.414</si:value>
+                <si:unit>\one</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+        <dcc:influenceCondition refType="pressure_ambientPressure">
+          <dcc:name>
+            <dcc:content lang="de">Umgebungsbedingung Absoluter Luftdruck</dcc:content>
+            <dcc:content lang="en">Environmental condition absolute pressure</dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:quantity refType="math_minimum">
+              <dcc:name>
+                <dcc:content lang="de">Absolutdruck Minimum</dcc:content>
+                <dcc:content lang="en">Minimal absolute pressure</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>97010</si:value>
+                <si:unit>\pascal</si:unit>
+              </si:real>
+            </dcc:quantity>
+            <dcc:quantity refType="math_maximum">
+              <dcc:name>
+                <dcc:content lang="de">Absolutdruck Maximum</dcc:content>
+                <dcc:content lang="en">Maximal absolute pressure</dcc:content>
+              </dcc:name>
+              <si:real>
+                <si:value>97790</si:value>
+                <si:unit>\pascal</si:unit>
+              </si:real>
+            </dcc:quantity>
+          </dcc:data>
+        </dcc:influenceCondition>
+      </dcc:influenceConditions>
+      <dcc:results>
+        <dcc:result id="result_impeller">
+          <dcc:name>
+            <dcc:content lang="de">Messergebnisse Flügelrad-Strömungssensor als numerisch indizierte Tabelle
+            </dcc:content>
+            <dcc:content lang="en">Measurement results for impeller flow sensor as a numerically indexed table
+            </dcc:content>
+          </dcc:name>
+          <dcc:data>
+            <dcc:list refType="basic_1IndexTable">
+              <dcc:quantity refType="basic_tableIndex0 basic_referenceValue">
+                <dcc:name>
+                  <dcc:content lang="de">Anzeige Referenz</dcc:content>
+                  <dcc:content lang="en">Standard reading</dcc:content>
+                </dcc:name>
+                <si:realListXMLList>
+                  <si:valueXMLList>0.51 1.13 2.59 5.18 7.66 10.17 12.69 15.20 20.07 30.38 40.45 50.24</si:valueXMLList>
+                  <si:unitXMLList>\metre\per\second</si:unitXMLList>
+                </si:realListXMLList>
+                <dcc:measurementMetaData>
+                  <dcc:metaData>
+                    <dcc:traceable>true</dcc:traceable>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_measuredValue">
+                <dcc:name>
+                  <dcc:content lang="de">Anzeige Kalibriergegenstand</dcc:content>
+                  <dcc:content lang="en">Device under test reading</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>0.73 1.13 2.64 5.21 7.70 10.20 12.70 15.18 20.11 30.38 40.29 50.07
+                    </si:valueXMLList>
+                    <si:unitXMLList>\metre\per\second</si:unitXMLList>
+                    <si:dateTimeXMLList>2025-07-11T07:38:44Z 2025-07-11T07:39:19Z 2025-07-11T07:39:54Z
+                      2025-07-11T07:40:29Z 2025-07-11T07:41:04Z 2025-07-11T07:41:39Z 2025-07-11T07:42:14Z
+                      2025-07-11T07:42:49Z 2025-07-11T07:43:24Z 2025-07-11T07:43:59Z 2025-07-11T07:44:34Z
+                      2025-07-11T07:45:09Z
+                    </si:dateTimeXMLList>
+                    <si:measurementUncertaintyUnivariateXMLList>
+                      <si:expandedMUXMLList>
+                        <si:valueExpandedMUXMLList>0.11 0.11 0.13 0.15 0.18 0.20 0.23 0.25 0.30 0.40 0.50 0.60
+                        </si:valueExpandedMUXMLList>
+                        <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                        <si:coverageProbabilityXMLList>0.9545</si:coverageProbabilityXMLList>
+                        <si:distributionXMLList>normal</si:distributionXMLList>
+                      </si:expandedMUXMLList>
+                    </si:measurementUncertaintyUnivariateXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+                <dcc:measurementMetaData>
+                  <dcc:metaData>
+                    <dcc:traceable>true</dcc:traceable>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+              <dcc:quantity refType="basic_deviation">
+                <dcc:name>
+                  <dcc:content lang="de">Absolute Abweichung</dcc:content>
+                  <dcc:content lang="en">Absolute deviation</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>0.22 0.00 0.05 0.03 0.04 0.03 0.01 -0.02 0.04 0.00 -0.16 -0.17</si:valueXMLList>
+                    <si:unitXMLList>\metre\per\second</si:unitXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+              </dcc:quantity>
+              <dcc:quantity refType="flow_temperature">
+                <dcc:name>
+                  <dcc:content lang="de">Temperatur</dcc:content>
+                  <dcc:content lang="en">Temperature</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>22.2 21.8 22.2 22.0 21.8 22.0 22.1 22.3 22.0 22.3 22.0 22.0</si:valueXMLList>
+                    <si:unitXMLList>\degreecelsius</si:unitXMLList>
+                    <si:measurementUncertaintyUnivariateXMLList>
+                      <si:expandedMUXMLList>
+                        <si:valueExpandedMUXMLList>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+                        </si:valueExpandedMUXMLList>
+                        <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                        <si:coverageProbabilityXMLList>0.9545</si:coverageProbabilityXMLList>
+                        <si:distributionXMLList>normal</si:distributionXMLList>
+                      </si:expandedMUXMLList>
+                    </si:measurementUncertaintyUnivariateXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+                <dcc:measurementMetaData>
+                  <dcc:metaData>
+                    <dcc:description>
+                      <dcc:content lang="de">Die Temperatur wurde mit einer erweiteren Messunsicherheit (k=2) von 0,5 °C
+                        gemessen.
+                      </dcc:content>
+                      <dcc:content lang="en">The temperature was measured with an expanded measurement uncertainty (k=2)
+                        of 0.5 °C.
+                      </dcc:content>
+                    </dcc:description>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+              <dcc:quantity refType="flow_humidity">
+                <dcc:name>
+                  <dcc:content lang="de">Relative Feuchte</dcc:content>
+                  <dcc:content lang="en">Relative humidity</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>0.383 0.384 0.382 0.383 0.380 0.382 0.381 0.382 0.378 0.384 0.383 0.374
+                    </si:valueXMLList>
+                    <si:unitXMLList>\one</si:unitXMLList>
+                    <si:measurementUncertaintyUnivariateXMLList>
+                      <si:expandedMUXMLList>
+                        <si:valueExpandedMUXMLList>0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03 0.03
+                        </si:valueExpandedMUXMLList>
+                        <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                        <si:coverageProbabilityXMLList>0.9545</si:coverageProbabilityXMLList>
+                        <si:distributionXMLList>normal</si:distributionXMLList>
+                      </si:expandedMUXMLList>
+                    </si:measurementUncertaintyUnivariateXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+                <dcc:measurementMetaData>
+                  <dcc:metaData>
+                    <dcc:description>
+                      <dcc:content lang="de">Die relative Luftfeuchte wurde mit einer erweiteren Messunsicherheit (k=2)
+                        von 3 %RH gemessen.
+                      </dcc:content>
+                      <dcc:content lang="en">The relative humidity was measured with an expanded measurement uncertainty
+                        (k=2) of 3 %RH.
+                      </dcc:content>
+                    </dcc:description>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+              <dcc:quantity refType="flow_absolutePressure">
+                <dcc:name>
+                  <dcc:content lang="de">Absoluter Luftdruck</dcc:content>
+                  <dcc:content lang="en">Absolute barometric pressure</dcc:content>
+                </dcc:name>
+                <si:hybrid>
+                  <si:realListXMLList>
+                    <si:valueXMLList>97480.0 97270.0 97420.0 97490.0 97520.0 97330.0 97520.0 97540.0 97370.0 97260.0
+                      97410.0 97370.0
+                    </si:valueXMLList>
+                    <si:unitXMLList>\pascal</si:unitXMLList>
+                    <si:measurementUncertaintyUnivariateXMLList>
+                      <si:expandedMUXMLList>
+                        <si:valueExpandedMUXMLList>250.0 250.0 250.0 250.0 250.0 250.0 250.0 250.0 250.0 250.0 250.0
+                          250.0
+                        </si:valueExpandedMUXMLList>
+                        <si:coverageFactorXMLList>2.0</si:coverageFactorXMLList>
+                        <si:coverageProbabilityXMLList>0.9545</si:coverageProbabilityXMLList>
+                        <si:distributionXMLList>normal</si:distributionXMLList>
+                      </si:expandedMUXMLList>
+                    </si:measurementUncertaintyUnivariateXMLList>
+                  </si:realListXMLList>
+                </si:hybrid>
+                <dcc:measurementMetaData>
+                  <dcc:metaData>
+                    <dcc:description>
+                      <dcc:content lang="de">Der Absolutdruck wurde mit einer erweiterten Messunsicherheit (k=2) von 2,5
+                        hPa gemessen.
+                      </dcc:content>
+                      <dcc:content lang="en">The absolute pressure was measured with an expanded measurement uncertainty
+                        (k=2) of 2,5 hPa.
+                      </dcc:content>
+                    </dcc:description>
+                  </dcc:metaData>
+                </dcc:measurementMetaData>
+              </dcc:quantity>
+            </dcc:list>
+          </dcc:data>
+        </dcc:result>
+      </dcc:results>
+    </dcc:measurementResult>
+  </dcc:measurementResults>
+</dcc:digitalCalibrationCertificate>
