@@ -426,10 +426,7 @@
                 <dcc:content lang="de">Befund</dcc:content>
                 <dcc:content lang="en">Findings</dcc:content>
               </dcc:name>
-              <si:real>
-                <si:value>1</si:value>
-                <si:unit>\one</si:unit>
-              </si:real>
+              <dcc:charsXMLList>1</dcc:charsXMLList>
               <dcc:measurementMetaData>
                 <dcc:metaData>
                   <dcc:declaration>
@@ -500,10 +497,7 @@
                 <dcc:content lang="de">Befund</dcc:content>
                 <dcc:content lang="en">Findings</dcc:content>
               </dcc:name>
-              <si:real>
-                <si:value>1</si:value>
-                <si:unit>\one</si:unit>
-              </si:real>
+              <dcc:charsXMLList>1</dcc:charsXMLList>
               <dcc:measurementMetaData>
                 <dcc:metaData>
                   <dcc:declaration>

@@ -73,6 +73,9 @@ public class QuantityDto implements HasId, HasRefIds, HasRefTypes {
   private XmlValuesDto xmlValues;
 
   @Schema
+  private List<String> xmlStrings;
+
+  @Schema
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSS")
   private LocalDateTime timestamp;
 

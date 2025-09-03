@@ -40,6 +40,7 @@ import de.ptb.common.dcc.xjc.generated.RealListXMLListType;
 import de.ptb.common.dcc.xjc.generated.RealQuantityType;
 import de.ptb.common.dcc.xjc.generated.UsedMethodListType;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -67,6 +68,7 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
   private final static String CONSTANT = "constant";
   private final static String HYBRID = "hybrid";
   private static final String REAL_LIST_XML_LIST = "realListXMLList";
+  private static final String CHARS_XML_LIST = "charsXMLList";
 
   private final LanguageSpecificStringsMapper languageSpecificStringsMapper;
   private final RichContentMapper richContentMapper;
@@ -162,6 +164,10 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
       }
       target.setXmlValues(xmlValues);
     }
+    if (CollectionUtils.isNotEmpty(jaxbObject.getCharsXMLList())) {
+      target.setQuantityTypeName(CHARS_XML_LIST);
+      target.setXmlStrings(jaxbObject.getCharsXMLList());
+    }
     if (jaxbObject.getHybrid() != null) {
       target.setQuantityTypeName(HYBRID);
       target.setHybridValues(hybridValuesMapper.mapToDto(jaxbObject.getHybrid()));
@@ -256,6 +262,10 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
             .mapToJaxbObject(xmlValues.getCoverageIntervals()));
       }
       target.setRealListXMLList(realListXMLList);
+    } else if (StringUtils.equalsIgnoreCase(dto.getQuantityTypeName(), CHARS_XML_LIST)) {
+      if (dto.getXmlStrings() != null) {
+        target.getCharsXMLList().addAll(dto.getXmlStrings());
+      }
     } else if (StringUtils.equalsIgnoreCase(dto.getQuantityTypeName(), HYBRID)) {
       if (dto.getHybridValues() != null) {
         target.setHybrid(hybridValuesMapper.mapToJaxbObject(dto.getHybridValues()));
