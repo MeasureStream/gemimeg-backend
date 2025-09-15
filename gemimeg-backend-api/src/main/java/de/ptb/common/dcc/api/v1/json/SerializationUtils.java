@@ -84,6 +84,7 @@ public class SerializationUtils {
     return convertToHex(messageDigest.digest(text.getBytes()));
   }
 
+  @Nonnull
   private static String convertToHex(@Nonnull byte[] data) {
     BigInteger bigint = new BigInteger(1, data);
     String hexText = bigint.toString(16);
