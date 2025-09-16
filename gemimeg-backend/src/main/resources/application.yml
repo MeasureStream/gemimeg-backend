@@ -6,8 +6,6 @@ server:
   error:
     include-message: always
 spring:
-  profiles:
-    active: user-${USERNAME}
   application:
     name: gemimeg-backend
   mvc:

@@ -36,7 +36,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,14 +66,14 @@ public class VersionController {
   @Operation(description = "Get the version information of the service.")
   @GetMapping(path = VERSION_PATH, produces = APPLICATION_JSON_VALUE)
   public VersionDto getVersion(@PathVariable(name = PATH_PART_NAME) String pathPart) throws IOException {
-    if (StringUtils.equalsIgnoreCase(versionConfiguration.getPathPart(), pathPart)) {
+    if (Strings.CI.equals(versionConfiguration.getPathPart(), pathPart)) {
       VersionDto version = new VersionDto();
       version.setArtifactId(versionConfiguration.getArtifactId());
       version.setVersion(versionConfiguration.getVersion());
       version.setTimestamp(versionConfiguration.getTimestamp());
       CurrentVersionJson currentVersionJson = objectMapper.readValue(IOUtils.resourceToString("version.json", StandardCharsets.UTF_8),
           CurrentVersionJson.class);
-      if (StringUtils.equalsIgnoreCase(currentVersionJson.getName(), version.getArtifactId())) {
+      if (Strings.CI.equals(currentVersionJson.getName(), version.getArtifactId())) {
         version.setTag(currentVersionJson.getVersion());
       }
       return version;

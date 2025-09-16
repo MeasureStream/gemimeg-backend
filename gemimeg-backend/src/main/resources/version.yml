@@ -3,3 +3,4 @@ mvn:
   artifactId: '@artifactId@'
   version: '@version@'
   timestamp: '@timestamp@'
+  tag: '@ci.tag@'
