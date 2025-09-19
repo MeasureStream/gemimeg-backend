@@ -30,6 +30,7 @@ package de.ptb.common.dcc.controller;
 
 import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.service.CalibrationCertificateService;
+import de.ptb.common.encoding.CharsetDetector;
 import de.ptb.common.http.BadRequestStatus;
 import de.ptb.common.http.NotFoundStatus;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -113,6 +114,7 @@ public class CalibrationCertificateController {
   @Operation(description = "Convert a valid DCC XML to JSON")
   @PostMapping(path = DCC_JSON_PATH, consumes = APPLICATION_XML_VALUE, produces = APPLICATION_JSON_VALUE)
   public CalibrationCertificateDto validateAndConvert(@RequestBody String xml) {
+
     try {
       return service.validateAndConvert(xml);
     } catch (JAXBException | SAXException | MalformedURLException e) {
@@ -157,5 +159,12 @@ public class CalibrationCertificateController {
     } catch (JAXBException | IOException e) {
       throw new BadRequestStatus(createLogEntry(e));
     }
+  }
+
+  private String detectCharset(String text) {
+    CharsetDetector detector = new CharsetDetector();
+    // TODO
+
+    return "";
   }
 }
