@@ -89,7 +89,7 @@ public abstract class MBCSRecognizer extends CharsetRecognizer {
 
   abstract boolean nextChar(iteratedChar it, CharsetDetector det);
 
-  static class SJISRecognizer extends MBCSRecognizer {
+  static class SJIS extends MBCSRecognizer {
     static int[] commonChars =
         {0x8140, 0x8141, 0x8142, 0x8145, 0x815b, 0x8169, 0x816a, 0x8175, 0x8176, 0x82a0,
             0x82a2, 0x82a4, 0x82a9, 0x82aa, 0x82ab, 0x82ad, 0x82af, 0x82b1, 0x82b3, 0x82b5,
@@ -134,7 +134,7 @@ public abstract class MBCSRecognizer extends CharsetRecognizer {
     }
   }
 
-  static class Big5Recognizer extends MBCSRecognizer {
+  static class Big5 extends MBCSRecognizer {
     static int[] commonChars =
         {0xa140, 0xa141, 0xa142, 0xa143, 0xa147, 0xa149, 0xa175, 0xa176, 0xa440, 0xa446,
             0xa447, 0xa448, 0xa451, 0xa454, 0xa457, 0xa464, 0xa46a, 0xa46c, 0xa477, 0xa4a3,

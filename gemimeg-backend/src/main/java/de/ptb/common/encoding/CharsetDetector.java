@@ -26,21 +26,25 @@ public class CharsetDetector {
 
   private static final int kBufSize = 8000;
 
-  public CharsetDetector setText(InputStream in) throws IOException {
+  public CharsetDetector setText(InputStream in) throws CharsetDetectException {
     fInputStream = in;
     fInputStream.mark(kBufSize);
     fRawInput = new byte[kBufSize];
     fRawLength = 0;
     int remainingLength = kBufSize;
-    while (remainingLength > 0) {
-      int bytesRead = fInputStream.read(fRawInput, fRawLength, remainingLength);
-      if (bytesRead <= 0) {
-        break;
+    try {
+      while (remainingLength > 0) {
+        int bytesRead = fInputStream.read(fRawInput, fRawLength, remainingLength);
+        if (bytesRead <= 0) {
+          break;
+        }
+        fRawLength += bytesRead;
+        remainingLength -= bytesRead;
       }
-      fRawLength += bytesRead;
-      remainingLength -= bytesRead;
+      fInputStream.reset();
+    } catch (IOException e) {
+      throw new CharsetDetectException(e.getMessage(), e.getCause());
     }
-    fInputStream.reset();
     return this;
   }
 
@@ -53,7 +57,7 @@ public class CharsetDetector {
   }
 
   public CharsetMatch[] detectAll() {
-    ArrayList<CharsetMatch> matches = new ArrayList<CharsetMatch>();
+    ArrayList<CharsetMatch> matches = new ArrayList<>();
     MungeInput();
     for (int i = 0; i < ALL_CS_RECOGNIZERS.size(); i++) {
       CSRecognizerInfo rcinfo = ALL_CS_RECOGNIZERS.get(i);
@@ -72,18 +76,14 @@ public class CharsetDetector {
     return resultArray;
   }
 
-  public Reader getReader(InputStream in, String declaredEncoding) {
+  public Reader getReader(InputStream in, String declaredEncoding) throws CharsetDetectException {
     fDeclaredEncoding = declaredEncoding;
-    try {
-      setText(in);
-      CharsetMatch match = detect();
-      if (match == null) {
-        return null;
-      }
-      return match.getReader();
-    } catch (IOException e) {
+    setText(in);
+    CharsetMatch match = detect();
+    if (match == null) {
       return null;
     }
+    return match.getReader();
   }
 
   public String getString(byte[] in, String declaredEncoding) {
@@ -199,34 +199,34 @@ public class CharsetDetector {
     list.add(new CSRecognizerInfo(new UnicodeRecognizer.UTF16LE(), true));
     list.add(new CSRecognizerInfo(new UnicodeRecognizer.UTF32BE(), true));
     list.add(new CSRecognizerInfo(new UnicodeRecognizer.UTF32LE(), true));
-    list.add(new CSRecognizerInfo(new MBCSRecognizer.SJISRecognizer(), true));
+    list.add(new CSRecognizerInfo(new MBCSRecognizer.SJIS(), true));
     list.add(new CSRecognizerInfo(new ISO2022Recognizer.JP(), true));
     list.add(new CSRecognizerInfo(new ISO2022Recognizer.CN(), true));
     list.add(new CSRecognizerInfo(new ISO2022Recognizer.KR(), true));
     list.add(new CSRecognizerInfo(new MBCSRecognizer.EUC.GB18030(), true));
     list.add(new CSRecognizerInfo(new MBCSRecognizer.EUC.JP(), true));
     list.add(new CSRecognizerInfo(new MBCSRecognizer.EUC.KR(), true));
-    list.add(new CSRecognizerInfo(new MBCSRecognizer.Big5Recognizer(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_1(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_2(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_5_ru(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_6_ar(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_7_el(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_8_I_he(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_8_he(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_windows_1251(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_windows_1256(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_KOI8_R(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_8859_9_tr(), true));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_IBM424_he_rtl(), false));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_IBM424_he_ltr(), false));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_IBM420_ar_rtl(), false));
-    list.add(new CSRecognizerInfo(new SBCSRecognizer.CharsetRecog_IBM420_ar_ltr(), false));
+    list.add(new CSRecognizerInfo(new MBCSRecognizer.Big5(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_1(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_2(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_5ru(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_6ar(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_7el(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_8Ihe(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_8he(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.Windows1251(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.Windows1256(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.KOI8R(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.ISO8859_9tr(), true));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.IBM424he_rtl(), false));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.IBM424he_ltr(), false));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.IBM420ar_rtl(), false));
+    list.add(new CSRecognizerInfo(new SBCSRecognizer.IBM420ar_ltr(), false));
     ALL_CS_RECOGNIZERS = Collections.unmodifiableList(list);
   }
 
   public String[] getDetectableCharsets() {
-    List<String> csnames = new ArrayList<String>(ALL_CS_RECOGNIZERS.size());
+    List<String> csnames = new ArrayList<>(ALL_CS_RECOGNIZERS.size());
     for (int i = 0; i < ALL_CS_RECOGNIZERS.size(); i++) {
       CSRecognizerInfo rcinfo = ALL_CS_RECOGNIZERS.get(i);
       boolean active = (fEnabledRecognizers == null) ? rcinfo.isDefaultEnabled : fEnabledRecognizers[i];
@@ -234,7 +234,7 @@ public class CharsetDetector {
         csnames.add(rcinfo.recognizer.getName());
       }
     }
-    return csnames.toArray(new String[csnames.size()]);
+    return csnames.toArray(new String[0]);
   }
 
   public CharsetDetector setDetectableCharset(String encoding, boolean enabled) {

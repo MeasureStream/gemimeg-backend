@@ -30,6 +30,7 @@ package de.ptb.common.dcc.controller;
 
 import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.service.CalibrationCertificateService;
+import de.ptb.common.encoding.CharsetDetectException;
 import de.ptb.common.encoding.CharsetDetector;
 import de.ptb.common.http.BadRequestStatus;
 import de.ptb.common.http.NotFoundStatus;
@@ -39,6 +40,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.xml.bind.JAXBException;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,9 +52,13 @@ import org.springframework.web.server.ResponseStatusException;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
+import javax.annotation.Nonnull;
 import javax.xml.transform.TransformerException;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.MalformedURLException;
+import java.nio.charset.Charset;
 
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_HTML_PATH;
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DCC_JSON_PATH;
@@ -63,6 +69,7 @@ import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DC
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.ID_PARAM_NAME;
 import static de.ptb.common.dcc.util.DccServiceUtil.createLogEntry;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
+import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PDF_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
@@ -82,22 +89,6 @@ public class CalibrationCertificateController {
     this.service = service;
   }
 
-  private static String getDetailedXmlError(String xml, Exception e) {
-    StringBuilder details = new StringBuilder(createLogEntry(e));
-    if (e instanceof JAXBException && (((JAXBException) e).getLinkedException() instanceof SAXParseException)) {
-      int line = ((SAXParseException) ((JAXBException) e).getLinkedException()).getLineNumber();
-      details.append(" Invalid xml: (line ").append(line).append(") :").append(System.lineSeparator());
-      Object[] xmlLines = xml.lines().toArray();
-      for (int i = Math.max(0, line - 3); i <= Math.min(xmlLines.length - 1, line + 3); i++) {
-        details.append(i).append(": ").append(xmlLines[i].toString()).append(System.lineSeparator());
-      }
-    }
-    String detailsMessage = details.toString();
-    log.error("Problem detected with provided XML: " + detailsMessage);
-    log.error("Problematic XML: " + xml);
-    return detailsMessage;
-  }
-
   @Operation(description = "Convert a DCC DTO as JSON to XML")
   @PostMapping(path = DCC_XML_PATH, consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_XML_VALUE)
   public String convertAndValidate(@RequestBody CalibrationCertificateDto dcc) {
@@ -112,13 +103,17 @@ public class CalibrationCertificateController {
   }
 
   @Operation(description = "Convert a valid DCC XML to JSON")
-  @PostMapping(path = DCC_JSON_PATH, consumes = APPLICATION_XML_VALUE, produces = APPLICATION_JSON_VALUE)
-  public CalibrationCertificateDto validateAndConvert(@RequestBody String xml) {
-
-    try {
-      return service.validateAndConvert(xml);
+  @PostMapping(path = DCC_JSON_PATH, consumes = APPLICATION_OCTET_STREAM_VALUE, produces = APPLICATION_JSON_VALUE)
+  public CalibrationCertificateDto validateAndConvert(@RequestBody byte[] payload) {
+    String xml = "";
+    try (ByteArrayInputStream inputStream = new ByteArrayInputStream(payload)) {
+      String detectedCharset = detectCharset(inputStream);
+      xml = IOUtils.toString(payload, detectedCharset);
+      return service.validateAndConvert(xml, Charset.forName(detectedCharset));
     } catch (JAXBException | SAXException | MalformedURLException e) {
       throw new BadRequestStatus(getDetailedXmlError(xml, e));
+    } catch (CharsetDetectException e) {
+      throw new BadRequestStatus(e.getMessage());
     } catch (Exception e) {
       throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
     }
@@ -161,10 +156,27 @@ public class CalibrationCertificateController {
     }
   }
 
-  private String detectCharset(String text) {
-    CharsetDetector detector = new CharsetDetector();
-    // TODO
+  @Nonnull
+  private static String getDetailedXmlError(String xml, Exception e) {
+    StringBuilder details = new StringBuilder(createLogEntry(e));
+    if (e instanceof JAXBException && (((JAXBException) e).getLinkedException() instanceof SAXParseException)) {
+      int line = ((SAXParseException) ((JAXBException) e).getLinkedException()).getLineNumber();
+      details.append(" Invalid xml: (line ").append(line).append(") :").append(System.lineSeparator());
+      Object[] xmlLines = xml.lines().toArray();
+      for (int i = Math.max(0, line - 3); i <= Math.min(xmlLines.length - 1, line + 3); i++) {
+        details.append(i).append(": ").append(xmlLines[i].toString()).append(System.lineSeparator());
+      }
+    }
+    String detailsMessage = details.toString();
+    log.error("Problem detected with provided XML: " + detailsMessage);
+    log.error("Problematic XML: " + xml);
+    return detailsMessage;
+  }
 
-    return "";
+  @Nonnull
+  private String detectCharset(@Nonnull InputStream inputStream) throws CharsetDetectException {
+    CharsetDetector detector = new CharsetDetector();
+    detector.setText(inputStream);
+    return detector.detect().getName();
   }
 }
