@@ -69,10 +69,10 @@ import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.DC
 import static de.ptb.common.dcc.api.v1.CalibrationCertificateControllerRoutes.ID_PARAM_NAME;
 import static de.ptb.common.dcc.util.DccServiceUtil.createLogEntry;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.http.MediaType.APPLICATION_OCTET_STREAM_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PDF_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
+import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 @Slf4j
 @RestController
@@ -103,7 +103,7 @@ public class CalibrationCertificateController {
   }
 
   @Operation(description = "Convert a valid DCC XML to JSON")
-  @PostMapping(path = DCC_JSON_PATH, consumes = APPLICATION_OCTET_STREAM_VALUE, produces = APPLICATION_JSON_VALUE)
+  @PostMapping(path = DCC_JSON_PATH, consumes = TEXT_PLAIN_VALUE, produces = APPLICATION_JSON_VALUE)
   public CalibrationCertificateDto validateAndConvert(@RequestBody byte[] payload) {
     String xml = "";
     try (ByteArrayInputStream inputStream = new ByteArrayInputStream(payload)) {
