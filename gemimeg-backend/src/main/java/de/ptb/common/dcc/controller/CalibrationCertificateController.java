@@ -72,7 +72,6 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_PDF_VALUE;
 import static org.springframework.http.MediaType.APPLICATION_XML_VALUE;
 import static org.springframework.http.MediaType.TEXT_HTML_VALUE;
-import static org.springframework.http.MediaType.TEXT_PLAIN_VALUE;
 
 @Slf4j
 @RestController
@@ -103,7 +102,7 @@ public class CalibrationCertificateController {
   }
 
   @Operation(description = "Convert a valid DCC XML to JSON")
-  @PostMapping(path = DCC_JSON_PATH, consumes = TEXT_PLAIN_VALUE, produces = APPLICATION_JSON_VALUE)
+  @PostMapping(path = DCC_JSON_PATH, consumes = APPLICATION_XML_VALUE, produces = APPLICATION_JSON_VALUE)
   public CalibrationCertificateDto validateAndConvert(@RequestBody byte[] payload) {
     String xml = "";
     try (ByteArrayInputStream inputStream = new ByteArrayInputStream(payload)) {
