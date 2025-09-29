@@ -91,6 +91,8 @@ deploy-production:
   before_script:
     - *set_environmentvariables
     # install envsubst and ssh-add
+    # update Openssl only for apline 3.22 because it is temporalily broken
+    - apk add openssl
     - apk add --no-cache gettext openssh-client
   script:
     # create the new docker-compose.yml
