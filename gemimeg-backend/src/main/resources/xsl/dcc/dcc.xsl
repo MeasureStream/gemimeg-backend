@@ -20,7 +20,6 @@
           min-width: 540px;
           width: auto;
           padding: 15px;
-
           .dcc-logos {
           display: flex;
           align-items: center;
@@ -31,27 +30,21 @@
           .ptb-logo {
           width: 230px;
           }
-
           .bundesadler-logo {
           width: 80px;
           }
           }
-
           .dcc-content {
-
           h1 {
           margin-top: 20px;
           margin-bottom: 5px;
           font-size: 36px;
           font-weight: 600;
-
           }
-
           .english-title {
           font-size: 18px;
           font-style: italic;
           }
-
           .english-label {
           font-size: 12px;
           font-style: italic;
@@ -66,81 +59,62 @@
           border-bottom: 1px solid rgb(0, 0, 0, 0.08);
           padding: 10px 0;
           }
-
           h2,
           h3,
           h4 {
           margin-top: 10px;
           margin-bottom: 5px;
-
           }
-
           h2 {
           font-size: 24px;
           font-weight: 600;
           }
-
           h3 {
           font-size: 20px;
           font-weight: 600;
           }
-
           h4 {
-
           font-size: 16px !important;
           font-weight: 600 !important;
           }
-
           h5 {
           font-size: 14px !important;
           font-weight: 600 !important;
           }
-
           .images{
           height:100px;
           }
-
-
           table {
           min-width: 200px;
           border-collapse: collapse;
           margin: 10px;
           }
-
           thead tr {
           border-bottom: 1px solid black;
           }
-
           th {
           text-align: left;
           border-bottom: 1px solid black;
           }
-
           td {
           vertical-align: top;
           overflow-wrap: break-word;
           white-space: normal;
           }
-
           td:first-child {
           width: 250px;
           }
-
           td p {
           margin: 0;
           width: 100%;
           }
-
           td p:last-child {
           margin-bottom: 5px;
           }
-
           }
-
           .nested-container {
           width: 80%;
           margin-left: 20px;
-
           .nested-container-heading,
           .nested-container-heading.nested-english-label {
           font-size: 14px;

@@ -101,6 +101,7 @@ public class CalibrationCertificateService {
   public static final String SELF_SIGNING_HASH_ALGORITHM = "SHA-256";
   public static final String SELF_SIGNED_ID_PREFIX = "self-signed_DCC";
   private static final String DCC_XSL_PATH = "/xsl/dcc/dcc.xsl";
+  private static final String DCC_XSLFO_PDF_PATH = "/xsl/dcc/dcc-pdf.xsl";
   private static String BLANK_HTML_PAGE;
 
   static {
@@ -186,20 +187,22 @@ public class CalibrationCertificateService {
   public byte[] validateAndProducePdf(@Nonnull CalibrationCertificateDto dcc)
       throws JAXBException, IOException, TransformerException, SAXException {
     FopFactory fopFactory = FopFactory.newInstance(new File(".").toURI());
+    System.out.println("Aktuelles fopFactory: " + fopFactory);
     FOUserAgent foUserAgent = fopFactory.newFOUserAgent();
     foUserAgent.setAuthor("Physikalisch-Technische Bundesanstalt");
     foUserAgent.setKeywords("dcc");
     foUserAgent.setCreationDate(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
-    try (ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+    try (
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        InputStream xslInputStream = this.getClass().getResourceAsStream(DCC_XSLFO_PDF_PATH)
+    ) {
       Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
-      TransformerFactory factory = TransformerFactory.newInstance();
-      try (InputStream xslInputStream = this.getClass().getResourceAsStream(DCC_XSL_PATH)) {
-        Transformer transformer = factory.newTransformer(new StreamSource(xslInputStream));
-        StreamSource xmlSource = new StreamSource(new StringReader(convert(dcc)));
-        Result result = new SAXResult(fop.getDefaultHandler());
-        transformer.transform(xmlSource, result);
-        return out.toByteArray();
-      }
+      TransformerFactory factory = TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", null);
+      Transformer transformer = factory.newTransformer(new StreamSource(xslInputStream));
+      StreamSource xmlSource = new StreamSource(new StringReader(convert(dcc)));
+      Result result = new SAXResult(fop.getDefaultHandler());
+      transformer.transform(xmlSource, result);
+      return out.toByteArray();
     }
   }
 
