@@ -6,11 +6,18 @@
   <xsl:variable name="base" select="'/'"/>
   <xsl:variable name="primaryLang"
                 select="dcc:digitalCalibrationCertificate/dcc:administrativeData/dcc:coreData/dcc:mandatoryLangCodeISO639_1"/>
+
   <xsl:variable name="secondaryLang"
                 select="dcc:digitalCalibrationCertificate/dcc:administrativeData/dcc:coreData/dcc:usedLangCodeISO639_1[text() != $primaryLang]"/>
+
+  <xsl:param name="isInternal" select="'false'"/>
+  <xsl:param name="base64PTBLogo"/>
+  <xsl:param name="base64BundesAdler"/>
+
   <xsl:template match="dcc:digitalCalibrationCertificate">
     <html>
       <head>
+        <!--                <link re="stylesheet" type="text/css" href="assets/css/humanReadable.css"/>-->
         <style>
           .dcc-wrapper {
           font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -20,6 +27,7 @@
           min-width: 540px;
           width: auto;
           padding: 15px;
+
 
           .dcc-logos {
           display: flex;
@@ -146,12 +154,16 @@
           font-size: 14px;
           font-weight: 700;
           display: inline;
+
           }
+
           .nested-wrapper {
           width: auto;
           margin-top: 20px;
+
           .nested-div-content-heading {
           margin-top: 10px;
+
           }
 
           .table-wrapper {
@@ -161,10 +173,13 @@
           margin: 10px 0;
           min-width: 500px;
           }
+
           }
+
           .table-quantity-wrapper {
           margin: 10px 0;
           min-width: 500px;
+
           .table-quantity-metrics-horizontal,
           .table-quantity-metrics-vertical {
           margin: 0;
@@ -173,11 +188,14 @@
           th p {
           margin: 3px 0;
           }
+
           th {
           background-color: rgb(224, 224, 224);
           }
+
           th,
           td {
+
           text-align: center;
           border: 1px solid black;
           text-align: center;
@@ -189,25 +207,44 @@
           font-style: italic;
           }
           }
+
           .table-quantity-metrics-horizontal {
+
           th p:first-child,
           td p:first-child {
           font-weight: 700;
           }
+
           td:first-child {
           background-color: rgb(224, 224, 224);
           width: 180px;
           }
+
+          }
+
+          }
+
+          }
+
+          }
+
           }
           }
-          }
-          }
-          }
-          }
+
+
         </style>
       </head>
       <body>
         <div class="dcc-wrapper">
+          <div id="logos-container">
+            <xsl:if test="$isInternal">
+              <div class="dcc-logos">
+                <img class="ptb-logo" alt="ptb-Logo" src="{concat('data:image/svg+xml;base64,', $base64PTBLogo)}"/>
+                <img class="bundesadler-logo" alt="bundesadler-logo"
+                     src="{concat('data:image/svg+xml;base64,', $base64BundesAdler)}"/>
+              </div>
+            </xsl:if>
+          </div>
           <div class="dcc-content p-l">
             <h1>Kalibrierzertifikat</h1>
             <p class="english-title">Digital Calibration Certificate</p>
