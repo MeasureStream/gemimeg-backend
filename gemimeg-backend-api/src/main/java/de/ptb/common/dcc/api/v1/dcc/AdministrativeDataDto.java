@@ -76,6 +76,9 @@ public class AdministrativeDataDto {
   private LocalDate endDate;
 
   @Schema
+  private IdentificationListDto identifications;
+
+  @Schema
   private String performanceLocation;
 
   @Schema

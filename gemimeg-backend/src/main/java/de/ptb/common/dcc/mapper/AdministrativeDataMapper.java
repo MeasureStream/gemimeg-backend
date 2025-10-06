@@ -28,13 +28,15 @@
  */
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
-import de.ptb.common.dcc.api.v1.dcc.ContactListDto;
-import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
-import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
+import de.ptb.common.dcc.api.v1.dto.AdministrativeDataDto;
+import de.ptb.common.dcc.api.v1.dto.ContactListDto;
+import de.ptb.common.dcc.api.v1.dto.IdentificationListDto;
+import de.ptb.common.dcc.api.v1.dto.SoftwareListDto;
+import de.ptb.common.dcc.api.v1.dto.StatementListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.AdministrativeDataType;
 import de.ptb.common.dcc.xjc.generated.CoreDataType;
+import de.ptb.common.dcc.xjc.generated.IdentificationListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.PerformanceLocationType;
 import de.ptb.common.dcc.xjc.generated.RespPersonListType;
@@ -64,6 +66,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
   private final CalibrationLaboratoryMapper calibrationLaboratoryMapper;
   private final ItemListMapper itemListMapper;
   private final StatementMapper statementMapper;
+  private final IdentificationMapper identificationMapper;
   private final ObjectFactory objectFactory;
 
   @Autowired
@@ -71,6 +74,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
                                   ContactNotStrictMapper contactNotStrictMapper,
                                   CalibrationLaboratoryMapper calibrationLaboratoryMapper,
                                   ItemListMapper itemListMapper, StatementMapper statementMapper,
+                                  IdentificationMapper identificationMapper,
                                   ObjectFactory objectFactory) {
     this.softwareMapper = softwareMapper;
     this.contactMapper = contactMapper;
@@ -78,6 +82,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
     this.calibrationLaboratoryMapper = calibrationLaboratoryMapper;
     this.itemListMapper = itemListMapper;
     this.statementMapper = statementMapper;
+    this.identificationMapper = identificationMapper;
     this.objectFactory = objectFactory;
   }
 
@@ -125,6 +130,15 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       if (coreData.getPerformanceLocation() != null && coreData.getPerformanceLocation().getValue() != null &&
           StringUtils.isNotBlank(coreData.getPerformanceLocation().getValue().value())) {
         target.setPerformanceLocation(coreData.getPerformanceLocation().getValue().value());
+      }
+      if (coreData.getIdentifications() != null &&
+          coreData.getIdentifications().getIdentification() != null &&
+          !coreData.getIdentifications().getIdentification().isEmpty()) {
+        IdentificationListDto identificationList = new IdentificationListDto();
+        identificationList.addAll(coreData.getIdentifications().getIdentification().stream()
+            .map(identificationMapper::mapToDto)
+            .toList());
+        target.setIdentifications(identificationList);
       }
     }
     if (jaxbObject.getRespPersons() != null && !jaxbObject.getRespPersons().getRespPerson().isEmpty()) {
@@ -198,6 +212,15 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       performanceLocation.setValue(StringPerformanceLocationType.LABORATORY);
     }
     coreData.setPerformanceLocation(performanceLocation);
+    if (dto.getIdentifications() != null && !dto.getIdentifications().isEmpty()) {
+      if (coreData.getIdentifications() == null) {
+        coreData.setIdentifications(objectFactory.createIdentificationListType());
+      }
+      coreData.getIdentifications().getIdentification().addAll(
+          dto.getIdentifications().stream()
+              .map(identificationMapper::mapToJaxbObject)
+              .toList());
+    }
     target.setCoreData(coreData);
     RespPersonListType respPersonList = objectFactory.createRespPersonListType();
     if (dto.getResponsiblePersons() != null) {
