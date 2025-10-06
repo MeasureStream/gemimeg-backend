@@ -28,11 +28,11 @@
  */
 package de.ptb.common.dcc.mapper;
 
-import de.ptb.common.dcc.api.v1.dto.AdministrativeDataDto;
-import de.ptb.common.dcc.api.v1.dto.ContactListDto;
-import de.ptb.common.dcc.api.v1.dto.IdentificationListDto;
-import de.ptb.common.dcc.api.v1.dto.SoftwareListDto;
-import de.ptb.common.dcc.api.v1.dto.StatementListDto;
+import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
+import de.ptb.common.dcc.api.v1.dcc.ContactListDto;
+import de.ptb.common.dcc.api.v1.dcc.IdentificationListDto;
+import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
+import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.AdministrativeDataType;
 import de.ptb.common.dcc.xjc.generated.CoreDataType;
