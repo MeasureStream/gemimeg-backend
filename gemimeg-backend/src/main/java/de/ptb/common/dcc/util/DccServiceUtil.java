@@ -52,6 +52,7 @@ import de.ptb.common.dcc.xjc.generated.ExpandedUncType;
 import de.ptb.common.dcc.xjc.generated.ExpandedUncXMLListType;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.glassfish.jaxb.runtime.marshaller.NamespacePrefixMapper;
 
 import javax.annotation.Nonnegative;
@@ -82,7 +83,7 @@ public class DccServiceUtil {
         for (String namespace : NAMESPACES) {
           String currentUri = StringUtils.substringBefore(namespace, "|");
           String prefix = StringUtils.substringAfter(namespace, "|");
-          if (StringUtils.equalsIgnoreCase(currentUri, namespaceUri)) {
+          if (Strings.CI.equals(currentUri, namespaceUri)) {
             return prefix;
           }
         }
@@ -200,8 +201,9 @@ public class DccServiceUtil {
     if (sample == null) {
       return false;
     }
-    return isNotEmpty(sample.getName()) && isNotEmpty(sample.getManufacturer()) &&
-        StringUtils.isNotBlank(sample.getModel());
+    return isNotEmpty(sample.getName()) || isNotEmpty(sample.getManufacturer()) ||
+        StringUtils.isNotBlank(sample.getModel()) || !(sample.getIdentifications() == null ||
+        sample.getIdentifications().isEmpty());
   }
 
   public static boolean isNotEmpty(@Nullable RichContentDto sample) {

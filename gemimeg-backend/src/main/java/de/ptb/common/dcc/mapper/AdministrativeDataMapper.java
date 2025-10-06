@@ -36,7 +36,6 @@ import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
 import de.ptb.common.dcc.xjc.generated.AdministrativeDataType;
 import de.ptb.common.dcc.xjc.generated.CoreDataType;
-import de.ptb.common.dcc.xjc.generated.IdentificationListType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.PerformanceLocationType;
 import de.ptb.common.dcc.xjc.generated.RespPersonListType;
@@ -70,12 +69,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
   private final ObjectFactory objectFactory;
 
   @Autowired
-  public AdministrativeDataMapper(SoftwareMapper softwareMapper, ContactMapper contactMapper,
-                                  ContactNotStrictMapper contactNotStrictMapper,
-                                  CalibrationLaboratoryMapper calibrationLaboratoryMapper,
-                                  ItemListMapper itemListMapper, StatementMapper statementMapper,
-                                  IdentificationMapper identificationMapper,
-                                  ObjectFactory objectFactory) {
+  public AdministrativeDataMapper(SoftwareMapper softwareMapper, ContactMapper contactMapper, ContactNotStrictMapper contactNotStrictMapper, CalibrationLaboratoryMapper calibrationLaboratoryMapper, ItemListMapper itemListMapper, StatementMapper statementMapper, IdentificationMapper identificationMapper, ObjectFactory objectFactory) {
     this.softwareMapper = softwareMapper;
     this.contactMapper = contactMapper;
     this.contactNotStrictMapper = contactNotStrictMapper;
@@ -92,9 +86,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
     AdministrativeDataDto target = new AdministrativeDataDto();
     if (jaxbObject.getDccSoftware() != null) {
       SoftwareListDto dccSoftware = new SoftwareListDto();
-      dccSoftware.addAll(jaxbObject.getDccSoftware().getSoftware().stream()
-          .map(softwareMapper::mapToDto)
-          .toList());
+      dccSoftware.addAll(jaxbObject.getDccSoftware().getSoftware().stream().map(softwareMapper::mapToDto).toList());
       target.setDccSoftware(dccSoftware);
     }
     if (jaxbObject.getCustomer() != null) {
@@ -127,33 +119,23 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       if (coreData.getEndPerformanceDate() != null) {
         target.setEndDate(convertDate(coreData.getEndPerformanceDate()));
       }
-      if (coreData.getPerformanceLocation() != null && coreData.getPerformanceLocation().getValue() != null &&
-          StringUtils.isNotBlank(coreData.getPerformanceLocation().getValue().value())) {
+      if (coreData.getPerformanceLocation() != null && coreData.getPerformanceLocation().getValue() != null && StringUtils.isNotBlank(coreData.getPerformanceLocation().getValue().value())) {
         target.setPerformanceLocation(coreData.getPerformanceLocation().getValue().value());
       }
-      if (coreData.getIdentifications() != null &&
-          coreData.getIdentifications().getIdentification() != null &&
-          !coreData.getIdentifications().getIdentification().isEmpty()) {
+      if (coreData.getIdentifications() != null && coreData.getIdentifications().getIdentification() != null && !coreData.getIdentifications().getIdentification().isEmpty()) {
         IdentificationListDto identificationList = new IdentificationListDto();
-        identificationList.addAll(coreData.getIdentifications().getIdentification().stream()
-            .map(identificationMapper::mapToDto)
-            .toList());
+        identificationList.addAll(coreData.getIdentifications().getIdentification().stream().map(identificationMapper::mapToDto).toList());
         target.setIdentifications(identificationList);
       }
     }
     if (jaxbObject.getRespPersons() != null && !jaxbObject.getRespPersons().getRespPerson().isEmpty()) {
       ContactListDto responsiblePersons = new ContactListDto();
-      responsiblePersons.addAll(jaxbObject.getRespPersons().getRespPerson().stream()
-          .map(RespPersonType::getPerson)
-          .map(contactNotStrictMapper::mapToDto)
-          .toList());
+      responsiblePersons.addAll(jaxbObject.getRespPersons().getRespPerson().stream().map(RespPersonType::getPerson).map(contactNotStrictMapper::mapToDto).toList());
       target.setResponsiblePersons(responsiblePersons);
     }
     if (jaxbObject.getStatements() != null) {
       StatementListDto statements = new StatementListDto();
-      statements.addAll(jaxbObject.getStatements().getStatement().stream()
-          .map(statementMapper::mapToDto)
-          .toList());
+      statements.addAll(jaxbObject.getStatements().getStatement().stream().map(statementMapper::mapToDto).toList());
       target.setStatements(statements);
     }
     return target;
@@ -165,10 +147,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
     AdministrativeDataType target = objectFactory.createAdministrativeDataType();
     if (dto.getDccSoftware() != null) {
       SoftwareListType softwareList = objectFactory.createSoftwareListType();
-      softwareList.getSoftware().addAll(dto.getDccSoftware().stream()
-          .filter(software -> isNotEmpty(software.getName()))
-          .map(softwareMapper::mapToJaxbObject)
-          .toList());
+      softwareList.getSoftware().addAll(dto.getDccSoftware().stream().filter(software -> isNotEmpty(software.getName())).map(softwareMapper::mapToJaxbObject).toList());
       target.setDccSoftware(softwareList);
     }
     if (isNotEmpty(dto.getCustomer())) {
@@ -203,8 +182,7 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       try {
         performanceLocation.setValue(StringPerformanceLocationType.valueOf(enumValue(dto.getPerformanceLocation())));
       } catch (Throwable t) {
-        log.info("'" + dto.getPerformanceLocation() + "' is not permitted / not known. Using '" +
-            StringPerformanceLocationType.LABORATORY.value() + "' instead.");
+        log.info("'{}' is not permitted / not known. Using '{}' instead.", dto.getPerformanceLocation(), StringPerformanceLocationType.LABORATORY.value());
         log.warn(t.getMessage());
         performanceLocation.setValue(StringPerformanceLocationType.LABORATORY);
       }
@@ -216,30 +194,21 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       if (coreData.getIdentifications() == null) {
         coreData.setIdentifications(objectFactory.createIdentificationListType());
       }
-      coreData.getIdentifications().getIdentification().addAll(
-          dto.getIdentifications().stream()
-              .map(identificationMapper::mapToJaxbObject)
-              .toList());
+      coreData.getIdentifications().getIdentification().addAll(dto.getIdentifications().stream().map(identificationMapper::mapToJaxbObject).toList());
     }
     target.setCoreData(coreData);
     RespPersonListType respPersonList = objectFactory.createRespPersonListType();
     if (dto.getResponsiblePersons() != null) {
-      dto.getResponsiblePersons().stream()
-          .filter(DccServiceUtil::isNotEmpty)
-          .map(contactNotStrictMapper::mapToJaxbObject)
-          .forEach(person -> {
-            RespPersonType respPerson = objectFactory.createRespPersonType();
-            respPerson.setPerson(person);
-            respPersonList.getRespPerson().add(respPerson);
-          });
+      dto.getResponsiblePersons().stream().filter(DccServiceUtil::isNotEmpty).map(contactNotStrictMapper::mapToJaxbObject).forEach(person -> {
+        RespPersonType respPerson = objectFactory.createRespPersonType();
+        respPerson.setPerson(person);
+        respPersonList.getRespPerson().add(respPerson);
+      });
     }
     target.setRespPersons(respPersonList);
     if (dto.getStatements() != null) {
       StatementListType statementList = objectFactory.createStatementListType();
-      statementList.getStatement().addAll(dto.getStatements().stream()
-          .filter(DccServiceUtil::isNotEmpty)
-          .map(statementMapper::mapToJaxbObject)
-          .toList());
+      statementList.getStatement().addAll(dto.getStatements().stream().filter(DccServiceUtil::isNotEmpty).map(statementMapper::mapToJaxbObject).toList());
       if (!statementList.getStatement().isEmpty()) {
         target.setStatements(statementList);
       }
