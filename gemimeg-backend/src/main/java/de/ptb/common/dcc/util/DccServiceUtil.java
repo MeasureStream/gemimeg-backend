@@ -260,12 +260,7 @@ public class DccServiceUtil {
   }
 
   public static boolean isNotEmpty(@Nullable StatementDto sample) {
-    if (sample == null) {
-      return false;
-    }
-    return StringUtils.isNotBlank(sample.getConformity()) || StringUtils.isNotBlank(sample.getConvention()) ||
-        StringUtils.isNotBlank(sample.getNonSIDefinition()) || isNotEmpty(sample.getDeclaration()) ||
-        isNotEmpty(sample.getResponsibleAuthority());
+    return sample != null;
   }
 
   public static <T extends HasId> void setId(T target, @Nullable String id) {
