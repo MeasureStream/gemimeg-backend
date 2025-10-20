@@ -3,7 +3,7 @@
   - export HTTPS_PROXY="http://194.94.94.194:8080/"
   - export http_proxy="http://194.94.94.194:8080/"
   - export https_proxy="http://194.94.94.194:8080/"
-  - export no_proxy="localhost,*.bs.ptb.de,*.berlin.ptb.de,*.ptb.de"
+  - export no_proxy="localhost,*.kc.ptb.de,*.bs.ptb.de,*.berlin.ptb.de,*.ptb.de"
 
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
@@ -23,7 +23,7 @@ stages:
 
 maven-test:
   stage: test
-  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.11-eclipse-temurin-21-alpine
+  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.11-eclipse-temurin-25-alpine
   before_script:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc
@@ -48,7 +48,7 @@ maven-package:
   stage: build
   only:
     - tags
-  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.11-eclipse-temurin-21-alpine
+  image: ${CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX}/maven:3.9.11-eclipse-temurin-25-alpine
   before_script:
     - *set_environmentvariables
     - cp .mavenrc /root/.mavenrc

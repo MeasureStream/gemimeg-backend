@@ -49,7 +49,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.enumValue;
@@ -103,11 +105,11 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       target.setUniqueIdentifier(coreData.getUniqueIdentifier());
       target.setCountryCode(coreData.getCountryCodeISO31661());
       if (isNotEmpty(coreData.getMandatoryLangCodeISO6391())) {
-        Set<String> mandatoryLanguages = new HashSet<>(coreData.getMandatoryLangCodeISO6391());
+        List<String> mandatoryLanguages = new ArrayList<>(coreData.getMandatoryLangCodeISO6391());
         target.setMandatoryLanguageCodes(mandatoryLanguages);
       }
       if (isNotEmpty(coreData.getUsedLangCodeISO6391())) {
-        Set<String> usedLanguages = new HashSet<>(coreData.getUsedLangCodeISO6391());
+        List<String> usedLanguages = new ArrayList<>(coreData.getUsedLangCodeISO6391());
         target.setUsedLanguageCodes(usedLanguages);
       }
       if (coreData.getReceiptDate() != null) {

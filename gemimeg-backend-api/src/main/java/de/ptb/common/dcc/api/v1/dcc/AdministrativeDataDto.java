@@ -33,7 +33,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Schema
@@ -58,10 +58,10 @@ public class AdministrativeDataDto {
   private String countryCode;
 
   @Schema
-  private Set<String> mandatoryLanguageCodes;
+  private List<String> mandatoryLanguageCodes;
 
   @Schema
-  private Set<String> usedLanguageCodes;
+  private List<String> usedLanguageCodes;
 
   @Schema
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

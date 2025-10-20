@@ -66,7 +66,6 @@ import javax.xml.datatype.Duration;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 import static de.ptb.common.dcc.api.v1.json.SerializationUtils.createObjectMapper;
@@ -269,8 +268,8 @@ public class CalibrationCertificateBuilder {
     CalibrationCertificateDto digitalCalibrationCertificate = new CalibrationCertificateDto();
     AdministrativeDataDto administrativeData = new AdministrativeDataDto();
     administrativeData.setCountryCode("DE");
-    administrativeData.setMandatoryLanguageCodes(Set.of("de"));
-    administrativeData.setUsedLanguageCodes(Set.of("de", "en"));
+    administrativeData.setMandatoryLanguageCodes(List.of("de"));
+    administrativeData.setUsedLanguageCodes(List.of("de", "en"));
     administrativeData.setUniqueIdentifier(UUID.randomUUID().toString());
     CalibrationLaboratoryDto calibrationLaboratory = new CalibrationLaboratoryDto();
     calibrationLaboratory.setCalibrationLaboratoryCode(laboratoryName);
