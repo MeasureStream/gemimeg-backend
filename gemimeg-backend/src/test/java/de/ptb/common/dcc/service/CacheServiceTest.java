@@ -66,7 +66,7 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 class CacheServiceTest {
 
-  private final Long cacheItemId = RandomUtils.nextLong();
+  private final Long cacheItemId = RandomUtils.secure().randomLong();
   private final Date createdAt = new Date(System.currentTimeMillis());
   @MockBean
   private VersionConfiguration versionConfiguration;
