@@ -30,15 +30,13 @@ package de.ptb.common.dcc.mapper;
 
 import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
 import de.ptb.common.dcc.api.v1.dcc.ExpandedMUDto;
-import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
 import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
 import de.ptb.common.dcc.api.v1.dcc.XmlValuesDto;
 import de.ptb.common.dcc.xjc.generated.ConstantQuantityType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
-import de.ptb.common.dcc.xjc.generated.QuantityType;
+import de.ptb.common.dcc.xjc.generated.PrimitiveQuantityType;
 import de.ptb.common.dcc.xjc.generated.RealListXMLListType;
 import de.ptb.common.dcc.xjc.generated.RealQuantityType;
-import de.ptb.common.dcc.xjc.generated.UsedMethodListType;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -63,7 +61,7 @@ import static de.ptb.common.dcc.util.DccServiceUtil.setRefTypes;
 
 @Slf4j
 @Component
-public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, QuantityDto> {
+public class PrimitiveQuantityMapper implements JaxbDtoBidirectionalMapper<PrimitiveQuantityType, QuantityDto> {
 
   private final static String REAL = "real";
   private final static String CONSTANT = "constant";
@@ -86,13 +84,13 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
   private final ObjectFactory objectFactory;
 
   @Autowired
-  public QuantityMapper(LanguageSpecificStringsMapper languageSpecificStringsMapper, RichContentMapper richContentMapper,
-                        HybridValuesMapper hybridValuesMapper, MethodMapper methodMapper,
-                        ExpandedMUMapper expandedMUMapper, ExpandedUncMapper expandedUncMapper,
-                        CoverageIntervalMapper coverageIntervalMapper,
-                        CoverageIntervalXmlListMapper coverageIntervalXmlListMapper,
-                        ExpandedMUXmlListMapper expandedMUXmlListMapper, ExpandedUncXmlListMapper expandedUncXmlListMapper,
-                        ObjectFactory objectFactory) {
+  public PrimitiveQuantityMapper(LanguageSpecificStringsMapper languageSpecificStringsMapper, RichContentMapper richContentMapper,
+                                 HybridValuesMapper hybridValuesMapper, MethodMapper methodMapper,
+                                 ExpandedMUMapper expandedMUMapper, ExpandedUncMapper expandedUncMapper,
+                                 CoverageIntervalMapper coverageIntervalMapper,
+                                 CoverageIntervalXmlListMapper coverageIntervalXmlListMapper,
+                                 ExpandedMUXmlListMapper expandedMUXmlListMapper, ExpandedUncXmlListMapper expandedUncXmlListMapper,
+                                 ObjectFactory objectFactory) {
     this.languageSpecificStringsMapper = languageSpecificStringsMapper;
     this.richContentMapper = richContentMapper;
     this.hybridValuesMapper = hybridValuesMapper;
@@ -108,7 +106,7 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
 
   @Override
   @Nonnull
-  public QuantityDto mapToDto(@Nonnull QuantityType jaxbObject) {
+  public QuantityDto mapToDto(@Nonnull PrimitiveQuantityType jaxbObject) {
     QuantityDto target = new QuantityDto();
     setId(target, jaxbObject.getId());
     setRefIds(target, jaxbObject.getRefId());
@@ -139,10 +137,10 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
         target.setTimestamp(constantQuantity.getDateTime().toGregorianCalendar().toZonedDateTime().toLocalDateTime());
       }
       if (constantQuantity.getUncertainty() != null || StringUtils.isNotBlank(constantQuantity.getDistribution())) {
-        ExpandedMUDto expandedMU = new ExpandedMUDto();
-        expandedMU.setUncertainty(constantQuantity.getUncertainty());
-        expandedMU.setDistribution(constantQuantity.getDistribution());
-        target.setExpandedMU(expandedMU);
+        ExpandedMUDto uncertainty = new ExpandedMUDto();
+        uncertainty.setUncertainty(constantQuantity.getUncertainty());
+        uncertainty.setDistribution(constantQuantity.getDistribution());
+        target.setExpandedMU(uncertainty);
       }
     }
     if (jaxbObject.getRealListXMLList() != null) {
@@ -173,14 +171,6 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
       target.setQuantityTypeName(HYBRID);
       target.setHybridValues(hybridValuesMapper.mapToDto(jaxbObject.getHybrid()));
     }
-    if (jaxbObject.getUsedMethods() != null) {
-      UsedMethodListType usedMethods = jaxbObject.getUsedMethods();
-      MethodListDto methodListDto = new MethodListDto();
-      methodListDto.addAll(usedMethods.getUsedMethod().stream()
-          .map(methodMapper::mapToDto)
-          .toList());
-      target.setUsedMethods(methodListDto);
-    }
     if (jaxbObject.getNoQuantity() != null && !jaxbObject.getNoQuantity().getContentAndFileAndFormula().isEmpty()) {
       target.setNoQuantity(richContentMapper.mapToDto(jaxbObject.getNoQuantity()));
     }
@@ -191,8 +181,8 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
   }
 
   @Override
-  public QuantityType mapToJaxbObject(QuantityDto dto) {
-    QuantityType target = objectFactory.createQuantityType();
+  public PrimitiveQuantityType mapToJaxbObject(QuantityDto dto) {
+    PrimitiveQuantityType target = objectFactory.createPrimitiveQuantityType();
     if (StringUtils.isNotBlank(dto.getId())) {
       target.setId(dto.getId());
     }
@@ -271,13 +261,6 @@ public class QuantityMapper implements JaxbDtoBidirectionalMapper<QuantityType, 
       if (dto.getHybridValues() != null) {
         target.setHybrid(hybridValuesMapper.mapToJaxbObject(dto.getHybridValues()));
       }
-    }
-    if (dto.getUsedMethods() != null) {
-      UsedMethodListType usedMethods = objectFactory.createUsedMethodListType();
-      usedMethods.getUsedMethod().addAll(dto.getUsedMethods().stream()
-          .map(methodMapper::mapToJaxbObject)
-          .toList());
-      target.setUsedMethods(usedMethods);
     }
     if (isNotEmpty(dto.getNoQuantity())) {
       target.setNoQuantity(richContentMapper.mapToJaxbObject(dto.getNoQuantity()));

@@ -41,10 +41,7 @@ public class XmlValuesDto {
   private List<DimensionDto> values;
 
   @Schema
-  private ExpandedUncListDto expandedUncList;
-
-  @Schema
-  private ExpandedMUListDto expandedMUList;
+  private ExpandedUncListDto uncertainties;
 
   @Schema
   private CoverageIntervalListDto coverageIntervals;
