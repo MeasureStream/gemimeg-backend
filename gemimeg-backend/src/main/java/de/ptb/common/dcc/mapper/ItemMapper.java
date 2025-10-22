@@ -30,12 +30,15 @@ package de.ptb.common.dcc.mapper;
 
 import de.ptb.common.dcc.api.v1.dcc.IdentificationListDto;
 import de.ptb.common.dcc.api.v1.dcc.ItemDto;
+import de.ptb.common.dcc.api.v1.dcc.QuantityListDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.xjc.generated.EquipmentClassType;
 import de.ptb.common.dcc.xjc.generated.IdentificationListType;
+import de.ptb.common.dcc.xjc.generated.ItemQuantityListType;
 import de.ptb.common.dcc.xjc.generated.ItemType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.SoftwareListType;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -45,6 +48,7 @@ import static de.ptb.common.dcc.util.DccServiceUtil.setId;
 import static de.ptb.common.dcc.util.DccServiceUtil.setRefIds;
 import static de.ptb.common.dcc.util.DccServiceUtil.setRefTypes;
 
+@Slf4j
 @Component
 public class ItemMapper implements JaxbDtoBidirectionalMapper<ItemType, ItemDto> {
 
@@ -53,17 +57,20 @@ public class ItemMapper implements JaxbDtoBidirectionalMapper<ItemType, ItemDto>
   private final SoftwareMapper softwareMapper;
   private final ContactNotStrictMapper contactMapper;
   private final IdentificationMapper identificationMapper;
+  private final PrimitiveQuantityMapper primitiveQuantityMapper;
   private final ObjectFactory objectFactory;
 
   @Autowired
   public ItemMapper(LanguageSpecificStringsMapper languageSpecificStringsMapper, RichContentMapper richContentMapper,
                     SoftwareMapper softwareMapper, ContactNotStrictMapper contactMapper,
-                    IdentificationMapper identificationMapper, ObjectFactory objectFactory) {
+                    IdentificationMapper identificationMapper, PrimitiveQuantityMapper primitiveQuantityMapper,
+                    ObjectFactory objectFactory) {
     this.languageSpecificStringsMapper = languageSpecificStringsMapper;
     this.richContentMapper = richContentMapper;
     this.softwareMapper = softwareMapper;
     this.contactMapper = contactMapper;
     this.identificationMapper = identificationMapper;
+    this.primitiveQuantityMapper = primitiveQuantityMapper;
     this.objectFactory = objectFactory;
   }
 
@@ -93,6 +100,16 @@ public class ItemMapper implements JaxbDtoBidirectionalMapper<ItemType, ItemDto>
     }
     if (jaxbObject.getManufacturer() != null) {
       target.setManufacturer(contactMapper.mapToDto(jaxbObject.getManufacturer()));
+    }
+    if (jaxbObject.getItemQuantities() != null && !jaxbObject.getItemQuantities().getItemQuantity().isEmpty()) {
+      QuantityListDto quantityList = new QuantityListDto();
+      quantityList.addAll(jaxbObject.getItemQuantities().getItemQuantity().stream()
+          .map(primitiveQuantityMapper::mapToDto)
+          .toList());
+      target.setItemQuantities(quantityList);
+    }
+    if (jaxbObject.getSubItems() != null && !jaxbObject.getSubItems().getItem().isEmpty()) {
+      log.warn("Cannot be mapped, due to possible circular reference: " + jaxbObject.getSubItems());
     }
     if (jaxbObject.getIdentifications() != null && !jaxbObject.getIdentifications().getIdentification().isEmpty()) {
       IdentificationListDto identificationList = new IdentificationListDto();
@@ -141,6 +158,16 @@ public class ItemMapper implements JaxbDtoBidirectionalMapper<ItemType, ItemDto>
     }
     if (isNotEmpty(dto.getManufacturer())) {
       target.setManufacturer(contactMapper.mapToJaxbObject(dto.getManufacturer()));
+    }
+    if (dto.getItemQuantities() != null && !dto.getItemQuantities().isEmpty()) {
+      ItemQuantityListType itemQuantityList = objectFactory.createItemQuantityListType();
+      itemQuantityList.getItemQuantity().addAll(dto.getItemQuantities().stream()
+          .map(primitiveQuantityMapper::mapToJaxbObject)
+          .toList());
+      target.setItemQuantities(itemQuantityList);
+    }
+    if (dto.getSubItems() != null && !dto.getSubItems().isEmpty()) {
+      log.warn("Cannot be mapped, due to possible circular reference: " + dto.getSubItems());
     }
     if (dto.getIdentifications() != null && !dto.getIdentifications().isEmpty()) {
       IdentificationListType identificationList = objectFactory.createIdentificationListType();

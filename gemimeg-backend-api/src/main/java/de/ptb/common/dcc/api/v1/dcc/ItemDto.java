@@ -56,6 +56,12 @@ public class ItemDto implements HasId, HasRefIds, HasRefTypes {
   protected RichContentDto description;
 
   @Schema
+  protected QuantityListDto itemQuantities;
+
+  @Schema
+  protected ItemListDto subItems;
+
+  @Schema
   protected SoftwareListDto installedSoftwares;
 
   @Schema
