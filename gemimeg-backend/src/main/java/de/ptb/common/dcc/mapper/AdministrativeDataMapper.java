@@ -29,8 +29,8 @@
 package de.ptb.common.dcc.mapper;
 
 import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
-import de.ptb.common.dcc.api.v1.dcc.ContactListDto;
 import de.ptb.common.dcc.api.v1.dcc.IdentificationListDto;
+import de.ptb.common.dcc.api.v1.dcc.ResponsiblePersonListDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
 import de.ptb.common.dcc.util.DccServiceUtil;
@@ -39,7 +39,6 @@ import de.ptb.common.dcc.xjc.generated.CoreDataType;
 import de.ptb.common.dcc.xjc.generated.ObjectFactory;
 import de.ptb.common.dcc.xjc.generated.PerformanceLocationType;
 import de.ptb.common.dcc.xjc.generated.RespPersonListType;
-import de.ptb.common.dcc.xjc.generated.RespPersonType;
 import de.ptb.common.dcc.xjc.generated.SoftwareListType;
 import de.ptb.common.dcc.xjc.generated.StatementListType;
 import de.ptb.common.dcc.xjc.generated.StringPerformanceLocationType;
@@ -50,9 +49,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static de.ptb.common.dcc.util.DccServiceUtil.enumValue;
 import static de.ptb.common.dcc.util.DccServiceUtil.isNotEmpty;
@@ -63,22 +60,25 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
 
   private final SoftwareMapper softwareMapper;
   private final ContactMapper contactMapper;
-  private final ContactNotStrictMapper contactNotStrictMapper;
   private final CalibrationLaboratoryMapper calibrationLaboratoryMapper;
   private final ItemListMapper itemListMapper;
   private final StatementMapper statementMapper;
   private final IdentificationMapper identificationMapper;
+  private final ResponsiblePersonMapper responsiblePersonMapper;
   private final ObjectFactory objectFactory;
 
   @Autowired
-  public AdministrativeDataMapper(SoftwareMapper softwareMapper, ContactMapper contactMapper, ContactNotStrictMapper contactNotStrictMapper, CalibrationLaboratoryMapper calibrationLaboratoryMapper, ItemListMapper itemListMapper, StatementMapper statementMapper, IdentificationMapper identificationMapper, ObjectFactory objectFactory) {
+  public AdministrativeDataMapper(SoftwareMapper softwareMapper, ContactMapper contactMapper,
+                                  CalibrationLaboratoryMapper calibrationLaboratoryMapper, ItemListMapper itemListMapper,
+                                  StatementMapper statementMapper, IdentificationMapper identificationMapper,
+                                  ResponsiblePersonMapper responsiblePersonMapper, ObjectFactory objectFactory) {
     this.softwareMapper = softwareMapper;
     this.contactMapper = contactMapper;
-    this.contactNotStrictMapper = contactNotStrictMapper;
     this.calibrationLaboratoryMapper = calibrationLaboratoryMapper;
     this.itemListMapper = itemListMapper;
     this.statementMapper = statementMapper;
     this.identificationMapper = identificationMapper;
+    this.responsiblePersonMapper = responsiblePersonMapper;
     this.objectFactory = objectFactory;
   }
 
@@ -129,10 +129,15 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
         identificationList.addAll(coreData.getIdentifications().getIdentification().stream().map(identificationMapper::mapToDto).toList());
         target.setIdentifications(identificationList);
       }
+      if (coreData.getIssueDate() != null) {
+        target.setIssueDate(convertDate(coreData.getIssueDate()));
+      }
     }
     if (jaxbObject.getRespPersons() != null && !jaxbObject.getRespPersons().getRespPerson().isEmpty()) {
-      ContactListDto responsiblePersons = new ContactListDto();
-      responsiblePersons.addAll(jaxbObject.getRespPersons().getRespPerson().stream().map(RespPersonType::getPerson).map(contactNotStrictMapper::mapToDto).toList());
+      ResponsiblePersonListDto responsiblePersons = new ResponsiblePersonListDto();
+      responsiblePersons.addAll(jaxbObject.getRespPersons().getRespPerson().stream()
+          .map(responsiblePersonMapper::mapToDto)
+          .toList());
       target.setResponsiblePersons(responsiblePersons);
     }
     if (jaxbObject.getStatements() != null) {
@@ -198,14 +203,16 @@ public class AdministrativeDataMapper implements JaxbDtoBidirectionalMapper<Admi
       }
       coreData.getIdentifications().getIdentification().addAll(dto.getIdentifications().stream().map(identificationMapper::mapToJaxbObject).toList());
     }
+    if (dto.getIssueDate() != null) {
+      coreData.setIssueDate(convertDate(dto.getIssueDate()));
+    }
     target.setCoreData(coreData);
     RespPersonListType respPersonList = objectFactory.createRespPersonListType();
     if (dto.getResponsiblePersons() != null) {
-      dto.getResponsiblePersons().stream().filter(DccServiceUtil::isNotEmpty).map(contactNotStrictMapper::mapToJaxbObject).forEach(person -> {
-        RespPersonType respPerson = objectFactory.createRespPersonType();
-        respPerson.setPerson(person);
-        respPersonList.getRespPerson().add(respPerson);
-      });
+      respPersonList.getRespPerson().addAll(dto.getResponsiblePersons().stream()
+          .filter(DccServiceUtil::isNotEmpty)
+          .map(responsiblePersonMapper::mapToJaxbObject)
+          .toList());
     }
     target.setRespPersons(respPersonList);
     if (dto.getStatements() != null) {

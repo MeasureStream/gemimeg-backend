@@ -1,36 +1,11 @@
-/**
- * Copyright 2025 Physikalisch-Technische Bundesanstalt
- * <p>
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- * <p>
- * 1. Redistributions of source code must retain the above copyright notice,
- * this list of conditions and the following disclaimer.
- * <p>
- * 2. Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation
- * and/or other materials provided with the distribution.
- * <p>
- * 3. Neither the name of the copyright holder nor the names of its contributors
- * may be used to endorse or promote products derived from this software without
- * specific prior written permission.
- * <p>
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND
- * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
- * IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
- * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
- * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
- * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
- * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
- * OF THE POSSIBILITY OF SUCH DAMAGE.
- */
 package de.ptb.common.dcc.util;
 
 import de.ptb.common.dcc.api.v1.dcc.ByteDataDto;
+import de.ptb.common.dcc.api.v1.dcc.ConditionDto;
 import de.ptb.common.dcc.api.v1.dcc.ContactDto;
 import de.ptb.common.dcc.api.v1.dcc.CoverageIntervalDto;
+import de.ptb.common.dcc.api.v1.dcc.DataDto;
+import de.ptb.common.dcc.api.v1.dcc.DataListDto;
 import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
 import de.ptb.common.dcc.api.v1.dcc.EquipmentDto;
 import de.ptb.common.dcc.api.v1.dcc.ExpandedMUDto;
@@ -41,6 +16,8 @@ import de.ptb.common.dcc.api.v1.dcc.HasRefIds;
 import de.ptb.common.dcc.api.v1.dcc.HasRefTypes;
 import de.ptb.common.dcc.api.v1.dcc.LanguageSpecificStringsDto;
 import de.ptb.common.dcc.api.v1.dcc.LocationDto;
+import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
+import de.ptb.common.dcc.api.v1.dcc.ResponsiblePersonDto;
 import de.ptb.common.dcc.api.v1.dcc.RichContentDto;
 import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementDto;
@@ -116,14 +93,15 @@ public class DccServiceUtil {
     return dimension;
   }
 
+  @Deprecated
   public static boolean isValid(@Nonnull ExpandedUncType expandedUnc) {
     return expandedUnc.getUncertainty() != 0 || expandedUnc.getCoverageFactor() != 0 ||
         expandedUnc.getCoverageProbability() != 0;
   }
 
-  public static boolean isValid(@Nonnull ExpandedMUType expandedMUType) {
-    return expandedMUType.getValueExpandedMU() != 0 || expandedMUType.getCoverageFactor() != 0 ||
-        expandedMUType.getCoverageProbability() != 0;
+  public static boolean isValid(@Nonnull ExpandedMUType expandedUnc) {
+    return expandedUnc.getValueExpandedMU() != 0 || expandedUnc.getCoverageFactor() != 0 ||
+        expandedUnc.getCoverageProbability() != 0;
   }
 
   public static boolean isValid(@Nonnull CoverageIntervalType coverageInterval) {
@@ -131,14 +109,15 @@ public class DccServiceUtil {
         (coverageInterval.getIntervalMin() < coverageInterval.getIntervalMax());
   }
 
-  public static boolean isValid(@Nonnull ExpandedMUDto expandedMU) {
-    return expandedMU.getUncertainty() != 0 || expandedMU.getCoverageFactor() != 0 ||
-        expandedMU.getCoverageProbability() != 0;
+  @Deprecated
+  public static boolean isValid(@Nonnull ExpandedUncDto uncertainty) {
+    return uncertainty.getUncertainty() != 0 || uncertainty.getCoverageFactor() != 0 ||
+        uncertainty.getCoverageProbability() != 0;
   }
 
-  public static boolean isValid(@Nonnull ExpandedUncDto expandedUnc) {
-    return expandedUnc.getUncertainty() != 0 || expandedUnc.getCoverageFactor() != 0 ||
-        expandedUnc.getCoverageProbability() != 0;
+  public static boolean isValid(@Nonnull ExpandedMUDto uncertainty) {
+    return uncertainty.getUncertainty() != 0 || uncertainty.getCoverageFactor() != 0 ||
+        uncertainty.getCoverageProbability() != 0;
   }
 
   public static boolean isValid(@Nonnull CoverageIntervalDto coverageInterval) {
@@ -155,6 +134,7 @@ public class DccServiceUtil {
     return (coverageProbability != 0 || standardUnc != 0) && (intervalMin < intervalMax);
   }
 
+  @Deprecated
   public static boolean isValid(@Nonnull ExpandedUncXMLListType expandedUncXMLList,
                                 @Nonnegative int index) {
     double uncertainty = expandedUncXMLList.getUncertaintyXMLList().get(index);
@@ -169,16 +149,16 @@ public class DccServiceUtil {
     return uncertainty != 0 || coverageFactor != 0 || coverageProbability != 0;
   }
 
-  public static boolean isValid(@Nonnull ExpandedMUXMLListType expandedMUXMLListType,
+  public static boolean isValid(@Nonnull ExpandedMUXMLListType expandedUncXMLList,
                                 @Nonnegative int index) {
-    double uncertainty = expandedMUXMLListType.getValueExpandedMUXMLList().get(index);
+    double uncertainty = expandedUncXMLList.getValueExpandedMUXMLList().get(index);
     double coverageFactor = 0.0;
-    if (expandedMUXMLListType.getCoverageFactorXMLList().size() > index) {
-      coverageFactor = expandedMUXMLListType.getCoverageFactorXMLList().get(index);
+    if (expandedUncXMLList.getCoverageFactorXMLList().size() > index) {
+      coverageFactor = expandedUncXMLList.getCoverageFactorXMLList().get(index);
     }
     double coverageProbability = 0.0;
-    if (expandedMUXMLListType.getCoverageProbabilityXMLList().size() > index) {
-      coverageProbability = expandedMUXMLListType.getCoverageProbabilityXMLList().get(index);
+    if (expandedUncXMLList.getCoverageProbabilityXMLList().size() > index) {
+      coverageProbability = expandedUncXMLList.getCoverageProbabilityXMLList().get(index);
     }
     return uncertainty != 0 || coverageFactor != 0 || coverageProbability != 0;
   }
@@ -194,7 +174,7 @@ public class DccServiceUtil {
       return false;
     }
     return sample.getContent() != null && sample.getContent().getFirst() != null &&
-        io.micrometer.common.util.StringUtils.isNotBlank(sample.getContent().getFirst().getText());
+        StringUtils.isNotBlank(sample.getContent().getFirst().getText());
   }
 
   public static boolean isNotEmpty(@Nullable EquipmentDto sample) {
@@ -218,8 +198,7 @@ public class DccServiceUtil {
     if (sample == null) {
       return false;
     }
-    return StringUtils.isNoneBlank(sample.getFileName(), sample.getMimeType()) && sample.getContent() != null &&
-        sample.getContent().length > 0;
+    return sample.getContent() != null && sample.getContent().length > 0;
   }
 
   public static boolean isNotEmpty(@Nullable LocationDto sample) {
@@ -261,6 +240,41 @@ public class DccServiceUtil {
 
   public static boolean isNotEmpty(@Nullable StatementDto sample) {
     return sample != null;
+  }
+
+  public static boolean isNotEmpty(@Nullable DataDto sample) {
+    return sample != null;
+  }
+
+  public static boolean isNotEmpty(@Nullable DataListDto sample) {
+    if (sample == null) {
+      return false;
+    }
+    return !sample.isEmpty() && sample.stream()
+        .allMatch(DccServiceUtil::isNotEmpty);
+  }
+
+  public static boolean isNotEmpty(@Nullable ConditionDto sample) {
+    return sample != null;
+  }
+
+  public static boolean isNotEmpty(@Nullable QuantityDto sample) {
+    if (sample == null) {
+      return false;
+    }
+    if (Strings.CI.equals(sample.getQuantityTypeName(), "real") && sample.getDimension() != null &&
+        StringUtils.isBlank(sample.getDimension().getUnit())) {
+      return false;
+    }
+    return sample.getDimension() != null || sample.getXmlStrings() != null ||
+        isNotEmpty(sample.getNoQuantity()) || sample.getXmlValues() != null;
+  }
+
+  public static boolean isNotEmpty(@Nullable ResponsiblePersonDto sample) {
+    if (sample == null) {
+      return false;
+    }
+    return isNotEmpty(sample.getContact());
   }
 
   public static <T extends HasId> void setId(T target, @Nullable String id) {

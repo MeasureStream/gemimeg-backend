@@ -278,24 +278,32 @@
     "performanceLocation" : "laboratory",
     "responsiblePersons" : [
       {
-        "name" : {
-          "content" : [
-            {
-              "lang" : "de",
-              "text" : "Michaela Musterfrau"
-            }
-          ]
-        }
+        "contact" : {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Michaela Musterfrau"
+              }
+            ]
+          }
+        },
+        "role" : "Laborleiterin",
+        "mainSigner" : true
       },
       {
-        "name" : {
-          "content" : [
-            {
-              "lang" : "de",
-              "text" : "Michael Mustermann"
-            }
-          ]
-        }
+        "contact" : {
+          "name" : {
+            "content" : [
+              {
+                "lang" : "de",
+                "text" : "Max Mustermann"
+              }
+            ]
+          }
+        },
+        "role" : "Stellv. Laborleiter",
+        "mainSigner" : false
       }
     ],
     "statements" : [

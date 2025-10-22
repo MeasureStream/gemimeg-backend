@@ -76,13 +76,17 @@ public class AdministrativeDataDto {
   private LocalDate endDate;
 
   @Schema
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+  private LocalDate issueDate;
+
+  @Schema
   private IdentificationListDto identifications;
 
   @Schema
   private String performanceLocation;
 
   @Schema
-  private ContactListDto responsiblePersons;
+  private ResponsiblePersonListDto responsiblePersons;
 
   @Schema
   private StatementListDto statements;

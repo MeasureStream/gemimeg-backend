@@ -28,12 +28,12 @@
  */
 package de.ptb.common.dcc.api.v1;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.ptb.common.dcc.api.v1.dcc.AdministrativeDataDto;
 import de.ptb.common.dcc.api.v1.dcc.CalibrationCertificateDto;
 import de.ptb.common.dcc.api.v1.dcc.CalibrationLaboratoryDto;
 import de.ptb.common.dcc.api.v1.dcc.ContactDto;
-import de.ptb.common.dcc.api.v1.dcc.ContactListDto;
 import de.ptb.common.dcc.api.v1.dcc.DataDto;
 import de.ptb.common.dcc.api.v1.dcc.DataListDto;
 import de.ptb.common.dcc.api.v1.dcc.DimensionDto;
@@ -50,6 +50,8 @@ import de.ptb.common.dcc.api.v1.dcc.MeasurementResultListDto;
 import de.ptb.common.dcc.api.v1.dcc.MethodDto;
 import de.ptb.common.dcc.api.v1.dcc.MethodListDto;
 import de.ptb.common.dcc.api.v1.dcc.QuantityDto;
+import de.ptb.common.dcc.api.v1.dcc.ResponsiblePersonDto;
+import de.ptb.common.dcc.api.v1.dcc.ResponsiblePersonListDto;
 import de.ptb.common.dcc.api.v1.dcc.ResultDto;
 import de.ptb.common.dcc.api.v1.dcc.ResultListDto;
 import de.ptb.common.dcc.api.v1.dcc.SignatureDto;
@@ -58,6 +60,7 @@ import de.ptb.common.dcc.api.v1.dcc.SoftwareDto;
 import de.ptb.common.dcc.api.v1.dcc.SoftwareListDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementDto;
 import de.ptb.common.dcc.api.v1.dcc.StatementListDto;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nonnull;
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -70,6 +73,7 @@ import java.util.UUID;
 
 import static de.ptb.common.dcc.api.v1.json.SerializationUtils.createObjectMapper;
 
+@Slf4j
 public class CalibrationCertificateBuilder {
 
   private final ObjectMapper objectMapper;
@@ -83,7 +87,7 @@ public class CalibrationCertificateBuilder {
   private LocalDate receiptDate;
   private LocalDate beginDate;
   private LocalDate endDate;
-  private ContactListDto respPersons;
+  private ResponsiblePersonListDto respPersons;
   private MeasurementResultListDto measurementResults;
   private SoftwareDto certificateCreationSoftware;
   private ItemListDto items;
@@ -215,11 +219,13 @@ public class CalibrationCertificateBuilder {
   @Nonnull
   public CalibrationCertificateBuilder withResponsiblePerson(String name) {
     if (this.respPersons == null) {
-      this.respPersons = new ContactListDto();
+      this.respPersons = new ResponsiblePersonListDto();
     }
     ContactDto contact = new ContactDto();
     contact.setName(createLanguageSpecificStrings(name));
-    this.respPersons.add(contact);
+    ResponsiblePersonDto responsiblePerson = new ResponsiblePersonDto();
+    responsiblePerson.setContact(contact);
+    this.respPersons.add(responsiblePerson);
     return this;
   }
 
@@ -264,7 +270,7 @@ public class CalibrationCertificateBuilder {
     return this;
   }
 
-  public CalibrationCertificateDto build() throws DatatypeConfigurationException {
+  public CalibrationCertificateDto build() throws JsonProcessingException, DatatypeConfigurationException {
     CalibrationCertificateDto digitalCalibrationCertificate = new CalibrationCertificateDto();
     AdministrativeDataDto administrativeData = new AdministrativeDataDto();
     administrativeData.setCountryCode("DE");
@@ -318,6 +324,7 @@ public class CalibrationCertificateBuilder {
     digitalCalibrationCertificate.setMeasurementResults(measurementResultList);
     digitalCalibrationCertificate.setSignatures(signatures);
     digitalCalibrationCertificate.setSchemaVersion(schemaVersion);
+    log.info("Created DCC as JSON: " + objectMapper.writeValueAsString(digitalCalibrationCertificate));
     return digitalCalibrationCertificate;
   }
 
