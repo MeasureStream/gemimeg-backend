@@ -146,6 +146,20 @@ public class CalibrationCertificateServiceTest {
     assertEquals(SELF_SIGNING_HASH_ALGORITHM, actualSignature.getSignedInfo().getMethodAlgorithm());
   }
 
+  @Test
+  void deleteExpiredCertificates_Ok() throws NoSuchMethodException {
+    when(repository.findByCreatedAtLessThan(any(Date.class))).thenReturn(List.of(calibrationCertificate));
+    Method deleteExpiredCertificates = service.getClass().getMethod("deleteExpiredCertificates");
+    assertEquals("0 */5 * ? * *", deleteExpiredCertificates.getAnnotation(Scheduled.class).cron());
+    Date now = new Date(System.currentTimeMillis());
+    service.deleteExpiredCertificates();
+    verify(repository).findByCreatedAtLessThan(dateCaptor.capture());
+    assertEquals((now.getTime() - configuration.getPersistLifespan() * 1000L) / 100L,
+        dateCaptor.getValue().getTime() / 100L);
+    verify(repository).delete(calibrationCertificate);
+    verifyNoMoreInteractions(repository);
+  }
+
   private void createDigitalCalibrationCertificate() throws JsonProcessingException, DatatypeConfigurationException {
     calibrationCertificateDto = CalibrationCertificateBuilder.getInstance()
         .withCertificateCreationSoftware("GEMIMEG Tool powered by OP-Layer", "1.0.0")
@@ -176,19 +190,5 @@ public class CalibrationCertificateServiceTest {
     calibrationCertificate = new CalibrationCertificate();
     calibrationCertificate.setId(UUID.randomUUID().toString());
     calibrationCertificate.setDccJson(objectMapper.writeValueAsString(calibrationCertificateDto));
-  }
-
-  @Test
-  void deleteExpiredCertificates_Ok() throws NoSuchMethodException {
-    when(repository.findByCreatedAtLessThan(any(Date.class))).thenReturn(List.of(calibrationCertificate));
-    Method deleteExpiredCertificates = service.getClass().getMethod("deleteExpiredCertificates");
-    assertEquals("0 */5 * ? * *", deleteExpiredCertificates.getAnnotation(Scheduled.class).cron());
-    Date now = new Date(System.currentTimeMillis());
-    service.deleteExpiredCertificates();
-    verify(repository).findByCreatedAtLessThan(dateCaptor.capture());
-    assertEquals((now.getTime() - configuration.getPersistLifespan() * 1000L) / 100L,
-        dateCaptor.getValue().getTime() / 100L);
-    verify(repository).delete(calibrationCertificate);
-    verifyNoMoreInteractions(repository);
   }
 }
