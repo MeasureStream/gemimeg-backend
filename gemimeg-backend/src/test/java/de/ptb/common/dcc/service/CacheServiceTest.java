@@ -41,8 +41,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import java.lang.reflect.Method;
 import java.nio.charset.StandardCharsets;
@@ -68,11 +68,11 @@ class CacheServiceTest {
 
   private final Long cacheItemId = RandomUtils.secure().randomLong();
   private final Date createdAt = new Date(System.currentTimeMillis());
-  @MockBean
+  @MockitoBean
   private VersionConfiguration versionConfiguration;
-  @MockBean
+  @MockitoBean
   private CacheConfiguration configuration;
-  @MockBean
+  @MockitoBean
   private CacheItemRepository repository;
   @Captor
   private ArgumentCaptor<Date> dateCaptor;

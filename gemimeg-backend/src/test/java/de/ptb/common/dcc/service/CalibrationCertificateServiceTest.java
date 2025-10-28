@@ -46,8 +46,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.xml.sax.SAXException;
 
 import javax.xml.datatype.DatatypeConfigurationException;
@@ -77,10 +77,10 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class CalibrationCertificateServiceTest {
 
-  @MockBean
+  @MockitoBean
   private CalibrationCertificateConfiguration configuration;
 
-  @MockBean
+  @MockitoBean
   private CalibrationCertificateRepository repository;
 
   @Autowired

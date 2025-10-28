@@ -90,10 +90,8 @@ deploy-production:
   image: ${CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX}/alpine:latest
   before_script:
     - *set_environmentvariables
-    # install envsubst and ssh-add
-    # update Openssl only for apline 3.22 because it is temporalily broken
-    - apk add openssl
-    - apk add --no-cache gettext openssh-client
+    # install gettext, openssh-client, openssl
+    - apk add --no-cache gettext openssh-client openssl
   script:
     # create the new docker-compose.yml
     - envsubst < docker-compose.tmpl > docker-compose.yml
