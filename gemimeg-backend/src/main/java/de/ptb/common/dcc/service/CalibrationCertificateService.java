@@ -72,6 +72,8 @@ import javax.xml.transform.sax.SAXResult;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
+
+import net.sf.saxon.TransformerFactoryImpl;
 import javax.xml.validation.SchemaFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -173,7 +175,7 @@ public class CalibrationCertificateService {
       StreamResult xmlTransformResult = new StreamResult(writer);
       try (InputStream xslInputStream = this.getClass().getResourceAsStream(DCC_XSL_PATH)) {
         StreamSource xslResource = new StreamSource(xslInputStream);
-        TransformerFactory factory = TransformerFactory.newInstance();
+        TransformerFactory factory = new TransformerFactoryImpl();
         Transformer transformer = factory.newTransformer(xslResource);
         transformer.transform(xmlResource, xmlTransformResult);
         return writer.getBuffer().toString();
@@ -197,7 +199,7 @@ public class CalibrationCertificateService {
         InputStream xslInputStream = this.getClass().getResourceAsStream(DCC_XSLFO_PDF_PATH)
     ) {
       Fop fop = fopFactory.newFop(MimeConstants.MIME_PDF, foUserAgent, out);
-      TransformerFactory factory = TransformerFactory.newInstance("net.sf.saxon.TransformerFactoryImpl", null);
+      TransformerFactory factory = new TransformerFactoryImpl();
       Transformer transformer = factory.newTransformer(new StreamSource(xslInputStream));
       StreamSource xmlSource = new StreamSource(new StringReader(convert(dcc)));
       Result result = new SAXResult(fop.getDefaultHandler());
