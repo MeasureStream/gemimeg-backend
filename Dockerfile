@@ -5,6 +5,11 @@ WORKDIR /app
 
 # Create a non-root user for security
 RUN addgroup --system spring && adduser --system spring --ingroup spring
+
+# Create data directory for H2 database files
+RUN mkdir -p /app/data && chown -R spring:spring /app/data
+
+# Switch to non-root user
 USER spring:spring
 
 # Copy the pre-built JAR file (built by Maven/GitHub Actions)
