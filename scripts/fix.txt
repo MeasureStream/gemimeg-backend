@@ -1,0 +1,103 @@
+REPO: gemimeg-backend
+STYLE: Linux kernel / patch-based
+================================
+
+REMOTES
+-------
+origin   = https://github.com/MeasureStream/gemimeg-backend.git   (MY FORK, WRITE)
+upstream = https://gitlab1.ptb.de/d-ptb/dcc/gemimeg-tool-2/gemimeg-backend.git (OFFICIAL, READ)
+
+
+BRANCHES
+--------
+master        = CLEAN MIRROR OF UPSTREAM
+work/patches  = UPSTREAM + MY PATCHES (DEPLOY FROM HERE)
+(no other long-lived branches)
+
+
+RULES (DO NOT BREAK)
+-------------------
+- NEVER commit on master
+- NEVER merge upstream
+- ONLY use git am / git format-patch
+- PATCH FILES ARE THE SOURCE OF TRUTH
+- origin is the ONLY push target
+
+
+WHERE I DEPLOY FROM
+-------------------
+DEPLOY FROM: work/patches
+(master is NEVER deployed)
+
+
+NORMAL WORKFLOW
+---------------
+
+# Get official updates
+git fetch upstream
+
+# Update master (mirror upstream)
+git checkout master
+git reset --hard upstream/master
+git push --force origin master
+
+# Reapply my patches
+git checkout -B work/patches upstream/master
+git am patches/*.patch
+git push --force-with-lease origin work/patches
+
+
+ADDING A NEW FIX / FEATURE
+-------------------------
+
+git checkout work/patches
+# edit code
+git add .
+git commit -m "patch: <description>"
+
+# Regenerate patches
+git format-patch upstream/master -o patches/ --force
+
+
+PATCH FAILURE RECOVERY
+---------------------
+
+# See failing patch
+git am --show-current-patch=diff
+
+# Fix + continue
+git add <files>
+git am --continue
+
+# Drop obsolete patch
+git am --skip
+
+# Abort everything safely
+git am --abort
+
+
+SANITY CHECK (NO CHANGES)
+------------------------
+
+git apply --check patches/*.patch
+
+
+ONE-LINE STATUS CHECK
+--------------------
+
+git branch
+git status
+git log --oneline --decorate -5
+
+
+MENTAL MODEL
+------------
+
+upstream/master
+        ↓
+      master        (PURE MIRROR)
+        ↓  + patches/*.patch
+  work/patches      (MY REAL CODE / DEPLOY)
+
+
+END
