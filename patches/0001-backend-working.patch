@@ -1,9 +1,13 @@
-From d95bcce7032d24ab9c34955fb1dbfa198462499e Mon Sep 17 00:00:00 2001
+From 2ad9d06f966ef280ba917af0ebea1c7f654bd4b9 Mon Sep 17 00:00:00 2001
 From: Mario Attrovio <marioleonardo.attrovio@dentsu.com>
 Date: Wed, 7 Jan 2026 17:04:20 +0100
-Subject: [PATCH] backend working
+Subject: [PATCH 1/2] backend working
 
 Signed-off-by: Mario Attrovio <marioleonardo.attrovio@dentsu.com>
+---
+ gemimeg-backend/pom.xml                                     | 5 +++++
+ .../common/dcc/service/CalibrationCertificateService.java   | 6 ++++--
+ 2 files changed, 9 insertions(+), 2 deletions(-)
 
 diff --git a/gemimeg-backend/pom.xml b/gemimeg-backend/pom.xml
 index a79f33e..7512a0e 100644

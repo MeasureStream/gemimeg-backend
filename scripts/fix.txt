@@ -57,6 +57,7 @@ git commit -m "patch: <description>"
 
 # Regenerate patches
 git format-patch upstream/master -o patches/ --force
+git push --force-with-lease origin work/patches
 
 
 PATCH FAILURE RECOVERY
