@@ -59,6 +59,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            DCC_SERVICE_URL=http://dcc-service:8080
+            GATEWAY_IAM_URL=http://gateway-iam:8080
+            FRONTEND_URL=http://gemimeg-frontend:80
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/gemimeg-backend:latest-dev-mario
             ${{ secrets.DOCKER_USERNAME }}/gemimeg-backend:${{ steps.version.outputs.VERSION }}-dev-mario
