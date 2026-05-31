@@ -454,7 +454,7 @@
               <dcc:quantity refType="basic_measurementError">
                 <dcc:name>
                   <dcc:content lang="de">Messabweichung</dcc:content>
-                  <dcc:content lang="en">Measurement error</dcc:content>
+                  <dcc:content lang="en">M_e</dcc:content>
                 </dcc:name>
                 <si:realListXMLList>
                   <si:valueXMLList>0.072 0.089 0.107 -0.009 -0.084</si:valueXMLList>

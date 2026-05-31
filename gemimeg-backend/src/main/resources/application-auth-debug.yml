@@ -1,0 +1,39 @@
+# ============================================================
+# Profile: auth-debug
+# Usage:
+#   mvn spring-boot:run -Dspring-boot.run.profiles=auth-debug
+#   (from the gemimeg-backend/ sub-module directory)
+#
+# Effects:
+#   - H2 database stored locally (./data/gemimeg-backend) instead
+#     of Docker path (/app/data/gemimeg-backend)
+#   - CORS wide open for local frontend dev on localhost:5173
+#   - H2 web console accessible (already enabled in base config)
+#   - Port stays 10001 — no conflict with dcc-service (8080)
+#
+# gemimeg-backend has NO Spring Security: all endpoints are open
+# without authentication in every profile. No JWT disabling needed.
+# ============================================================
+
+server:
+  port: 10001
+
+spring:
+  datasource:
+    # Store H2 file locally during development instead of /app/data/
+    url: jdbc:h2:file:./data/gemimeg-backend
+  h2:
+    console:
+      # Allow browser access from any host in dev
+      settings.web-allow-others: true
+
+  web:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: "*"
+      allowed-headers: "*"
+
+logging:
+  level:
+    root: INFO
+    de.ptb.common.dcc: DEBUG

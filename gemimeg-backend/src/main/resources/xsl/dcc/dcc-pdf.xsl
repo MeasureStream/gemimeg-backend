@@ -33,7 +33,7 @@
         <fo:flow flow-name="xsl-region-body">
           <fo:block keep-together="always">
             <fo:block font-size="26pt" font-weight="bold" space-after="3pt">
-              Kalibrierzertifikat
+              Certificato di taratura
             </fo:block>
             <fo:block font-size="14pt" font-style="italic" space-after="20pt">
               Digital Calibration Certificate
@@ -50,48 +50,48 @@
   <xsl:template match="dcc:administrativeData">
     <fo:block space-before="20pt">
       <fo:block keep-together="always">
-        <fo:block font-size="18pt" font-weight="bold">Verwaltungsdaten</fo:block>
+        <fo:block font-size="18pt" font-weight="bold">Dati amministrativi</fo:block>
         <fo:block font-size="10pt" font-style="italic">Administrative Data</fo:block>
       </fo:block>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always" keep-with-next="always">
-        <fo:block font-size="14pt" font-weight="bold">DCC Software</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Software DCC</fo:block>
         <fo:block font-size="10pt" font-style="italic">DCC Software</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:dccSoftware"/>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always" keep-with-next="always">
-        <fo:block font-size="14pt" font-weight="bold">Kerndaten</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Dati principali</fo:block>
         <fo:block font-size="10pt" font-style="italic">Coredata</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:coreData"/>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always" keep-with-next="always">
-        <fo:block font-size="14pt" font-weight="bold">Kunde</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Cliente</fo:block>
         <fo:block font-size="10pt" font-style="italic">Customer</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:customer"/>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always">
-        <fo:block font-size="14pt" font-weight="bold">Kalibrierlabor</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Laboratorio di taratura</fo:block>
         <fo:block font-size="10pt" font-style="italic">Calibration Laboratory</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:calibrationLaboratory"/>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always" keep-with-next="always">
-        <fo:block font-size="14pt" font-weight="bold">Verantwortliche Person</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Persona responsabile</fo:block>
         <fo:block font-size="10pt" font-style="italic">ResponsablePerson</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:respPersons"/>
     </fo:block>
     <fo:block space-before="20pt">
       <fo:block keep-together="always" keep-with-next="always">
-        <fo:block font-size="14pt" font-weight="bold">Kalibriergegenstände</fo:block>
+        <fo:block font-size="14pt" font-weight="bold">Oggetti di taratura</fo:block>
         <fo:block font-size="10pt" font-style="italic">items</fo:block>
       </fo:block>
       <xsl:apply-templates select="dcc:items"/>
@@ -99,7 +99,7 @@
     <fo:block space-before="20pt">
       <xsl:if test="dcc:statements">
         <fo:block keep-together="always" keep-with-next="always">
-          <fo:block font-size="14pt" font-weight="bold">Feststellungen</fo:block>
+          <fo:block font-size="14pt" font-weight="bold">Constatazioni</fo:block>
           <fo:block font-size="10pt" font-style="italic">Statements</fo:block>
         </fo:block>
       </xsl:if>
@@ -108,7 +108,7 @@
   </xsl:template>
   <xsl:template name="measurementResultsSection">
     <fo:block keep-together="always" keep-with-next="always" space-before="20pt">
-      <fo:block font-size="14pt" font-weight="bold">Messergebnisse</fo:block>
+      <fo:block font-size="14pt" font-weight="bold">Risultati di misura</fo:block>
       <fo:block font-size="10pt" font-style="italic">Measure Results</fo:block>
     </fo:block>
     <xsl:apply-templates select="dcc:measurementResults"/>
@@ -157,7 +157,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Ländercode</fo:block>
+              <fo:block font-size="12pt">Codice paese</fo:block>
               <fo:block font-size="10pt" font-style="italic">Country Code</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -170,7 +170,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Verwendete Sprache</fo:block>
+              <fo:block font-size="12pt">Lingue utilizzate</fo:block>
               <fo:block font-size="10pt" font-style="italic">Used Language</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -186,7 +186,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Pflichtsprache</fo:block>
+              <fo:block font-size="12pt">Lingua obbligatoria</fo:block>
               <fo:block font-size="10pt" font-style="italic">Mandatory Language</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -202,7 +202,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Kalibrierzeichen</fo:block>
+              <fo:block font-size="12pt">Identificatore univoco</fo:block>
               <fo:block font-size="10pt" font-style="italic">Unique Identdifier</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -213,7 +213,7 @@
           </fo:table-cell>
         </fo:table-row>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Eingangsdatum'"/>
+          <xsl:with-param name="label" select="'Data di ricezione'"/>
           <xsl:with-param name="english-label" select="'Arrival date'"/>
           <xsl:with-param name="value" select="dcc:receiptDate"/>
           <xsl:with-param name="isDate" select="'true'"/>
@@ -221,7 +221,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Beginn der Labortätigkeit</fo:block>
+              <fo:block font-size="12pt">Inizio delle attività di laboratorio</fo:block>
               <fo:block font-size="10pt" font-style="italic">Start of lab operations</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -234,7 +234,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Ende der Labortätigkeit</fo:block>
+              <fo:block font-size="12pt">Fine delle attività di laboratorio</fo:block>
               <fo:block font-size="10pt" font-style="italic">End of lab operations</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -245,7 +245,7 @@
           </fo:table-cell>
         </fo:table-row>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Ausführungsort'"/>
+          <xsl:with-param name="label" select="'Luogo di esecuzione'"/>
           <xsl:with-param name="english-label" select="'Place of Calibration'"/>
           <xsl:with-param name="value" select="dcc:performanceLocation"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -261,7 +261,7 @@
       <fo:table-body>
         <xsl:apply-templates select="dcc:name"/>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Telefon'"/>
+          <xsl:with-param name="label" select="'Telefono'"/>
           <xsl:with-param name="english-label" select="'Phone'"/>
           <xsl:with-param name="value" select="dcc:phone"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -282,43 +282,43 @@
       <fo:table-column column-width="60%"/>
       <fo:table-body>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Stadt'"/>
+          <xsl:with-param name="label" select="'Città'"/>
           <xsl:with-param name="english-label" select="'City'"/>
           <xsl:with-param name="value" select="dcc:city"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Ländercode'"/>
+          <xsl:with-param name="label" select="'Codice paese'"/>
           <xsl:with-param name="english-label" select="'CountryCode'"/>
           <xsl:with-param name="value" select="dcc:countryCode"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'PLZ'"/>
+          <xsl:with-param name="label" select="'Codice postale'"/>
           <xsl:with-param name="english-label" select="'Postal Code'"/>
           <xsl:with-param name="value" select="dcc:postCode"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Bundesland'"/>
+          <xsl:with-param name="label" select="'Regione'"/>
           <xsl:with-param name="english-label" select="'State'"/>
           <xsl:with-param name="value" select="dcc:state"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Straße'"/>
+          <xsl:with-param name="label" select="'Via'"/>
           <xsl:with-param name="english-label" select="'Street'"/>
           <xsl:with-param name="value" select="dcc:street"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Hausnr'"/>
+          <xsl:with-param name="label" select="'Numero civico'"/>
           <xsl:with-param name="english-label" select="'Street No.'"/>
           <xsl:with-param name="value" select="dcc:streetNo"/>
           <xsl:with-param name="isDate" select="'false'"/>
         </xsl:call-template>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Postfach'"/>
+          <xsl:with-param name="label" select="'Casella postale'"/>
           <xsl:with-param name="english-label" select="'PostOfficeBox'"/>
           <xsl:with-param name="value" select="dcc:postOfficeBox"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -333,7 +333,7 @@
       <xsl:variable name="lang" select="@lang"/>
       <xsl:variable name="pos" select="position()"/>
       <xsl:call-template name="showIfNotEmpty">
-        <xsl:with-param name="label" select="concat('Name ',$pos)"/>
+        <xsl:with-param name="label" select="concat('Nome ',$pos)"/>
         <xsl:with-param name="english-label" select="concat('Name ',$pos)"/>
         <xsl:with-param name="value" select="."/>
         <xsl:with-param name="isDate" select="'false'"/>
@@ -347,7 +347,7 @@
       <fo:table-column column-width="60%"/>
       <fo:table-body>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Kennung'"/>
+          <xsl:with-param name="label" select="'Identificatore'"/>
           <xsl:with-param name="english-label" select="'Calibration Laboratory Code'"/>
           <xsl:with-param name="value" select="dcc:calibrationLaboratoryCode"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -357,7 +357,7 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always">
-              <fo:block font-size="12pt">Telefon</fo:block>
+              <fo:block font-size="12pt">Telefono</fo:block>
               <fo:block font-size="10pt" font-style="italic">Phone</fo:block>
             </fo:block>
           </fo:table-cell>
@@ -393,7 +393,7 @@
           <fo:table-row>
             <fo:table-cell padding="4pt" border-bottom="0.5pt solid black" number-columns-spanned="2">
               <fo:block font-size="12pt" font-weight="bold">
-                <xsl:value-of select="position()"/>. Person (Person)
+                <xsl:value-of select="position()"/>. Persona (Person)
               </fo:block>
             </fo:table-cell>
           </fo:table-row>
@@ -401,7 +401,7 @@
         <fo:table-body>
           <xsl:apply-templates select="dcc:name"/>
           <xsl:call-template name="showIfNotEmpty">
-            <xsl:with-param name="label" select="'Telefon'"/>
+            <xsl:with-param name="label" select="'Telefono'"/>
             <xsl:with-param name="english-label" select="'Phone'"/>
             <xsl:with-param name="value" select="dcc:phone"/>
             <xsl:with-param name="isDate" select="'false'"/>
@@ -424,9 +424,8 @@
         <fo:table-row>
           <fo:table-cell padding="4pt">
             <fo:block keep-together="always" keep-with-next="always">
-              <fo:block keep-with-next="always" font-size="12px" font-weight="bold">Hersteller</fo:block>
-              <fo:block keep-with-previous="always" font-size="10px" font-style="italic">Manufacturer
-              </fo:block>
+              <fo:block keep-with-next="always" font-size="12px" font-weight="bold">Produttore</fo:block>
+                <fo:block keep-with-previous="always" font-size="10px" font-style="italic">Manufacturer</fo:block>
             </fo:block>
           </fo:table-cell>
           <fo:table-cell padding="4pt">
@@ -435,7 +434,7 @@
         </fo:table-row>
         <xsl:apply-templates select="dcc:name"/>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Telefon'"/>
+          <xsl:with-param name="label" select="'Telefono'"/>
           <xsl:with-param name="english-label" select="'Phone'"/>
           <xsl:with-param name="value" select="dcc:phone"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -452,7 +451,7 @@
   </xsl:template>
   <xsl:template match="dcc:identifications">
     <fo:block margin-left="10pt" margin-right="10pt" space-before="20pt">
-      <fo:block keep-with-next="always" font-size="12pt" font-weight="bold" padding="4pt">Identifikatoren
+      <fo:block keep-with-next="always" font-size="12pt" font-weight="bold" padding="4pt">Identificatori
         (Identifications)
       </fo:block>
       <xsl:for-each select="dcc:identification">
@@ -464,7 +463,7 @@
               <fo:table-row>
                 <fo:table-cell padding="4pt" number-columns-spanned="2">
                   <fo:block keep-with-next="always" font-size="12pt" font-weight="bold">
-                    <xsl:value-of select="position()"/>. Identifikator (Identificator)
+                    <xsl:value-of select="position()"/>. Identificatore (Identificator)
                   </fo:block>
                 </fo:table-cell>
               </fo:table-row>
@@ -473,7 +472,7 @@
               <fo:table-row>
                 <fo:table-cell padding="4pt">
                   <fo:block keep-together="always">
-                    <fo:block font-size="12pt">Herausgeber</fo:block>
+                    <fo:block font-size="12pt">Emittente</fo:block>
                     <fo:block font-size="10pt" font-style="italic">Issuer</fo:block>
                   </fo:block>
                 </fo:table-cell>
@@ -486,7 +485,7 @@
               <fo:table-row>
                 <fo:table-cell padding="4pt">
                   <fo:block keep-together="always">
-                    <fo:block font-size="12pt">Identifikator</fo:block>
+                    <fo:block font-size="12pt">Identificatore</fo:block>
                     <fo:block font-size="10pt" font-style="italic">value</fo:block>
                   </fo:block>
                 </fo:table-cell>
@@ -513,7 +512,7 @@
             <fo:table-row>
               <fo:table-cell padding="4pt" number-columns-spanned="2">
                 <fo:block font-size="12pt" font-weight="bold">
-                  <xsl:value-of select="position()"/>. Kalibriergegenstand (Item)
+                  <xsl:value-of select="position()"/>. Oggetto di taratura (Item)
                 </fo:block>
               </fo:table-cell>
             </fo:table-row>
@@ -521,7 +520,7 @@
           <fo:table-body>
             <xsl:apply-templates select="dcc:name"/>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Modell'"/>
+              <xsl:with-param name="label" select="'Modello'"/>
               <xsl:with-param name="english-label" select="'Model'"/>
               <xsl:with-param name="value" select="dcc:model"/>
               <xsl:with-param name="isDate" select="'false'"/>
@@ -546,7 +545,7 @@
       <xsl:apply-templates select="dcc:identifications"/>
       <xsl:if test="dcc:installedSoftwares">
         <fo:block keep-together="always" keep-with-next="always" space-before="20pt" padding="4pt">
-          <fo:block font-size="12pt" font-weight="bold">Installierte Software</fo:block>
+          <fo:block font-size="12pt" font-weight="bold">Software installata</fo:block>
           <fo:block font-size="10pt" font-weight="italic">(Installed Software)</fo:block>
           <fo:block>
             <xsl:apply-templates select="dcc:installedSoftwares"/>
@@ -559,8 +558,8 @@
 
     <xsl:variable name="title">
       <xsl:choose>
-        <xsl:when test="self::dcc:statements">Feststellung (Statement)</xsl:when>
-        <xsl:otherwise>Metadaten (Meta Data)</xsl:otherwise>
+        <xsl:when test="self::dcc:statements">Constatazione (Statement)</xsl:when>
+        <xsl:otherwise>Metadati (Meta Data)</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
 
@@ -614,45 +613,45 @@
           <fo:table-body>
 
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Ländercode'"/>
+              <xsl:with-param name="label" select="'Codice paese'"/>
               <xsl:with-param name="english-label" select="'Country Code'"/>
               <xsl:with-param name="value" select="dcc:countryCodeISO3166_1"/>
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Konvention'"/>
+              <xsl:with-param name="label" select="'Convenzione'"/>
               <xsl:with-param name="english-label" select="'convention'"/>
               <xsl:with-param name="value" select="dcc:convention"/>
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Referenz'"/>
+              <xsl:with-param name="label" select="'Riferimento'"/>
               <xsl:with-param name="english-label" select="'reference'"/>
               <xsl:with-param name="value" select="dcc:reference"/>
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:for-each select="dcc:norm">
               <xsl:call-template name="showIfNotEmpty">
-                <xsl:with-param name="label" select="concat('Norm ', position())"/>
+                <xsl:with-param name="label" select="concat('Norma ', position())"/>
                 <xsl:with-param name="english-label" select="concat('Norm ', position())"/>
                 <xsl:with-param name="value" select="."/>
                 <xsl:with-param name="isDate" select="'false'"/>
               </xsl:call-template>
             </xsl:for-each>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Datum'"/>
+              <xsl:with-param name="label" select="'Data'"/>
               <xsl:with-param name="english-label" select="'date'"/>
               <xsl:with-param name="value" select="dcc:date"/>
               <xsl:with-param name="isDate" select="'true'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Periode'"/>
+              <xsl:with-param name="label" select="'Periodo'"/>
               <xsl:with-param name="english-label" select="'period'"/>
               <xsl:with-param name="value" select="dcc:period"/>
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Konformität'"/>
+              <xsl:with-param name="label" select="'Conformità'"/>
               <xsl:with-param name="english-label" select="'conformity'"/>
               <xsl:with-param name="value" select="dcc:conformity"/>
               <xsl:with-param name="isDate" select="'false'"/>
@@ -670,13 +669,13 @@
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'rückführbar'"/>
+              <xsl:with-param name="label" select="'tracciabile'"/>
               <xsl:with-param name="english-label" select="'traceable'"/>
               <xsl:with-param name="value" select="dcc:traceable"/>
               <xsl:with-param name="isDate" select="'false'"/>
             </xsl:call-template>
             <xsl:call-template name="showIfNotEmpty">
-              <xsl:with-param name="label" select="'Valide'"/>
+              <xsl:with-param name="label" select="'Valido'"/>
               <xsl:with-param name="english-label" select="'Valid'"/>
               <xsl:with-param name="value" select="dcc:valid"/>
               <xsl:with-param name="isDate" select="'false'"/>
@@ -704,7 +703,7 @@
     <xsl:for-each select="dcc:measurementResult">
       <fo:block keep-with-next="always" font-size="12pt" font-weight="bold" padding="4pt" space-before="20pt"
                 space-after="20pt">
-        <xsl:value-of select="position()"/>. Messergebnis (Measurement Results)
+        <xsl:value-of select="position()"/>. Risultato di misura (Measurement Results)
       </fo:block>
       <fo:block>
         <xsl:if test="dcc:name">
@@ -720,7 +719,7 @@
       <xsl:if test="dcc:usedSoftware">
         <fo:block keep-together="always" space-before="20pt" space-after="20pt">
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
-            Verwendete Software
+            Software utilizzata
           </fo:block>
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
             Used Software
@@ -731,7 +730,7 @@
       <xsl:if test="dcc:usedMethods">
         <fo:block keep-together="always" keep-with-next="always" space-before="20pt" space-after="20pt">
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
-            Methoden
+            Metodi
           </fo:block>
           <fo:block font-size="10pt" font-style="italic" padding="4pt">
             Methods
@@ -742,7 +741,7 @@
       <xsl:if test="dcc:influenceConditions">
         <fo:block keep-together="always" keep-with-next="always" space-before="20pt" space-after="20pt">
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
-            Einflussfaktoren
+            Fattori di influenza
           </fo:block>
           <fo:block font-size="10pt" font-style="italic" padding="4pt">
             Influence Condition
@@ -753,7 +752,7 @@
       <xsl:if test="dcc:results">
         <fo:block keep-together="always" space-before="20pt" space-after="20pt">
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
-            Ergebnisse
+            Risultati
           </fo:block>
           <fo:block font-size="10pt" font-style="italic" padding="4pt">
             Results
@@ -764,7 +763,7 @@
       <xsl:if test="dcc:measurementMetaData">
         <fo:block keep-together="always" space-before="20pt" space-after="20pt">
           <fo:block font-size="12pt" font-weight="bold" padding="4pt">
-            Metadaten
+            Metadati
           </fo:block>
           <fo:block font-size="10pt" font-style="italic" padding="4pt">
             Meta Data
@@ -784,7 +783,7 @@
           <fo:table-row>
             <fo:table-cell padding="4pt" number-columns-spanned="2">
               <fo:block keep-with-next="auto" font-size="12pt" font-weight="bold" margin-bottom="10pt">
-                <xsl:value-of select="position()"/>. Verwendete Methode (Used Method)
+                <xsl:value-of select="position()"/>. Metodo utilizzato (Used Method)
               </fo:block>
             </fo:table-cell>
           </fo:table-row>
@@ -903,7 +902,7 @@
       <fo:table-body>
         <fo:table-row>
           <fo:table-cell padding="4pt">
-            <fo:block font-size="12pt" font-weight="bold">Verantwortliche Stelle</fo:block>
+            <fo:block font-size="12pt" font-weight="bold">Autorità responsabile</fo:block>
             <fo:block font-size="10pt" font-style="italic">Responsible Authority</fo:block>
           </fo:table-cell>
           <fo:table-cell padding="4pt">
@@ -912,7 +911,7 @@
         </fo:table-row>
         <xsl:apply-templates select="dcc:name"/>
         <xsl:call-template name="showIfNotEmpty">
-          <xsl:with-param name="label" select="'Telefon'"/>
+          <xsl:with-param name="label" select="'Telefono'"/>
           <xsl:with-param name="english-label" select="'Phone'"/>
           <xsl:with-param name="value" select="dcc:phone"/>
           <xsl:with-param name="isDate" select="'false'"/>
@@ -926,7 +925,7 @@
 
       </fo:table-body>
     </fo:table>
-    <!--    todo: hier wieder einschalten wenn location gefixed ist-->
+    <!--    todo: riattivare qui quando location è sistemata -->
     <xsl:apply-templates select="dcc:location"/>
   </xsl:template>
   <xsl:template match="dcc:list">
@@ -1030,27 +1029,27 @@
   <xsl:template name="richContent">
     <xsl:choose>
       <xsl:when test="dcc:further">
-        <xsl:call-template name="richContentSection">
+          <xsl:call-template name="richContentSection">
           <xsl:with-param name="sectionName" select="dcc:further"/>
-          <xsl:with-param name="labelDe" select="'Weitere Information'"/>
+          <xsl:with-param name="labelDe" select="'Ulteriori informazioni'"/>
           <xsl:with-param name="labelEn" select="'Further'"/>
         </xsl:call-template>
       </xsl:when>
     </xsl:choose>
     <xsl:choose>
       <xsl:when test="dcc:description">
-        <xsl:call-template name="richContentSection">
+          <xsl:call-template name="richContentSection">
           <xsl:with-param name="sectionName" select="dcc:description"/>
-          <xsl:with-param name="labelDe" select="'Beschreibung'"/>
+          <xsl:with-param name="labelDe" select="'Descrizione'"/>
           <xsl:with-param name="labelEn" select="'Description'"/>
         </xsl:call-template>
       </xsl:when>
     </xsl:choose>
     <xsl:choose>
       <xsl:when test="dcc:declaration">
-        <xsl:call-template name="richContentSection">
+          <xsl:call-template name="richContentSection">
           <xsl:with-param name="sectionName" select="dcc:declaration"/>
-          <xsl:with-param name="labelDe" select="'Deklaration'"/>
+          <xsl:with-param name="labelDe" select="'Dichiarazione'"/>
           <xsl:with-param name="labelEn" select="'Declaration'"/>
         </xsl:call-template>
       </xsl:when>
@@ -1088,7 +1087,7 @@
 
             <fo:table-cell padding="4pt">
               <fo:block keep-together="always">
-                <fo:block font-size="12pt">Inhalt
+                <fo:block font-size="12pt">Contenuto
                   <xsl:value-of select="position()"/>
                 </fo:block>
                 <fo:block font-size="10pt" font-style="italic">Content
@@ -1112,8 +1111,8 @@
             <fo:table-row>
               <fo:table-cell padding="4pt">
                 <fo:block keep-together="always">
-                  <fo:block font-size="12pt">Dateiname</fo:block>
-                  <fo:block font-size="10pt" font-style="italic">Filename</fo:block>
+                  <fo:block font-size="12pt">Nome file</fo:block>
+                    <fo:block font-size="10pt" font-style="italic">Filename</fo:block>
                 </fo:block>
               </fo:table-cell>
               <fo:table-cell padding="4pt">
@@ -1140,8 +1139,8 @@
             </fo:table-row>
             <fo:table-row>
               <fo:table-cell padding="4pt">
-                <fo:block font-size="12pt">
-                  Bild
+                  <fo:block font-size="12pt">
+                  Immagine
                 </fo:block>
                 <fo:block font-size="10pt">
                   Image
@@ -1182,8 +1181,8 @@
                 <fo:table-row>
                   <fo:table-cell padding="4pt" number-columns-spanned="2">
                     <fo:block font-size="12pt" font-weight="bold" border-bottom="1pt solid black"
-                              margin-bottom="10pt"><xsl:value-of select="position()"/>. Messgröße
-                      (Quantity)
+                                    margin-bottom="10pt"><xsl:value-of select="position()"/>. Grandezza di misura
+                                  (Quantity)
                     </fo:block>
                   </fo:table-cell>
                 </fo:table-row>

@@ -297,7 +297,7 @@
                     ],
                     "name" : {
                       "de" : "Messabweichung",
-                      "en" : "Measurement error"
+                      "en" : "M_e"
                     },
                     "quantityTypeName" : "realListXMLList",
                     "xmlValues" : {

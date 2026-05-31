@@ -1,131 +1,185 @@
-# Gemimeg Backend
+# gemimeg-backend
 
-[![pipeline status](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/badges/master/pipeline.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/commits/master)
-[![coverage report](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/badges/master/coverage.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/commits/master) [![Latest Release](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/badges/release.svg)](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/releases)
+PTB DCC XML/JSON/PDF conversion service.  
+Converts Digital Calibration Certificate documents between XML (PTB DCC schema v3.3.0), JSON, HTML, and PDF.
 
-## Getting started
+Used by `dcc-service` to convert DCC JSON → XML and JSON → PDF for signing and download, and to convert calibration-pipeline XML output → JSON for saving into the DCC database.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+---
 
-Already a pro? Just edit this README.md and make it your own. Want to make it
-easy? [Use the template at the bottom](#editing-this-readme)!
+## Endpoints
 
-## Add your files
+| Method | Path | Consumes | Produces | Description |
+|---|---|---|---|---|
+| `POST` | `/api/v1/dcc/xsd/dcc/xml` | `application/json` | `application/xml` | JSON → XML (validate + convert) |
+| `POST` | `/api/v1/dcc/xsd/dcc/json` | `application/xml` | `application/json` | XML → JSON (validate + convert) |
+| `POST` | `/api/v1/dcc/xsd/dcc/html` | `application/json` | `text/html` | JSON → HTML (via XSLT) |
+| `POST` | `/api/v1/dcc/xsd/dcc/pdf` | `application/json` | `application/pdf` | JSON → PDF (via XSL-FO) |
+| `GET`  | `/api/v1/dcc/xsd/dcc/{id}` | — | `application/json` | Retrieve stored DCC as JSON |
+| `GET`  | `/api/v1/dcc/xsd/dcc/{id}/xml` | — | `application/xml` | Retrieve stored DCC as XML |
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file)
-  or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line)
-  or push an existing Git repository with the following command:
+**No authentication required** — gemimeg-backend has no Spring Security. All endpoints are open.
 
+---
+
+## Requirements
+
+- Java 25 (Eclipse Temurin)
+- Maven 3.9+
+- Port **10001** (default; configurable via `SERVER_PORT`)
+
+---
+
+## Build
+
+> **Important**: this is a **multi-module Maven project**.
+> The parent module (`gemimeg-backend/`) has no `spring-boot-maven-plugin` — all build and run commands must be executed from the **sub-module** directory:
+> ```
+> backend/gemimeg-backend/gemimeg-backend/   ← correct working directory
+> backend/gemimeg-backend/                   ← parent pom only, do NOT run spring-boot:run here
+> ```
+
+Build from the sub-module:
+
+```powershell
+cd backend\gemimeg-backend\gemimeg-backend
+mvn clean package -DskipTests
 ```
-cd existing_repo
-git remote add origin https://itgit.bs.ptb.de/op-layer/gemimeg-backend.git
-git branch -M master
-git push -uf origin master
+
+The runnable JAR is produced at:
+```
+backend\gemimeg-backend\gemimeg-backend\target\gemimeg-backend.jar
 ```
 
-## Integrate with your tools
+---
 
-- [ ] [Set up project integrations](https://itgit.bs.ptb.de/op-layer/gemimeg-backend/-/settings/integrations)
+## Run locally (development)
 
-## Collaborate with your team
+### With `auth-debug` profile (recommended)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+The `auth-debug` profile:
+- Stores the H2 database at `./data/gemimeg-backend` (local path) instead of `/app/data/gemimeg-backend` (Docker path)
+- Opens the H2 web console to all hosts
+- Sets `de.ptb.common.dcc` logging to DEBUG
 
-## Test and Deploy
+```powershell
+# MUST be run from the sub-module directory, NOT the parent
+cd backend\gemimeg-backend\gemimeg-backend
 
-Use the built-in continuous integration in GitLab.
+mvn spring-boot:run -Dspring-boot.run.profiles=auth-debug
+```
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+Or with the pre-built JAR:
 
-***
+```powershell
+cd backend\gemimeg-backend\gemimeg-backend
 
-# Editing this README
+java -jar target\gemimeg-backend.jar --spring.profiles.active=auth-debug
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to
-structure it however you want - this is just a starting point!). Thanks
-to [makeareadme.com](https://www.makeareadme.com/) for this template.
+The service starts on **http://localhost:10001**.
 
-## Suggestions for a good README
+> **Common mistake**: running `mvn spring-boot:run` from `backend/gemimeg-backend/` (the parent)
+> gives `No plugin found for prefix 'spring-boot'`. Always `cd` into `gemimeg-backend/gemimeg-backend/` first.
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are
-suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long
-is better than too short. If you think your README is too long, consider utilizing another form of documentation rather
-than cutting out information.
+### Verify it works
 
-## Name
+```powershell
+# Health check
+curl http://localhost:10001/actuator/health
+# Expected: {"status":"UP"}
 
-Choose a self-explaining name for your project.
+# XML → JSON conversion (uses a generated DCC XML as input)
+curl -X POST http://localhost:10001/api/v1/dcc/xsd/dcc/json `
+  -H "Content-Type: application/xml" `
+  --data-binary "@..\..\calibration\certificato_out\ntc_calibration_certificate.xml"
 
-## Description
+# JSON → XML conversion (reverse direction)
+# Pipe the JSON output of the previous command back:
+curl -X POST http://localhost:10001/api/v1/dcc/xsd/dcc/xml `
+  -H "Content-Type: application/json" `
+  -d "<paste JSON output from above>"
+```
 
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be
-unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your
-project, this is a good place to list differentiating factors.
+### H2 Console (auth-debug only)
 
-## Badges
+Available at: **http://localhost:10001/h2-console**
 
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the
-project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+| Field | Value |
+|---|---|
+| JDBC URL | `jdbc:h2:file:./data/gemimeg-backend` |
+| Username | `sa` |
+| Password | *(leave empty)* |
 
-## Visuals
+---
 
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see
-GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## dcc-service integration
 
-## Installation
+`dcc-service` calls gemimeg-backend via the `gemimeg.backend.url` property.
 
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew.
-However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing
-specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a
-specific context like a particular programming language version or operating system or has dependencies that have to be
-installed manually, also add a Requirements subsection.
+| Context | Value |
+|---|---|
+| Local dev | `http://localhost:10001` (set in `dcc-service/application-auth-debug.properties`) |
+| Docker Compose | `http://gemimeg-backend:10001` (default in `application.properties`) |
 
-## Usage
+The `auth-debug` profile of dcc-service already sets `gemimeg.backend.url=http://localhost:10001` — no extra env var needed.
 
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of
-usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably
-include in the README.
+### Correct local dev launch order
 
-## Support
+```powershell
+# Terminal 1 — start gemimeg-backend first
+cd backend\gemimeg-backend\gemimeg-backend
+mvn spring-boot:run -Dspring-boot.run.profiles=auth-debug
+# Starts on http://localhost:10001
 
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address,
-etc.
+# Terminal 2 — start dcc-service
+cd backend\dcc_service
+mvn spring-boot:run -Dspring-boot.run.profiles=auth-debug
+# Starts on http://localhost:8080
+# Will call gemimeg at http://localhost:10001 for XML/JSON/PDF conversion
+```
 
-## Roadmap
+---
 
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+## Docker / Docker Compose
 
-## Contributing
+gemimeg-backend is included in `backend/compose/compose.yaml` as `gemimeg-backend` service.
 
-State if you are open to contributions and what your requirements are for accepting them.
+Build the image first (from `backend/gemimeg-backend/`):
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started.
-Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps
-explicit. These instructions could also be useful to your future self.
+```bash
+# From repo root
+docker build -t gemimeg-backend:local backend/gemimeg-backend/
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce
-the likelihood that the changes inadvertently break something. Having instructions for running tests is especially
-helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+# Or let compose build it automatically
+cd backend/compose
+docker compose build gemimeg-backend
+docker compose up gemimeg-backend
+```
 
-## Authors and acknowledgment
+The service runs at **http://gemimeg-backend:10001** inside the Docker network.  
+H2 data is persisted in the named volume `gemimeg_h2_data`.
 
-Show your appreciation to those who have contributed to the project.
+---
 
-## License
+## Configuration
 
-For open source projects, say how it is licensed.
+All values can be overridden via environment variables:
 
-## Project status
+| Property | Env var | Default (Docker) | Default (auth-debug) |
+|---|---|---|---|
+| `server.port` | `SERVER_PORT` | `10001` | `10001` |
+| `spring.datasource.url` | `SPRING_DATASOURCE_URL` | `jdbc:h2:file:/app/data/gemimeg-backend` | `jdbc:h2:file:./data/gemimeg-backend` |
+| `spring.datasource.username` | `SPRING_DATASOURCE_USERNAME` | `sa` | `sa` |
+| `spring.datasource.password` | `SPRING_DATASOURCE_PASSWORD` | *(empty)* | *(empty)* |
+| `logging.level.root` | `LOGGING_LEVEL_ROOT` | `INFO` | `INFO` |
+| `logging.level.de.ptb.common.dcc` | — | — | `DEBUG` (auth-debug only) |
 
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has
-slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or
-owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+---
+
+## Notes
+
+- **No authentication** — all endpoints are intentionally open. gemimeg is a backend-to-backend conversion service, not exposed to the public internet directly.
+- The `common.security.enabled` property in `application.yml` is tied to `server.ssl.enabled` (both false by default) — this controls an optional SSL-based security layer in the `gemimeg-backend-api` module, not Spring Security.
+- DCC persistence (`common.dcc.persist-enabled`) is set to `false` by default — converted documents are returned directly without being stored in H2.
+- The H2 console (`/h2-console`) is enabled in all profiles; in Docker it is accessible only from within the container unless you port-forward.
