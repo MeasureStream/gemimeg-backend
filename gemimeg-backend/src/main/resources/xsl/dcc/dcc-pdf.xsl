@@ -18,15 +18,15 @@
         </fo:simple-page-master>
       </fo:layout-master-set>
       <fo:page-sequence master-reference="A4">
-        <!-- Fußzeile -->
+        <!-- Piè di pagina -->
         <fo:static-content flow-name="xsl-region-after">
           <fo:block border-top="0.5pt solid gray"
                     padding-top="4pt"
                     font-size="10pt"
                     text-align="right">
-            Seite
+            Pagina
             <fo:page-number/>
-            von
+            di
             <fo:page-number-citation-last ref-id="last-page"/>
           </fo:block>
         </fo:static-content>
@@ -830,7 +830,7 @@
             <fo:table-cell number-columns-spanned="2">
               <fo:block keep-together="always" keep-with-next="always" font-size="12pt" font-weight="bold"
                         margin-bottom="10pt">
-                <xsl:value-of select="position()"/>. Einflussfaktor (Influence Condition)
+                <xsl:value-of select="position()"/>. Fattore di influenza (Influence Condition)
               </fo:block>
             </fo:table-cell>
           </fo:table-row>
@@ -876,7 +876,7 @@
           <fo:table-row>
             <fo:table-cell number-columns-spanned="2">
               <fo:block keep-together="always" font-size="12pt" font-weight="bold">
-                <xsl:value-of select="position()"/>. Ergebnis (Result)
+                <xsl:value-of select="position()"/>. Risultato (Result)
               </fo:block>
             </fo:table-cell>
           </fo:table-row>
@@ -1238,17 +1238,17 @@
             <fo:table-row>
               <fo:table-cell padding="4pt" border="1px solid black" background-color="#E0E0E0"
                              text-align="center">
-                <fo:block font-size="12pt" font-weight="bold">Messwert</fo:block>
+                <fo:block font-size="12pt" font-weight="bold">Valore misurato</fo:block>
                 <fo:block font-size="10pt" font-style="italic">Measurement</fo:block>
               </fo:table-cell>
               <fo:table-cell padding="4pt" border="1px solid black" background-color="#E0E0E0"
                              text-align="center">
-                <fo:block font-size="12pt" font-weight="bold">Wert</fo:block>
+                <fo:block font-size="12pt" font-weight="bold">Valore</fo:block>
                 <fo:block font-size="10pt" font-style="italic">Value</fo:block>
               </fo:table-cell>
               <fo:table-cell padding="4pt" border="1px solid black" background-color="#E0E0E0"
                              text-align="center">
-                <fo:block font-size="12pt" font-weight="bold">Einheit</fo:block>
+                <fo:block font-size="12pt" font-weight="bold">Unità</fo:block>
                 <fo:block font-size="10pt" font-style="italic">Unit</fo:block>
               </fo:table-cell>
             </fo:table-row>
@@ -1292,7 +1292,7 @@
                              background-color="#E0E0E0"
                              text-align="center">
                 <fo:block font-size="12pt">
-                  Wert
+                  Valore
                 </fo:block>
                 <fo:block font-size="10pt" font-style="italic">
                   Value
@@ -1302,7 +1302,7 @@
                              background-color="#E0E0E0"
                              text-align="center">
                 <fo:block font-size="12pt">
-                  Einheit
+                  Unità
                 </fo:block>
                 <fo:block font-size="10pt" font-style="italic">
                   Unit
